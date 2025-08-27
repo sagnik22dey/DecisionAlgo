@@ -1,11 +1,18 @@
-from flask import Flask
-from flask import render_template
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
+import uvicorn
 
-app = Flask(__name__)
+from Routes import healthcheck
+from Routes import homepage
 
-@app.route('/')
-def index():
-    return render_template('index.html')
+app = FastAPI()
 
-if __name__ == '__main__':
-    app.run(debug=True)
+app.include_router(healthcheck.router)
+app.include_router(homepage.router)
+
+@app.exception_handler(404)
+async def not_found_exception_handler(request: Request, exc):
+    return JSONResponse(status_code=404, content={"message": "Page not found"})
+
+if __name__ == "__main__":
+    uvicorn.run("app:app", host="0.0.0.0", port=5000, reload=True)

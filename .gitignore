@@ -10,12 +10,12 @@
 #Virtual Environment
 venv/
 
-# Flask
+# Fast
 instance/*
 !instance/.gitignore
 .webassets-cache
 
-# Flask.Python Stack
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
