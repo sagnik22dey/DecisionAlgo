@@ -5,11 +5,8 @@ from fastapi.responses import HTMLResponse
 async def homepageStyle():
     return """
     <style>
-        :root {
-            --bg: #111;
-        }
         body {
-            background: var(--bg);
+            background: #111111;
         }
-    </style>
+    </style>    
     """

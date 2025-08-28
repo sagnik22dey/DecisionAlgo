@@ -2,20 +2,33 @@ from fastapi import APIRouter
 from fastapi.responses import HTMLResponse
 
 
-async def heroSection():
+async def heroSection_body():
     return """
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hero Section</title>
-    
-    <!-- Import Fonts from Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700&family=Jost:wght@400&family=Poppins:wght@400&display=swap" rel="stylesheet">
+<div>
+    <div class="hero-section-container">
+        <!-- Background and Decorative Elements -->
+        <div class="bg-dark"></div>
+        <div class="glow-top"></div>
+        <div class="grid-container"></div>
+        <div class="gradient-overlay"></div>
+        <div class="glow-bottom"></div>
+        
+        <!-- Foreground Content (Text and Button) -->
+        <div class ="hero-content-container">
+        <div class="hero-content">
+            <h1>Is your Business drowning in Data but, Starving for Insights?</h1>
+            <p>Transform frustration into fortune with AI solutions that eliminate data headaches, accelerate decision-making, and drive measurable ROI.</p>
+            <a href="#" class="cta-button">
+                <span>Discover How</span>
+            </a>
+        </div>
+        </div>
+    </div>
+</div>
+"""
 
+async def heroSection_style():
+    return """    
     <style>
         /* The main container for the hero section to provide a positioning context */
         .hero-section-container {
@@ -185,29 +198,4 @@ async def heroSection():
             flex-grow: 0;
         }
     </style>
-</head>
-<body>
-
-    <div class="hero-section-container">
-        <!-- Background and Decorative Elements -->
-        <div class="bg-dark"></div>
-        <div class="glow-top"></div>
-        <div class="grid-container"></div>
-        <div class="gradient-overlay"></div>
-        <div class="glow-bottom"></div>
-        
-        <!-- Foreground Content (Text and Button) -->
-        <div class ="hero-content-container">
-        <div class="hero-content">
-            <h1>Is your Business drowning in Data but, Starving for Insights?</h1>
-            <p>Transform frustration into fortune with AI solutions that eliminate data headaches, accelerate decision-making, and drive measurable ROI.</p>
-            <a href="#" class="cta-button">
-                <span>Discover How</span>
-            </a>
-        </div>
-        </div>
-    </div>
-
-</body>
-</html>
-"""
+    """ 

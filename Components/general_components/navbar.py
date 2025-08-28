@@ -2,14 +2,27 @@ from fastapi import APIRouter
 from fastapi.responses import HTMLResponse
 
 
-async def navbar():
+async def navbar_body():
     return """
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Navbar</title>
+<div>
+    <header class="navbar" role="navigation" aria-label="Main">
+        <a href="#" class="brand">
+            <img src="/Resources/Images/DecisionAlgoLogo.png" alt="DecisionAlgo logo" />
+        </a>
+        <nav class="nav">
+            <a href="#" class="active">Home</a>
+            <a href="#">Dashboards</a>
+            <a href="#">Case Studies</a>
+            <a href="#">About us</a>
+            <a href="#">Pricing</a>
+            <a href="#">Contact Us</a>
+        </nav>
+    </header>
+</div>
+    """
+
+async def navbar_style():
+    return """
     <style>
         :root {
             --bg: #111;
@@ -95,23 +108,5 @@ async def navbar():
             }
         }
     </style>
-</head>
-
-<body>
-    <header class="navbar" role="navigation" aria-label="Main">
-        <a href="#" class="brand">
-            <img src="/Resources/Images/DecisionAlgoLogo.png" alt="DecisionAlgo logo" />
-        </a>
-        <nav class="nav">
-            <a href="#" class="active">Home</a>
-            <a href="#">Dashboards</a>
-            <a href="#">Case Studies</a>
-            <a href="#">About us</a>
-            <a href="#">Pricing</a>
-            <a href="#">Contact Us</a>
-        </nav>
-    </header>
-</body>
-
-</html>
     """
+        
