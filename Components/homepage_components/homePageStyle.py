@@ -7,6 +7,8 @@ async def homepageStyle():
     <style>
         body {
             background: #111111;
+            margin: 0;
+            padding: 0;
         }
     </style>    
     """

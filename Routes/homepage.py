@@ -3,6 +3,7 @@ from fastapi.responses import HTMLResponse
 from Components.general_components.navbar import *
 from Components.homepage_components.heroSection import *
 from Components.homepage_components.homePageStyle import homepageStyle
+from Components.homepage_components.robotSection import *
 
 router = APIRouter()
 
@@ -14,6 +15,11 @@ async def homepage():
     homepageStyle_css = await homepageStyle()
     navbar_css = await navbar_style()
     heroSection_css = await heroSection_style()
+    robotSection_html= await robot_body()
+    robotSection_css= await robot_style()
+    
+    
+    
     return f"""
     <html>
         <head>
@@ -26,11 +32,13 @@ async def homepage():
         <title>Home Page</title>
         {homepageStyle_css}
         {navbar_css}
-        {heroSection_css}   
+        {heroSection_css}  
+        {robotSection_css}
         </head>
         <body>
             {navbar_html}
             {heroSection_html}
+            {robotSection_html}
         </body>
     </html>
     """

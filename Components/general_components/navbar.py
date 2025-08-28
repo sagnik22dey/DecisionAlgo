@@ -4,7 +4,6 @@ from fastapi.responses import HTMLResponse
 
 async def navbar_body():
     return """
-<div>
     <header class="navbar" role="navigation" aria-label="Main">
         <a href="#" class="brand">
             <img src="/Resources/Images/DecisionAlgoLogo.png" alt="DecisionAlgo logo" />
@@ -18,7 +17,6 @@ async def navbar_body():
             <a href="#">Contact Us</a>
         </nav>
     </header>
-</div>
     """
 
 async def navbar_style():
@@ -36,6 +34,7 @@ async def navbar_style():
 
         body {
             margin: 0;
+            padding: 0;
             background: var(--bg);
             color: var(--text);
             font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;

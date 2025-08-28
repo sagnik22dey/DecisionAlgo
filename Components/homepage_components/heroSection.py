@@ -4,7 +4,6 @@ from fastapi.responses import HTMLResponse
 
 async def heroSection_body():
     return """
-<div>
     <div class="hero-section-container">
         <!-- Background and Decorative Elements -->
         <div class="bg-dark"></div>
@@ -24,7 +23,6 @@ async def heroSection_body():
         </div>
         </div>
     </div>
-</div>
 """
 
 async def heroSection_style():
@@ -34,14 +32,13 @@ async def heroSection_style():
         .hero-section-container {
             position: relative; /* Changed from absolute */
             width: 100%;
-            min-height: 928px; /* Reduced fixed height, use min-height for flexibility */
             overflow: hidden; /* To contain the glows */
             display: flex; /* Use flexbox to align content */
             flex-direction: column;
             justify-content: center; /* Vertically center content */
             align-items: center; /* Horizontally center content */
             padding-top: 100px; /* Add some top padding to move content down from the top of the container */
-            padding-bottom: 200px; /* Add some bottom padding */
+            padding-bottom: 100px; /* Add some bottom padding */
             box-sizing: border-box; /* Include padding in width/height calculation */
         }
 
