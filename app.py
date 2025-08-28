@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
 import uvicorn
 
 from Routes import healthcheck
@@ -9,6 +10,8 @@ app = FastAPI()
 
 app.include_router(healthcheck.router)
 app.include_router(homepage.router)
+
+app.mount("/Resources", StaticFiles(directory="Resources"), name="Resources")
 
 @app.exception_handler(404)
 async def not_found_exception_handler(request: Request, exc):
