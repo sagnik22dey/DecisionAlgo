@@ -29,15 +29,16 @@ async def heroSection_style():
     <style>
         /* The main container for the hero section to provide a positioning context */
         .hero-section-container {
+            margin-top: 7rem;
             position: relative; /* Changed from absolute */
             width: 100%;
-            /* overflow: hidden; */ /* To contain the glows */
+            /* overflow: hidden; */ /* Can't use here, as it would clip the glows */
             display: flex; /* Use flexbox to align content */
             flex-direction: column;
             justify-content: center; /* Vertically center content */
             align-items: center; /* Horizontally center content */
             padding-top: 15rem; /* Add some top padding to move content down from the top of the container */
-            padding-bottom: 15rem; /* Add some bottom padding */
+            padding-bottom: 20rem; /* Add some bottom padding */
             box-sizing: border-box; /* Include padding in width/height calculation */
         }
 
@@ -49,6 +50,7 @@ async def heroSection_style():
             left: 0px;
             top: 0px; /* Changed from 151px */
             background: #111111;
+            border-radius: 65px; /* PATCH: Match the overlay's border-radius to prevent leaking */
         }
 
         /* Ellipse 4335: Top white glow effect */
@@ -88,7 +90,8 @@ async def heroSection_style():
             left: 0px; /* Changed from -14px */
             top: 0px; /* Changed from 151px */
             /* Using the image path you provided */
-            background-image: url('../../Resources/Images/rectanglebox_bg.png');
+            background-image: url('../../Resources/Images/grid1.png');
+            border-radius: 65px; /* PATCH: Match the overlay's border-radius to prevent leaking */
         }
 
         /* Ellipse 2: Bottom white glow effect */

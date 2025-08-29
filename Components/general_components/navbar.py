@@ -41,7 +41,7 @@ async def navbar_style():
         }
 
         .navbar {
-            position: relative;
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
@@ -53,9 +53,9 @@ async def navbar_style():
             gap: 24px;
             padding-top: 20px;
             padding-bottom:20px;
-            padding-right:40px;
-            max-width: 1800px;
-            margin: 0 auto;
+            padding-right:20px;
+            padding-left:30px;
+            max-width: 100vw;
         }
 
         .brand {

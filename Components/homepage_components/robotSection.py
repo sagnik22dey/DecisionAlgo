@@ -12,7 +12,7 @@ async def robot_style():
             display: flex;
             flex-direction: column;
             align-items: center;
-            height: 1180px;
+            height: 1480px;
             background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 1.45%, rgba(48, 48, 48, 0.08) 28.37%, #000000 100%);
             padding-top: 10rem;
             border-radius: 65px;
@@ -35,7 +35,7 @@ async def robot_style():
             letter-spacing: -0.02em;
             text-transform: capitalize;
             z-index: 20;
-            margin-bottom: 0px;
+            margin-bottom: 20px;
         }
         
         .heading-container h1 {
@@ -55,14 +55,37 @@ async def robot_style():
         }
         
         .content-wrapper {
-            position: relative;
+            position: relative; /* This is crucial for positioning the SVG */
             width: 100%;
             max-width: 1728px;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 60px;
+            margin-bottom: 0px;
+            margin-top:120px;
         }
+
+        /* START: Added styles for connector lines */
+        .connector-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Allows clicks to pass through to elements underneath */
+            z-index: 15; /* Positioned between robot (10) and feature boxes (20) */
+        }
+
+        .connector-line {
+            stroke: rgba(255, 255, 255, 0.5);
+            stroke-width: 1;
+            fill: none;
+        }
+
+        .connector-circle {
+            fill: rgba(255, 255, 255, 0.5);
+        }
+        /* END: Added styles for connector lines */
 
         /* Robot Image */
         #robot-image {
@@ -217,6 +240,32 @@ async def robot_body():
         </div>
 
         <div class="content-wrapper">
+        
+            <!-- START: Added SVG for connector lines -->
+            <svg class="connector-svg" viewBox="0 0 1728 850" preserveAspectRatio="xMidYMid meet">
+                <!-- Line for Top-Left: Real-Time Dashboards -->
+                <g>
+                    <path class="connector-line" d="M 428 158 L 680 158" />
+                    <circle class="connector-circle" cx="680" cy="158" r="5" />
+                </g>
+                <!-- Line for Bottom-Left: AI-Powered Chatbots -->
+                <g>
+                    <path class="connector-line" d="M 428 513 L 680 513" />
+                    <circle class="connector-circle" cx="680" cy="513" r="5" />
+                </g>
+                <!-- Line for Top-Right: Data-Driven Reports -->
+                <g>
+                    <path class="connector-line" d="M 1300 158 L 1050 158" />
+                    <circle class="connector-circle" cx="1050" cy="158" r="5" />
+                </g>
+                <!-- Line for Bottom-Right: Smart Outsourcing Solutions -->
+                <g>
+                    <path class="connector-line" d="M 1300 513 L 1050 513" />
+                    <circle class="connector-circle" cx="1050" cy="513" r="5" />
+                </g>
+            </svg>
+            <!-- END: Added SVG for connector lines -->
+
             <div class="features-wrapper">
                 <!-- Feature Box 1: Real-Time Dashboards -->
                 <div class="feature-box">
@@ -265,7 +314,7 @@ async def robot_body():
                         <h3>Data-Driven Reports</h3>
                     </div>
                     <div class="feature-content">
-                        <p>No More Manual Reporting-Get Automated Insights Delivered Weekly & Monthly To Make Informed Decisions Faster.</p>
+                        <p>No More Manual Reporting-Get Automated Insights Delivered Weekly & Monthly To Make Informed Decisions Faster.</p>                        
                         <a href="#" class="show-detail-link">
                             <span>Show Detail</span>
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 18L18 6M18 6H9M18 6V15" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
