@@ -12,9 +12,10 @@ async def robot_style():
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 40px 0;
-            
+            height: 1180px;
             background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 1.45%, rgba(48, 48, 48, 0.08) 28.37%, #000000 100%);
+            padding-top: 10rem;
+            border-radius: 65px;
         }
 
         /* Main Container Background */
@@ -24,30 +25,17 @@ async def robot_style():
             height: 100%;
             overflow: hidden;
         }
-
-        /* Background Glow */
-        .glow {
-            position: absolute;
-            width: 202px;
-            height: 329px;
-            left: 763px;
-            top: 650px;
-            background: #FFFFFF;
-            opacity: 0.2;
-            filter: blur(150px);
-            z-index: 1;
-        }
-
+ 
         /* Headings */
         .heading-container {
             position: relative;
-            width: 90%;
+            width: 100%;
             max-width: 916px;
             text-align: center;
             letter-spacing: -0.02em;
             text-transform: capitalize;
             z-index: 20;
-            margin-bottom: 60px;
+            margin-bottom: 0px;
         }
         
         .heading-container h1 {
@@ -79,8 +67,8 @@ async def robot_style():
         /* Robot Image */
         #robot-image {
             position: relative;
-            width: 462.18px;
-            height: 575.45px;
+            width:662.18px;
+            height: 775.45px;
             z-index: 10;
         }
 
@@ -222,7 +210,6 @@ async def robot_body():
     return """
     <div class="page-wrapper">
         <div class="main-container"></div>
-        <div class="glow"></div>
         
         <div class="heading-container">
             <h1>What We Offer</h1>
@@ -303,11 +290,6 @@ async def robot_body():
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="button-container">
-            <a href="#" class="btn btn-primary">See Our Dashboards</a>
-            <a href="#" class="btn btn-secondary">Explore More Solutions</a>
         </div>
     </div>
 """

@@ -7,7 +7,6 @@ async def heroSection_body():
     <div class="hero-section-container">
         <!-- Background and Decorative Elements -->
         <div class="bg-dark"></div>
-        <div class="glow-top"></div>
         <div class="grid-container"></div>
         <div class="gradient-overlay"></div>
         <div class="glow-bottom"></div>
@@ -32,13 +31,13 @@ async def heroSection_style():
         .hero-section-container {
             position: relative; /* Changed from absolute */
             width: 100%;
-            overflow: hidden; /* To contain the glows */
+            /* overflow: hidden; */ /* To contain the glows */
             display: flex; /* Use flexbox to align content */
             flex-direction: column;
             justify-content: center; /* Vertically center content */
             align-items: center; /* Horizontally center content */
-            padding-top: 100px; /* Add some top padding to move content down from the top of the container */
-            padding-bottom: 100px; /* Add some bottom padding */
+            padding-top: 15rem; /* Add some top padding to move content down from the top of the container */
+            padding-bottom: 15rem; /* Add some bottom padding */
             box-sizing: border-box; /* Include padding in width/height calculation */
         }
 
@@ -53,16 +52,18 @@ async def heroSection_style():
         }
 
         /* Ellipse 4335: Top white glow effect */
-        .glow-top {
+        .hero-section-container::before {
+            content: '';
             position: absolute;
-            width: 469px;
-            height: 469px;
+            width: 350px;
+            height: 350px;
             left: 50%; /* Centered horizontally */
             top: -100px; /* Adjusted to be higher but still visible */
             background: #FFFFFF;
-            opacity: 0.32;
-            filter: blur(250px);
+            opacity: 0.2;
+            filter: blur(200px);
             transform: translateX(-50%); /* For horizontal centering */
+            z-index: 1;
         }
 
         /* Rectangle 41: Gradient overlay with rounded corners */
@@ -74,6 +75,8 @@ async def heroSection_style():
             top: 0px; /* Changed from 144px */
             background: linear-gradient(177.33deg, rgba(15, 15, 15, 0) 5.46%, rgba(0, 0, 0, 0.6006) 53.07%, rgba(0, 0, 0, 0.77) 93.86%);
             border-radius: 65px;
+            border-bottom: solid 1px;
+            border-color:#f0f0f0;
         }
 
         /* Rectangle 14: The grid pattern container with border */
@@ -91,14 +94,15 @@ async def heroSection_style():
         /* Ellipse 2: Bottom white glow effect */
         .glow-bottom {
             position: absolute;
-            width: 202.11px;
-            height: 329px;
+            width: 800px;
+            height: 800px;
             left: 50%; /* Centered horizontally */
-            bottom: -100px; /* Adjusted to be higher but still visible */
+            bottom: -400px; /* Positioned to span sections */
             background: #FFFFFF;
-            opacity: 0.66;
-            filter: blur(200px);
-            transform: translateX(-50%); /* Removed matrix transform, added translateX for centering */
+            opacity: 0.25;
+            filter: blur(250px);
+            transform: translateX(-50%);
+            border-radius: 50%;
         }
 
         .hero-content-container{
@@ -113,7 +117,7 @@ async def heroSection_style():
             gap: 33px;
             position: relative; /* Changed from absolute, to flow within flex container */
             max-width: 971px; /* Keep max-width, but add fluid width */
-            width: 90%; /* Make it responsive */
+            width: 100%; /* Make it responsive */
             z-index: 10; /* Ensure text is on top of all background elements */
         }
         
