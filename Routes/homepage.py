@@ -4,6 +4,8 @@ from Components.general_components.navbar import *
 from Components.homepage_components.heroSection import *
 from Components.homepage_components.homePageStyle import homepageStyle
 from Components.homepage_components.robotSection import *
+from Components.general_components.footer import *
+
 
 router = APIRouter()
 
@@ -17,6 +19,8 @@ async def homepage():
     heroSection_css = await heroSection_style()
     robotSection_html= await robot_body()
     robotSection_css= await robot_style()
+    footer_html = await footer_body()
+    footer_css = await footer_style()
     
     
     
@@ -34,11 +38,14 @@ async def homepage():
         {navbar_css}
         {heroSection_css}  
         {robotSection_css}
+        {footer_css}
         </head>
         <body>
             {navbar_html}
             {heroSection_html}
             {robotSection_html}
+            
+            {footer_html}
         </body>
     </html>
     """
