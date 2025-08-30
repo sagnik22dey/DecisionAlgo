@@ -5,6 +5,7 @@ from Components.homepage_components.heroSection import *
 from Components.homepage_components.homePageStyle import homepageStyle
 from Components.homepage_components.robotSection import *
 from Components.general_components.footer import *
+from Components.homepage_components.business_trust import *
 
 
 router = APIRouter()
@@ -21,6 +22,8 @@ async def homepage():
     robotSection_css= await robot_style()
     footer_html = await footer_body()
     footer_css = await footer_style()
+    business_trust_html = await trust_body()
+    business_trust_css = await trust_style()
     
     
     
@@ -38,12 +41,15 @@ async def homepage():
         {navbar_css}
         {heroSection_css}  
         {robotSection_css}
+        {business_trust_css}
+        
         {footer_css}
         </head>
         <body>
             {navbar_html}
             {heroSection_html}
             {robotSection_html}
+            {business_trust_html}
             
             {footer_html}
         </body>
