@@ -80,6 +80,10 @@ async def navbar_style():
             font-weight: 800;
         }
 
+        .nav a:last-child {
+            padding-right: 20px;
+        }
+
         .nav a:hover {
             opacity: 0.85;
         }

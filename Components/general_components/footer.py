@@ -72,7 +72,6 @@ async def footer_style():
 
         /* Footer Container */
         .footer-container {
-            margin-top:15rem;
             background: linear-gradient(293.29deg, #090909 0.66%, rgba(37, 37, 37, 0.85) 27.54%, rgba(84, 84, 84, 0.62) 72.03%);
             padding: 60px 80px;
             display: flex;
@@ -144,7 +143,6 @@ async def footer_style():
             font-size: 18px;
             font-weight: 400;
             opacity: 0.7;
-            line-height: 1.6;
         }
         
         .link-column ul li::before {
