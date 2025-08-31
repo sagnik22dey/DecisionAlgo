@@ -10,16 +10,19 @@ async def robot_body():
 
         <div class="content-wrapper">
                 <!-- Connectors -->
-                <svg id="vector-1" class="connector-vector" width="135" height="82" viewBox="0 0 135 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg id="vector-1" class="connector-vector" width="7.03vw" height="8.59vh" viewBox="0 0 135 82" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M133 8H134.5V6.5H133V8ZM16 8C16 3.58173 12.4183 0 8 0C3.58173 0 0 3.58173 0 8C0 12.4183 3.58173 16 8 16C12.4183 16 16 12.4183 16 8ZM133 82H134.5V8H133H131.5V82H133ZM133 8V6.5H8V8V9.5H133V8Z" fill="#818181" fill-opacity="0.43"/>
                 </svg>
-                <svg id="vector-2" class="connector-vector" width="95" height="16" viewBox="0 0 95 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+                <svg id="vector-2" class="connector-vector" width="5.95vw" height="2.48vh" viewBox="0 0 95 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M93 8H94.5V6.5H93V8ZM16 8C16 3.58172 12.4183 0 7.99999 0C3.58172 0 -7.62939e-06 3.58172 -7.62939e-06 8C-7.62939e-06 12.4183 3.58172 16 7.99999 16C12.4183 16 16 12.4183 16 8ZM93 10H94.5V8H93H91.5V10H93ZM93 8V6.5H7.99999V8V9.5H93V8Z" fill="#818181" fill-opacity="0.43"/>
                 </svg>
-                <svg id="vector-3" class="connector-vector" width="120" height="82" viewBox="0 0 120 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+                <svg id="vector-3" class="connector-vector" width="6.25vw" height="9.59vh" viewBox="0 0 120 82" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M2 8H0.5V6.5H2V8ZM104 8C104 3.58173 107.582 0 112 0C116.418 0 120 3.58173 120 8C120 12.4183 116.418 16 112 16C107.582 16 104 12.4183 104 8ZM2 82H0.5V8H2H3.5V82H2ZM2 8V6.5H112V8V9.5H2V8Z" fill="#818181" fill-opacity="0.43"/>
                 </svg>
-                <svg id="vector-4" class="connector-vector" width="157" height="16" viewBox="0 0 157 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+                <svg id="vector-4" class="connector-vector" width="8.18vw" height="2.48vh" viewBox="0 0 157 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M2 8H0.5V6.5H2V8ZM141 8C141 3.58172 144.582 0 149 0C153.418 0 157 3.58172 157 8C157 12.4183 153.418 16 149 16C144.582 16 141 12.4183 141 8ZM2 10H0.5V8H2H3.5V10H2ZM2 8V6.5H149V8V9.5H2V8Z" fill="#818181" fill-opacity="0.43"/>
                 </svg>
 
@@ -223,8 +226,8 @@ async def robot_style():
             left:50%;
             top:50%;
             transform:translate(-50%,-50%);
-            width: 31.25vw; /* Original: 600px */
-            height: 64.81vh; /* Original: 700px */
+            width: 39.25vw; /* Original: 600px */
+            height: 65.81vh; /* Original: 700px */
             object-fit:contain;
             z-index:10;
             filter: drop-shadow(0 1.85vh 3.125vw rgba(0,0,0,0.6)); /* Original: 0 20px 60px */
