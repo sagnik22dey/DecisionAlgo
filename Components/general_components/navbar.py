@@ -1,7 +1,3 @@
-from fastapi import APIRouter
-from fastapi.responses import HTMLResponse
-
-
 async def navbar_body():
     return """
     <header class="navbar" role="navigation" aria-label="Main">
@@ -50,28 +46,28 @@ async def navbar_style():
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 24px;
-            padding-top: 20px;
-            padding-bottom:20px;
-            padding-right:20px;
-            padding-left:30px;
+            gap: 1.25vw; /* Original: 24px */
+            padding-top: 1.85vh; /* Original: 20px */
+            padding-bottom: 1.85vh; /* Original: 20px */
+            padding-right: 1.04vw; /* Original: 20px */
+            padding-left: 1.56vw; /* Original: 30px */
             max-width: 100vw;
         }
 
         .brand {
             display:flex;
-            width: 357px;
-            height: 76px;
-            border-radius: 8px;
+            width: 18.6vw; /* Original: 357px */
+            height: 7.0vh; /* Original: 76px */
+            border-radius: 0.42vw; /* Original: 8px */
             object-fit: cover;
         }
         
         .nav {
-            margin-left:30px;
+            margin-left: 1.56vw; /* Original: 30px */
             display: flex;
             align-items: center;
-            gap: 32px;
-            font-size:20px;
+            gap: 1.67vw; /* Original: 32px */
+            font-size: 1.04vw; /* Original: 20px */
         }
 
         .nav a {
@@ -81,7 +77,7 @@ async def navbar_style():
         }
 
         .nav a:last-child {
-            padding-right: 20px;
+            padding-right: 1.04vw; /* Original: 20px */
         }
 
         .nav a:hover {
@@ -97,25 +93,25 @@ async def navbar_style():
             position: absolute;
             left: 0;
             right: 0;
-            bottom: -6px;
-            height: 3px;
+            bottom: -0.56vh; /* Original: -6px */
+            height: 0.28vh; /* Original: 3px */
             background: var(--text);
-            border-radius: 2px;
+            border-radius: 0.1vw; /* Original: 2px */
         }
 
-        @media (max-width: 720px) {
+        /* Changed the breakpoint to be responsive as well */
+        @media (max-width: 37.5vw) { /* Original: 720px */
             .navbar {
                 flex-wrap: wrap;
-                gap: 16px;
+                gap: 0.83vw; /* Original: 16px */
             }
 
             .nav {
                 flex-basis: 100%;
                 justify-content: space-between;
-                gap: 16px;
+                gap: 0.83vw; /* Original: 16px */
                 overflow-x: auto;
             }
         }
     </style>
     """
-        

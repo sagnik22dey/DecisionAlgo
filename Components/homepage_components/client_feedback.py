@@ -1,4 +1,3 @@
-
 async def client_feedback_body():
     return """
     <section class="section">
@@ -81,7 +80,7 @@ async def client_feedback_style():
             --gold: #FFBB00;
             --stroke: #DFDFDF;
             --chip-bg: #FFFFFF;
-            --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+            --shadow: 0 0.93vh 1.56vw rgba(0, 0, 0, .35); /* Original: 0 10px 30px */
         }
 
         * {
@@ -96,7 +95,7 @@ async def client_feedback_style():
         .section {
             position: relative;
             min-height: 100vh;
-            padding: 96px 24px 120px;
+            padding: 8.89vh 1.67vw 11.11vh; /* Original: 96px 24px 120px */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -108,29 +107,29 @@ async def client_feedback_style():
         /* Top pill button (Let's Talk) */
         .cta {
             position: relative;
-            margin: -2rem;
+            margin: -2.96vh; /* Original: -2rem */
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 10px 22px;
+            padding: 0.93vh 1.53vw; /* Original: 10px 22px */
             background: var(--chip-bg);
-            border: 1.3px solid var(--stroke);
-            border-radius: 999px;
+            border: 0.09vw solid var(--stroke); /* Original: 1.3px */
+            border-radius: 50vw; /* Original: 999px */
             color: #000;
-            font: 400 21px/1.3 'Poppins', system-ui, sans-serif;
+            font: 400 1.46vw/1.3 'Poppins', system-ui, sans-serif; /* Original: 21px */
             text-transform: capitalize;
             box-shadow: var(--shadow);
             user-select: none;
-            width: 12rem;
-            height: 2rem;
+            width: 13.33vw; /* Original: 12rem */
+            height: 2.96vh; /* Original: 2rem */
         }
 
         /* Tagline gradient */
         .tagline {
-            max-width: 1136px;
+            max-width: 78.89vw; /* Original: 1136px */
             text-align: center;
-            margin: 8rem;
-            font: 700 36px/1.1 'Exo 2', sans-serif;
+            margin: 11.85vh auto; /* Original: 8rem */
+            font: 700 2.5vw/1.1 'Exo 2', sans-serif; /* Original: 36px */
             letter-spacing: -0.02em;
             text-transform: capitalize;
             background: linear-gradient(90deg, rgba(235, 240, 243, .54) 7.5%, #EBF1F3 24.5%, #EBF0F3 67.4%, rgba(235, 239, 243, .54) 94.46%);
@@ -141,9 +140,9 @@ async def client_feedback_style():
 
         /* Section heading gradient */
         .heading {
-            margin-top: 7rem;
+            margin-top: 10.37vh; /* Original: 7rem */
             text-align: center;
-            font: 800 64px/1.2 'Exo 2', sans-serif;
+            font: 800 4.44vw/1.2 'Exo 2', sans-serif; /* Original: 64px */
             letter-spacing: -0.02em;
             text-transform: capitalize;
             background: linear-gradient(90deg, rgba(235, 240, 243, .30) .22%, #EBF0F3 15.65%, #EBF0F3 54.72%, rgba(235, 239, 243, .72) 79.36%);
@@ -153,20 +152,21 @@ async def client_feedback_style():
         }
 
         .layout {
-            width: min(1417px, 100%);
+            width: min(98.4vw, 100%); /* Original: 1417px */
             display: grid;
-            grid-template-columns: 420px 1fr;
-            gap: 56px;
+            grid-template-columns: 29.17vw 1fr; /* Original: 420px */
+            gap: 3.89vw; /* Original: 56px */
             align-items: start;
             position: relative;
         }
 
         /* Left portrait card */
         .portrait {
-            margin-top: 50px;
-            width: 100%;
-            height: 453px;
-            border-radius: 30px;
+            margin-top: 10.63vh; /* Original: 50px */
+            margin-left: 2.67vw;
+            width: 90%;
+            height: 51.94vh; /* Original: 453px */
+            border-radius: 2.08vw; /* Original: 30px */
             position: relative;
             overflow: hidden;
             box-shadow: var(--shadow);
@@ -178,20 +178,18 @@ async def client_feedback_style():
         /* Right testimonial panel */
         .card {
             position: relative;
-            height: 513px;
-            border-radius: 50px;
+            height: 68.5vh; /* Original: 513px */
+            border-radius: 3.47vw; /* Original: 50px */
             background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.2) 100%), #1111;
         }
-
-        /* Decorative ellipses top-right (subtle, per comp) */
         
         /* Huge quote-mark watermark */
         .quote-mark {
             position: absolute;
-            top: -50px;
-            right: 30px;
-            width: 352px;
-            height: 245px;
+            top: -4.63vh; /* Original: -50px */
+            right: 2.08vw; /* Original: 30px */
+            width: 24.44vw; /* Original: 352px */
+            height: 22.68vh; /* Original: 245px */
             background: url("../../Resources/Images/comma_bg.png") no-repeat;
             background-size: contain;
             opacity: 1;
@@ -201,15 +199,15 @@ async def client_feedback_style():
         /* Inner content */
         .card-inner {
             position: absolute;
-            inset: 60px 60px auto 60px;
+            inset: 5.56vh 4.17vw auto 4.17vw; /* Original: 60px */
             z-index: 1;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 1.85vh; /* Original: 20px */
         }
 
         .quote {
-            font: 500 36px/1.5 'Exo 2', sans-serif;
+            font: 500 2.5vw/1.5 'Exo 2', sans-serif; /* Original: 36px */
             letter-spacing: -0.01em;
             color: #fff;
         }
@@ -217,21 +215,20 @@ async def client_feedback_style():
         /* Name + title */
         .person {
             position: absolute;
-            left: 60px;
-            bottom: 60px;
+            left: 4.17vw; /* Original: 60px */
+            bottom: 5.56vh; /* Original: 60px */
             display: flex;
             flex-direction: column;
-            gap: 20px;
         }
 
         .person .name {
-            font: 700 41px/1.4 'Exo 2', sans-serif;
+            font: 700 2.85vw/1.4 'Exo 2', sans-serif; /* Original: 41px */
             letter-spacing: -0.02em;
             margin: 0;
         }
 
         .person .role {
-            font: 400 33px/1.4 'Exo 2', sans-serif;
+            font: 400 2.29vw/1.4 'Exo 2', sans-serif; /* Original: 33px */
             letter-spacing: -0.02em;
             color: var(--muted);
             margin: 0;
@@ -240,33 +237,32 @@ async def client_feedback_style():
         /* Divider + stars row */
         .footer-row {
             position: absolute;
-            left: 60px;
-            right: 60px;
-            bottom: 36px;
+            left: 4.17vw; /* Original: 60px */
+            right: 4.17vw; /* Original: 60px */
+            bottom: 3.33vh; /* Original: 36px */
             display: flex;
             align-items: flex-end;
             justify-content: space-between;
-            gap: 24px;
+            gap: 1.67vw; /* Original: 24px */
         }
 
         .dash {
             flex: 1 1 auto;
             opacity: 1;
             background: url("data:image/svg+xml,%3Csvg width='565' height='1' viewBox='0 0 565 1' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline y1='0.5' x2='565' y2='0.5' stroke='white' stroke-dasharray='10 10'/%3E%3C/svg%3E");
-            height: 1px;
+            height: 0.09vh; /* Original: 1px */
             z-index: 10;
-         
         }
 
         .stars {
             display: inline-flex;
-            gap: 4px;
-            height: 24px;
+            gap: 0.28vw; /* Original: 4px */
+            height: 2.22vh; /* Original: 24px */
         }
 
         .star {
-            width: 24px;
-            height: 24px;
+            width: 1.67vw; /* Original: 24px */
+            height: 2.22vh; /* Original: 24px */
             display: inline-block;
         }
 
@@ -274,47 +270,47 @@ async def client_feedback_style():
             display: block;
             width: 100%;
             height: 100%;
-            fill: var(--gold)
+            fill: var(--gold);
         }
 
         /* Responsiveness */
-        @media (max-width:1100px) {
+        @media (max-width: 76.39vw) { /* Original: 1100px */
             .layout {
                 grid-template-columns: 1fr
             }
 
             .portrait {
                 order: 2;
-                height: 380px
+                height: 35.18vh; /* Original: 380px */
             }
 
             .card {
                 order: 1;
                 height: auto;
-                min-height: 520px
+                min-height: 48.15vh; /* Original: 520px */
             }
 
             .card-inner {
-                inset: 32px
+                inset: 2.96vh 2.22vw; /* Original: 32px */
             }
 
             .person {
-                left: 32px;
-                bottom: 96px
+                left: 2.22vw; /* Original: 32px */
+                bottom: 8.89vh; /* Original: 96px */
             }
 
             .footer-row {
-                left: 32px;
-                right: 32px;
-                bottom: 28px
+                left: 2.22vw; /* Original: 32px */
+                right: 2.22vw; /* Original: 32px */
+                bottom: 2.59vh; /* Original: 28px */
             }
 
             .heading {
-                font-size: 48px
+                font-size: 3.33vw; /* Original: 48px */
             }
 
             .tagline {
-                font-size: 28px
+                font-size: 1.94vw; /* Original: 28px */
             }
         }
     </style>

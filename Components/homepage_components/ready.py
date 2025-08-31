@@ -44,64 +44,67 @@ async def ready_style():
         .viewport-container {
             position: relative;
             width: 100vw;
-            height: 78vh;
-            transform: scale(0.8);
-            transform-origin: top center;
+            min-height: 100vh; /* Changed from fixed height and scale to be a full-height section */
+            display: flex; /* Using Flexbox for a robust and responsive layout */
+            align-items: center;
+            justify-content: center;
+            gap: 5vw;
+            padding: 5vh 5vw;
+            overflow: hidden; /* Prevents background ellipses from causing scrollbars */
+            box-sizing: border-box;
         }
 
         /* Blurred Background Ellipses */
         .ellipse {
             position: absolute;
             opacity: 1;
-            filter: blur(200px);
+            filter: blur(10.42vw); /* Original: 200px */
+            z-index: -1;
         }
 
-        /* Ellipse 4336 (Left) */
+        /* Ellipse 1 (Left) */
         .ellipse-1 {
-            width: 202.11px;
-            height: 329px;
-            left: -187px;
-            top: 164px; /* Vertical position normalized from Figma's large canvas value */            
+            width: 10.53vw; /* Original: 202.11px */
+            height: 30.46vh; /* Original: 329px */
+            left: 5vw;
+            top: 20vh;          
             background: rgba(255, 255, 255, 0.48);
-           
         }
 
-        /* Ellipse 4336 (Right) */
+        /* Ellipse 2 (Right) */
         .ellipse-2 {
-            width: 202.11px;
-            height: 329px;
-            left: 1478px;
-            top: 105px; /* Vertical position normalized */
+            width: 10.53vw; /* Original: 202.11px */
+            height: 30.46vh; /* Original: 329px */
+            right: 5vw;
+            top: 15vh;
             background: rgba(255, 255, 255, 0.49);
             transform: matrix(0.45, 0.89, 0.89, -0.45, 0, 0);
         }
 
-        /* Main Text & Button Container (Frame 2147225631) */
+        /* Main Text & Button Container */
         .text-container {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 56px;
-            position: absolute;
-            width: 884px;
-            left: 198px;
-            top: 230px; /* Adjusted top position for better vertical centering */
+            gap: 5.18vh; /* Original: 56px */
+            width: 46vw; /* Original: 884px */
+            max-width: 46vw;
         }
 
         .text-content {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 21.93px;
+            gap: 2.03vh; /* Original: 21.93px */
             width: 100%;
         }
 
         /* "Ready to Make Data Work for You?" */
         .main-heading {
-            width: 845px;
+            width: 100%; /* Changed from fixed width */
             font-family: 'Exo 2', sans-serif;
             font-weight: 700;
-            font-size: 64px;
+            font-size: 3.33vw; /* Original: 64px */
             line-height: 1.2;
             color: #FFFFFF;
             margin: 0;
@@ -112,7 +115,7 @@ async def ready_style():
             width: 100%;
             font-family: 'Exo 2', sans-serif;
             font-weight: 700;
-            font-size: 36.5509px;
+            font-size: 1.9vw; /* Original: 36.55px */
             line-height: 1.2;
             color: #FFFFFF;
             margin: 0;
@@ -123,7 +126,7 @@ async def ready_style():
             width: 100%;
             font-family: 'Exo 2', sans-serif;
             font-weight: 400;
-            font-size: 29.2408px;
+            font-size: 1.52vw; /* Original: 29.24px */
             line-height: 1.5;
             color: #FFFFFF;
             margin: 0;
@@ -134,7 +137,8 @@ async def ready_style():
             display: flex;
             flex-direction: row;
             align-items: center;
-            gap: 21.93px;
+            gap: 1.14vw; /* Original: 21.93px */
+            flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
         }
 
         .button {
@@ -144,13 +148,13 @@ async def ready_style():
             text-decoration: none;
             font-family: 'Outfit', sans-serif;
             font-weight: 600;
-            font-size: 22px; /* Adjusted from 16px in spec to visually match the image */
-            height: 65px;
+            font-size: 1.15vw; /* Original: 22px */
+            height: 6.02vh; /* Original: 65px */
             box-sizing: border-box;
-            border-radius: 182.755px;
+            border-radius: 9.52vw; /* Original: 182.755px */
             white-space: nowrap;
-            padding-left: 43.8611px;
-            padding-right: 43.8611px;
+            padding-left: 2.28vw; /* Original: 43.86px */
+            padding-right: 2.28vw; /* Original: 43.86px */
             transition: transform 0.2s ease, opacity 0.2s ease;
         }
         
@@ -159,52 +163,47 @@ async def ready_style():
             opacity: 0.9;
         }
 
-        /* "Get a Free Consultation" Button */
         .primary-button {
             background: #FFFFFF;
             color: #000000;
         }
 
-        /* "Try Our Solutions" Button */
         .secondary-button {
-            border: 1.82755px solid #FFFFFF;
+            border: 0.1vw solid #FFFFFF; /* Original: 1.82px */
             color: #FFFFFF;
             background: transparent;
         }
 
-        /* Image Column Container (Frame 2147225630) */
+        /* Image Column Container */
         .image-container {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 14.68px;
-            position: absolute;
-            width: 313.43px;
-            left: 1181px;
-            top: 150px; /* Adjusted top position */
-            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            gap: 1.36vh; /* Original: 14.68px */
+            width: 16.32vw; /* Original: 313.43px */
+            filter: drop-shadow(0 0.37vh 0.21vw rgba(0, 0, 0, 0.25)); /* Original: 0px 4px 4px */
         }
 
         .image-box {
             box-sizing: border-box;
-            width: 313.43px;
-            border: 2px solid #616161;
-            border-radius: 31.4483px;
-            overflow: hidden; /* Ensures the image conforms to the rounded corners */
+            width: 100%; /* Fills the container */
+            border: 0.1vw solid #616161; /* Original: 2px */
+            border-radius: 1.64vw; /* Original: 31.44px */
+            overflow: hidden;
         }
 
         .image-box-short {
-            height: 146.76px;
+            height: 13.59vh; /* Original: 146.76px */
         }
 
         .image-box-long {
-            height: 285.13px;
+            height: 26.4vh; /* Original: 285.13px */
         }
 
         .image-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensures the image fills the box without distortion */
+            object-fit: cover;
             filter: grayscale(100%);
         }
     </style>

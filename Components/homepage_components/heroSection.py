@@ -1,7 +1,3 @@
-from fastapi import APIRouter
-from fastapi.responses import HTMLResponse
-
-
 async def heroSection_body():
     return """
     <div class="hero-section-container">
@@ -29,55 +25,54 @@ async def heroSection_style():
     <style>
         /* The main container for the hero section to provide a positioning context */
         .hero-section-container {
-            margin-top: 7rem;
-            position: relative; /* Changed from absolute */
+            margin-top: 6.48vh; /* Original: 7rem */
+            position: relative; 
             width: 100%;
-            /* overflow: hidden; */ /* Can't use here, as it would clip the glows */
-            display: flex; /* Use flexbox to align content */
+            display: flex; 
             flex-direction: column;
-            justify-content: center; /* Vertically center content */
-            align-items: center; /* Horizontally center content */
-            padding-top: 15rem; /* Add some top padding to move content down from the top of the container */
-            padding-bottom: 20rem; /* Add some bottom padding */
-            box-sizing: border-box; /* Include padding in width/height calculation */
+            justify-content: center; 
+            align-items: center; 
+            padding-top: 22.22vh; /* Original: 15rem */
+            padding-bottom: 29.63vh; /* Original: 20rem */
+            box-sizing: border-box; 
         }
 
         /* Rectangle 29: Base background color layer */
         .bg-dark {
             position: absolute;
-            width: 100%; /* Changed from fixed width */
-            height: 100%; /* Changed from fixed height */
-            left: 0px;
-            top: 0px; /* Changed from 151px */
+            width: 100%; 
+            height: 100%; 
+            left: 0;
+            top: 0;
             background: #111111;
-            border-radius: 65px; /* PATCH: Match the overlay's border-radius to prevent leaking */
+            border-radius: 3.38vw; /* Original: 65px */
         }
 
         /* Ellipse 4335: Top white glow effect */
         .hero-section-container::before {
             content: '';
             position: absolute;
-            width: 350px;
-            height: 350px;
-            left: 50%; /* Centered horizontally */
-            top: -100px; /* Adjusted to be higher but still visible */
+            width: 18.23vw; /* Original: 350px */
+            height: 18.23vw; /* Using vw for height to maintain aspect ratio */
+            left: 50%;
+            top: -9.26vh; /* Original: -100px */
             background: #FFFFFF;
             opacity: 0.2;
-            filter: blur(200px);
-            transform: translateX(-50%); /* For horizontal centering */
+            filter: blur(10.42vw); /* Original: 200px */
+            transform: translateX(-50%); 
             z-index: 1;
         }
 
         /* Rectangle 41: Gradient overlay with rounded corners */
         .gradient-overlay {
             position: absolute;
-            width: 100%; /* Changed from fixed width */
-            height: 100%; /* Changed from fixed height */
-            left: 0px;
-            top: 0px; /* Changed from 144px */
+            width: 100%; 
+            height: 100%; 
+            left: 0;
+            top: 0;
             background: linear-gradient(177.33deg, rgba(15, 15, 15, 0) 5.46%, rgba(0, 0, 0, 0.6006) 53.07%, rgba(0, 0, 0, 0.77) 93.86%);
-            border-radius: 65px;
-            border-bottom: solid 1px;
+            border-radius: 3.38vw; /* Original: 65px */
+            border-bottom: solid 0.09vh; /* Original: 1px */
             border-color:#f0f0f0;
         }
 
@@ -85,80 +80,76 @@ async def heroSection_style():
         .grid-container {
             box-sizing: border-box;
             position: absolute;
-            width: 100%; /* Changed from fixed width */
-            height: 100%; /* Changed from fixed height */
-            left: 0px; /* Changed from -14px */
-            top: 0px; /* Changed from 151px */
-            /* Using the image path you provided */
+            width: 100%; 
+            height: 100%;
+            left: 0;
+            top: 0;
             background-image: url('../../Resources/Images/grid1.png');
-            border-radius: 65px; /* PATCH: Match the overlay's border-radius to prevent leaking */
+            border-radius: 3.38vw; /* Original: 65px */
         }
 
         /* Ellipse 2: Bottom white glow effect */
         .glow-bottom {
             position: absolute;
-            width: 800px;
-            height: 800px;
-            left: 50%; /* Centered horizontally */
-            bottom: -400px; /* Positioned to span sections */
+            width: 41.67vw; /* Original: 800px */
+            height: 41.67vw; /* Using vw for height to maintain aspect ratio */
+            left: 50%;
+            bottom: -37.04vh; /* Original: -400px */
             background: #FFFFFF;
             opacity: 0.25;
-            filter: blur(250px);
+            filter: blur(13.02vw); /* Original: 250px */
             transform: translateX(-50%);
             border-radius: 50%;
         }
 
         .hero-content-container{
-            margin-right: 600px;
+            margin-right: 31.25vw; /* Original: 600px */
         }
+        
         /* Frame 2147225626: Container for all text content */
         .hero-content {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            padding: 0px; /* Added horizontal padding for spacing from edges */
-            gap: 33px;
-            position: relative; /* Changed from absolute, to flow within flex container */
-            max-width: 971px; /* Keep max-width, but add fluid width */
-            width: 100%; /* Make it responsive */
-            z-index: 10; /* Ensure text is on top of all background elements */
+            padding: 0;
+            gap: 3.05vh; /* Original: 33px */
+            position: relative; 
+            max-width: 50.57vw; /* Original: 971px */
+            width: 100%; 
+            z-index: 10; 
         }
         
 
         /* Main Headline: "Is your Business..." */
         .hero-content h1 {
-            /* Removed fixed width and height */
             font-family: 'Exo 2', sans-serif;
             font-style: normal;
             font-weight: 700;
-            font-size: 72px;
-            line-height: 86px;
+            font-size: 3.75vw; /* Original: 72px */
+            line-height: 4.48vw; /* Original: 86px */
             letter-spacing: -0.04em;
             color: #FFFFFF;
-            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            /* Layout properties from CSS */
+            text-shadow: 0 0.37vh 0.21vw rgba(0, 0, 0, 0.25); /* Original: 0px 4px 4px */
             flex: none;
             order: 0;
             align-self: stretch;
             flex-grow: 0;
-            margin: 0; /* Reset default margin */
+            margin: 0; 
         }
 
         /* Paragraph: "Transform frustration..." */
         .hero-content p {
-            /* Removed fixed width and height */
             font-family: 'Poppins', sans-serif;
             font-style: normal;
             font-weight: 400;
-            font-size: 24px;
+            font-size: 1.25vw; /* Original: 24px */
             line-height: 150%;
             color: #FFFFFF;
-            /* Layout properties from CSS */
             flex: none;
             order: 1;
             align-self: stretch;
             flex-grow: 0;
-            margin: 0; /* Reset default margin */
+            margin: 0; 
         }
 
         /* Frame 5: The call-to-action button */
@@ -167,36 +158,33 @@ async def heroSection_style():
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            padding: 8.40541px 42.027px;
-            gap: 16.81px;
-            width: 193px;
-            height: 46px;
+            padding: 0.78vh 2.19vw; /* Original: 8.4px 42.02px */
+            gap: 0.88vw; /* Original: 16.81px */
+            width: 10.05vw; /* Original: 193px */
+            height: 4.26vh; /* Original: 46px */
             background: #FFFFFF;
-            box-shadow: 0px 6.72433px 6.72433px rgba(0, 0, 0, 0.25);
-            border-radius: 100px;
-            /* Layout properties from CSS */
+            box-shadow: 0 0.62vh 0.35vw rgba(0, 0, 0, 0.25); /* Original: 0px 6.72px 6.72px */
+            border-radius: 5.21vw; /* Original: 100px */
             flex: none;
             order: 2;
             flex-grow: 0;
-            /* Additional styles for link behavior */
             text-decoration: none;
             box-sizing: border-box;
         }
 
         /* Text inside the button: "Discover How" */
         .cta-button span {
-            width: 131px;
-            height: 35px;
+            width: 6.82vw; /* Original: 131px */
+            height: 3.24vh; /* Original: 35px */
             font-family: 'Jost', sans-serif;
             font-style: normal;
             font-weight: 400;
-            font-size: 24px;
-            line-height: 35px;
+            font-size: 1.25vw; /* Original: 24px */
+            line-height: 1.82vw; /* Original: 35px */
             display: flex;
             align-items: center;
             letter-spacing: -0.04em;
             color: #111111;
-            /* Layout properties from CSS */
             flex: none;
             order: 0;
             flex-grow: 0;

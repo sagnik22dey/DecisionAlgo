@@ -1,6 +1,3 @@
-from fastapi import APIRouter
-from fastapi.responses import HTMLResponse
-
 async def footer_body():
     return """
         <footer class="footer-container">
@@ -73,11 +70,11 @@ async def footer_style():
         /* Footer Container */
         .footer-container {
             background: linear-gradient(293.29deg, #090909 0.66%, rgba(37, 37, 37, 0.85) 27.54%, rgba(84, 84, 84, 0.62) 72.03%);
-            padding: 60px 80px;
+            padding: 5.56vh 4.17vw; /* Original: 60px 80px */
             display: flex;
             flex-direction: column;
-            gap: 60px;
-            border-radius: 55px 55px 0 0;
+            gap: 5.56vh; /* Original: 60px */
+            border-radius: 2.86vw 2.86vw 0 0; /* Original: 55px */
         }
 
         /* Top Section: Logo and Social Links */
@@ -86,30 +83,30 @@ async def footer_style():
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 40px;
-            padding-left:7rem;
+            gap: 2.08vw; /* Original: 40px */
+            padding-left: 5.83vw; /* Original: 7rem */
         }
 
         .logo {
-            max-width: 1107px;
-            height: 239;
+            max-width: 57.66vw; /* Original: 1107px */
+            height: 22.13vh; /* Original: 239px */
             object-fit: contain;
         }
 
         .social-links {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            padding-right:10rem;
+            gap: 1.85vh; /* Original: 20px */
+            padding-right: 8.33vw; /* Original: 10rem */
         }
 
         .social-links a {
-            font-size: 24px;
+            font-size: 1.25vw; /* Original: 24px */
             font-weight: 400;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 170px; /* Helps align the arrows */
+            width: 8.85vw; /* Original: 170px */
             transition: opacity 0.3s ease;
             opacity: 0.7;
         }
@@ -121,17 +118,18 @@ async def footer_style():
         /* Middle Section: Link Columns */
         .footer-middle {
             display: flex;
-            gap: 100px;
+            gap: 5.21vw; /* Original: 100px */
             flex-wrap: wrap;
         }
 
         .link-column{
-            padding-left: 3rem;
+            padding-left: 2.5vw; /* Original: 3rem */
         }
+        
         .link-column h3 {
-            font-size: 32px;
+            font-size: 1.67vw; /* Original: 32px */
             font-weight: 600;
-            margin: 0 0 15px 0;
+            margin: 0 0 1.39vh 0; /* Original: 15px */
             background: linear-gradient(90.01deg, #EBF3F3 16.31%, #EBF3F3 94.45%);
             -webkit-background-clip: text;
             -moz-background-clip: text;
@@ -140,7 +138,7 @@ async def footer_style():
         }
 
         .link-column ul li {
-            font-size: 18px;
+            font-size: 0.94vw; /* Original: 18px */
             font-weight: 400;
             opacity: 0.7;
         }
@@ -155,13 +153,13 @@ async def footer_style():
         .footer-bottom {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 2.78vh; /* Original: 30px */
         }
 
         .separator {
             width: 100%;
             border: 0;
-            height: 1px;
+            height: 0.09vh; /* Original: 1px */
             background-color: #DDD7DE;
             opacity: 0.5;
         }
@@ -171,11 +169,11 @@ async def footer_style():
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 1.04vw; /* Original: 20px */
         }
 
         .copyright {
-            font-size: 28px;
+            font-size: 1.46vw; /* Original: 28px */
             font-weight: 700;
             margin: 0;
             background: linear-gradient(90.01deg, rgba(235, 243, 243, 0.3) 0.01%, #EBF3F3 18.63%, #EBF3F3 65.13%, rgba(235, 243, 243, 0.3) 94.45%);
@@ -183,33 +181,33 @@ async def footer_style():
             -moz-background-clip: text;
             background-clip: text;
             color: transparent;
-            padding-left:4rem;
+            padding-left: 3.33vw; /* Original: 4rem */
         }
 
         .partner {
-            font-size: 24px;
+            font-size: 1.25vw; /* Original: 24px */
             font-weight: 400;
             margin: 0;
             opacity: 0.9;
-            padding-right:4rem;
+            padding-right: 3.33vw; /* Original: 4rem */
         }
 
         /* Responsive Adjustments */
-        @media (max-width: 1200px) {
+        @media (max-width: 62.5vw) { /* Original: 1200px */
             .logo {
-                max-width: 450px;
+                max-width: 23.44vw; /* Original: 450px */
             }
             .copyright {
-                font-size: 24px;
+                font-size: 1.25vw; /* Original: 24px */
             }
             .partner {
-                font-size: 20px;
+                font-size: 1.04vw; /* Original: 20px */
             }
         }
         
-        @media (max-width: 992px) {
+        @media (max-width: 51.67vw) { /* Original: 992px */
             .footer-container {
-                padding: 50px 40px;
+                padding: 4.63vh 2.08vw; /* Original: 50px 40px */
             }
             .footer-top {
                 flex-direction: column;
@@ -217,44 +215,43 @@ async def footer_style():
             }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 40vw) { /* Original: 768px */
             .footer-middle {
                 flex-direction: column;
-                gap: 40px;
+                gap: 3.7vh; /* Original: 40px */
             }
             .bottom-content {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 15px;
+                gap: 1.39vh; /* Original: 15px */
             }
             .copyright {
-                font-size: 20px;
+                font-size: 1.04vw; /* Original: 20px */
             }
             .partner {
-                font-size: 18px;
+                font-size: 0.94vw; /* Original: 18px */
             }
         }
         
-        @media (max-width: 576px) {
+        @media (max-width: 30vw) { /* Original: 576px */
             .logo {
                 max-width: 100%;
             }
              .copyright {
-                font-size: 18px;
+                font-size: 0.94vw; /* Original: 18px */
             }
             .partner {
-                font-size: 16px;
+                font-size: 0.83vw; /* Original: 16px */
             }
             .social-links a {
-                font-size: 20px;
+                font-size: 1.04vw; /* Original: 20px */
             }
             .link-column h3 {
-                font-size: 28px;
+                font-size: 1.46vw; /* Original: 28px */
             }
              .link-column ul li {
-                font-size: 16px;
+                font-size: 0.83vw; /* Original: 16px */
              }
         }
     </style>
     """
-    
