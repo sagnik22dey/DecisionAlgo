@@ -6,9 +6,18 @@ async def footer_body():
             <!-- As requested, here is a dummy image for the logo -->
             <img src="../../Resources/Images/silver_logo.png" alt="Decisionalgo Logo" class="logo">
             <div class="social-links">
-                <a href="#"><span>Instagram</span><span>&rarr;</span></a>
-                <a href="#"><span>Facebook</span><span>&rarr;</span></a>
-                <a href="#"><span>YouTube</span><span>&rarr;</span></a>
+                <a href="#"><span>Instagram</span><span><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3.75 12.5L20.25 12.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M13.5 5.75V5.75C14.6595 8.55205 16.8074 10.8309 19.5361 12.1538L20.25 12.5L19.1908 13.0777C16.6674 14.4542 14.6674 16.6233 13.5 19.25V19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg></span></a>
+                                    <a href="#"><span>Facebook</span><span><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3.75 12.5L20.25 12.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M13.5 5.75V5.75C14.6595 8.55205 16.8074 10.8309 19.5361 12.1538L20.25 12.5L19.1908 13.0777C16.6674 14.4542 14.6674 16.6233 13.5 19.25V19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg></span></a>
+                                    <a href="#"><span>YouTube</span><span><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/200/svg">
+                    <path d="M3.75 12.5L20.25 12.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M13.5 5.75V5.75C14.6595 8.55205 16.8074 10.8309 19.5361 12.1538L20.25 12.5L19.1908 13.0777C16.6674 14.4542 14.6674 16.6233 13.5 19.25V19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg></span></a>
             </div>
         </div>
 
@@ -223,6 +232,7 @@ async def footer_style():
             }
             .social-links a {
                 font-size: 1.1rem; /* 18px */
+                gap: 2.67vw;
             }
 
             .footer-middle {
