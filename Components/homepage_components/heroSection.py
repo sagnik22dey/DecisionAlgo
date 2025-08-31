@@ -189,5 +189,74 @@ async def heroSection_style():
             order: 0;
             flex-grow: 0;
         }
+
+        /******************************************/
+        /*           MOBILE STYLES                */
+        /******************************************/
+        @media (max-width: 768px) {
+            .hero-section-container {
+                margin-top: 3rem;
+                padding: 6rem 1rem 7rem; /* Reduced padding for mobile */
+            }
+
+            .bg-dark, .gradient-overlay, .grid-container {
+                border-radius: 30px; /* A fixed radius looks better on mobile */
+            }
+
+            .hero-section-container::before {
+                width: 70vw; /* Make glow wider relative to screen */
+                height: 70vw;
+                top: -5rem;
+                filter: blur(100px);
+            }
+            
+            .glow-bottom {
+                width: 100vw; /* Make glow wider */
+                height: 100vw;
+                bottom: -150px;
+                opacity: 0.15;
+                filter: blur(100px);
+            }
+
+            .hero-content-container {
+                margin-right: 0; /* Remove right margin to center content */
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+            .hero-content {
+                align-items: center; /* Center-align all items */
+                text-align: center;
+                gap: 1.75rem; /* Adjusted gap for mobile */
+                max-width: 95%; /* Allow content to use more width */
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem; /* Readable font size for mobile headlines */
+                line-height: 1.2;
+                letter-spacing: -0.02em;
+            }
+            
+            .hero-content p {
+                font-size: 1rem; /* Readable font size for body text */
+                line-height: 1.6;
+                max-width: 500px; /* Prevent lines from getting too long */
+            }
+
+            .cta-button {
+                width: auto; /* Let the button size itself based on content */
+                height: auto;
+                padding: 0.8rem 2.5rem;
+                border-radius: 50px; /* A simpler radius */
+            }
+
+            .cta-button span {
+                width: auto; /* Reset fixed width */
+                height: auto; /* Reset fixed height */
+                font-size: 1.1rem; /* Slightly larger, more tappable text */
+                line-height: 1.5;
+            }
+        }
     </style>
-    """ 
+    """

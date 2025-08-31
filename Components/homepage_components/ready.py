@@ -206,5 +206,107 @@ async def ready_style():
             object-fit: cover;
             filter: grayscale(100%);
         }
+
+        /******************************************/
+        /*           MOBILE STYLES                */
+        /******************************************/
+        @media (max-width: 768px) {
+            .viewport-container {
+                flex-direction: column; /* Stack text and images vertically */
+                padding: 4rem 1.5rem;
+                justify-content: flex-start; /* Align content to the top */
+                gap: 3rem;
+                min-height: auto;
+            }
+
+            /* Adjust background glows for a vertical layout */
+            .ellipse-1 {
+                width: 60vw;
+                height: 60vw;
+                top: 5vh;
+                left: -20vw;
+                filter: blur(100px);
+            }
+            .ellipse-2 {
+                width: 60vw;
+                height: 60vw;
+                top: 50vh;
+                right: -20vw;
+                filter: blur(100px);
+                transform: none; /* Reset desktop transform */
+            }
+
+            /* Center align text content */
+            .text-container {
+                width: 100%;
+                max-width: 100%;
+                align-items: center;
+                text-align: center;
+                gap: 2.5rem;
+            }
+            
+            .text-content {
+                align-items: center;
+                gap: 1rem;
+            }
+
+            /* Use readable rem units for fonts */
+            .main-heading {
+                font-size: 2.5rem;
+                line-height: 1.2;
+            }
+            .sub-heading {
+                font-size: 1.25rem;
+                line-height: 1.3;
+            }
+            .description {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            /* Stack buttons vertically and make them full-width */
+            .buttons-container {
+                flex-direction: column;
+                width: 100%;
+                max-width: 400px;
+                gap: 1rem;
+            }
+
+            .button {
+                width: 100%;
+                font-size: 1rem;
+                height: auto;
+                padding: 0.9rem 1.5rem;
+                border-radius: 50px;
+            }
+
+            .secondary-button {
+                border-width: 2px; /* Make border more visible */
+            }
+
+            /* Change images to a horizontal row layout */
+            .image-container {
+                flex-direction: row; /* Arrange images side-by-side */
+                width: 100%;
+                gap: 0.75rem; /* 12px */
+                justify-content: center;
+            }
+            
+            .image-box {
+                border-radius: 16px;
+                border-width: 2px;
+            }
+
+            /* Adjust image box sizes for the row layout */
+            .image-box-short {
+                width: 30%;
+                height: 150px;
+            }
+            .image-box-long {
+                width: 40%;
+                height: 200px;
+                transform: translateY(-25px); /* Creates a nice overlap effect */
+            }
+        }
     </style>
 """

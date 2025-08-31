@@ -100,7 +100,6 @@ async def robot_body():
     </div>
     """
 
-
 async def robot_style():
     return """
     <style>
@@ -108,13 +107,9 @@ async def robot_style():
         :root{
             --card-w: 20.83vw; /* Original: 400px */
             --card-h: 27.78vh; /* Original: 300px */
-            --cards-gap: 2.08vw; /* Original: 40px */
-            --canvas-h: 74.07vh; /* Original: 800px */
             --blue:#25A6E9;
-            --ink:#EBF0F3;
             --glass-bg: rgba(255,255,255,0.06);
             --glass-brd: rgba(255, 255, 255, 0.2);
-            --ink-70: rgba(255,255,255,0.7);
         }
         *{box-sizing:border-box}
         html,body{
@@ -204,7 +199,7 @@ async def robot_style():
             position:relative;
             width:100%;
             max-width: 83.33vw; /* Original: 1600px */
-            height:var(--canvas-h);
+            height: 74.07vh; /* Original: 800px */
             margin-top: 7.41vh; /* Original: 80px */
         }
 
@@ -226,8 +221,8 @@ async def robot_style():
             left:50%;
             top:50%;
             transform:translate(-50%,-50%);
-            width: 39.25vw; /* Original: 600px */
-            height: 65.81vh; /* Original: 700px */
+            width: 31.25vw; /* Original: 600px */
+            height: auto;
             object-fit:contain;
             z-index:10;
             filter: drop-shadow(0 1.85vh 3.125vw rgba(0,0,0,0.6)); /* Original: 0 20px 60px */
@@ -239,18 +234,18 @@ async def robot_style():
             width:var(--card-w);
             height:var(--card-h);
             z-index: 20;
-            border: 0.05vw solid var(--glass-brd); /* Original: 1px */
-            border-radius: 0.625vw; /* Original: 12px */
-            padding: 2.96vh 1.46vw; /* Original: 32px 28px */
+            border: 1px solid var(--glass-brd);
+            border-radius: 12px;
+            padding: 32px 28px;
             background: var(--glass-bg);
-            backdrop-filter: blur(0.52vw) saturate(120%); /* Original: 10px */
-            -webkit-backdrop-filter: blur(0.52vw) saturate(120%);
-            box-shadow: 0 0.74vh 1.67vw rgba(0,0,0,0.3); /* Original: 0 8px 32px */
+            backdrop-filter: blur(10px) saturate(120%);
+            -webkit-backdrop-filter: blur(10px) saturate(120%);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         .feature-box:hover{
-            transform: translateY(-0.37vh); /* Original: -4px */
-            box-shadow: 0 1.11vh 2.08vw rgba(0,0,0,0.4); /* Original: 0 12px 40px */
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.4);
         }
         #feature-box-1{ top: -3%; left: 13%; }
         #feature-box-2{ bottom: 15%; left: 7%; }
@@ -260,25 +255,25 @@ async def robot_style():
         .feature-header{
             display:flex;
             align-items:center;
-            gap: 1.04vw; /* Original: 20px */
-            margin-bottom: 2.96vh; /* Original: 32px */
+            gap: 20px;
+            margin-bottom: 32px;
         }
         .feature-icon{
             display:flex;
             justify-content:center;
             align-items:center;
-            width: 2.6vw; /* Original: 50px */
-            height: 2.6vw; /* Kept aspect ratio */
+            width: 50px;
+            height: 50px;
             background: linear-gradient(135deg, #0A1015 0%, #1a1f25 100%);
-            border: 0.05vw solid #3A4046; /* Original: 1px */
-            border-radius: 0.42vw; /* Original: 8px */
+            border: 1px solid #3A4046;
+            border-radius: 8px;
             flex-shrink:0;
         }
-        .feature-icon img{ width: 1.46vw; height: 1.46vw; } /* Original: 28px */
+        .feature-icon img{ width: 28px; height: 28px; }
 
         .feature-box h3{
             font-weight:600;
-            font-size: 1.15vw; /* Original: 22px */
+            font-size: 1.375rem; /* 22px */
             line-height:1.3;
             color:#FFFFFF;
             margin:0;
@@ -287,11 +282,11 @@ async def robot_style():
         .feature-content{
             display:flex;
             flex-direction:column;
-            gap: 1.04vw; /* Original: 20px */
+            gap: 20px;
         }
         .feature-content p{
             font-weight:400;
-            font-size: 0.78vw; /* Original: 15px */
+            font-size: 0.9375rem; /* 15px */
             line-height:1.5;
             color: rgba(255,255,255,0.8);
             margin:0;
@@ -300,10 +295,10 @@ async def robot_style():
         .show-detail-link{
             display:flex;
             align-items:center;
-            gap: 0.42vw; /* Original: 8px */
+            gap: 8px;
             text-decoration:none;
             font-weight:500;
-            font-size: 0.83vw; /* Original: 16px */
+            font-size: 1rem; /* 16px */
             line-height:1.5;
             color:#FFFFFF;
             transition:opacity .2s ease, transform .2s ease;
@@ -311,79 +306,105 @@ async def robot_style():
         }
         .show-detail-link:hover{
             opacity:1; 
-            transform:translateY(-0.09vh); /* Original: -1px */
+            transform:translateY(-1px);
         }
         .show-detail-link svg{
-            width: 1.04vw; /* Original: 20px */
-            height: 1.04vw; /* Original: 20px */
+            width: 20px;
+            height: 20px;
             transition: transform 0.2s ease;
         }
         .show-detail-link:hover svg{
-            transform: translateX(0.1vw); /* Original: 2px */
-        }
-
-        /* Responsive Design */
-        @media (max-width: 72.92vw) { /* Original: 1400px */
-            .content-wrapper{
-                max-width: 67.71vw; /* Original: 1300px */
-            }
-            :root{
-                --card-w: 19.79vw; /* Original: 380px */
-                --card-h: 25.93vh; /* Original: 280px */
-            }
+            transform: translateX(2px);
         }
         
-        @media (max-width: 62.5vw) { /* Original: 1200px */
-            .heading-container h1,
-            .heading-container h2{
-                font-size: 2.5vw; /* Original: 48px */
-            }
-            .content-wrapper{
-                max-width: 57.29vw; /* Original: 1100px */
-                margin-top: 5.56vh; /* Original: 60px */
-            }
-            :root{
-                --card-w: 18.75vw; /* Original: 360px */
-                --card-h: 24.07vh; /* Original: 260px */
-            }
+        /* Tablet & smaller desktop adjustments */
+        @media (max-width: 1400px) {
+            #feature-box-1{ top: -3%; left: 10%; }
+            #feature-box-2{ bottom: 15%; left: 4%; }
+            #feature-box-3{ top: -3%; right: 4%; }
+            #feature-box-4{ bottom: 10%; right: 4%; }
         }
 
-        @media (max-width: 40vw) { /* Original: 768px */
-            .page-wrapper{
-                padding: 5.93vh 0.83vw 4.44vh; /* Original: 4rem 1rem 3rem */
-            }
+        @media (max-width: 1200px) {
             .heading-container h1,
-            .heading-container h2{
-                font-size: 4.5vw; /* Adjusted for better mobile readability */
+            .heading-container h2 {
+                font-size: 2.5vw;
             }
-            .content-wrapper{
+             #feature-box-1{ left: 5%; }
+             #feature-box-2{ left: 1%; }
+             #feature-box-3{ right: 1%; }
+             #feature-box-4{ right: 1%; }
+        }
+
+        /* --- MOBILE STYLES --- */
+        @media (max-width: 992px) {
+            .page-wrapper {
+                padding: 4rem 1.5rem;
+                min-height: auto;
+            }
+
+            .heading-container {
+                max-width: 100%;
+            }
+
+            .heading-container h1,
+            .heading-container h2 {
+                font-size: 2rem; /* 32px */
+            }
+
+            .content-wrapper {
                 position: static;
                 height: auto;
+                margin-top: 3rem;
                 display: flex;
                 flex-direction: column;
-                gap: 2.78vh; /* Original: 30px */
-                margin-top: 3.7vh; /* Original: 40px */
+                align-items: center;
+                gap: 2rem;
             }
-            .feature-box{
-                position: static !important;
-                width: 100% !important;
-                height: auto !important;
-                max-width: 80vw; /* Original: 400px adjusted */
-                margin: 0 auto;
-            }
-            .feature-box h3 { font-size: 3vw; }
-            .feature-content p { font-size: 2.5vw; }
-            .show-detail-link { font-size: 2.6vw; }
-            #robot-image{
-                position: static !important;
-                transform: none !important;
-                width: 39vw; /* Original: 300px adjusted */
-                height: 32.41vh; /* Original: 350px */
-                margin: 1.85vh auto; /* Original: 20px */
-                order: 2;
-            }
-            .connector-vector{
+
+            .connector-vector {
                 display: none;
+            }
+
+            #robot-image {
+                position: static;
+                transform: none;
+                width: 70vw;
+                max-width: 350px;
+                height: auto;
+                order: 3; /* Places robot in the middle */
+            }
+            
+            .feature-box {
+                position: static !important; /* Override inline styles if any */
+                transform: none !important;
+                width: 100%;
+                max-width: 450px;
+                height: auto;
+                padding: 24px;
+            }
+
+            #feature-box-1 { order: 1; }
+            #feature-box-2 { order: 2; }
+            #feature-box-3 { order: 4; }
+            #feature-box-4 { order: 5; }
+
+            .feature-box:hover {
+                transform: none !important;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            }
+            
+            .feature-header {
+                gap: 16px;
+                margin-bottom: 24px;
+            }
+
+            .feature-box h3 {
+                font-size: 1.25rem; /* 20px */
+            }
+
+            .feature-content p {
+                font-size: 1rem; /* 16px */
             }
         }
     </style>

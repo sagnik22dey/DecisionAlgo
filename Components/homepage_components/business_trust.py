@@ -3,74 +3,78 @@ async def trust_body():
   <section class="trust-section" aria-label="Why Businesses Trust Us">
     <div class="top-fade" aria-hidden="true"></div>
 
-    <!-- CTAs -->
-    <div class="cta-row">
-      <a href="#" class="btn primary">See Our Dashboards</a>
-      <a href="#" class="btn ghost">Explore More Solutions</a>
-    </div>
+    <!-- This wrapper helps reorder content on mobile using CSS flexbox's 'order' property -->
+    <div class="trust-section-content-wrapper">
 
-    <!-- Title -->
-    <h2 class="title">
-      Why <span class="accent">Businesses</span> Trust Us
-    </h2>
+      <!-- CTAs -->
+      <div class="cta-row">
+        <a href="#" class="btn primary">See Our Dashboards</a>
+        <a href="#" class="btn ghost">Explore More Solutions</a>
+      </div>
 
-    <!-- Layered frames -->
-    <div class="frame-outline" aria-hidden="true"></div>
+      <!-- Title -->
+      <h2 class="title">
+        Why <span class="accent">Businesses</span> Trust Us
+      </h2>
 
-    <!-- Main panel -->
-    <div class="panel">
-      <div class="features">
-      <div class="feature-text-box">
-        <!-- Feature 1 -->
-        <div class="feature f1">
-          <div class="icon"></div>
-          <div class="feature-content">
-            <h3>Tailored AI & Data Solutions</h3>
-            <p>We create custom automation & insights for your specific business challenges.</p>
-          </div>
-        </div>
+      <!-- Layered frames -->
+      <div class="frame-outline" aria-hidden="true"></div>
 
-        <!-- Feature 2 -->
-        <div class="feature f2">
-          <div class="icon"></div>
-          <div class="feature-content">
-            <h3>Built to Scale</h3>
-            <p>Whether you’re a startup or an enterprise, our solutions grow with your needs.</p>
-          </div>
-        </div>
+      <!-- Main panel -->
+      <div class="panel">
+        <div class="features">
+          <div class="feature-text-box">
+            <!-- Feature 1 -->
+            <div class="feature f1">
+              <div class="icon"></div>
+              <div class="feature-content">
+                <h3>Tailored AI & Data Solutions</h3>
+                <p>We create custom automation & insights for your specific business challenges.</p>
+              </div>
+            </div>
 
-        <!-- Feature 3 -->
-        <div class="feature f3">
-          <div class="icon"></div>
-          <div class="feature-content">
-            <h3>Cost-Efficient Automation</h3>
-            <p>Save resources by reducing manual tasks with smart automation.</p>
-          </div>
-        </div>
+            <!-- Feature 2 -->
+            <div class="feature f2">
+              <div class="icon"></div>
+              <div class="feature-content">
+                <h3>Built to Scale</h3>
+                <p>Whether you’re a startup or an enterprise, our solutions grow with your needs.</p>
+              </div>
+            </div>
 
-        <!-- Feature 4 -->
-        <div class="feature f4">
-          <div class="icon"></div>
-          <div class="feature-content">
-            <h3>Ironclad Security</h3>
-            <p>Your data is protected with enterprise-grade security & compliance.</p>
-          </div>
-        </div>
+            <!-- Feature 3 -->
+            <div class="feature f3">
+              <div class="icon"></div>
+              <div class="feature-content">
+                <h3>Cost-Efficient Automation</h3>
+                <p>Save resources by reducing manual tasks with smart automation.</p>
+              </div>
+            </div>
 
-        <!-- Feature 5 -->
-        <div class="feature f5">
-          <div class="icon"></div>
-          <div class="feature-content">
-            <h3>Proven Results </h3>
-            <p>Our client see higher efficiency, smarter decisions, and business growth.</p>
+            <!-- Feature 4 -->
+            <div class="feature f4">
+              <div class="icon"></div>
+              <div class="feature-content">
+                <h3>Ironclad Security</h3>
+                <p>Your data is protected with enterprise-grade security & compliance.</p>
+              </div>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="feature f5">
+              <div class="icon"></div>
+              <div class="feature-content">
+                <h3>Proven Results </h3>
+                <p>Our client see higher efficiency, smarter decisions, and business growth.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      </div>
-    </div>
+
+    </div> <!-- End of content-wrapper -->
   </section>
 """
-
 
 async def trust_style():
     return """  
@@ -195,19 +199,19 @@ async def trust_style():
     }
     
     .feature-text-box{
-          padding: 14.81vh 2.5vw; /* Original: 10rem 3rem */
-          display: flex;
-          flex-wrap: wrap;
-          gap: 3.65vw; /* Original: 70px */
-          justify-content: space-evenly;
-        }
-        
-        .feature {
-          color: #FFFFFF;
-          display: flex;
-          align-items: flex-start;
-          gap: 1.3vw; /* Original: 25px */
-        }
+      padding: 14.81vh 2.5vw; /* Original: 10rem 3rem */
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3.65vw; /* Original: 70px */
+      justify-content: space-evenly;
+    }
+    
+    .feature {
+      color: #FFFFFF;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.3vw; /* Original: 25px */
+    }
     .feature .icon {
       width: 2.6vw; /* Original: 50px */
       height: 2.6vw; /* Original: 50px, using vw to maintain aspect ratio */
@@ -267,5 +271,127 @@ async def trust_style():
       width: 20.42vw; /* Original: 392px */
       height: 13.89vh; /* Original: 150px */
     }
-  </style>
-  """
+
+    /******************************************/
+    /*           MOBILE STYLES                */
+    /******************************************/
+    @media (max-width: 768px) {
+        .trust-section {
+            padding: 4rem 1rem 3rem;
+            min-width: initial; /* Reset min-width for mobile */
+        }
+
+        .trust-section-content-wrapper {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+        }
+
+        /* Re-order content for a better mobile UX flow */
+        .title { order: 1; }
+        .panel { order: 2; }
+        .cta-row { order: 3; }
+
+        .title {
+            position: relative; /* Reset positioning from desktop */
+            transform: none;
+            left: auto;
+            width: 100%;
+            font-size: 2.25rem; /* ~36px */
+            line-height: 1.2;
+            margin-top: 0;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Hide decorative frame on mobile for a cleaner look */
+        .frame-outline { 
+            display: none; 
+        }
+
+        .panel {
+            position: relative; /* Reset positioning */
+            transform: none;
+            left: auto;
+            width: 100%;
+            height: auto;
+            margin-top: 0;
+            border-radius: 20px;
+        }
+
+        /*************************************/
+        /*            >> FIX <<              */
+        /*************************************/
+        .features {
+            position: relative; /* Change from absolute to bring it back into flow */
+            inset: auto; /* Reset the inset property */
+        }
+        
+        .feature-text-box {
+            padding: 2.5rem 1.5rem;
+            flex-direction: column;
+            gap: 2.5rem;
+            align-items: flex-start; /* Re-aligns items for column layout */
+            justify-content: flex-start; /* Re-aligns items */
+        }
+
+        .f1, .f2, .f3, .f4, .f5 {
+            width: 100%;
+            height: auto;
+        }
+        
+        .feature { 
+            gap: 1rem; /* 16px */
+        }
+
+        .feature .icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            background-size: 24px 24px;
+        }
+
+        .feature-content { 
+            flex: 1; /* Allow text to take remaining space */
+        }
+
+        .feature h3 {
+            width: auto;
+            height: auto;
+            font-size: 1.2rem;
+            line-height: 1.3;
+            margin: 0 0 0.5rem 0; /* Add space below heading */
+        }
+
+        .feature p {
+            width: auto;
+            height: auto;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .cta-row {
+            position: relative; /* Reset positioning */
+            transform: none;
+            left: auto;
+            flex-direction: column;
+            width: 100%;
+            gap: 1rem; /* 16px */
+            margin-top: 3rem;
+        }
+
+        .btn {
+            width: 100%;
+            max-width: 400px; /* Prevent buttons from being too wide */
+            height: auto;
+            padding: 0.9rem 1.5rem;
+            border-radius: 12px;
+            font-size: 1rem; /* 16px */
+        }
+        
+        .btn.primary {
+            padding: 0.9rem 1.5rem; /* Ensure consistent padding */
+        }
+    }
+</style>
+"""

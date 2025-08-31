@@ -63,6 +63,7 @@ async def client_feedback_body():
         </div>
     </section>
     """
+
 async def client_feedback_style():
     return """
     
@@ -273,44 +274,108 @@ async def client_feedback_style():
             fill: var(--gold);
         }
 
-        /* Responsiveness */
-        @media (max-width: 76.39vw) { /* Original: 1100px */
-            .layout {
-                grid-template-columns: 1fr
+        /******************************************/
+        /*           MOBILE STYLES                */
+        /******************************************/
+        @media (max-width: 768px) {
+            .section {
+                padding: 4rem 1rem 3rem;
+                min-height: auto;
             }
 
-            .portrait {
-                order: 2;
-                height: 35.18vh; /* Original: 380px */
-            }
-
-            .card {
-                order: 1;
+            .cta {
+                font-size: 0.9rem;
+                padding: 0.5rem 1.25rem;
+                width: auto;
                 height: auto;
-                min-height: 48.15vh; /* Original: 520px */
-            }
-
-            .card-inner {
-                inset: 2.96vh 2.22vw; /* Original: 32px */
-            }
-
-            .person {
-                left: 2.22vw; /* Original: 32px */
-                bottom: 8.89vh; /* Original: 96px */
-            }
-
-            .footer-row {
-                left: 2.22vw; /* Original: 32px */
-                right: 2.22vw; /* Original: 32px */
-                bottom: 2.59vh; /* Original: 28px */
-            }
-
-            .heading {
-                font-size: 3.33vw; /* Original: 48px */
+                margin: 0 0 2rem 0;
             }
 
             .tagline {
-                font-size: 1.94vw; /* Original: 28px */
+                font-size: 1.1rem;
+                line-height: 1.5;
+                max-width: 100%;
+                margin: 0 auto 2rem;
+            }
+
+            .heading {
+                font-size: 2.25rem;
+                line-height: 1.2;
+                margin: 0 auto 2.5rem;
+            }
+
+            .layout {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                width: 100%;
+            }
+            
+            /* Testimonial card comes FIRST on mobile */
+            .card {
+                order: 1; 
+                height: auto; /* Allow height to fit the content */
+                border-radius: 24px;
+                /* Add bottom padding to make space for absolutely positioned elements */
+                padding: 2rem 1.5rem 8rem 1.5rem;
+            }
+            
+            /* Portrait image comes SECOND */
+            .portrait {
+                order: 2;
+                margin: 0;
+                width: 100%;
+                height: 350px;
+                border-radius: 24px;
+            }
+
+            /* --- Styles inside the card --- */
+
+            .quote-mark {
+                top: -10px;
+                right: 15px;
+                width: 120px;
+                height: 100px;
+                opacity: 0.8;
+            }
+            
+            .card-inner {
+                position: relative; /* Change from absolute to flow normally */
+                inset: auto;
+            }
+
+            .quote {
+                font-size: 1.25rem;
+                line-height: 1.6;
+            }
+
+            .person {
+                left: 1.5rem;
+                bottom: 4.5rem; /* Position above the footer row */
+            }
+
+            .person .name {
+                font-size: 1.5rem;
+            }
+
+            .person .role {
+                font-size: 1rem;
+                color: var(--muted);
+            }
+
+            .footer-row {
+                left: 1.5rem;
+                right: 1.5rem;
+                bottom: 2rem; /* Position it firmly at the bottom */
+            }
+            
+            .stars {
+                height: 20px;
+            }
+            
+            .star {
+                width: 20px;
+                height: 20px;
             }
         }
     </style>
