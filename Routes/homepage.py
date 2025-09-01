@@ -25,6 +25,7 @@ async def homepage():
     robotScript = await robot_script()
     footer_html = await footer_body()
     footer_css = await footer_style()
+    footerScript = await footer_script()
     business_trust_html = await trust_body()
     business_trust_css = await trust_style()
     busiiness_trust_script = await trust_script()
@@ -54,6 +55,7 @@ async def homepage():
         {footer_css}
         {robotScript}
         {busiiness_trust_script}
+        {footerScript}
         </head>
         <body>
             {navbar_html}

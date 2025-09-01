@@ -2,7 +2,7 @@ async def client_feedback_body():
     return """
     <section class="section">
         <!-- Top pill -->
-        <div class="cta">Let’s Talk</div>
+        <a href='#' class="cta">Let’s Talk</a>
 
         <!-- Tagline -->
         <h2 class="tagline">
