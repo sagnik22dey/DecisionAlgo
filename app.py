@@ -5,11 +5,14 @@ import uvicorn
 
 from Routes import healthcheck
 from Routes import homepage
+from Routes import dashboard
+
 
 app = FastAPI()
 
 app.include_router(healthcheck.router)
 app.include_router(homepage.router)
+app.include_router(dashboard.router)
 
 app.mount("/Resources", StaticFiles(directory="Resources"), name="Resources")
 

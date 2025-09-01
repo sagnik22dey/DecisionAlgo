@@ -158,13 +158,13 @@ async def heroSection_style():
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            padding: 0.78vh 2.19vw; /* Original: 8.4px 42.02px */
-            gap: 0.88vw; /* Original: 16.81px */
-            width: 10.05vw; /* Original: 193px */
-            height: 4.26vh; /* Original: 46px */
+            padding: 0.78vh 2.19vw;
+            gap: 0.88vw;
+            width: 12.05vw;
+            height: 6.26vh;
             background: #FFFFFF;
-            box-shadow: 0 0.62vh 0.35vw rgba(0, 0, 0, 0.25); /* Original: 0px 6.72px 6.72px */
-            border-radius: 5.21vw; /* Original: 100px */
+            box-shadow: 0 0.62vh 0.35vw rgba(0, 0, 0, 0.25);
+            border-radius: 5.21vw;
             flex: none;
             order: 2;
             flex-grow: 0;

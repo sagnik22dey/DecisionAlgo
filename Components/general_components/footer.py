@@ -309,7 +309,7 @@ async def footer_style():
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            text-align: center; /* Keep heading centered */
+            text-align: left; /* Keep heading centered */
         }
 
         .mobile-footer .mobile-list {

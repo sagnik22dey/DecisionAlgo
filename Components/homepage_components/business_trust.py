@@ -195,15 +195,22 @@ async def trust_style():
       justify-content: center;
       height: 3.98vh; /* Original: 43px */
       padding: 1.02vh 1.82vw; /* Original: 11px 35px */
-      border-radius: 1.25vw; /* Original: 24px */
       border: 0.05vw solid #DFDFDF; /* Original: 1px */
-      font-family: "Poppins", system-ui, Arial, sans-serif;
-      font-weight: 400;
-      font-size: 0.83vw; /* Original: 16px */
       line-height: 1.33;
-      white-space: nowrap;
       cursor: pointer;
       user-select: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 1.15vw;
+      height: 6.02vh;
+      box-sizing: border-box;
+      border-radius: 9.52vw;
+      white-space: nowrap;
+      transition: transform 0.2s ease, opacity 0.2s ease;
     }
     
     /* Mobile button overrides */

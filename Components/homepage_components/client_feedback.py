@@ -107,17 +107,17 @@ async def client_feedback_style():
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 1.93vh 1.53vw; /* Original: 10px 22px */
+            padding: 2.93vh 2.53vw;
             background: var(--chip-bg);
-            border: 0.09vw solid var(--stroke); /* Original: 1.3px */
-            border-radius: 50vw; /* Original: 999px */
+            border: 0.09vw solid var(--stroke);
+            border-radius: 50vw;
             color: #000;
-            font: 400 1.46vw/1.3 'Poppins', system-ui, sans-serif; /* Original: 21px */
+            font: 400 1.46vw / 1.3 'Poppins', system-ui, sans-serif;
             text-transform: capitalize;
             box-shadow: var(--shadow);
             user-select: none;
-            width: 13.33vw; /* Original: 12rem */
-            height: 2.96vh; /* Original: 2rem */
+            width: 16.33vw;
+            height: 5.96vh;
         }
 
         /* Tagline gradient */
