@@ -292,7 +292,7 @@ async def client_feedback_style():
                 font-size: 1.1rem;
                 line-height: 1.5;
                 max-width: 100%;
-                margin: 0 auto 2rem;
+                margin: 0 auto 6rem;
             }
 
             .heading {
@@ -319,9 +319,9 @@ async def client_feedback_style():
             
             /* Portrait image comes FIRST */
             .portrait {
-                order: 1; /* CHANGED */
-                margin: 0;
-                width: 100%;
+                order: 1;
+                margin: auto;
+                width: 80%;
                 height: 350px;
                 border-radius: 24px;
             }
