@@ -24,48 +24,51 @@ async def trust_body():
       <div class="panel">
         <div class="features">
           <div class="feature-text-box">
-            <!-- Feature 1 -->
-            <div class="feature f1">
-              <div class="icon"></div>
-              <div class="feature-content">
-                <h3>Tailored AI & Data Solutions</h3>
-                <p>We create custom automation & insights for your specific business challenges.</p>
+            <div class = "upper-features">
+              <!-- Feature 1 -->
+              <div class="feature f1">
+                <div class="icon"></div>
+                <div class="feature-content">
+                  <h3>Tailored AI & Data Solutions</h3>
+                  <p>We create custom automation & insights for your specific business challenges.</p>
+                </div>
+              </div>
+
+              <!-- Feature 2 -->
+              <div class="feature f2">
+                <div class="icon"></div>
+                <div class="feature-content">
+                  <h3>Built to Scale</h3>
+                  <p>Whether you’re a startup or an enterprise, our solutions grow with your needs.</p>
+                </div>
+              </div>
+
+              <!-- Feature 3 -->
+              <div class="feature f3">
+                <div class="icon"></div>
+                <div class="feature-content">
+                  <h3>Cost-Efficient Automation</h3>
+                  <p>Save resources by reducing manual tasks with smart automation.</p>
+                </div>
               </div>
             </div>
-
-            <!-- Feature 2 -->
-            <div class="feature f2">
-              <div class="icon"></div>
-              <div class="feature-content">
-                <h3>Built to Scale</h3>
-                <p>Whether you’re a startup or an enterprise, our solutions grow with your needs.</p>
+            <div class = "lower-features">
+                <!-- Feature 4 -->
+              <div class="feature f4">
+                <div class="icon"></div>
+                <div class="feature-content">
+                  <h3>Ironclad Security</h3>
+                  <p>Your data is protected with enterprise-grade security & compliance.</p>
+                </div>
               </div>
-            </div>
 
-            <!-- Feature 3 -->
-            <div class="feature f3">
-              <div class="icon"></div>
-              <div class="feature-content">
-                <h3>Cost-Efficient Automation</h3>
-                <p>Save resources by reducing manual tasks with smart automation.</p>
-              </div>
-            </div>
-
-            <!-- Feature 4 -->
-            <div class="feature f4">
-              <div class="icon"></div>
-              <div class="feature-content">
-                <h3>Ironclad Security</h3>
-                <p>Your data is protected with enterprise-grade security & compliance.</p>
-              </div>
-            </div>
-
-            <!-- Feature 5 -->
-            <div class="feature f5">
-              <div class="icon"></div>
-              <div class="feature-content">
-                <h3>Proven Results </h3>
-                <p>Our client see higher efficiency, smarter decisions, and business growth.</p>
+              <!-- Feature 5 -->
+              <div class="feature f5">
+                <div class="icon"></div>
+                <div class="feature-content">
+                  <h3>Proven Results </h3>
+                  <p>Our client see higher efficiency, smarter decisions, and business growth.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -75,6 +78,7 @@ async def trust_body():
     </div> <!-- End of content-wrapper -->
   </section>
 """
+
 
 async def trust_style():
     return """  
@@ -201,9 +205,23 @@ async def trust_style():
     .feature-text-box{
       padding: 14.81vh 2.5vw; /* Original: 10rem 3rem */
       display: flex;
+      flex-direction: column; /* Stack feature groups vertically */
       flex-wrap: wrap;
       gap: 3.65vw; /* Original: 70px */
       justify-content: space-evenly;
+      align-items: center; /* Center the feature groups */
+    }
+
+    .upper-features {
+      display: flex;
+      justify-content: center;
+      gap: 3.65vw; /* Maintain the same gap as the parent */
+    }
+    .lower-features {
+      margin-top: 5.65vh;
+      display: flex;
+      justify-content: center;
+      gap: 5.65vw; /* Maintain the same gap as the parent */
     }
     
     .feature {

@@ -43,6 +43,7 @@ async def ready_style():
     <style>
         .viewport-container {
             position: relative;
+            position: relative;
             width: 100vw;
             min-height: 100vh; /* Changed from fixed height and scale to be a full-height section */
             display: flex; /* Using Flexbox for a robust and responsive layout */
