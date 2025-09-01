@@ -88,11 +88,6 @@ async def client_feedback_style():
             box-sizing: border-box
         }
 
-        html,
-        body {
-            height: 100%
-        }
-
         .section {
             position: relative;
             min-height: 100vh;
@@ -108,11 +103,11 @@ async def client_feedback_style():
         /* Top pill button (Let's Talk) */
         .cta {
             position: relative;
-            margin: -2.96vh; /* Original: -2rem */
+            margin: 0vh;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 0.93vh 1.53vw; /* Original: 10px 22px */
+            padding: 1.93vh 1.53vw; /* Original: 10px 22px */
             background: var(--chip-bg);
             border: 0.09vw solid var(--stroke); /* Original: 1.3px */
             border-radius: 50vw; /* Original: 999px */
@@ -155,10 +150,11 @@ async def client_feedback_style():
         .layout {
             width: min(98.4vw, 100%); /* Original: 1417px */
             display: grid;
-            grid-template-columns: 29.17vw 1fr; /* Original: 420px */
+            grid-template-columns: 22.17vw 1fr; /* Original: 420px */
             gap: 3.89vw; /* Original: 56px */
             align-items: start;
             position: relative;
+            scale:0.95;
         }
 
         /* Left portrait card */
@@ -252,6 +248,7 @@ async def client_feedback_style():
             opacity: 1;
             background: url("data:image/svg+xml,%3Csvg width='565' height='1' viewBox='0 0 565 1' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline y1='0.5' x2='565' y2='0.5' stroke='white' stroke-dasharray='10 10'/%3E%3C/svg%3E");
             height: 0.09vh; /* Original: 1px */
+            margin-bottom: 0.12vh;
             z-index: 10;
         }
 
@@ -311,18 +308,18 @@ async def client_feedback_style():
                 width: 100%;
             }
             
-            /* Testimonial card comes FIRST on mobile */
+            /* Testimonial card comes SECOND on mobile */
             .card {
-                order: 1; 
+                order: 2; /* CHANGED */
                 height: auto; /* Allow height to fit the content */
                 border-radius: 24px;
                 /* Add bottom padding to make space for absolutely positioned elements */
                 padding: 2rem 1.5rem 8rem 1.5rem;
             }
             
-            /* Portrait image comes SECOND */
+            /* Portrait image comes FIRST */
             .portrait {
-                order: 2;
+                order: 1; /* CHANGED */
                 margin: 0;
                 width: 100%;
                 height: 350px;

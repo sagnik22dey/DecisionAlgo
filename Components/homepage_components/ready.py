@@ -5,34 +5,35 @@ async def ready_body():
         <div class="ellipse ellipse-1"></div>
         <div class="ellipse ellipse-2"></div>
 
-        <!-- Left Side: Text and Buttons -->
+        <!-- Left Side: Text -->
         <div class="text-container">
             <div class="text-content">
                 <h1 class="main-heading">Ready to Make Data Work for You?</h1>
                 <p class="sub-heading">Say goodbye to guesswork.</p>
                 <p class="description">Let’s turn your business into a data-driven powerhouse!</p>
             </div>
-            <div class="buttons-container">
-                <a href="#" class="button primary-button">Get a Free Consultation</a>
-                <a href="#" class="button secondary-button">Try Our Solutions</a>
-            </div>
         </div>
 
         <!-- Right Side: Images -->
         <div class="image-container">
             <div class="image-box image-box-short">
-                <img src="../../Resources/images/Tripple_1.png" alt="Futuristic data dashboard">
+                <img src="../../Resources/Images/Tripple_1.png" alt="Futuristic data dashboard">
             </div>
             <div class="image-box image-box-long">
-                 <img src="../../Resources/images/Tripple_2.png" alt="Robotic hand interacting with a digital interface">
+                 <img src="../../Resources/Images/Tripple_2.png" alt="Robotic hand interacting with a digital interface">
             </div>
             <div class="image-box image-box-short">
-                 <img src="../../Resources/images/Tripple_3.png" alt="Woman in a modern, futuristic setting">
+                 <img src="../../Resources/Images/Tripple_3.png" alt="Woman in a modern, futuristic setting">
             </div>
+        </div>
+
+        <!-- Buttons (Moved here to be a sibling for layout control) -->
+        <div class="buttons-container">
+            <a href="#" class="button primary-button">Get a Free Consultation</a>
+            <a href="#" class="button secondary-button">Try Our Solutions</a>
         </div>
     </main>
 """
-
 async def ready_style():
     return """ 
     <!-- Google Fonts Import -->
@@ -43,15 +44,19 @@ async def ready_style():
     <style>
         .viewport-container {
             position: relative;
-            position: relative;
             width: 100vw;
-            min-height: 100vh; /* Changed from fixed height and scale to be a full-height section */
-            display: flex; /* Using Flexbox for a robust and responsive layout */
+            min-height: 100vh;
+            /* CHANGED: Use CSS Grid for robust 2D desktop layout */
+            display: grid;
+            grid-template-columns: 46vw auto;
+            grid-template-areas:
+                "text   images"
+                "buttons images";
             align-items: center;
             justify-content: center;
-            gap: 5vw;
+            gap: 5.18vh 5vw; /* row-gap column-gap */
             padding: 5vh 5vw;
-            overflow: hidden; /* Prevents background ellipses from causing scrollbars */
+            overflow: hidden;
             box-sizing: border-box;
         }
 
@@ -59,75 +64,69 @@ async def ready_style():
         .ellipse {
             position: absolute;
             opacity: 1;
-            filter: blur(10.42vw); /* Original: 200px */
+            filter: blur(10.42vw);
             z-index: -1;
         }
 
-        /* Ellipse 1 (Left) */
         .ellipse-1 {
-            width: 10.53vw; /* Original: 202.11px */
-            height: 30.46vh; /* Original: 329px */
+            width: 10.53vw;
+            height: 30.46vh;
             left: 5vw;
             top: 20vh;          
             background: rgba(255, 255, 255, 0.48);
         }
 
-        /* Ellipse 2 (Right) */
         .ellipse-2 {
-            width: 10.53vw; /* Original: 202.11px */
-            height: 30.46vh; /* Original: 329px */
+            width: 10.53vw;
+            height: 30.46vh;
             right: 5vw;
             top: 15vh;
             background: rgba(255, 255, 255, 0.49);
             transform: matrix(0.45, 0.89, 0.89, -0.45, 0, 0);
         }
 
-        /* Main Text & Button Container */
+        /* Main Text Container */
         .text-container {
+            grid-area: text; /* Assign to grid area */
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 5.18vh; /* Original: 56px */
-            width: 46vw; /* Original: 884px */
-            max-width: 46vw;
+            align-self: end; /* Position closer to buttons */
         }
 
         .text-content {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 2.03vh; /* Original: 21.93px */
+            gap: 2.03vh;
             width: 100%;
         }
 
-        /* "Ready to Make Data Work for You?" */
         .main-heading {
-            width: 100%; /* Changed from fixed width */
+            width: 100%;
             font-family: 'Exo 2', sans-serif;
             font-weight: 700;
-            font-size: 3.33vw; /* Original: 64px */
+            font-size: 3.33vw;
             line-height: 1.2;
             color: #FFFFFF;
             margin: 0;
         }
 
-        /* "Say goodbye to guesswork." */
         .sub-heading {
             width: 100%;
             font-family: 'Exo 2', sans-serif;
             font-weight: 700;
-            font-size: 1.9vw; /* Original: 36.55px */
+            font-size: 1.9vw;
             line-height: 1.2;
             color: #FFFFFF;
             margin: 0;
         }
 
-        /* "Let’s turn your business into a data-driven powerhouse!" */
         .description {
             width: 100%;
             font-family: 'Exo 2', sans-serif;
             font-weight: 400;
-            font-size: 1.52vw; /* Original: 29.24px */
+            font-size: 1.52vw;
             line-height: 1.5;
             color: #FFFFFF;
             margin: 0;
@@ -135,11 +134,13 @@ async def ready_style():
 
         /* Buttons Container */
         .buttons-container {
+            grid-area: buttons; /* Assign to grid area */
             display: flex;
             flex-direction: row;
             align-items: center;
-            gap: 1.14vw; /* Original: 21.93px */
-            flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+            gap: 1.14vw;
+            flex-wrap: wrap;
+            align-self: start; /* Position closer to text */
         }
 
         .button {
@@ -149,13 +150,13 @@ async def ready_style():
             text-decoration: none;
             font-family: 'Outfit', sans-serif;
             font-weight: 600;
-            font-size: 1.15vw; /* Original: 22px */
-            height: 6.02vh; /* Original: 65px */
+            font-size: 1.15vw;
+            height: 6.02vh;
             box-sizing: border-box;
-            border-radius: 9.52vw; /* Original: 182.755px */
+            border-radius: 9.52vw;
             white-space: nowrap;
-            padding-left: 2.28vw; /* Original: 43.86px */
-            padding-right: 2.28vw; /* Original: 43.86px */
+            padding-left: 2.28vw;
+            padding-right: 2.28vw;
             transition: transform 0.2s ease, opacity 0.2s ease;
         }
         
@@ -170,35 +171,36 @@ async def ready_style():
         }
 
         .secondary-button {
-            border: 0.1vw solid #FFFFFF; /* Original: 1.82px */
+            border: 0.1vw solid #FFFFFF;
             color: #FFFFFF;
             background: transparent;
         }
 
         /* Image Column Container */
         .image-container {
+            grid-area: images; /* Assign to grid area */
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 1.36vh; /* Original: 14.68px */
-            width: 16.32vw; /* Original: 313.43px */
-            filter: drop-shadow(0 0.37vh 0.21vw rgba(0, 0, 0, 0.25)); /* Original: 0px 4px 4px */
+            gap: 1.36vh;
+            width: 16.32vw;
+            filter: drop-shadow(0 0.37vh 0.21vw rgba(0, 0, 0, 0.25));
         }
 
         .image-box {
             box-sizing: border-box;
-            width: 100%; /* Fills the container */
-            border: 0.1vw solid #616161; /* Original: 2px */
-            border-radius: 1.64vw; /* Original: 31.44px */
+            width: 100%;
+            border: 0.1vw solid #616161;
+            border-radius: 1.64vw;
             overflow: hidden;
         }
 
         .image-box-short {
-            height: 13.59vh; /* Original: 146.76px */
+            height: 13.59vh;
         }
 
         .image-box-long {
-            height: 26.4vh; /* Original: 285.13px */
+            height: 26.4vh;
         }
 
         .image-container img {
@@ -213,14 +215,14 @@ async def ready_style():
         /******************************************/
         @media (max-width: 768px) {
             .viewport-container {
-                flex-direction: column; /* Stack text and images vertically */
+                display: flex; /* CHANGE: Override grid with flexbox for mobile */
+                flex-direction: column; /* This now correctly orders the sibling elements */
                 padding: 4rem 1.5rem;
-                justify-content: flex-start; /* Align content to the top */
+                justify-content: flex-start;
                 gap: 3rem;
                 min-height: auto;
             }
 
-            /* Adjust background glows for a vertical layout */
             .ellipse-1 {
                 width: 60vw;
                 height: 60vw;
@@ -234,16 +236,13 @@ async def ready_style():
                 top: 50vh;
                 right: -20vw;
                 filter: blur(100px);
-                transform: none; /* Reset desktop transform */
+                transform: none;
             }
 
-            /* Center align text content */
             .text-container {
                 width: 100%;
-                max-width: 100%;
                 align-items: center;
                 text-align: center;
-                gap: 2.5rem;
             }
             
             .text-content {
@@ -251,21 +250,10 @@ async def ready_style():
                 gap: 1rem;
             }
 
-            /* Use readable rem units for fonts */
-            .main-heading {
-                font-size: 2.5rem;
-                line-height: 1.2;
-            }
-            .sub-heading {
-                font-size: 1.25rem;
-                line-height: 1.3;
-            }
-            .description {
-                font-size: 1rem;
-                line-height: 1.6;
-            }
+            .main-heading { font-size: 2.5rem; line-height: 1.2; }
+            .sub-heading { font-size: 1.25rem; line-height: 1.3; }
+            .description { font-size: 1rem; line-height: 1.6; }
 
-            /* Stack buttons vertically and make them full-width */
             .buttons-container {
                 flex-direction: column;
                 width: 100%;
@@ -282,14 +270,13 @@ async def ready_style():
             }
 
             .secondary-button {
-                border-width: 2px; /* Make border more visible */
+                border-width: 2px;
             }
 
-            /* Change images to a horizontal row layout */
             .image-container {
-                flex-direction: row; /* Arrange images side-by-side */
+                flex-direction: row;
                 width: 100%;
-                gap: 0.75rem; /* 12px */
+                gap: 0.75rem;
                 justify-content: center;
             }
             
@@ -298,16 +285,8 @@ async def ready_style():
                 border-width: 2px;
             }
 
-            /* Adjust image box sizes for the row layout */
-            .image-box-short {
-                width: 30%;
-                height: 150px;
-            }
-            .image-box-long {
-                width: 40%;
-                height: 200px;
-                transform: translateY(-25px); /* Creates a nice overlap effect */
-            }
+            .image-box-short { width: 30%; height: 150px; }
+            .image-box-long { width: 40%; height: 200px; transform: translateY(-25px); }
         }
     </style>
 """

@@ -22,10 +22,12 @@ async def homepage():
     heroSection_css = await heroSection_style()
     robotSection_html= await robot_body()
     robotSection_css= await robot_style()
+    robotScript = await robot_script()
     footer_html = await footer_body()
     footer_css = await footer_style()
     business_trust_html = await trust_body()
     business_trust_css = await trust_style()
+    busiiness_trust_script = await trust_script()
     client_feedback_html = await client_feedback_body()
     client_feedback_css = await client_feedback_style()
     ready_html = await ready_body()
@@ -50,6 +52,8 @@ async def homepage():
         {client_feedback_css}
         {ready_css}
         {footer_css}
+        {robotScript}
+        {busiiness_trust_script}
         </head>
         <body>
             {navbar_html}
