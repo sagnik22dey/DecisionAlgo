@@ -1,12 +1,12 @@
 async def navbar_body():
     return """
     <header class="navbar" role="navigation" aria-label="Main">
-        <a href="#" class="brand">
+        <a href="/" class="brand">
             <img src="/Resources/Images/DecisionAlgoLogo.png" alt="DecisionAlgo logo" />
         </a>
         <nav class="nav" id="main-nav">
-            <a href="#" class="active">Home</a>
-            <a href="#">Dashboards</a>
+            <a href="/">Home</a>
+            <a href="/dashboard">Dashboards</a>
             <a href="#">Case Studies</a>
             <a href="#">About us</a>
             <a href="#">Pricing</a>
@@ -20,6 +20,27 @@ async def navbar_body():
     </header>
     
     <script>
+        // Set active class based on current page
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav a');
+            const currentPage = window.location.pathname;
+            
+            navLinks.forEach(link => {
+                // Remove any existing active classes
+                link.classList.remove('active');
+                
+                // Add active class to the current page link
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+                
+                // Special case for home page
+                if (currentPage === '/' && link.getAttribute('href') === '/') {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
         const hamburgerButton = document.getElementById('hamburger-button');
         const mainNav = document.getElementById('main-nav');
 

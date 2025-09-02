@@ -259,6 +259,7 @@ async def ready_style():
                 width: 100%;
                 max-width: 400px;
                 gap: 1rem;
+                margin : auto;
             }
 
             .button {

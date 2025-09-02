@@ -2,6 +2,7 @@ from fastapi import APIRouter
 from fastapi.responses import HTMLResponse
 from Components.general_components.navbar import *
 from Components.general_components.footer import *
+from Components.dashboard_components.heroSection import *
 
 router = APIRouter()
 
@@ -13,6 +14,8 @@ async def dashboard():
     footer_html = await footer_body()
     navabar_css = await navbar_style()
     footer_css = await footer_style()
+    hero_section_html = await heroSection_body()
+    hero_section_css = await heroSection_style()
 
     return f""" 
     <!DOCTYPE html>
@@ -23,14 +26,12 @@ async def dashboard():
         <title>Dashboard</title>  
         {navabar_css}
         {footer_css}
-        
-        
-          
+        {hero_section_css}
     </head>
     <body>
         {navabar_html}
+        {hero_section_html}
         {footer_html}
-    
     
     </body>
     </html>
