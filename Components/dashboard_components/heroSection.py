@@ -21,6 +21,8 @@ async def heroSection_body():
        </div>
         <!-- cards row -->
         <div class="cards-row">
+          <img class="peak-glow" src="../../Resources/Images/Dashboard/peak_glow.png" alt="peak glow">
+          <img class="eclipse-glow" src="../../Resources/Images/Dashboard/ecliplse_glow.png" alt="eclipse glow">
           <!-- left card -->
           <article class="card card-left">
            <img src="../../Resources/Images/Dashboard/dashboard_left_card.png" alt="card image">
@@ -143,7 +145,28 @@ async def heroSection_style():
         top: -15vw;
       }
 
+      .peak-glow,
+      .eclipse-glow {
+        position: absolute;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .peak-glow {
+        width: 32vw;
+        left: 0vw;
+        top: -44vh;
+      }
+
+      .eclipse-glow {
+        width: 50vw;
+        right: 13vw;
+        top: -20vh;
+      }
+
       .card{
+        position: relative;
+        z-index: 2;
         background:linear-gradient(180deg,#050505 0%,#202020 45%,#050505 100%);
         border-radius:1.2vw;
         box-shadow:0 1.4vh 3.2vw rgba(0,0,0,0.35);
