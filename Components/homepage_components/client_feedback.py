@@ -169,7 +169,7 @@ async def client_feedback_style():
             box-shadow: var(--shadow);
             background:
                 linear-gradient(0deg, rgba(255, 255, 255, .2), rgba(255, 255, 255, .2)),
-                url("../../Resources/Images/ceo.png") center/cover no-repeat;
+                url("../../Resources/Images/HomePage/ceo.png") center/cover no-repeat;
         }
 
         /* Right testimonial panel */
@@ -187,7 +187,7 @@ async def client_feedback_style():
             right: 2.08vw; /* Original: 30px */
             width: 24.44vw; /* Original: 352px */
             height: 22.68vh; /* Original: 245px */
-            background: url("../../Resources/Images/comma_bg.png") no-repeat;
+            background: url("../../Resources/Images/HomePage/comma_bg.png") no-repeat;
             background-size: contain;
             opacity: 1;
             z-index: 1;

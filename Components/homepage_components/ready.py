@@ -17,13 +17,13 @@ async def ready_body():
         <!-- Right Side: Images -->
         <div class="image-container">
             <div class="image-box image-box-short">
-                <img src="../../Resources/Images/Tripple_1.png" alt="Futuristic data dashboard">
+                <img src="../../Resources/Images/HomePage/Tripple_1.png" alt="Futuristic data dashboard">
             </div>
             <div class="image-box image-box-long">
-                 <img src="../../Resources/Images/Tripple_2.png" alt="Robotic hand interacting with a digital interface">
+                 <img src="../../Resources/Images/HomePage/Tripple_2.png" alt="Robotic hand interacting with a digital interface">
             </div>
             <div class="image-box image-box-short">
-                 <img src="../../Resources/Images/Tripple_3.png" alt="Woman in a modern, futuristic setting">
+                 <img src="../../Resources/Images/HomePage/Tripple_3.png" alt="Woman in a modern, futuristic setting">
             </div>
         </div>
 

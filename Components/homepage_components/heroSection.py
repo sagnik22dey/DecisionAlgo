@@ -84,7 +84,7 @@ async def heroSection_style():
             height: 100%;
             left: 0;
             top: 0;
-            background-image: url('../../Resources/Images/grid1.png');
+            background-image: url('../../Resources/Images/HomePage/grid1.png');
             border-radius: 3.38vw; /* Original: 65px */
         }
 

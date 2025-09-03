@@ -38,7 +38,7 @@ async def heroSection_body():
               <div class="metric-tile">
                 <div class="metric-head">
                   <div class="mini-icon">
-                    <img src="https://picsum.photos/seed/b/10/10" alt="icon">
+                    <img src="" alt="icon">
                   </div>
                   <div class="metric-text">
                     <div class="metric-value">99.99%</div>
@@ -126,7 +126,7 @@ async def heroSection_style():
         align-items: center;
         gap: 1.5vh;
         margin-bottom: 5vh;
-        background-image: url('../../Resources/Images/grid1.png');
+        background-image: url('../../Resources/Images/HomePage/grid1.png');
         border-bottom: solid #ffffff;
         border-radius: 3vw;
       }

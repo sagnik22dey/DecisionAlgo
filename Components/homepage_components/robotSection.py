@@ -31,7 +31,7 @@ async def robot_body():
             <div id="feature-box-1" class="feature-box desktop-card">
                 <div class="feature-header">
                     <div class="feature-icon">
-                        <img src="../../Resources/Images/route.png" alt="route icon">
+                        <img src="../../Resources/Images/HomePage/route.png" alt="route icon">
                     </div>
                     <h3>Real-Time Dashboards</h3>
                 </div>
@@ -47,7 +47,7 @@ async def robot_body():
             <div id="feature-box-2" class="feature-box desktop-card">
                 <div class="feature-header">
                     <div class="feature-icon">
-                        <img src="../../Resources/Images/route.png" alt="route icon">
+                        <img src="../../Resources/Images/HomePage/route.png" alt="route icon">
                     </div>
                     <h3>AI-Powered Chatbots</h3>
                 </div>
@@ -61,12 +61,12 @@ async def robot_body():
             </div>
 
             <!-- Desktop Robot -->
-            <img id="robot-image" class="desktop-robot" src="../../Resources/Images/robotHomepage.png" alt="A sleek black robot with red highlights, symbolizing advanced automation and AI.">
+            <img id="robot-image" class="desktop-robot" src="../../Resources/Images/HomePage/robotHomepage.png" alt="A sleek black robot with red highlights, symbolizing advanced automation and AI.">
 
             <div id="feature-box-3" class="feature-box desktop-card">
                 <div class="feature-header">
                     <div class="feature-icon">
-                        <img src="../../Resources/Images/route.png" alt="route icon">
+                        <img src="../../Resources/Images/HomePage/route.png" alt="route icon">
                     </div>
                     <h3>Data-Driven Reports</h3>
                 </div>
@@ -82,7 +82,7 @@ async def robot_body():
             <div id="feature-box-4" class="feature-box desktop-card">
                 <div class="feature-header">
                     <div class="feature-icon">
-                        <img src="../../Resources/Images/route.png" alt="route icon">
+                        <img src="../../Resources/Images/HomePage/route.png" alt="route icon">
                     </div>
                     <h3>Smart Outsourcing Solutions</h3>
                 </div>
@@ -102,7 +102,7 @@ async def robot_body():
                 <div class="feature-box mobile-card">
                     <div class="feature-header">
                         <div class="feature-icon">
-                            <img src="../../Resources/Images/route.png" alt="route icon">
+                            <img src="../../Resources/Images/HomePage/route.png" alt="route icon">
                         </div>
                         <h3>Real-Time Dashboards</h3>
                     </div>
@@ -118,7 +118,7 @@ async def robot_body():
                 <div class="feature-box mobile-card">
                     <div class="feature-header">
                         <div class="feature-icon">
-                            <img src="../../Resources/Images/route.png" alt="route icon">
+                            <img src="../../Resources/Images/HomePage/route.png" alt="route icon">
                         </div>
                         <h3>AI-Powered Chatbots</h3>
                     </div>
@@ -133,13 +133,13 @@ async def robot_body():
 
                 <!-- Mobile Robot -->
                 <div class="robot-container">
-                    <img class="mobile-robot" src="../../Resources/Images/robotHomepage.png" alt="A sleek black robot with red highlights, symbolizing advanced automation and AI.">
+                    <img class="mobile-robot" src="../../Resources/Images/HomePage/robotHomepage.png" alt="A sleek black robot with red highlights, symbolizing advanced automation and AI.">
                 </div>
 
                 <div class="feature-box mobile-card">
                     <div class="feature-header">
                         <div class="feature-icon">
-                            <img src="../../Resources/Images/route.png" alt="route icon">
+                            <img src="../../Resources/Images/HomePage/route.png" alt="route icon">
                         </div>
                         <h3>Data-Driven Reports</h3>
                     </div>
@@ -155,7 +155,7 @@ async def robot_body():
                 <div class="feature-box mobile-card">
                     <div class="feature-header">
                         <div class="feature-icon">
-                            <img src="../../Resources/Images/route.png" alt="route icon">
+                            <img src="../../Resources/Images/HomePage/route.png" alt="route icon">
                         </div>
                         <h3>Smart Outsourcing Solutions</h3>
                     </div>

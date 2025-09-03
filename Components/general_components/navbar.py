@@ -2,7 +2,7 @@ async def navbar_body():
     return """
     <header class="navbar" role="navigation" aria-label="Main">
         <a href="/" class="brand">
-            <img src="/Resources/Images/DecisionAlgoLogo.png" alt="DecisionAlgo logo" />
+            <img src="/Resources/Images/HomePage/DecisionAlgoLogo.png" alt="DecisionAlgo logo" />
         </a>
         <nav class="nav" id="main-nav">
             <a href="/">Home</a>

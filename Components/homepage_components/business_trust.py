@@ -407,11 +407,11 @@ async def trust_style():
       background-position: center;
       background-repeat: no-repeat;
     }
-    .f1 .icon { background-image: url("/Resources/Images/tailoredAi.png"); }
-    .f2 .icon { background-image: url("/Resources/Images/buildToScale.png"); }
-    .f3 .icon { background-image: url("/Resources/Images/costEfficient.png"); }
-    .f4 .icon { background-image: url("/Resources/Images/ironCladSecurity.png"); }
-    .f5 .icon { background-image: url("/Resources/Images/provenResult.png"); }
+    .f1 .icon { background-image: url("/Resources/Images/HomePage/tailoredAi.png"); }
+    .f2 .icon { background-image: url("/Resources/Images/HomePage/buildToScale.png"); }
+    .f3 .icon { background-image: url("/Resources/Images/HomePage/costEfficient.png"); }
+    .f4 .icon { background-image: url("/Resources/Images/HomePage/ironCladSecurity.png"); }
+    .f5 .icon { background-image: url("/Resources/Images/HomePage/provenResult.png"); }
     
     .feature-content {
       /* This is a container for the text content */
