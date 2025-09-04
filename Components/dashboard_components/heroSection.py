@@ -24,12 +24,12 @@ async def heroSection_body():
           <img class="peak-glow" src="../../Resources/Images/Dashboard/peak_glow.png" alt="peak glow">
           <img class="eclipse-glow" src="../../Resources/Images/Dashboard/ecliplse_glow.png" alt="eclipse glow">
           <!-- left card -->
-          <article class="card card-left">
+          <article class="card1 card-left">
            <img src="../../Resources/Images/Dashboard/dashboard_left_card.png" alt="card image">
           </article>
 
           <!-- right card -->
-          <article class="card card-right">
+          <article class="card1 card-right">
             <img src="../../Resources/Images/Dashboard/dashboard_right_card.png" alt="card image">
           </article>
         </div>
@@ -41,8 +41,8 @@ async def heroSection_style():
     <style>
       /* keep original container metrics */
       .hero-section-container{
-        margin-top:10vh;
-        margin-bottom:10vh;
+        margin-top:2vh;
+        margin-bottom:-25vh;
         position:relative;
         width:100vw;
         min-height:50vh;
@@ -59,13 +59,13 @@ async def heroSection_style():
         position: relative;
         z-index: 4;
         width: 100vw;
-        height:80vh;
+        height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 1.5vh;
-        margin-bottom: 5vh;
-        background-image: url('../../Resources/Images/HomePage/grid1.png');
+        margin-bottom: 0vh;
+        background-image: url(../../Resources/Images/HomePage/grid1.png);
         border-bottom: solid #ffffff;
         border-radius: 3vw;
       }
@@ -85,14 +85,15 @@ async def heroSection_style():
 
       /* content wrapper */
       .hero-head{
-        position:relative;
-        z-index:4;
-        width:70vw;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        gap:1.5vh;
-        margin-bottom:1vh;
+        position: relative;
+        z-index: 4;
+        width: 70vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5vh;
+        margin-bottom: 3vh;
+        margin-top: 8vw;
       }
       .hero-title{
         font-family:'Exo 2',sans-serif;
@@ -164,15 +165,12 @@ async def heroSection_style():
         top: -20vh;
       }
 
-      .card{
+      .card1{
         position: relative;
         z-index: 2;
-        background:linear-gradient(180deg,#050505 0%,#202020 45%,#050505 100%);
-        border-radius:1.2vw;
-        box-shadow:0 1.4vh 3.2vw rgba(0,0,0,0.35);
-        border:0.09vh solid rgba(255,255,255,0.06);
         display:flex;
         flex-direction:column;
+        max-height:44vh;
         
       }
       .card-left{ /* 745px / 1920px = 0.388vw, 475px / 1080px = 0.44vh */

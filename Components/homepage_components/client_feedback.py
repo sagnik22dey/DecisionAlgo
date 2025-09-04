@@ -1,6 +1,7 @@
-async def client_feedback_body():
-    return """
-    <section class="section">
+async def lets_talk_body():
+    return """  
+
+    <section class="section-1">
         <!-- Top pill -->
         <a href='#' class="cta">Let’s Talk</a>
 
@@ -8,10 +9,14 @@ async def client_feedback_body():
         <h2 class="tagline">
             A Modern, High-Tech Business Dashboard Displaying Real-Time Analytics, AI Chatbot, Interactions, And Automated Reports-Clean, Professional, And Futuristic.
         </h2>
+    </section>
+"""
 
-        <!-- Heading -->
+async def client_feedback_body():
+    return """
+    <section class="section">
+     <!-- Heading -->
         <h1 class="heading">What Our Clients Say</h1>
-
         <div class="layout">
             <!-- Left portrait panel (Picsum image) -->
             <div class="portrait" aria-label="Client portrait from Picsum"></div>
@@ -91,7 +96,17 @@ async def client_feedback_style():
         .section {
             position: relative;
             min-height: 100vh;
-            padding: 8.89vh 1.67vw 11.11vh; /* Original: 96px 24px 120px */
+            padding: 2.89vh 1.67vw 3.11vh; /* Original: 96px 24px 120px */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            overflow: hidden;
+            background: radial-gradient(80% 80% at 50% -10%, rgba(255, 255, 25, .06) 0%, rgba(255, 255, 255, 0) 60%), #00;
+        }
+        .section-1 {
+            position: relative;
+            min-height: 30vh;
             display: flex;
             flex-direction: column;
             align-items: center;

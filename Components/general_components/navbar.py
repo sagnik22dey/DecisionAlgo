@@ -26,21 +26,14 @@ async def navbar_body():
             const currentPage = window.location.pathname;
             
             navLinks.forEach(link => {
-                // Remove any existing active classes
                 link.classList.remove('active');
-                
-                // Add active class to the current page link
                 if (link.getAttribute('href') === currentPage) {
-                    link.classList.add('active');
-                }
-                
-                // Special case for home page
-                if (currentPage === '/' && link.getAttribute('href') === '/') {
                     link.classList.add('active');
                 }
             });
         });
         
+        // Hamburger menu toggle logic
         const hamburgerButton = document.getElementById('hamburger-button');
         const mainNav = document.getElementById('main-nav');
 
@@ -49,12 +42,11 @@ async def navbar_body():
             hamburgerButton.setAttribute('aria-expanded', !isOpened);
             mainNav.classList.toggle('is-active');
             hamburgerButton.classList.toggle('is-active');
-            // Prevents the page from scrolling when the menu is open
+            // Prevents the page from scrolling when the mobile menu is open
             document.body.classList.toggle('no-scroll');
         });
     </script>
     """
-
 async def navbar_style():
     return """
     <style>
@@ -63,15 +55,16 @@ async def navbar_style():
             --text: #ffffff;
             --brand: #7ec5f4;
             --nav-timing: 400ms;
+            --nav-panel-bg: #1a1a1a;
         }
 
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            margin: 0;
-            padding: 0;
             background: var(--bg);
             color: var(--text);
             font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;
@@ -81,26 +74,25 @@ async def navbar_style():
             overflow: hidden;
         }
 
-        /* --- DESKTOP STYLES (Preserved Original Design) --- */
+        /* --- SHARED & MOBILE-FIRST STYLES --- */
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
-            right: 0;
+            width: 100vw;
             z-index: 1000;
-            background-color: #111;
+            background-color: var(--bg);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 24px;
-            padding: 20px 30px;
+            padding: 2vh 4vw; /* Vertical padding scales with height, horizontal with width */
         }
 
         .brand {
             display: flex;
-            width: 357px;
+            width: 40vw; /* Larger logo on mobile */
+            max-width: 200px; /* But don't let it get enormous */
             height: auto;
-            border-radius: 8px;
             z-index: 1001; /* Keeps logo above mobile nav panel */
         }
         
@@ -109,67 +101,31 @@ async def navbar_style():
             height: auto;
         }
         
-        .nav {
-            margin-left: 30px;
-            display: flex;
-            align-items: center;
-            gap: 32px;
-            font-size: 20px;
-        }
-
-        .nav a {
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 800;
-            white-space: nowrap;
-        }
-
-        .nav a:last-child {
-            padding-right: 20px;
-        }
-
-        .nav a:hover {
-            opacity: 0.85;
-        }
-
-        .nav a.active {
-            position: relative;
-        }
-
-        .nav a.active::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: -6px;
-            height: 3px;
-            background: var(--text);
-            border-radius: 2px;
-        }
-
-        /* --- HAMBURGER MENU (Hidden on Desktop) --- */
+        /* --- HAMBURGER MENU STYLES (Visible on Mobile by default) --- */
         .hamburger {
-            display: none;
+            display: block;
             cursor: pointer;
-            padding: 10px;
-            margin: -10px; /* Offset padding to maintain alignment */
+            padding: 1vh 1vw;
             border: none;
             background-color: transparent;
             z-index: 1001;
         }
 
         .hamburger-box {
-            width: 30px;
-            height: 24px;
+            width: 8vw; /* Scales with screen width */
+            max-width: 35px;
+            height: 6vw; /* Scales with screen width */
+            max-height: 28px;
             display: inline-block;
             position: relative;
         }
 
         .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-            width: 30px;
-            height: 3px;
+            width: 100%;
+            height: 0.5vh; /* Scales with screen height */
+            max-height: 4px;
             background-color: var(--text);
-            border-radius: 4px;
+            border-radius: 2vw;
             position: absolute;
             transition: transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
         }
@@ -177,18 +133,18 @@ async def navbar_style():
         .hamburger-inner {
             display: block;
             top: 50%;
-            margin-top: -1.5px;
+            transform: translateY(-50%);
         }
         .hamburger-inner::before, .hamburger-inner::after {
             content: "";
             display: block;
         }
         .hamburger-inner::before {
-            top: -10px;
+            top: -2.5vw; /* Scales with screen width */
             transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
         }
         .hamburger-inner::after {
-            bottom: -10px;
+            bottom: -2.5vw; /* Scales with screen width */
             transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
         }
 
@@ -208,72 +164,93 @@ async def navbar_style():
             transform: rotate(-90deg);
             transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
         }
-
-        /* --- MOBILE & TABLET STYLES --- */
-        @media (max-width: 992px) {
-            .navbar {
-                padding: 15px 20px;
-            }
-
-            .brand {
-                width: 200px; /* Resized logo for smaller screens */
-            }
+        
+        /* --- MOBILE NAVIGATION PANEL --- */
+        .nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 75vw; /* Takes 75% of the screen width */
+            height: 100vh;
+            background-color: var(--nav-panel-bg);
             
-            .hamburger {
-                display: block; /* Show the hamburger */
-            }
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5vh; /* Vertical gap scales with screen height */
+            
+            transform: translateX(100%); /* Hide off-screen */
+            transition: transform var(--nav-timing) cubic-bezier(0.23, 1, 0.32, 1);
+        }
 
-            /* Mobile Navigation Panel */
-            .nav {
-                position: fixed;
-                top: 0;
-                right: 0;
-                width: min(75vw, 400px); /* Responsive width */
-                height: 100vh;
-                background-color: #1a1a1a;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 40px;
-                font-size: 18px;
-                transform: translateX(100%); /* Hide off-screen */
-                transition: transform var(--nav-timing) cubic-bezier(0.23, 1, 0.32, 1);
-                margin-left: 0;
-            }
-
-            .nav.is-active {
-                transform: translateX(0); /* Slide into view */
-            }
-
-            /* Staggered animation for nav items */
-            .nav a {
-                opacity: 0;
-                transform: translateY(20px);
-                transition: opacity 0.3s ease, transform 0.3s ease;
-            }
-            .nav.is-active a {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            .nav.is-active a:nth-child(1) { transition-delay: calc(var(--nav-timing) * 0.5); }
-            .nav.is-active a:nth-child(2) { transition-delay: calc(var(--nav-timing) * 0.6); }
-            .nav.is-active a:nth-child(3) { transition-delay: calc(var(--nav-timing) * 0.7); }
-            .nav.is-active a:nth-child(4) { transition-delay: calc(var(--nav-timing) * 0.8); }
-            .nav.is-active a:nth-child(5) { transition-delay: calc(var(--nav-timing) * 0.9); }
-            .nav.is-active a:nth-child(6) { transition-delay: calc(var(--nav-timing) * 1.0); }
-
-            .nav a:last-child {
-                padding-right: 0;
-            }
+        .nav.is-active {
+            transform: translateX(0); /* Slide into view */
         }
         
-        /* Further adjustments for small mobile screens */
-        @media (max-width: 480px) {
+        .nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 800;
+            white-space: nowrap;
+            /* Using clamp for fluid typography: min size, preferred (fluid) size, max size */
+            font-size: clamp(16px, 4.5vw, 22px); 
+
+            /* Staggered animation setup */
+            opacity: 0;
+            transform: translateY(3vh);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        
+        .nav a:hover {
+            opacity: 0.85;
+        }
+
+        /* Staggered animation for nav items when menu opens */
+        .nav.is-active a {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .nav.is-active a:nth-child(1) { transition-delay: calc(var(--nav-timing) * 0.5); }
+        .nav.is-active a:nth-child(2) { transition-delay: calc(var(--nav-timing) * 0.6); }
+        .nav.is-active a:nth-child(3) { transition-delay: calc(var(--nav-timing) * 0.7); }
+        .nav.is-active a:nth-child(4) { transition-delay: calc(var(--nav-timing) * 0.8); }
+        .nav.is-active a:nth-child(5) { transition-delay: calc(var(--nav-timing) * 0.9); }
+        .nav.is-active a:nth-child(6) { transition-delay: calc(var(--nav-timing) * 1.0); }
+        
+        /* --- DESKTOP STYLES (Applied on screens wider than 992px) --- */
+        @media (min-width: 993px) {
             .navbar {
-                padding: 10px 15px;
+                padding: 1.5vh 2.5vw;
             }
+
             .brand {
-                width: 160px;
+                width: 18vw; /* Adjust logo size for desktop */
+                max-width: 360px;
+            }
+
+            .hamburger {
+                display: none; /* Hide hamburger on desktop */
+            }
+
+            /* Revert nav to a horizontal layout for desktop */
+            .nav {
+                position: static;
+                width: auto;
+                height: auto;
+                background-color: transparent;
+                flex-direction: row;
+                justify-content: flex-end;
+                gap: 2vw; /* Horizontal gap for desktop */
+                transform: none; /* Remove slide-in effect */
+                transition: none;
+            }
+
+            .nav a {
+                opacity: 1;
+                transform: none;
+                transition: opacity 0.2s ease;
+                font-size: clamp(16px, 1.1vw, 22px);
             }
         }
     </style>
