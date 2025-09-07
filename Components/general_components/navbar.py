@@ -87,6 +87,8 @@ async def navbar_style():
             align-items: center;
             justify-content: space-between;
             padding: 2vh 4vw; /* Zoom-safe padding */
+            font-family: 'Poppins', sans-serif; 
+            font-weight: 600;
         }
 
         .brand {
