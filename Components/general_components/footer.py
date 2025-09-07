@@ -59,6 +59,37 @@ async def footer_body():
                 </div>
             </div>
 
+            <!-- Mobile Social Links Section (Hidden on Desktop) -->
+            <div class="mobile-social-links">
+                <a href="#">
+                    <span>Instagram</span>
+                    <span class="social-arrow">
+                        <svg viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.75 12.5L20.25 12.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13.5 5.75V5.75C14.6595 8.55205 16.8074 10.8309 19.5361 12.1538L20.25 12.5L19.1908 13.0777C16.6674 14.4542 14.6674 16.6233 13.5 19.25V19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </a>
+                <a href="#">
+                    <span>Facebook</span>
+                    <span class="social-arrow">
+                       <svg viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.75 12.5L20.25 12.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13.5 5.75V5.75C14.6595 8.55205 16.8074 10.8309 19.5361 12.1538L20.25 12.5L19.1908 13.0777C16.6674 14.4542 14.6674 16.6233 13.5 19.25V19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </a>
+                <a href="#">
+                    <span>YouTube</span>
+                    <span class="social-arrow">
+                        <svg viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.75 12.5L20.25 12.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13.5 5.75V5.75C14.6595 8.55205 16.8074 10.8309 19.5361 12.1538L20.25 12.5L19.1908 13.0777C16.6674 14.4542 14.6674 16.6233 13.5 19.25V19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+
             <!-- Bottom Section: Copyright Info -->
             <div class="footer-bottom">
                 <hr class="separator">
@@ -133,6 +164,11 @@ async def footer_style():
         .social-arrow svg {
             width: 1.2vw;
             height: auto;
+        }
+
+        /* Hide mobile social links on desktop */
+        .mobile-social-links {
+            display: none;
         }
 
         .footer-middle {
@@ -222,42 +258,54 @@ async def footer_style():
                 padding: 8vh 6vw;
                 gap: 6vh;
                 border-radius: 8vw 8vw 0 0;
+                display: flex;
+                flex-direction: column;
             }
 
             .footer-top {
+                display: flex;
                 flex-direction: column;
                 align-items: center; /* Center logo */
                 gap: 6vh;
                 padding: 0; /* Reset padding */
-                order: 1; /* Keep it first */
+                order: 1; /* Logo section first */
             }
             
             .logo {
                 width: 50vw; /* Larger, more prominent logo */
                 max-width: 200px;
-                order: 1;
+            }
+            
+            /* Hide original social links in footer-top for mobile */
+            .footer-top .social-links {
+                display: none;
             }
 
             .footer-middle {
-                flex-direction: column; /* Stack link columns */
+                flex-direction: row; /* Display link columns side by side */
+                justify-content: space-between; /* Space them evenly */
                 text-align: center; /* Center headings and links */
-                gap: 5vh;
-                order: 2;
+                gap: 8vw; /* Adequate spacing between columns */
+                order: 2; /* Middle section second */
             }
             
             .link-column {
                 padding: 0;
+                flex: 1; /* Each column takes equal space */
+                min-width: 0; /* Allow shrinking if needed */
             }
 
             .link-column h3 {
                 font-size: 5.5vw;
                 margin-bottom: 2vh;
+                text-align: left;
             }
 
             .link-column ul li {
-                font-size: 4vw;
-                line-height: 2;
+                font-size: 3.5vw; /* Slightly smaller font for better fit */
+                line-height: 1.8; /* Tighter line height for mobile */
                 padding-left: 0;
+                text-align: left;
             }
             
             .link-column ul li::before {
@@ -265,21 +313,35 @@ async def footer_style():
                 margin-right: 0;
             }
             
-            .social-links {
-                order: 3; /* Move social links below the main links */
-                flex-direction: row; /* Horizontal links */
+            /* Show and style mobile social links */
+            .mobile-social-links {
+                display: flex;
+                flex-direction: row;
                 justify-content: center;
                 gap: 8vw;
                 padding: 0;
                 width: 100%;
+                order: 3; /* Position after footer-middle */
             }
 
-            .social-links a {
+            .mobile-social-links a {
                 font-size: 4vw;
-                width: auto; /* Let content define width */
+                font-weight: 400;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: auto;
+                transition: opacity 0.3s ease;
+                opacity: 0.7;
+                text-decoration: none;
+                color: inherit;
+            }
+
+            .mobile-social-links a:hover {
+                opacity: 1;
             }
             
-            .social-arrow {
+            .mobile-social-links .social-arrow {
                 display: none; /* Hide arrow icon for a cleaner mobile look */
             }
 
