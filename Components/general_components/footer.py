@@ -1,28 +1,41 @@
 async def footer_body():
     return """
-        <!-- Desktop Footer -->
-        <footer class="footer-container desktop-footer">
-            <!-- Top Section -->
+        <footer class="footer-container">
+            <!-- Top Section: Logo & Social Links -->
             <div class="footer-top">
-                <!-- As requested, here is a dummy image for the logo -->
                 <img src="../../Resources/Images/HomePage/silver_logo.png" alt="Decisionalgo Logo" class="logo">
                 <div class="social-links">
-                    <a href="#"><span>Instagram</span><span><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3.75 12.5L20.25 12.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M13.5 5.75V5.75C14.6595 8.55205 16.8074 10.8309 19.5361 12.1538L20.25 12.5L19.1908 13.0777C16.6674 14.4542 14.6674 16.6233 13.5 19.25V19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg></span></a>
-                    <a href="#"><span>Facebook</span><span><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3.75 12.5L20.25 12.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M13.5 5.75V5.75C14.6595 8.55205 16.8074 10.8309 19.5361 12.1538L20.25 12.5L19.1908 13.0777C16.6674 14.4542 14.6674 16.6233 13.5 19.25V19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg></span></a>
-                    <a href="#"><span>YouTube</span><span><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3.75 12.5L20.25 12.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M13.5 5.75V5.75C14.6595 8.55205 16.8074 10.8309 19.5361 12.1538L20.25 12.5L19.1908 13.0777C16.6674 14.4542 14.6674 16.6233 13.5 19.25V19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg></span></a>
+                    <a href="#">
+                        <span>Instagram</span>
+                        <span class="social-arrow">
+                            <svg viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.75 12.5L20.25 12.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M13.5 5.75V5.75C14.6595 8.55205 16.8074 10.8309 19.5361 12.1538L20.25 12.5L19.1908 13.0777C16.6674 14.4542 14.6674 16.6233 13.5 19.25V19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                    </a>
+                    <a href="#">
+                        <span>Facebook</span>
+                        <span class="social-arrow">
+                           <svg viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.75 12.5L20.25 12.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M13.5 5.75V5.75C14.6595 8.55205 16.8074 10.8309 19.5361 12.1538L20.25 12.5L19.1908 13.0777C16.6674 14.4542 14.6674 16.6233 13.5 19.25V19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                    </a>
+                    <a href="#">
+                        <span>YouTube</span>
+                        <span class="social-arrow">
+                            <svg viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.75 12.5L20.25 12.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M13.5 5.75V5.75C14.6595 8.55205 16.8074 10.8309 19.5361 12.1538L20.25 12.5L19.1908 13.0777C16.6674 14.4542 14.6674 16.6233 13.5 19.25V19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                    </a>
                 </div>
             </div>
 
-            <!-- Middle Section -->
+            <!-- Middle Section: Link Columns -->
             <div class="footer-middle">
                 <div class="link-column">
                     <h3>Industries</h3>
@@ -46,7 +59,7 @@ async def footer_body():
                 </div>
             </div>
 
-            <!-- Bottom Section -->
+            <!-- Bottom Section: Copyright Info -->
             <div class="footer-bottom">
                 <hr class="separator">
                 <div class="bottom-content">
@@ -55,348 +68,244 @@ async def footer_body():
                 </div>
             </div>
         </footer>
-        
-        <!-- Mobile Footer (Updated Structure) -->
-        <footer class="footer-container mobile-footer">
-            <!-- Main Content: Logo + Link Columns -->
-            <div class="mobile-main-content">
-                <img src="../../Resources/Images/HomePage/silver_logo.png" alt="Decisionalgo Logo" class="logo mobile-logo">
-                <div class="mobile-links-wrapper">
-                    <div class="link-column mobile-column">
-                        <h3 class="mobile-heading">Industries</h3>
-                        <ul class="mobile-list">
-                            <li class="mobile-item">Consumer Packaged Goods</li>
-                            <li class="mobile-item">Retail</li>
-                            <li class="mobile-item">Financial Services</li>
-                            <li class="mobile-item">Insurance</li>
-                            <li class="mobile-item">Technology, Media & telecom</li>
-                            <li class="mobile-item">HealthCare & Life Sciences</li>
-                        </ul>
-                    </div>
-                    <div class="link-column mobile-column">
-                        <h3 class="mobile-heading">Quick Links</h3>
-                        <ul class="mobile-list">
-                            <li class="mobile-item">Case Studies</li>
-                            <li class="mobile-item">About Us</li>
-                            <li class="mobile-item">Pricing</li>
-                            <li class="mobile-item">Contact Us</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Social Links Section -->
-            <div class="social-links mobile-social">
-                <a href="#" class="mobile-social-link"><span>Instagram</span></a>
-                <a href="#" class="mobile-social-link"><span>Facebook</span></a>
-                <a href="#" class="mobile-social-link"><span>YouTube</span></a>
-            </div>
-
-            <!-- Mobile Bottom Section -->
-            <div class="footer-bottom mobile-bottom">
-                <hr class="separator mobile-separator">
-                <div class="bottom-content mobile-content">
-                    <p class="copyright mobile-copyright">&copy; 2024 Decisionalgo. All rights reserved.</p>
-                    <p class="partner mobile-partner">Digital Partner: Suflex Media</p>
-                </div>
-            </div>
-        </footer>
     """
-    
+
 async def footer_style():
     return """ 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* General Styles */
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        /* Base Footer Container */
+        /* --- Base & Desktop Styles --- */
+        
         .footer-container {
             font-family: 'Exo 2', sans-serif;
             background: linear-gradient(293.29deg, #090909 0.66%, rgba(37, 37, 37, 0.85) 27.54%, rgba(84, 84, 84, 0.62) 72.03%);
             display: flex;
             flex-direction: column;
-            border-radius: 55px 55px 0 0;
+            border-radius: 3vw 3vw 0 0;
             color: #ffffff;
+            padding: 4vh 5vw;
+            gap: 4vh;
+            box-sizing: border-box;
         }
 
-        /* Desktop Footer Styles */
-        .desktop-footer {
-            padding: 3.75rem 5rem; /* 60px 80px */
-            gap: 3.75rem; /* 60px */
-            display: block;
-        }
-
-        .desktop-footer .footer-top {
+        .footer-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 2.5rem; /* 40px */
-            padding-left: 7rem;
+            gap: 2vw;
+            padding-left: 3.5vw;
         }
 
-        .desktop-footer .logo {
-            max-width: 100vh;
+        .logo {
+            width: 50vw;
+            max-width: 50vw; /* Max size for very large screens */
             height: auto;
             object-fit: contain;
         }
 
-        .desktop-footer .social-links {
+        .social-links {
             display: flex;
             flex-direction: column;
-            gap: 1.25rem; /* 20px */
-            padding-right: 10rem;
+            gap: 2vh;
+            padding-right: 5vw;
         }
 
-        .desktop-footer .social-links a {
-            font-size: 1.25rem; /* 20px */
+        .social-links a {
+            font-size: 1.2vw;
             font-weight: 400;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 170px;
+            width: 9vw;
             transition: opacity 0.3s ease;
             opacity: 0.7;
+            text-decoration: none;
+            color: inherit;
         }
 
-        .desktop-footer .social-links a:hover {
+        .social-links a:hover {
             opacity: 1;
         }
+        
+        .social-arrow svg {
+            width: 1.2vw;
+            height: auto;
+        }
 
-        .desktop-footer .footer-middle {
+        .footer-middle {
             display: flex;
-            gap: 6.25rem; /* 100px */
+            gap: 5vw;
             flex-wrap: wrap;
         }
 
-        .desktop-footer .link-column {
-            padding-left: 3rem;
+        .link-column {
+            padding-left: 1.5vw;
         }
         
-        .desktop-footer .link-column h3 {
-            font-size: 1.75rem; /* 28px */
+        .link-column h3 {
+            font-size: 1.5vw;
             font-weight: 600;
-            margin: 0 0 1rem 0; /* 16px */
+            margin: 0 0 2vh 0;
             background: linear-gradient(90.01deg, #EBF3F3 16.31%, #EBF3F3 94.45%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
 
-        .desktop-footer .link-column ul li {
-            font-size: 1rem; /* 16px */
+        .link-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .link-column ul li {
+            font-size: 0.9vw;
             font-weight: 400;
             opacity: 0.7;
             line-height: 1.8;
-            padding-left: 0.5rem;
+            padding-left: 0.5vw;
         }
         
-        .desktop-footer .link-column ul li::before {
+        .link-column ul li::before {
              content: "•";
-             margin-right: 0.5rem;
+             margin-right: 0.5vw;
              opacity: 0.8;
         }
 
-        .desktop-footer .footer-bottom {
+        .footer-bottom {
             display: flex;
             flex-direction: column;
-            gap: 1.875rem; /* 30px */
+            gap: 3vh;
         }
 
-        .desktop-footer .separator {
+        .separator {
             width: 100%;
             border: 0;
-            height: 1px;
+            height: 0.1vh;
             background-color: #DDD7DE;
             opacity: 0.5;
         }
 
-        .desktop-footer .bottom-content {
+        .bottom-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 1.25rem; /* 20px */
+            gap: 1.5vw;
         }
 
-        .desktop-footer .copyright {
-            font-size: 1.5rem; /* 24px */
+        .copyright {
+            font-size: 1.3vw;
             font-weight: 700;
             margin: 0;
             background: linear-gradient(90.01deg, rgba(235, 243, 243, 0.3) 0.01%, #EBF3F3 18.63%, #EBF3F3 65.13%, rgba(235, 243, 243, 0.3) 94.45%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            padding-left: 4rem;
+            padding-left: 2vw;
         }
 
-        .desktop-footer .partner {
-            font-size: 1.25rem; /* 20px */
+        .partner {
+            font-size: 1.1vw;
             font-weight: 400;
             margin: 0;
             opacity: 0.9;
-            padding-right: 4rem;
+            padding-right: 2vw;
         }
 
-        /* Mobile Footer Styles (Updated) */
-        .mobile-footer {
-            padding: 2.5rem 1.5rem; /* 40px 24px */
-            gap: 2.5rem; /* 40px */
-            border-radius: 40px 40px 0 0;
-            display: none;
-        }
+        /* --- Elegant & Aesthetic Mobile View --- */
+        @media (max-width: 767px) {
+            .footer-container {
+                padding: 8vh 6vw;
+                gap: 6vh;
+                border-radius: 8vw 8vw 0 0;
+            }
 
-        .mobile-footer .mobile-main-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2.5rem; /* 40px */
-            width: 100%;
-        }
+            .footer-top {
+                flex-direction: column;
+                align-items: center; /* Center logo */
+                gap: 6vh;
+                padding: 0; /* Reset padding */
+                order: 1; /* Keep it first */
+            }
+            
+            .logo {
+                width: 50vw; /* Larger, more prominent logo */
+                max-width: 200px;
+                order: 1;
+            }
 
-        .mobile-footer .mobile-logo {
-            max-width: 220px; /* Reduced logo size */
-        }
+            .footer-middle {
+                flex-direction: column; /* Stack link columns */
+                text-align: center; /* Center headings and links */
+                gap: 5vh;
+                order: 2;
+            }
+            
+            .link-column {
+                padding: 0;
+            }
 
-        .mobile-footer .mobile-links-wrapper {
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-            gap: 1.5rem; /* Space between the two columns */
-        }
+            .link-column h3 {
+                font-size: 5.5vw;
+                margin-bottom: 2vh;
+            }
 
-        .mobile-footer .mobile-social {
-            display: flex;
-            flex-direction: row; /* Display links side-by-side */
-            justify-content: center;
-            align-items: center;
-            gap: 1.5rem; /* Space between links */
-            flex-wrap: wrap;
-        }
+            .link-column ul li {
+                font-size: 4vw;
+                line-height: 2;
+                padding-left: 0;
+            }
+            
+            .link-column ul li::before {
+                content: ""; /* Remove bullet points for cleaner look */
+                margin-right: 0;
+            }
+            
+            .social-links {
+                order: 3; /* Move social links below the main links */
+                flex-direction: row; /* Horizontal links */
+                justify-content: center;
+                gap: 8vw;
+                padding: 0;
+                width: 100%;
+            }
 
-        .mobile-footer .mobile-social-link {
-            font-size: 1rem; /* 16px */
-            font-weight: 400;
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
-        }
+            .social-links a {
+                font-size: 4vw;
+                width: auto; /* Let content define width */
+            }
+            
+            .social-arrow {
+                display: none; /* Hide arrow icon for a cleaner mobile look */
+            }
 
-        .mobile-footer .mobile-social-link:hover {
-            opacity: 1;
-        }
+            .footer-bottom {
+                order: 4; /* Bottom section is last */
+                gap: 3vh;
+            }
+            
+            .bottom-content {
+                flex-direction: column; /* Stack copyright and partner */
+                text-align: center;
+                gap: 1.5vh;
+            }
 
-        .mobile-footer .mobile-column {
-            text-align: left; /* Align column content to the left */
-        }
-        
-        .mobile-footer .mobile-heading {
-            font-size: 1.5rem; /* 24px */
-            font-weight: 600;
-            margin: 0 0 1rem 0;
-            background: linear-gradient(90.01deg, #EBF3F3 16.31%, #EBF3F3 94.45%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-align: left; /* Keep heading centered */
-        }
+            .copyright {
+                font-size: 4vw;
+                padding: 0;
+            }
 
-        .mobile-footer .mobile-list {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .mobile-footer .mobile-item {
-            font-size: 0.9rem; /* 14.4px */
-            font-weight: 400;
-            opacity: 0.7;
-            line-height: 1.8;
-        }
-
-        .mobile-footer .mobile-item::before {
-             content: "•";
-             margin-right: 0.5rem;
-             opacity: 0.8;
-        }
-
-        .mobile-footer .mobile-bottom {
-            display: flex;
-            flex-direction: column;
-            gap: 1.875rem; /* 30px */
-        }
-
-        .mobile-footer .mobile-separator {
-            width: 100%;
-            border: 0;
-            height: 1px;
-            background-color: #DDD7DE;
-            opacity: 0.5;
-        }
-
-        .mobile-footer .mobile-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem; /* 16px */
-            text-align: center;
-        }
-
-        .mobile-footer .mobile-copyright {
-            font-size: 1.2rem; /* 19px */
-            font-weight: 700;
-            margin: 0;
-            background: linear-gradient(90.01deg, rgba(235, 243, 243, 0.3) 0.01%, #EBF3F3 18.63%, #EBF3F3 65.13%, rgba(235, 243, 243, 0.3) 94.45%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .mobile-footer .mobile-partner {
-            font-size: 1rem; /* 16px */
-            font-weight: 400;
-            margin: 0;
-            opacity: 0.9;
+            .partner {
+                font-size: 3.5vw;
+                padding: 0;
+            }
         }
     </style>
     """
+
 async def footer_script():
-    return """
-    <script>
-        function toggleFooterView() {
-            const desktopFooter = document.querySelector('.desktop-footer');
-            const mobileFooter = document.querySelector('.mobile-footer');
-            
-            function checkScreenSize() {
-                const isMobile = window.innerWidth <= 768;
-                
-                if (isMobile) {
-                    desktopFooter.style.display = 'none';
-                    mobileFooter.style.display = 'flex';
-                } else {
-                    desktopFooter.style.display = 'flex';
-                    mobileFooter.style.display = 'none';
-                }
-            }
-            
-            // Check on initial load
-            checkScreenSize();
-            
-            // Check on window resize
-            window.addEventListener('resize', checkScreenSize);
-        }
-        
-        // Initialize footer toggle when DOM is loaded
-        document.addEventListener('DOMContentLoaded', toggleFooterView);
-    </script>
-    """
+    return "" # No script is needed with the pure CSS solution

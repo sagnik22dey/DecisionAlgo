@@ -15,6 +15,7 @@ async def smart_simple_body():
         <div class="decorative-line"></div>
     </div>
 """
+
 async def see_data_body():
     return """
     <div class="see-data-container">
@@ -30,59 +31,46 @@ async def see_data_body():
         </section>
     </div>
 """
+
 async def dashboard_text_cards_style():
     return """
-
     <style>
+        /* --- Desktop First: Base Styles --- */
 
         .smart-simple-container {
             position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 8vw;
+            margin-top: 8vh;
         }
 
         .decorative-line {
-             width: 82vw;
-            /* max-width: 1500px; */
+            width: 82vw;
             height: 3.5vh;
-            border-bottom: 1.5px solid rgba(255, 255, 255, 255);
+            border-bottom: 0.15vw solid #FFFFFF; /* Replaced px with vw */
             border-radius: 0 0 150vw 150vw;
         }
 
-        /* --- AI Section Container --- */
-        .ai-powered-section {
+        .ai-powered-section,
+        .see-data-section {
             width: 90vw;
-            /* max-width: 1400px; */
             padding: 6vh 5vw;
             text-align: center;
             border-radius: 2.5vw;
             background: linear-gradient(180deg, #2a2a2a 0%, #1e1e1e 100%);
             box-shadow: inset 0 0.2vw 0.5vw rgba(255, 255, 255, 0.05), 0 1vw 2vw rgba(0, 0, 0, 0.5);
-
-            /* Gradient background to mimic the lighting in the image */
-            background: linear-gradient(180deg, #2a2a2a 0%, #1e1e1e 100%);
-
-            /* Subtle shadows for depth and a top-edge highlight */
-            box-shadow:
-                inset 0 0.2vw 0.5vw rgba(255, 255, 255, 0.05),
-                /* Inner top highlight */
-                0 1vw 2vw rgba(0, 0, 0, 0.5);
-            /* Outer shadow for depth */
+            box-sizing: border-box;
         }
 
-        /* --- Headline Styles --- */
-        .headline {
+        .headline,
+        .see-data-headline {
             font-size: 4.7vw;
-            /* Responsive font size */
             font-weight: 700;
-            margin-top:0vh;
-            margin-bottom: 4vh;
+            margin: 0 0 4vh 0;
             line-height: 1.2;
         }
 
-        /* Gradient style for "Smart." */
         .headline .smart-text {
             background: linear-gradient(180deg, #E0E0E0 0%, #A0A0A0 100%);
             -webkit-background-clip: text;
@@ -91,29 +79,56 @@ async def dashboard_text_cards_style():
             text-fill-color: transparent;
         }
 
-        /* Plain white style for "Simple." */
         .headline .simple-text {
             color: #FFFFFF;
         }
 
-        /* Blue style for "AI-Powered." */
-        .headline .ai-text {
+        .headline .ai-text,
+        .see-data-headline .never-before {
             color: #82C2EE;
         }
+        
+        .see-data-headline {
+             color: #E0E0E0;
+        }
 
-        /* --- Paragraph Styles --- */
-        .description {
+        .description,
+        .see-data-description {
             font-size: 1.5vw;
-            /* Responsive font size */
             font-weight: 400;
             line-height: 1.6;
             color: rgba(255, 255, 255, 0.85);
             max-width: 65vw;
-            /* Controls line length for readability */
             margin: 0 auto;
-            /* Center the paragraph block */
         }
         
+        .see-data-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 8vh 0; /* Changed margin to padding for better layout control */
+            box-sizing: border-box;
+        }
+
+        .see-data-background-card {
+            position: absolute;
+            width: 83vw;
+            height: 42vh;
+            border-top: 0.15vw solid #FFFFFF; /* Replaced px with vw */
+            border-radius: 2.5vw;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -54%);
+            z-index: 1;
+        }
+
+        .see-data-section {
+            position: relative;
+            z-index: 2;
+        }
+
         .get-started-btn {
             display: inline-block;
             margin-top: 4vh;
@@ -123,81 +138,27 @@ async def dashboard_text_cards_style():
             font-size: 1.5vw;
             font-weight: 600;
             text-decoration: none;
-            border-radius: 50px;
-            transition: background-color 0.3s ease;
+            border-radius: 50vw; /* Fully rounded corners */
+            transition: transform 0.3s ease, background-color 0.3s ease;
             cursor: pointer;
         }
 
         .get-started-btn:hover {
             background-color: #EAEAEA;
+            transform: scale(1.05);
         }
 
-        .see-data-container {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            margin-top: 8vw;
-            margin-bottom: 8vw;
-        }
-
-        .see-data-background-card {
-            position: absolute;
-            width: 83vw;
-            height: 42vh;
-            border-top: 1.5px solid rgba(255, 255, 255, 255);
-            border-radius: 2.5vw;
-            top: 9vw;
-            left: 50%;
-            transform: translate(-50%, -54%);
-            z-index: 1;
-        }
-
-        .see-data-section {
-            position: relative;
-            z-index: 2;
-            width: 90vw;
-            padding: 6vh 5vw;
-            text-align: center;
-            border-radius: 2.5vw;
-            background: linear-gradient(180deg, #2a2a2a 0%, #1e1e1e 100%);
-            box-shadow: inset 0 0.2vw 0.5vw rgba(255, 255, 255, 0.05), 0 1vw 2vw rgba(0, 0, 0, 0.5);
-        }
-
-        .see-data-headline {
-            font-size: 4.7vw;
-            font-weight: 700;
-            margin-top: 0vh;
-            margin-bottom: 4vh;
-            line-height: 1.2;
-            color: #E0E0E0;
-        }
-
-        .see-data-headline .never-before {
-            color: #82C2EE;
-        }
-
-        .see-data-description {
-            font-size: 1.5vw;
-            font-weight: 400;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.85);
-            max-width: 65vw;
-            margin: 0 auto 4vh auto;
-        }
-
-        /* --- Responsive Adjustments --- */
- 
-        /* Tablet View */
+        /* --- Tablet View --- */
         @media (max-width: 1024px) {
-            .headline, .see-data-headline {
+            .headline,
+            .see-data-headline {
                 font-size: 7vw;
             }
- 
-            .description, .see-data-description {
+
+            .description,
+            .see-data-description {
                 font-size: 2.5vw;
-                max-width: 75vw;
+                max-width: 80vw;
             }
 
             .get-started-btn {
@@ -205,34 +166,63 @@ async def dashboard_text_cards_style():
                 padding: 2vh 4vw;
             }
 
-            .ai-powered-section {
+            .ai-powered-section,
+            .see-data-section,
+            .see-data-background-card {
                 border-radius: 3.5vw;
             }
         }
 
-        /* Mobile View */
-        @media (max-width: 640px) {
+        /* --- Mobile View (Redesigned for Elegance & Aesthetics) --- */
+        @media (max-width: 767px) {
+            .smart-simple-container,
+            .see-data-container {
+                margin-top: 5vh; /* Reduced top margin for better flow */
+                padding: 8vh 0;
+            }
 
-            .ai-powered-section {
+            .ai-powered-section,
+            .see-data-section {
                 width: 90vw;
-                padding: 8vh 6vw;
+                padding: 8vh 6vw; /* More generous padding */
                 border-radius: 5vw;
             }
-
-            .headline, .see-data-headline {
-                font-size: 9.5vw;
-                margin-bottom: 5vh;
+            
+            .decorative-line {
+                width: 90vw; /* Match card width */
+                height: 5vh;
             }
- 
-            .description, .see-data-description {
-                font-size: 4.2vw;
-                max-width: 100%;
-                /* Allow full width on mobile */
+            
+            .see-data-background-card {
+                /* Subtly position it behind the main card */
+                width: 90vw;
+                height: 100%;
+                top: 45%;
+                transform: translate(-50%, -50%) scale(1.05);
+                border: 0.2vw solid rgba(255, 255, 255, 0.5); /* Make it a full, subtle border */
+                background: none;
+            }
+
+            .headline,
+            .see-data-headline {
+                font-size: 10vw; /* Larger, more impactful text */
+                margin-bottom: 4vh;
+                line-height: 1.25;
+            }
+
+            .description,
+            .see-data-description {
+                font-size: 4.5vw;
+                line-height: 1.7; /* Increased for readability */
+                max-width: 100%; /* Use full width of the card */
             }
 
             .get-started-btn {
-                font-size: 3.8vw;
-                padding: 2vh 6vw;
+                font-size: 4.5vw;
+                padding: 2.5vh 8vw; /* Larger tap target */
+                width: 80%; /* Make button wider */
+                max-width: 300px; /* But not excessively so */
+                box-sizing: border-box;
             }
         }
     </style>
