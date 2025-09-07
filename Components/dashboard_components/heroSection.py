@@ -228,6 +228,9 @@ async def heroSection_style():
             margin-bottom: -45vh; /* Adjust negative margin for stacked layout */
             padding-top: 8vh;
         }
+        .hero-content {
+            height: 72vh; 
+        }
 
         .hero-head {
             width: 90vw;
@@ -263,7 +266,7 @@ async def heroSection_style():
             flex-direction: column;
             width: 90vw;
             gap: 4vh;
-            top: -28vw; /* Adjust overlap for vertical stack */
+            top: -88vw; /* Adjust overlap for vertical stack */
         }
         
         .card-left,

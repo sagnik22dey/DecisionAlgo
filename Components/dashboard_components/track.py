@@ -209,7 +209,7 @@ async def track_style():
                 align-items: center;
                 height: auto; /* Allow height to grow with content */
                 min-height: 100vh;
-                padding: 15vh 5vw;
+                padding: 5vh 5vw;
                 gap: 4vh; /* Vertical gap for clean separation */
             }
             
@@ -239,8 +239,9 @@ async def track_style():
                 align-items: center;
             }
             .laptop-img { 
-                width: 100%; /* Make laptop fit container */
+                width: 130rem; /* Make laptop fit container */
                 margin-right: 0; /* Reset desktop margin */
+                margin-top: -10vw; /* Add some top margin */
             }
             
             .card2 { 

@@ -220,7 +220,7 @@ async def dashboard_love_style():
         /* --- Mobile View (Redesigned for Elegance & Aesthetics) --- */
         @media (max-width: 767px) {
             .features-section {
-                padding: 10vh 5vw; /* More vertical and horizontal space */
+                padding: 3vh 5vw; /* More vertical and horizontal space */
             }
 
             .section-title {
@@ -236,7 +236,7 @@ async def dashboard_love_style():
 
             .feature-card {
                 width: 100%; /* Full width of the container */
-                height: auto;
+                height: 19rem;
                 padding: 8vw 6vw; /* Generous padding */
                 gap: 3vh; /* Vertical gap using vh */
                 border-radius: 4vw;

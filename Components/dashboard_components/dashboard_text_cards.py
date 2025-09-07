@@ -169,7 +169,7 @@ async def dashboard_text_cards_style():
             .ai-powered-section,
             .see-data-section,
             .see-data-background-card {
-                border-radius: 3.5vw;
+                border-radius: 14.5vw;
             }
         }
 
@@ -178,13 +178,13 @@ async def dashboard_text_cards_style():
             .smart-simple-container,
             .see-data-container {
                 margin-top: 5vh; /* Reduced top margin for better flow */
-                padding: 8vh 0;
+                padding: 2vh 0;
             }
 
             .ai-powered-section,
             .see-data-section {
                 width: 90vw;
-                padding: 8vh 6vw; /* More generous padding */
+                padding: 4vh 3vw; /* More generous padding */
                 border-radius: 5vw;
             }
             
@@ -195,8 +195,8 @@ async def dashboard_text_cards_style():
             
             .see-data-background-card {
                 /* Subtly position it behind the main card */
-                width: 90vw;
-                height: 100%;
+                width: 80vw;
+                height: 91vw;
                 top: 45%;
                 transform: translate(-50%, -50%) scale(1.05);
                 border: 0.2vw solid rgba(255, 255, 255, 0.5); /* Make it a full, subtle border */
