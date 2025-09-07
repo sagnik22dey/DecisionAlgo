@@ -97,14 +97,14 @@ async def companies_style():
         .companies-logo-bar {
             display: flex;
             align-items: center;
-            justify-content: space-around; /* Default for desktop */
-            width: 85vw; /* Default for desktop */
-            gap: 2vw; /* Default for desktop */
+            justify-content: space-around;
+            width: 85vw;
+            gap: 2vw;
             transition: all 0.3s ease-in-out;
         }
 
         .company-logo {
-            flex: 1; /* Default for desktop */
+            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -113,10 +113,10 @@ async def companies_style():
 
         .company-logo img {
             max-width: 100%;
-            max-height: 18vh; /* Controls the vertical size of logos */
+            max-height: 18vh;
             width: 20rem;
             object-fit: contain;
-            filter: grayscale(1) brightness(5); /* Ensures logos are white and bright */
+            filter: grayscale(1) brightness(5);
             opacity: 0.8;
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
@@ -124,6 +124,50 @@ async def companies_style():
         .company-logo img:hover {
             opacity: 1;
             transform: scale(1.1);
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .companies-section {
+                padding: 8vh 0;
+            }
+
+            .companies-logo-bar {
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 90vw;
+                gap: 5vh 5vw;
+            }
+
+            .company-logo {
+                flex: 1 0 35%;
+                padding: 0 2vw;
+                min-width: 35%;
+            }
+
+            .company-logo img {
+                max-height: 12vh;
+                width: auto;
+                max-width: 80%;
+            }
+
+            /* Increase touch target size for mobile */
+            .company-logo img:hover {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Tablet Styles */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .companies-logo-bar {
+                gap: 1.5vw;
+                width: 90vw;
+            }
+
+            .company-logo img {
+                max-height: 16vh;
+                width: 18rem;
+            }
         }
     </style>
     """

@@ -1,6 +1,12 @@
 async def team_body():
     return """
-    <div class="team-section">
+    <div class="eclipse-glow-1">
+        <img src="../../Resources/Images/Dashboard/ecliplse_glow.png" alt="Mahak Dhameja, VP, Strategy Advisor">
+    </div>
+    <div class="eclipse-glow-2">
+        <img src="../../Resources/Images/Dashboard/ecliplse_glow.png" alt="Mahak Dhameja, VP, Strategy Advisor">
+    </div>
+    <div class="team-section">        
         <!-- Founder Section -->
         <div class="team-group">
             <div class="section-bar">
@@ -8,7 +14,7 @@ async def team_body():
             </div>
 
             <div class="profile-card founder-card">
-                <div class="profile-image-wrapper">
+                <div class="profile-image-wrapper founder-image">
                     <img src="../../Resources/Images/AboutUs/anand.png" alt="Divanshu Anand, Founder & CEO">
                 </div>
                 <div class="profile-text-content">
@@ -28,7 +34,7 @@ async def team_body():
 
             <!-- Vishal (image right) -->
             <div class="profile-card expert-card expert-card--reverse">
-                <div class="profile-image-wrapper">
+                <div class="profile-image-wrapper profile-image-right">
                     <img src="../../Resources/Images/AboutUs/vishal.png" alt="Dr. Vishal Vaibhav, VP, Systems Architect Advisor">
                 </div>
                 <div class="profile-text-content">
@@ -45,7 +51,7 @@ async def team_body():
 
             <!-- Mahak (image left) -->
             <div class="profile-card expert-card expert-card--normal">
-                <div class="profile-image-wrapper">
+                <div class="profile-image-wrapper profile-image-left">
                     <img src="../../Resources/Images/AboutUs/mahak.png" alt="Mahak Dhameja, VP, Strategy Advisor">
                 </div>
                 <div class="profile-text-content">
@@ -61,9 +67,6 @@ async def team_body():
             </div>
         </div>
 
-        <!-- Decorative Glows -->
-        <div class="glow-effect-1"></div>
-        <div class="glow-effect-2"></div>
     </div>
 
     <script>
@@ -139,8 +142,20 @@ async def team_body():
 async def team_style():
     return """
     <style>
+        .eclipse-glow-1 {
+            margin-top: -27vw;
+            z-index: 5;
+            position: absolute;
+            margin-left: -33rem;
+        }
+        .eclipse-glow-2 {
+            margin-top: -44vw;
+            z-index: 5;
+            position: absolute;
+            margin-left: 65vw;
+        }
         .team-section{
-            background-color:#1c1c1c;
+            background-color:transparent;
             padding:15vh 0;
             position:relative;
             overflow:hidden;
@@ -160,7 +175,7 @@ async def team_style():
         /* Dark bar that holds the gradient title, matching the comp */
         .section-bar{
             width:100vw;
-            background:#1c1c1c;
+            background:transparent;
             padding:6vh 0 4vh 0;
         }
 
@@ -202,19 +217,19 @@ async def team_style():
         .expert-card--reverse{
             background:linear-gradient(90deg, #5FC7FB 0%, #D7F2FF 100%);
             flex-direction:row-reverse;
-            margin-bottom:20vw; /* Added this line */
+            margin-bottom:20vw;
             margin-top:5vw;
         }
 
         .profile-image-wrapper{
             position:absolute;
-            bottom:0;
             height:100vh;
             width:39vw;
             z-index:2;
         }
-        .profile-card:not(.expert-card--reverse) .profile-image-wrapper{left:6vw; bottom:4.6vw;}
-        .profile-card.expert-card--reverse .profile-image-wrapper{right:8vw; bottom:4.9vw;}
+        .profile-card:not(.expert-card--reverse) .profile-image-wrapper{ bottom:4.65vw;}
+        .profile-card:not(.expert-card--reverse):not(.expert-card--normal) .profile-image-wrapper{ bottom:4.5vw;}
+        .profile-card.expert-card--reverse .profile-image-wrapper{right:8vw; bottom:4.65vw;}
 
         .profile-image-wrapper img{
             width:100%;
@@ -244,19 +259,133 @@ async def team_style():
         .profile-text-content ul{ list-style-type:none; padding-left:1.6vw; margin:0; }
         .profile-text-content ul li{ position:relative; padding-left:1.6vw; margin-bottom:1.2vh; }
         .profile-text-content ul li::before{ content:'-'; position:absolute; left:0; color:#000; }
+        
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .eclipse-glow-1,
+            .eclipse-glow-2 {
+                display: none;
+            }
 
-        /* Soft bloom glows */
-        .glow-effect-1, .glow-effect-2{
-            position:absolute;
-            width:15vw;
-            height:25vh;
-            background:#FFFFFF;
-            opacity:0.1;
-            filter:blur(10vw);
-            pointer-events:none;
-            z-index:0;
+            .image-frame {
+                margin-left: 4vw;
+            }
+
+            .team-section {
+                gap: 8vh;
+                padding: 0vh 0;
+            }
+
+            .team-section-title {
+                font-size: 12vw;
+                text-align: center !important;
+                padding: 0 5vw;
+            }
+
+            .profile-card {
+                flex-direction: column !important;
+                min-height: 0vh;
+                padding: 0;
+                background: none !important;
+                margin-bottom: 0 !important;
+                margin-top: -18vh !important;
+            }
+
+            .profile-image-wrapper {
+                position: relative !important;
+                height: 44vh;
+                width: 86vw;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                margin: 0 auto -8vh auto;
+            }
+
+            .profile-image-wrapper img {
+                scale: 0.8;
+                object-fit: cover;
+                border: 1px solid white;
+                border-radius: 9vw;
+                margin-top: 10vh;
+                background-color: black;
+                object-position: top;
+            }
+
+            .profile-text-content {
+                width: 100vw !important;
+                margin: 0 !important;
+                padding: 14vh 7vw 8vh 7vw;
+                text-align: center;
+                background: linear-gradient(90deg, #DCF3FF 0%, #5FC7FB 100%);
+            }
+
+            .expert-card--reverse .profile-text-content {
+                background: linear-gradient(90deg, #5FC7FB 0%, #D7F2FF 100%) !important;
+            }
+
+            .profile-text-content h3 {
+                font-size: 8vw;
+                margin-bottom: 2vh;
+            }
+
+            .profile-text-content h4 {
+                font-size: 5vw;
+                margin: 1vh 0 3vh 0;
+            }
+
+            .profile-text-content p,
+            .profile-text-content li {
+                font-size: 4vw;
+                line-height: 1.6;
+            }
+
+            .profile-text-content ul {
+                text-align: left;
+                display: inline-block;
+                padding-left: 5vw;
+                margin-top: 2vh;
+            }
+
+            .profile-text-content ul li {
+                padding-left: 4vw;
+                margin-bottom: 1.5vh;
+            }
         }
-        .glow-effect-1{ top:10vh; right:5vw; }
-        .glow-effect-2{ top:30vh; left:2vw; }
+
+        /* Tablet Styles */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .team-section-title {
+                font-size: 6vw;
+            }
+
+            .profile-text-content h3 {
+                font-size: 4vw;
+            }
+
+            .profile-text-content h4 {
+                font-size: 2.2vw;
+            }
+
+            .profile-text-content p,
+            .profile-text-content li {
+                font-size: 1.4vw;
+            }
+
+            .profile-image-wrapper {
+                width: 45vw;
+            }
+
+            .profile-text-content {
+                width: 50vw;
+            }
+
+            .profile-card:not(.expert-card--reverse) .profile-text-content {
+                margin-left: 45vw;
+            }
+
+            .profile-card.expert-card--reverse .profile-text-content {
+                margin-right: 45vw;
+            }
+        }
     </style>
     """

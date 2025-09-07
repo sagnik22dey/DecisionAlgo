@@ -35,15 +35,59 @@ async def aboutUs():
     <html>
         <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <!-- Import Fonts from Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700&family=Jost:wght@400&family=Poppins:wght@400&display=swap" rel="stylesheet">
-        <title>About Us</title>
+        <title>About Us - DecisionAlgo</title>
         <style>
+        /* Global Mobile Optimizations */
+        * {{
+            box-sizing: border-box;
+        }}
+        
         body {{
             overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }}
+        
+        /* Smooth scrolling for better UX */
+        html {{
+            scroll-behavior: smooth;
+        }}
+        
+        /* Touch-friendly button styles */
+        button, a, .clickable {{
+            min-height: 44px;
+            min-width: 44px;
+            cursor: pointer;
+        }}
+        
+        /* Mobile-specific improvements */
+        @media (max-width: 768px) {{
+            /* Prevent zoom on input focus */
+            input[type="text"],
+            input[type="email"],
+            input[type="password"],
+            textarea {{
+                font-size: 16px;
+            }}
+            
+            /* Better mobile tap targets */
+            a, button {{
+                min-height: 48px;
+                padding: 12px 16px;
+            }}
+            
+            /* Optimize images for mobile */
+            img {{
+                max-width: 100%;
+                height: auto;
+            }}
         }}
         </style>
         {navbar_css}
@@ -61,12 +105,6 @@ async def aboutUs():
         {innovation_html}
         {team_html}
         {footer_html}
-            
-            
         </body>
-
-
-    
-
     """
     
