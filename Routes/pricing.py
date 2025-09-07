@@ -4,6 +4,9 @@ from Components.general_components.navbar import *
 from Components.homepage_components.heroSection import *
 from Components.general_components.footer import *
 from Components.pricing_components.heroSection import *
+from Components.pricing_components.get_in_touch import *
+from Components.pricing_components.customSolutions import *
+
 
 
 
@@ -19,6 +22,10 @@ async def pricing():
     footerScript = await footer_script()
     heroSection_html = await pricing_banner_body()
     heroSection_css = await pricing_banner_style()
+    getInTouch_html = await get_in_touch_body()
+    getInTouch_css = await get_in_touch_style()
+    customSolutions_html = await custom_solutions_body()
+    customSolutions_css = await custom_solutions_style()
 
 
     return f"""
@@ -36,12 +43,17 @@ async def pricing():
         {footer_css}
         {footerScript}
         {heroSection_css}
+        
+        {getInTouch_css}
+        {customSolutions_css}
     </head>
     <body>
         {navbar_html}
         {heroSection_html}
+        {customSolutions_html}
+        {getInTouch_html}
         {footer_html}
-        
+
     </body>
     </html>
     """
