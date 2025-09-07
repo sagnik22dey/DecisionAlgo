@@ -202,17 +202,19 @@ async def team_style():
         .expert-card--reverse{
             background:linear-gradient(90deg, #5FC7FB 0%, #D7F2FF 100%);
             flex-direction:row-reverse;
+            margin-bottom:20vw; /* Added this line */
+            margin-top:5vw;
         }
 
         .profile-image-wrapper{
             position:absolute;
             bottom:0;
-            height:64vh;
-            width:36vw;
+            height:100vh;
+            width:39vw;
             z-index:2;
         }
-        .profile-card:not(.expert-card--reverse) .profile-image-wrapper{left:8vw;}
-        .profile-card.expert-card--reverse .profile-image-wrapper{right:8vw;}
+        .profile-card:not(.expert-card--reverse) .profile-image-wrapper{left:6vw; bottom:4.6vw;}
+        .profile-card.expert-card--reverse .profile-image-wrapper{right:8vw; bottom:4.9vw;}
 
         .profile-image-wrapper img{
             width:100%;
@@ -220,6 +222,7 @@ async def team_style():
             object-fit:contain;
             object-position:bottom;
             filter:grayscale(100%);
+            scale:1.2;
         }
 
         .profile-text-content{
