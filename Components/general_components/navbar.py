@@ -8,7 +8,7 @@ async def navbar_body():
             <a href="/">Home</a>
             <a href="/dashboard">Dashboards</a>
             <a href="#">Case Studies</a>
-            <a href="#">About us</a>
+            <a href="/aboutus">About us</a>
             <a href="#">Pricing</a>
             <a href="#">Contact Us</a>
         </nav>
