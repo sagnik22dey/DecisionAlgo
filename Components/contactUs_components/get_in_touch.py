@@ -45,7 +45,7 @@ async def get_in_touch_style():
             margin: 0;
             background-color: var(--bg);
             color: var(--white);
-            font-family: 'Times New Roman', serif;
+            font-family: 'Poppins', serif;
             font-size: max(1.2vh, 1.1vw);
             line-height: 1.3;
         }
