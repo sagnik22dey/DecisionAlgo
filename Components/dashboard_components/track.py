@@ -129,7 +129,7 @@ async def track_style():
             -webkit-backdrop-filter: blur(0.75vw);
             display: flex;
             flex-direction: column;
-            gap: 1.56vw;
+            gap: 0.56vw;
             z-index: 1;
         }
         

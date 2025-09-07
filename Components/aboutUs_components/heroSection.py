@@ -3,6 +3,8 @@ async def heroSection_body():
     <div class="hero-section-container">
         <!-- Background Elements -->
         <div class="grid-overlay"></div>
+        <!-- Eclipse Glow Background -->
+        <div class="eclipse-glow"></div>
         <!-- Main Content Wrapper -->
         <div class="hero-content-wrapper">
             <!-- Left Section: Image -->
@@ -58,6 +60,21 @@ async def heroSection_style():
             border-bottom-right-radius: 5vw;
     }
     
+    .eclipse-glow {
+        position: absolute;
+        width: 70vw;
+        height: 70vw;
+        left: 57vw;
+        top: 36vh;
+        transform: translateY(-50%);
+        background-image: url('../../Resources/Images/AboutUs/ecliplse_glow.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 1;
+        opacity: 0.8;
+        pointer-events: none;
+    }
 
     .hero-content-wrapper {
         display: flex;
@@ -104,7 +121,7 @@ async def heroSection_style():
     }
 
     .hero-paragraph {
-        font-size: 1.1vw;
+        font-size: 0.76vw;
         font-weight: 400;
         line-height: 1.6;
         color: rgba(255, 255, 255, 0.8);
@@ -115,7 +132,7 @@ async def heroSection_style():
         display: inline-block;
         background-color: #FFFFFF;
         color: #101010;
-        font-size: 1.1vw;
+        font-size: 0.76vw;
         font-weight: 600;
         text-decoration: none;
         padding: 1.5vh 2.5vw;
@@ -140,6 +157,53 @@ async def heroSection_style():
         content: '|';
         margin-left: 1.5vw;
         color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+        .eclipse-glow {
+            display: none; /* Hide eclipse glow on mobile */
+        }
+        
+        .hero-section-container {
+            min-height: 100vh;
+            border-radius: 0;
+        }
+        
+        .hero-content-wrapper {
+            flex-direction: column;
+        }
+        
+        .hero-image-section {
+            display: none; /* Hide image section on mobile */
+        }
+        
+        .hero-text-section {
+            flex: 1;
+            padding: 5vw;
+            text-align: center;
+            align-items: center;
+            order: 2;
+        }
+        
+        .hero-headline {
+            font-size: 8vw;
+        }
+        
+        .hero-paragraph {
+            font-size: 4vw;
+            max-width: 90vw;
+        }
+        
+        .hero-cta-button {
+            font-size: 4vw;
+            padding: 3vw 6vw;
+        }
+        
+        .hero-keywords {
+            font-size: 3.5vw;
+            justify-content: center;
+        }
     }
 </style>
 

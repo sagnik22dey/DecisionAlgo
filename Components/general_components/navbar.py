@@ -47,6 +47,7 @@ async def navbar_body():
         });
     </script>
     """
+
 async def navbar_style():
     return """
     <style>
@@ -85,15 +86,15 @@ async def navbar_style():
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 2vh 4vw; /* Vertical padding scales with height, horizontal with width */
+            padding: 2vh 4vw; /* Zoom-safe padding */
         }
 
         .brand {
             display: flex;
-            width: 40vw; /* Larger logo on mobile */
-            max-width: 200px; /* But don't let it get enormous */
+            width: 40vw; /* Zoom-safe width for mobile */
+            max-width: 40vw;
             height: auto;
-            z-index: 1001; /* Keeps logo above mobile nav panel */
+            z-index: 1001;
         }
         
         .brand img {
@@ -105,27 +106,26 @@ async def navbar_style():
         .hamburger {
             display: block;
             cursor: pointer;
-            padding: 1vh 1vw;
+            padding: 1vh 1vw; /* Zoom-safe padding */
             border: none;
             background-color: transparent;
             z-index: 1001;
         }
 
         .hamburger-box {
-            width: 8vw; /* Scales with screen width */
-            max-width: 35px;
-            height: 6vw; /* Scales with screen width */
-            max-height: 28px;
+            width: 8vw; /* Zoom-safe width */
+            max-width: 8vw;
+            height: 6vw; /* Zoom-safe height */
+            max-height: 6vw;
             display: inline-block;
             position: relative;
         }
 
         .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
             width: 100%;
-            height: 0.5vh; /* Scales with screen height */
-            max-height: 4px;
+            height: 0.5vh; /* Zoom-safe height */
             background-color: var(--text);
-            border-radius: 2vw;
+            border-radius: 1vw;
             position: absolute;
             transition: transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
         }
@@ -140,11 +140,11 @@ async def navbar_style():
             display: block;
         }
         .hamburger-inner::before {
-            top: -2.5vw; /* Scales with screen width */
+            top: -2.5vw; /* Zoom-safe spacing */
             transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
         }
         .hamburger-inner::after {
-            bottom: -2.5vw; /* Scales with screen width */
+            bottom: -2.5vw; /* Zoom-safe spacing */
             transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
         }
 
@@ -170,7 +170,7 @@ async def navbar_style():
             position: fixed;
             top: 0;
             right: 0;
-            width: 75vw; /* Takes 75% of the screen width */
+            width: 75vw; /* Zoom-safe width */
             height: 100vh;
             background-color: var(--nav-panel-bg);
             
@@ -178,14 +178,14 @@ async def navbar_style():
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 5vh; /* Vertical gap scales with screen height */
+            gap: 5vh; /* Zoom-safe gap */
             
-            transform: translateX(100%); /* Hide off-screen */
+            transform: translateX(100%);
             transition: transform var(--nav-timing) cubic-bezier(0.23, 1, 0.32, 1);
         }
 
         .nav.is-active {
-            transform: translateX(0); /* Slide into view */
+            transform: translateX(0);
         }
         
         .nav a {
@@ -193,12 +193,11 @@ async def navbar_style():
             text-decoration: none;
             font-weight: 800;
             white-space: nowrap;
-            /* Using clamp for fluid typography: min size, preferred (fluid) size, max size */
-            font-size: clamp(16px, 4.5vw, 22px); 
+            font-size: 4.5vw; /* Zoom-safe font size for mobile */
 
             /* Staggered animation setup */
             opacity: 0;
-            transform: translateY(3vh);
+            transform: translateY(3vh); /* Zoom-safe transform */
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
         
@@ -221,16 +220,16 @@ async def navbar_style():
         /* --- DESKTOP STYLES (Applied on screens wider than 992px) --- */
         @media (min-width: 993px) {
             .navbar {
-                padding: 1.5vh 2.5vw;
+                padding: 1.5vh 2.5vw; /* Zoom-safe padding for desktop */
             }
 
             .brand {
-                width: 18vw; /* Adjust logo size for desktop */
-                max-width: 360px;
+                width: 18vw; /* Zoom-safe width for desktop */
+                max-width: 18vw;
             }
 
             .hamburger {
-                display: none; /* Hide hamburger on desktop */
+                display: none;
             }
 
             /* Revert nav to a horizontal layout for desktop */
@@ -241,8 +240,8 @@ async def navbar_style():
                 background-color: transparent;
                 flex-direction: row;
                 justify-content: flex-end;
-                gap: 2vw; /* Horizontal gap for desktop */
-                transform: none; /* Remove slide-in effect */
+                gap: 2vw; /* Zoom-safe gap for desktop */
+                transform: none;
                 transition: none;
             }
 
@@ -250,7 +249,7 @@ async def navbar_style():
                 opacity: 1;
                 transform: none;
                 transition: opacity 0.2s ease;
-                font-size: clamp(16px, 1.1vw, 22px);
+                font-size: 1.1vw; /* Zoom-safe font size for desktop */
             }
         }
     </style>
