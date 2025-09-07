@@ -10,7 +10,7 @@ async def navbar_body():
             <a href="#">Case Studies</a>
             <a href="/aboutus">About us</a>
             <a href="#">Pricing</a>
-            <a href="#">Contact Us</a>
+            <a href="/contactus">Contact Us</a>
         </nav>
         <button class="hamburger" id="hamburger-button" aria-label="Open menu" aria-controls="main-nav" aria-expanded="false">
             <span class="hamburger-box">

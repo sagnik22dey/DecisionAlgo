@@ -7,6 +7,7 @@ from Routes import healthcheck
 from Routes import homepage
 from Routes import dashboard
 from Routes import aboutUs
+from Routes import contactUs
 
 
 app = FastAPI()
@@ -15,6 +16,7 @@ app.include_router(healthcheck.router)
 app.include_router(homepage.router)
 app.include_router(dashboard.router)
 app.include_router(aboutUs.router)
+app.include_router(contactUs.router)
 
 app.mount("/Resources", StaticFiles(directory="Resources"), name="Resources")
 
