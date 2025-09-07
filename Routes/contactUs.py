@@ -36,7 +36,7 @@ async def contactUs():
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700&family=Jost:wght@400&family=Poppins:wght@400&display=swap" rel="stylesheet">
-        <title>About Us</title>
+        <title>Contact Us</title>
         <style>
         body {{
             overflow-x: hidden;

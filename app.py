@@ -8,7 +8,7 @@ from Routes import homepage
 from Routes import dashboard
 from Routes import aboutUs
 from Routes import contactUs
-
+from Routes import pricing
 
 app = FastAPI()
 
@@ -17,6 +17,7 @@ app.include_router(homepage.router)
 app.include_router(dashboard.router)
 app.include_router(aboutUs.router)
 app.include_router(contactUs.router)
+app.include_router(pricing.router)
 
 app.mount("/Resources", StaticFiles(directory="Resources"), name="Resources")
 
