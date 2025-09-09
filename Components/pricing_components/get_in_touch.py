@@ -44,7 +44,6 @@ async def get_in_touch_style():
             margin: 0;
             background-color: var(--bg);
             color: var(--white);
-            font-family: 'Times New Roman', serif;
             font-size: max(1.2vh, 1.1vw);
             line-height: 1.3;
         }
@@ -64,7 +63,6 @@ async def get_in_touch_style():
 
         h1 {
             margin: 0;
-            font-family: 'Times New Roman', serif;
             font-weight: 700;
             font-size: min(8vw, 10vh);
             letter-spacing: .1vw;
