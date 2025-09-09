@@ -256,6 +256,17 @@ async def navbar_style():
                 transition: opacity 0.2s ease;
                 font-size: 1.5rem;
                 padding: 0.5rem 1rem;
+                position: relative;
+            }
+
+            .nav a.active::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -2px;
+                width: 100%;
+                height: 2px;
+                background-color: white;
             }
         }
     </style>
