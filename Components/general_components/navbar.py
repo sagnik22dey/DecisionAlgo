@@ -7,7 +7,17 @@ async def navbar_body():
         <nav class="nav" id="main-nav">
             <a href="/">Home</a>
             <a href="/dashboard">Dashboards</a>
-            <a href="#">Case Studies</a>
+            <div class="nav-item dropdown">
+               <a href="#" class="nav-link" id="case-studies-link">Case Studies</a>
+               <div class="dropdown-menu">
+                   <a href="/casestudy/customer_package_goods">Customer Packaged Goods</a>
+                   <a href="/casestudy/retail_firm">Retail Firm Adapting to AI Era</a>
+                   <a href="/casestudy/finance">Finance</a>
+                   <a href="/casestudy/insurance">Insurance</a>
+                   <a href="/casestudy/tech_media_telecom">Tech, Media & Telecom</a>
+                   <a href="/casestudy/healthcare">Healthcare</a>
+               </div>
+           </div>
             <a href="/aboutus">About us</a>
             <a href="/pricing">Pricing</a>
             <a href="/contactus">Contact Us</a>
@@ -22,15 +32,36 @@ async def navbar_body():
     <script>
         // Set active class based on current page
         document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('.nav a');
+            const navLinks = document.querySelectorAll('.nav > a, .nav .dropdown-menu a');
             const currentPage = window.location.pathname;
+            const caseStudiesDropdown = document.querySelector('.nav-item.dropdown');
+            const caseStudiesLink = document.getElementById('case-studies-link');
+
+            let isCaseStudyPage = false;
             
+            // Handle active classes for all nav links
             navLinks.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href') === currentPage) {
                     link.classList.add('active');
+                    if (link.closest('.dropdown-menu')) {
+                        isCaseStudyPage = true;
+                    }
                 }
             });
+
+            // Add active class to "Case Studies" if on a case study page
+            if (isCaseStudyPage && caseStudiesLink) {
+                caseStudiesLink.classList.add('active');
+            }
+
+            // Mobile dropdown toggle
+            if (caseStudiesDropdown && window.innerWidth < 993) {
+                caseStudiesLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    caseStudiesDropdown.classList.toggle('is-open');
+                });
+            }
         });
         
         // Hamburger menu toggle logic
@@ -267,6 +298,83 @@ async def navbar_style():
                 width: 100%;
                 height: 2px;
                 background-color: white;
+            }
+        }
+
+        /* --- Dropdown Styles --- */
+        .nav-item.dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: var(--nav-panel-bg);
+            min-width: 240px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+        }
+
+        .dropdown-menu a {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            font-size: 1.1rem;
+            white-space: normal;
+            line-height: 1.4;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #575757;
+            opacity: 1;
+        }
+
+        .nav-item.dropdown .nav-link.active::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background-color: white;
+        }
+
+        /* Desktop Dropdown */
+        @media (min-width: 993px) {
+            .nav-item.dropdown:hover .dropdown-menu {
+                display: block;
+            }
+            .nav-item.dropdown .nav-link {
+                padding: 0.5rem 1rem;
+            }
+        }
+
+        /* Mobile Dropdown */
+        @media (max-width: 992px) {
+            .nav-item.dropdown {
+                width: 100%;
+                text-align: center;
+            }
+            .nav-item.dropdown .nav-link::after {
+                content: ' ▾';
+                display: inline-block;
+            }
+            .dropdown-menu {
+                position: static;
+                display: none;
+                background-color: transparent;
+                box-shadow: none;
+                width: 100%;
+            }
+            .nav-item.dropdown.is-open .dropdown-menu {
+                display: block;
+            }
+            .dropdown-menu a {
+                font-size: 3.8vw;
+                padding: 1.5vh 0;
             }
         }
     </style>

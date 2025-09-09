@@ -9,6 +9,12 @@ from Routes import dashboard
 from Routes import aboutUs
 from Routes import contactUs
 from Routes import pricing
+from Routes import customer_package_goods
+from Routes import retail_firm
+from Routes import finance
+from Routes import insurance
+from Routes import tech_media_telecom
+from Routes import healthcare
 
 app = FastAPI()
 
@@ -18,6 +24,12 @@ app.include_router(dashboard.router)
 app.include_router(aboutUs.router)
 app.include_router(contactUs.router)
 app.include_router(pricing.router)
+app.include_router(customer_package_goods.router)
+app.include_router(retail_firm.router)
+app.include_router(finance.router)
+app.include_router(insurance.router)
+app.include_router(tech_media_telecom.router)
+app.include_router(healthcare.router)
 
 app.mount("/Resources", StaticFiles(directory="Resources"), name="Resources")
 
