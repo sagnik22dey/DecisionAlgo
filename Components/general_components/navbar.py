@@ -51,6 +51,8 @@ async def navbar_body():
 async def navbar_style():
     return """
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap');
+
         :root {
             --bg: #111;
             --text: #ffffff;
@@ -222,12 +224,12 @@ async def navbar_style():
         /* --- DESKTOP STYLES (Applied on screens wider than 992px) --- */
         @media (min-width: 993px) {
             .navbar {
-                padding: 1.5vh 2.5vw; /* Zoom-safe padding for desktop */
+                padding: 1.5vw 2vw;
             }
 
             .brand {
-                width: 18vw; /* Zoom-safe width for desktop */
-                max-width: 18vw;
+                width: 12rem;
+                max-width: 12rem;
             }
 
             .hamburger {
@@ -242,7 +244,8 @@ async def navbar_style():
                 background-color: transparent;
                 flex-direction: row;
                 justify-content: flex-end;
-                gap: 2vw; /* Zoom-safe gap for desktop */
+                align-items: center;
+                gap: 0.5rem;
                 transform: none;
                 transition: none;
             }
@@ -251,7 +254,8 @@ async def navbar_style():
                 opacity: 1;
                 transform: none;
                 transition: opacity 0.2s ease;
-                font-size: 1.1vw; /* Zoom-safe font size for desktop */
+                font-size: 1.5rem;
+                padding: 0.5rem 1rem;
             }
         }
     </style>
