@@ -17,7 +17,6 @@ async def robotSection_style():
             box-sizing: border-box;
         }
             .solutions-section {
-                margin-top:10vw;
                 width: 100vw;
                 min-height: 100vh;
                 display: flex;
@@ -26,27 +25,6 @@ async def robotSection_style():
                 justify-content: center;
                 padding: 5vh 5vw;
                 position: relative;
-            }
-
-            .heading-container {
-                text-align: center;
-                margin-bottom: 5vh;
-            }
-
-            .heading-container h1 {
-                font-size: 3.2vw;
-                line-height: 1.2;
-                font-weight: 700;
-                text-transform: uppercase;
-                letter-spacing: -0.02em;
-                color: var(--primary-gray);
-            }
-
-            .heading-container h1 span {
-                color: var(--primary-blue);
-            }
-            .heading-container h1 .text-white {
-                color: var(--primary-white);
             }
 
             .main-content {
@@ -224,13 +202,6 @@ async def robotSection_body(folderName,text1,text2,text3,text4,text5):
 
         <img class="eclipse-glow" src="../../Resources/Images/Dashboard/ecliplse_glow.png" alt="eclipse glow">
         <section class="solutions-section">
-            <div class="heading-container">
-                <h1>
-                    <span>Leading Enterprises</span> Across Various <br>
-                    Consumer Goods <span class="text-white">Corporations</span> <span>Utilize</span> <br>
-                    <span>Our Solutions.</span>
-                </h1>
-            </div>
 
             <div class="main-content">
                 <!-- SVG lines will be drawn here by JavaScript for desktop -->

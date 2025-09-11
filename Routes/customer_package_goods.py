@@ -3,10 +3,11 @@ from fastapi.responses import HTMLResponse
 from Components.general_components.navbar import *
 from Components.general_components.footer import *
 from Components.caseStudies_components.heroSection import *
+from Components.caseStudies_components.customert_package_goods.text import *
 from Components.caseStudies_components.robotSection import *
-from Components.caseStudies_components.top_business import *
-from Components.caseStudies_components.our_offerings import *
-from Components.caseStudies_components.client_feedback import *
+from Components.caseStudies_components.customert_package_goods.top_business import *
+from Components.caseStudies_components.customert_package_goods.our_offerings import *
+from Components.caseStudies_components.customert_package_goods.client_feedback import *
 
 
 router = APIRouter()
@@ -28,7 +29,8 @@ async def customer_package_goods():
     our_offerings_css = await our_offerings_style()
     client_feedback_html = await client_feedback_body()
     client_feedback_css = await client_feedback_style()
-
+    text_top_robot_section_html = await text_top_robot_section()
+    text_top_robot_section_css = await style_top_robot_section()
 
 
     return f"""
@@ -46,11 +48,13 @@ async def customer_package_goods():
             {top_business_css}
             {our_offerings_css}
             {client_feedback_css}
+            {text_top_robot_section_css}
 
     </head>
     <body>
         {navbar_html}
         {heroSection_html}
+        {text_top_robot_section_html}
         {robotSection_html}
         {top_business_html}
         {our_offerings_html}
