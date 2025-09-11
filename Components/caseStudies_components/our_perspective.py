@@ -1,11 +1,5 @@
 async def our_perspective_style():
     return """
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Perspective</title>
     <style>
         /* --- Base Styles & Resets --- */
         * {
@@ -21,6 +15,8 @@ async def our_perspective_style():
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
+            overflow: hidden;
 
             /* Padding using viewport units */
             padding: 10vh 5vw;
@@ -30,6 +26,8 @@ async def our_perspective_style():
             width: 80vw;
             max-width: 1200px; /* Cap width on very large screens */
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
         .perspective-container .section-title {
@@ -98,14 +96,29 @@ async def our_perspective_style():
             font-size: 1.1vw;
             max-width: 30ch; /* Limits line length for readability */
         }
+        .eclipse-glow {
+            position: absolute;
+            width: 80vw;
+            height: 40vw;
+            top: 60%;
+            left: 95%;
+            transform: translate(-50%, -50%);
+            background-image: url('../../Resources/Images/AboutUs/ecliplse_glow.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: -1;
+            opacity: 0.5;
+            pointer-events: none;
+    }
 
     </style>
     
 """
 
 
-async def our_perspective_body():
-    return """    
+async def our_perspective_body(h3_1a, h3_1b,p_1,h3_2a, h3_2b,p_2,h3_3a, h3_3b,p_3):
+    return f"""    
     <section id="perspective-section">
         <div class="perspective-container">
             <h2 class="section-title">Our <span class="highlight">Perspective</span></h2>
@@ -124,8 +137,8 @@ async def our_perspective_body():
                         </g>
                         </svg>
                     </div>
-                    <h3>AI's Role In <br>Decision-Making</h3>
-                    <p>Uncover the critical role that artificial intelligence plays in making informed, data-backed decisions.</p>
+                    <h3>{h3_1a} <br>{h3_1b}</h3>
+                    <p>{p_1}</p>
                 </article>
 
                 <!-- Card 2 -->
@@ -141,8 +154,8 @@ async def our_perspective_body():
                         </g>
                         </svg>
                     </div>
-                    <h3>Data-Driven<br>Transformations</h3>
-                    <p>Delve into real-world examples of how data and AI have transformed industries and businesses.</p>
+                    <h3>{h3_2a} <br>{h3_2b}</h3>
+                    <p>{p_2}</p>
                 </article>
 
                 <!-- Card 3 -->
@@ -158,11 +171,12 @@ async def our_perspective_body():
                         </g>
                         </svg>
                     </div>
-                    <h3>Intelligence <br>Beyond Numbers</h3>
-                    <p>See how data and AI provide a depth of understanding that goes beyond raw data points.</p>
+                    <h3>{h3_3a} <br>{h3_3b}</h3>
+                    <p>{p_3}</p>
                 </article>
             </div>
         </div>
+        <div class="eclipse-glow"></div>
     </section>
 
     <script>
@@ -171,7 +185,7 @@ async def our_perspective_body():
          * It checks the viewport width and applies different styles for mobile vs. desktop,
          * effectively creating two different layouts (or "splits") as requested.
          */
-        function adjustPerspectiveLayout() {
+        function adjustPerspectiveLayout() {{
             // Set the breakpoint for mobile devices
             const isMobile = window.innerWidth < 768;
 
@@ -180,7 +194,7 @@ async def our_perspective_body():
             const cardsGrid = document.querySelector('#perspective-section .cards-grid');
             const cards = document.querySelectorAll('#perspective-section .perspective-card');
 
-            if (isMobile) {
+            if (isMobile) {{
                 // --- APPLY MOBILE STYLES ---
 
                 // Adjust main title font size
@@ -192,7 +206,7 @@ async def our_perspective_body():
                 cardsGrid.style.gap = '8vh'; // Increase vertical gap for stacked items
 
                 // Loop through each card to adjust its contents
-                cards.forEach(card => {
+                cards.forEach(card => {{
                     const iconContainer = card.querySelector('.icon-container');
                     const cardTitle = card.querySelector('h3');
                     const cardText = card.querySelector('p');
@@ -205,9 +219,9 @@ async def our_perspective_body():
                     // Adjust font sizes for mobile readability
                     cardTitle.style.fontSize = '5.5vw';
                     cardText.style.fontSize = '4vw';
-                });
+                }});
 
-            } else {
+            }} else {{
                 // --- APPLY DESKTOP STYLES (Revert to original CSS) ---
 
                 // Restore main title font size
@@ -219,7 +233,7 @@ async def our_perspective_body():
                 cardsGrid.style.gap = '4vw';
 
                 // Loop through each card to restore desktop styles
-                cards.forEach(card => {
+                cards.forEach(card => {{
                     const iconContainer = card.querySelector('.icon-container');
                     const cardTitle = card.querySelector('h3');
                     const cardText = card.querySelector('p');
@@ -232,9 +246,9 @@ async def our_perspective_body():
                     // Restore font sizes
                     cardTitle.style.fontSize = '1.6vw';
                     cardText.style.fontSize = '1.1vw';
-                });
-            }
-        }
+                }});
+            }}
+        }}
 
         // Run the function on initial page load
         document.addEventListener('DOMContentLoaded', adjustPerspectiveLayout);

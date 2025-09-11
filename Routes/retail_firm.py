@@ -10,7 +10,7 @@ from Components.caseStudies_components.retail.our_offerings import *
 from Components.caseStudies_components.retail.robustData import *
 from Components.caseStudies_components.retail.unleash import *
 from Components.caseStudies_components.retail.future_of_retail import *
-from Components.caseStudies_components.retail.our_perspective import *
+from Components.caseStudies_components.our_perspective import *
 
 
 router = APIRouter()
@@ -43,7 +43,17 @@ async def get_retail_firm():
     unleash_css = await unleash_style()
     future_of_retail_html = await future_of_retail_body()
     future_of_retail_css = await future_of_retail_style()
-    our_perspective_html = await our_perspective_body()
+    our_perspective_html = await our_perspective_body(
+        "AI's Role In",
+        "Decision-Making",
+        "Uncover the critical role that artificial intelligence plays in making informed, data-backed decisions.",
+        "Data-Driven",
+        "Transformations",
+        "Delve into real-world examples of how data and AI have transformed industries and businesses.",
+        "Intelligence",
+        "Beyond Numbers",  
+        "See how data and AI provide a depth of understanding that goes beyond raw data points."
+    )
     our_perspective_css = await our_perspective_style()
 
     return f"""
