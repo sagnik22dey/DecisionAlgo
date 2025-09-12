@@ -119,6 +119,7 @@ async def footer_style():
             padding: 4vh 5vw;
             gap: 4vh;
             box-sizing: border-box;
+            border-top: 0.1vh solid #DDD7DE;
         }
 
         .footer-top {
