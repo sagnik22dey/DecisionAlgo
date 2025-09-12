@@ -61,7 +61,12 @@ async def client_feedback_style():
 
         .slider-track {
             display: flex;
-            transition: transform 0.5s ease-in-out;
+            cursor: grab;
+            user-select: none;
+        }
+
+        .slider-track:active {
+            cursor: grabbing;
         }
 
         .testimonial-card {
@@ -346,83 +351,167 @@ async def client_feedback_body():
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const track = document.querySelector('.slider-track');
+            if (!track) return;
+
             let slides = Array.from(track.children);
-            const paginationContainer = document.querySelector('.slider-pagination');
-            const originalSlideCount = slides.length;
-            let currentIndex = 0;
-            let slideInterval;
+            const slideCount = slides.length;
+            if (slideCount === 0) return;
 
-            if (originalSlideCount === 0) return;
-
-            // Clone slides for infinite loop
+            // Clone all slides for a seamless infinite loop with multiple visible cards
             slides.forEach(slide => {
                 const clone = slide.cloneNode(true);
                 track.appendChild(clone);
             });
-            slides = Array.from(track.children);
-
-            // Create pagination dots for original slides
-            for (let i = 0; i < originalSlideCount; i++) {
-                const dot = document.createElement('button');
-                dot.classList.add('pagination-dot');
-                dot.addEventListener('click', () => {
-                    moveToSlide(i);
-                    resetInterval();
-                });
-                paginationContainer.appendChild(dot);
+            for (let i = slideCount - 1; i >= 0; i--) {
+                const clone = slides[i].cloneNode(true);
+                track.insertBefore(clone, slides[0]);
             }
-            const dots = Array.from(paginationContainer.children);
 
-            const updateDots = () => {
-                dots.forEach(dot => dot.classList.remove('active'));
-                if (dots.length > 0) {
-                    dots[currentIndex % originalSlideCount].classList.add('active');
-                }
-            };
+            slides = Array.from(track.children); // update slides array
+
+            let isDragging = false,
+                startPos = 0,
+                currentTranslate = 0,
+                prevTranslate = 0,
+                animationID,
+                currentIndex = slideCount; // Start at the first real slide
 
             const getSlideWidth = () => {
+                if (slides.length === 0) return 0;
                 const slideStyle = window.getComputedStyle(slides[0]);
                 const slideMargin = parseFloat(slideStyle.marginLeft) + parseFloat(slideStyle.marginRight);
                 return slides[0].offsetWidth + slideMargin;
             };
 
-            const moveToSlide = (index, withTransition = true) => {
+            function setSliderPosition() {
+                track.style.transform = 'translateX(' + currentTranslate + 'px)';
+            }
+
+            function setPositionByIndex(withTransition = true) {
                 const slideWidth = getSlideWidth();
+                currentTranslate = -currentIndex * slideWidth;
+                prevTranslate = currentTranslate;
                 if (withTransition) {
-                    track.style.transition = 'transform 0.5s ease-in-out';
+                    track.style.transition = 'transform 0.5s ease-out';
                 } else {
                     track.style.transition = 'none';
                 }
-                track.style.transform = 'translateX(-' + slideWidth * index + 'px)';
-                currentIndex = index;
-                updateDots();
-            };
+                setSliderPosition();
+            }
+            
+            // Set initial position
+            setPositionByIndex(false);
 
-            const nextSlide = () => {
-                moveToSlide(currentIndex + 1);
-            };
+            function dragStart(event) {
+                isDragging = true;
+                startPos = getPositionX(event);
+                animationID = requestAnimationFrame(animation);
+                track.style.transition = 'none';
 
-            track.addEventListener('transitionend', () => {
-                if (currentIndex >= originalSlideCount) {
-                    moveToSlide(currentIndex % originalSlideCount, false);
+                document.addEventListener('mousemove', dragMove);
+                document.addEventListener('touchmove', dragMove, { passive: true });
+
+                document.addEventListener('mouseup', dragEnd);
+                document.addEventListener('touchend', dragEnd);
+            }
+
+            function dragMove(event) {
+                if (isDragging) {
+                    const currentPosition = getPositionX(event);
+                    currentTranslate = prevTranslate + currentPosition - startPos;
                 }
-            });
+            }
 
-            const startInterval = () => {
-                slideInterval = setInterval(nextSlide, 5000);
-            };
+            function dragEnd() {
+                if (!isDragging) return;
+                cancelAnimationFrame(animationID);
+                isDragging = false;
 
-            const resetInterval = () => {
-                clearInterval(slideInterval);
-                startInterval();
-            };
+                document.removeEventListener('mousemove', dragMove);
+                document.removeEventListener('touchmove', dragMove);
+                document.removeEventListener('mouseup', dragEnd);
+                document.removeEventListener('touchend', dragEnd);
 
-            moveToSlide(0);
-            startInterval();
+                const movedBy = currentTranslate - prevTranslate;
+                const slideWidth = getSlideWidth();
+
+                if (movedBy < -slideWidth / 4 && currentIndex < slides.length - 1) {
+                    currentIndex++;
+                }
+                if (movedBy > slideWidth / 4 && currentIndex > 0) {
+                    currentIndex--;
+                }
+
+                setPositionByIndex();
+                
+                track.addEventListener('transitionend', () => {
+                    checkIndex();
+                    updatePagination();
+                }, { once: true });
+            }
+
+            function getPositionX(event) {
+                return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+            }
+
+            function animation() {
+                setSliderPosition();
+                if (isDragging) requestAnimationFrame(animation);
+            }
+            
+            function checkIndex() {
+                // If we are at the prepended clones, jump to the corresponding real slides
+                if (currentIndex < slideCount) {
+                    currentIndex += slideCount;
+                    track.style.transition = 'none';
+                    setPositionByIndex(false);
+                }
+                // If we are at the appended clones, jump to the corresponding real slides
+                else if (currentIndex >= slideCount * 2) {
+                    currentIndex -= slideCount;
+                    track.style.transition = 'none';
+                    setPositionByIndex(false);
+                }
+            }
+
+            // Event Listeners
+            track.addEventListener('mousedown', dragStart);
+            track.addEventListener('touchstart', dragStart, { passive: true });
 
             window.addEventListener('resize', () => {
-                moveToSlide(currentIndex, false)
+                setPositionByIndex(false);
             });
+            
+            // --- Pagination ---
+            const paginationContainer = document.querySelector('.slider-pagination');
+            if (paginationContainer) {
+                // Create dots
+                for (let i = 0; i < slideCount; i++) {
+                    const dot = document.createElement('button');
+                    dot.classList.add('pagination-dot');
+                    dot.addEventListener('click', () => {
+                        currentIndex = i + slideCount;
+                        setPositionByIndex();
+                        track.addEventListener('transitionend', () => {
+                            checkIndex();
+                            updatePagination();
+                        }, { once: true });
+                    });
+                    paginationContainer.appendChild(dot);
+                }
+            }
+
+            function updatePagination() {
+                const dots = paginationContainer ? paginationContainer.children : [];
+                if (dots.length > 0) {
+                    const activeDotIndex = (currentIndex % slideCount);
+                    for (let i = 0; i < dots.length; i++) {
+                        dots[i].classList.toggle('active', i === activeDotIndex);
+                    }
+                }
+            }
+
+            updatePagination();
         });
     </script>
 """

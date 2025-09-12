@@ -555,7 +555,7 @@ async def robot_script():
         class ResponsiveController {
             constructor() {
                 this.currentView = null;
-                this.breakpoint = 768; // 48vw equivalent in pixels
+                this.breakpoint = 48;
                 this.init();
             }
 

@@ -20,7 +20,7 @@ async def contact_banner_body():
         function optimizeContactBanner() {
             const title = document.querySelector('.contact-hero-title');
             const section = document.querySelector('.contact-hero-section');
-            const isMobile = window.innerWidth <= 768;
+            const isMobile = window.innerWidth <= 48;
 
             if (isMobile) {
                 // Apply mobile-specific styles for better readability

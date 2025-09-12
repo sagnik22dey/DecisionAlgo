@@ -55,7 +55,7 @@ async def our_offerings_style():
         .offering-card {
             background-color: var(--card-bg);
             border-radius: 1vh;
-            padding: 4vw;
+            padding: 2vw;
             position: relative;
             overflow: hidden;
             display: flex;
@@ -94,13 +94,13 @@ async def our_offerings_style():
 
         .card-description {
             font-family: 'Urbanist', sans-serif;
-            font-size: 1.5vw;
+            font-size: 1.5vh;
             line-height: 1.6;
             color: var(--primary-white);
         }
 
         /* --- Mobile View --- */
-        @media (max-width: 768px) {
+        @media (max-width: 48vw) {
             .offerings-section {
                 padding: 10vh 5vw;
                 height: auto;

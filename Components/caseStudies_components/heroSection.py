@@ -10,7 +10,7 @@ async def heroSection_body(heroName):
             const section = document.querySelector('.pricing-hero-section');
             if (!title || !section) return;
 
-            const isMobile = window.innerWidth <= 768;
+            const isMobile = window.innerWidth <= 48;
 
             if (isMobile) {{
                 // Apply mobile-specific styles for better impact and fit
@@ -68,7 +68,7 @@ async def heroSection_style():
             text-fill-color: transparent;
 
             /* Responsive font size */
-            font-size: clamp(40px, 10vw, 96px);
+            font-size: clamp(5.92vh, 10vw, 14.22vh);
         }
 
         .pricing-hero-title {

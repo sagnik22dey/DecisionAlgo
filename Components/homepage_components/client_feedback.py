@@ -289,65 +289,65 @@ async def client_feedback_style():
         /******************************************/
         /*           MOBILE STYLES                */
         /******************************************/
-        @media (max-width: 768px) {
+        @media (max-width: 48vw) {
             .section {
-                padding: 4rem 1rem 3rem;
+                padding: 5.92vh 1.04vw 4.44vh;
                 min-height: auto;
             }
 
             .cta {
-                font-size: 0.9rem;
-                padding: 0.5rem 1.25rem;
+                font-size: 1.17vw;
+                padding: 0.74vh 1.62vw;
                 width: auto;
                 height: auto;
-                margin: 0 0 2rem 0;
+                margin: 0 0 2.96vh 0;
             }
 
             .tagline {
-                font-size: 1.1rem;
+                font-size: 1.43vw;
                 line-height: 1.5;
-                max-width: 100%;
-                margin: 0 auto 6rem;
+                max-width: 100vw;
+                margin: 0 auto 8.88vh;
             }
 
             .heading {
-                font-size: 2.25rem;
+                font-size: 2.92vw;
                 line-height: 1.2;
-                margin: 0 auto 2.5rem;
+                margin: 0 auto 3.7vh;
             }
 
             .layout {
                 display: flex;
                 flex-direction: column;
-                gap: 2rem;
-                width: 100%;
+                gap: 2.96vh;
+                width: 100vw;
             }
             
             /* Testimonial card comes SECOND on mobile */
             .card {
                 order: 2; /* CHANGED */
                 height: auto; /* Allow height to fit the content */
-                border-radius: 24px;
+                border-radius: 3.125vw;
                 /* Add bottom padding to make space for absolutely positioned elements */
-                padding: 2rem 1.5rem 8rem 1.5rem;
+                padding: 2.96vh 1.95vw 11.85vh 1.95vw;
             }
             
             /* Portrait image comes FIRST */
             .portrait {
                 order: 1;
                 margin: auto;
-                width: 80%;
-                height: 350px;
-                border-radius: 24px;
+                width: 80vw;
+                height: 51.85vh;
+                border-radius: 3.125vw;
             }
 
             /* --- Styles inside the card --- */
 
             .quote-mark {
-                top: -10px;
-                right: 15px;
-                width: 120px;
-                height: 100px;
+                top: -1.48vh;
+                right: 1.95vw;
+                width: 15.625vw;
+                height: 14.81vh;
                 opacity: 0.8;
             }
             
@@ -357,37 +357,37 @@ async def client_feedback_style():
             }
 
             .quote {
-                font-size: 1.25rem;
+                font-size: 1.62vw;
                 line-height: 1.6;
             }
 
             .person {
-                left: 1.5rem;
-                bottom: 4.5rem; /* Position above the footer row */
+                left: 1.95vw;
+                bottom: 6.66vh; /* Position above the footer row */
             }
 
             .person .name {
-                font-size: 1.5rem;
+                font-size: 1.95vw;
             }
 
             .person .role {
-                font-size: 1rem;
+                font-size: 1.3vw;
                 color: var(--muted);
             }
 
             .footer-row {
-                left: 1.5rem;
-                right: 1.5rem;
-                bottom: 2rem; /* Position it firmly at the bottom */
+                left: 1.95vw;
+                right: 1.95vw;
+                bottom: 2.96vh; /* Position it firmly at the bottom */
             }
             
             .stars {
-                height: 20px;
+                height: 2.96vh;
             }
             
             .star {
-                width: 20px;
-                height: 20px;
+                width: 2.6vw;
+                height: 2.96vh;
             }
         }
     </style>

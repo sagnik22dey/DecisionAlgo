@@ -19,7 +19,7 @@ async def custom_solutions_body():
 
     <script>
         function optimizeCustomSolutionsLayout() {
-            const isMobile = window.innerWidth <= 768;
+            const isMobile = window.innerWidth <= 48;
             const section = document.querySelector('.custom-solutions-section');
             const headline = document.querySelector('.solutions-headline');
             const list = document.querySelector('.solutions-list');

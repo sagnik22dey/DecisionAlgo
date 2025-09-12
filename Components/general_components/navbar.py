@@ -253,14 +253,14 @@ async def navbar_style():
         .nav.is-active a:nth-child(6) { transition-delay: calc(var(--nav-timing) * 1.0); }
         
         /* --- DESKTOP STYLES (Applied on screens wider than 992px) --- */
-        @media (min-width: 993px) {
+        @media (min-width: 51.71vw) {
             .navbar {
                 padding: 1.5vw 2vw;
             }
 
             .brand {
-                width: 12rem;
-                max-width: 12rem;
+                width: 12.5vw;
+                max-width: 12.5vw;
             }
 
             .hamburger {
@@ -276,7 +276,7 @@ async def navbar_style():
                 flex-direction: row;
                 justify-content: flex-end;
                 align-items: center;
-                gap: 0.5rem;
+                gap: 0.52vw;
                 transform: none;
                 transition: none;
             }
@@ -285,8 +285,8 @@ async def navbar_style():
                 opacity: 1;
                 transform: none;
                 transition: opacity 0.2s ease;
-                font-size: 1.5rem;
-                padding: 0.5rem 1rem;
+                font-size: 1.56vw;
+                padding: 0.74vh 1.04vw;
                 position: relative;
             }
 
@@ -294,9 +294,9 @@ async def navbar_style():
                 content: '';
                 position: absolute;
                 left: 0;
-                bottom: -2px;
+                bottom: -0.29vh;
                 width: 100%;
-                height: 2px;
+                height: 0.29vh;
                 background-color: white;
             }
         }
@@ -310,19 +310,19 @@ async def navbar_style():
             display: none;
             position: absolute;
             background-color: var(--nav-panel-bg);
-            min-width: 240px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            min-width: 25vw;
+            box-shadow: 0vh 1.18vh 2.37vh 0vh rgba(0,0,0,0.2);
             z-index: 1;
-            border-radius: 4px;
-            margin-top: 0.5rem;
+            border-radius: 0.59vh;
+            margin-top: 0.74vh;
         }
 
         .dropdown-menu a {
-            padding: 12px 16px;
+            padding: 1.77vh 2.37vw;
             text-decoration: none;
             display: block;
             text-align: left;
-            font-size: 1.1rem;
+            font-size: 1.14vw;
             white-space: normal;
             line-height: 1.4;
         }
@@ -336,24 +336,24 @@ async def navbar_style():
             content: '';
             position: absolute;
             left: 0;
-            bottom: -2px;
+            bottom: -0.29vh;
             width: 100%;
-            height: 2px;
+            height: 0.29vh;
             background-color: white;
         }
 
         /* Desktop Dropdown */
-        @media (min-width: 993px) {
+        @media (min-width: 51.71vw) {
             .nav-item.dropdown:hover .dropdown-menu {
                 display: block;
             }
             .nav-item.dropdown .nav-link {
-                padding: 0.5rem 1rem;
+                padding: 0.74vh 1.04vw;
             }
         }
 
         /* Mobile Dropdown */
-        @media (max-width: 992px) {
+        @media (max-width: 51.66vw) {
             .nav-item.dropdown {
                 width: 100%;
                 text-align: center;

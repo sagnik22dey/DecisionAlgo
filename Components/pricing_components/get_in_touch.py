@@ -76,7 +76,7 @@ async def get_in_touch_style():
 
         .stage {
             width: 90vw;
-            max-width: 1400px;
+            max-width: 109.37vw;
             /* Max width for large screens */
             display: flex;
             justify-content: space-between;
@@ -166,7 +166,7 @@ async def get_in_touch_style():
         }
 
         /* responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 48vw) {
             .stage {
                 flex-direction: column;
                 align-items: center;

@@ -510,10 +510,10 @@ async def plans_style():
             --text-muted: #d9d9d9;
             --accent: #00a3dc;
             --gap: 0;
-            --row-height: 108px;
-            --feature-col-width: 235px;
-            --plan-col-width: 360px;
-            --container-width: 1491px;
+            --row-height: 16vh;
+            --feature-col-width: 18.35vw;
+            --plan-col-width: 28.12vw;
+            --container-width: 116.48vw;
             --dash-color: #e5e5e5;
             --font-stack: 'Exo 2', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif;
         }
@@ -535,7 +535,7 @@ async def plans_style():
             width: 100%;
             display: flex;
             justify-content: center;
-            padding: 60px 20px;
+            padding: 8.88vh 2.96vw;
         }
 
         .container {
@@ -546,8 +546,8 @@ async def plans_style():
         /* Main Heading */
         .main-heading {
             text-align: center;
-            margin: 0 0 50px;
-            font-size: clamp(3rem, 8vw, 6rem);
+            margin: 0 0 7.4vh;
+            font-size: clamp(4.44vh, 8vw, 8.88vh);
             font-weight: 700;
             letter-spacing: -0.02em;
             line-height: 1;
@@ -560,8 +560,8 @@ async def plans_style():
         }
 
         .caption {
-            margin: 10px 0 40px;
-            font-size: 14px;
+            margin: 1.48vh 0 5.92vh;
+            font-size: 2.07vh;
             color: #9d9d9d;
             text-align: left;
             line-height: 1.4;
@@ -573,21 +573,21 @@ async def plans_style():
             position: relative;
             border-collapse: separate;
             border-spacing: 0;
-            font-size: 15px;
+            font-size: 2.22vh;
             line-height: 1.25;
             background:
-                linear-gradient(to right, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0) 9%) left top / 100% 64px no-repeat;
+                linear-gradient(to right, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0) 9%) left top / 100% 9.48vh no-repeat;
         }
 
         .comparison thead th {
             font-weight: 600;
             text-align: left;
-            padding: 22px 28px;
-            font-size: 20px;
-            letter-spacing: .3px;
+            padding: 3.25vh 4.14vw;
+            font-size: 2.96vh;
+            letter-spacing: .04vh;
             background: var(--col-header-bg);
-            border-right: 4px solid #0f0f0f;
-            border-left: 4px solid #0f0f0f;
+            border-right: 0.59vh solid #0f0f0f;
+            border-left: 0.59vh solid #0f0f0f;
             position: sticky;
             top: 0;
             z-index: 2;
@@ -596,7 +596,7 @@ async def plans_style():
         .comparison thead th:first-child {
             background: transparent;
             border: none;
-            font-size: 18px;
+            font-size: 2.66vh;
             font-weight: 600;
         }
 
@@ -608,13 +608,13 @@ async def plans_style():
         .comparison tbody th {
             width: var(--feature-col-width);
             background: var(--feature-col-bg);
-            padding: 20px 18px 20px 10px;
+            padding: 2.96vh 2.66vw 2.96vh 1.48vw;
             font-weight: 600;
-            font-size: 18px;
-            letter-spacing: .25px;
+            font-size: 2.66vh;
+            letter-spacing: .03vh;
             line-height: 1.15;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
+            border-top: 0.14vh solid var(--border-color);
+            border-bottom: 0.14vh solid var(--border-color);
         }
 
         .comparison tbody tr:first-child th {
@@ -624,11 +624,11 @@ async def plans_style():
         .comparison tbody td {
             width: var(--plan-col-width);
             background: var(--cell-bg);
-            padding: 20px 26px;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            border-left: 4px solid #0f0f0f;
-            border-right: 4px solid #0f0f0f;
+            padding: 2.96vh 3.85vw;
+            border-top: 0.14vh solid var(--border-color);
+            border-bottom: 0.14vh solid var(--border-color);
+            border-left: 0.59vh solid #0f0f0f;
+            border-right: 0.59vh solid #0f0f0f;
             font-weight: 400;
             color: var(--text-muted);
             position: relative;
@@ -645,30 +645,30 @@ async def plans_style():
         .check {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 1.48vh;
             color: var(--text-muted);
             font-weight: 400;
         }
 
         .check svg {
-            width: 18px;
-            height: 18px;
+            width: 2.66vh;
+            height: 2.66vh;
             stroke: var(--accent);
             fill: none;
             stroke-width: 2.4;
             stroke-linecap: round;
             stroke-linejoin: round;
             flex-shrink: 0;
-            filter: drop-shadow(0 0 2px rgba(0, 163, 220, .35));
+            filter: drop-shadow(0 0 0.29vh rgba(0, 163, 220, .35));
         }
 
         .inline-dash {
             display: inline-block;
-            width: 80px;
-            height: 3px;
+            width: 11.85vh;
+            height: 0.44vh;
             background: var(--dash-color);
-            border-radius: 2px;
-            margin: 6px 0 4px;
+            border-radius: 0.29vh;
+            margin: 0.88vh 0 0.59vh;
         }
 
         /* Mobile Layout - Split into separate tables */
@@ -677,25 +677,25 @@ async def plans_style():
         }
 
         .mobile-plan-table {
-            margin-bottom: 40px;
-            border-radius: 12px;
+            margin-bottom: 5.92vh;
+            border-radius: 1.77vh;
             overflow: hidden;
-            border: 1px solid var(--border-color);
+            border: 0.14vh solid var(--border-color);
             background: var(--cell-bg);
         }
 
         .mobile-plan-header {
             background: var(--col-header-bg);
-            padding: 20px 24px;
-            font-size: 20px;
+            padding: 2.96vh 3.55vw;
+            font-size: 2.96vh;
             font-weight: 600;
             text-align: center;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 0.14vh solid var(--border-color);
         }
 
         .mobile-feature-row {
             display: flex;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 0.14vh solid var(--border-color);
         }
 
         .mobile-feature-row:last-child {
@@ -705,12 +705,12 @@ async def plans_style():
         .mobile-feature-label {
             flex: 0 0 45%;
             background: var(--feature-col-bg);
-            padding: 20px 16px;
+            padding: 2.96vh 2.37vw;
             font-weight: 600;
-            font-size: 16px;
-            letter-spacing: .2px;
+            font-size: 2.37vh;
+            letter-spacing: .02vh;
             line-height: 1.2;
-            border-right: 1px solid var(--border-color);
+            border-right: 0.14vh solid var(--border-color);
             display: flex;
             align-items: center;
         }
@@ -718,7 +718,7 @@ async def plans_style():
         .mobile-feature-value {
             flex: 1;
             background: var(--cell-bg);
-            padding: 20px 20px;
+            padding: 2.96vh 2.96vw;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -733,49 +733,49 @@ async def plans_style():
         }
 
         .mobile-inline-dash {
-            width: 60px;
-            height: 3px;
+            width: 8.88vh;
+            height: 0.44vh;
             background: var(--dash-color);
-            border-radius: 2px;
+            border-radius: 0.29vh;
         }
 
         /* Tablet responsive adjustments */
-        @media (max-width: 1200px) and (min-width: 769px) {
+        @media (max-width: 75vw) and (min-width: 48.06vw) {
             :root {
-                --feature-col-width: 200px;
-                --plan-col-width: 280px;
+                --feature-col-width: 15.62vw;
+                --plan-col-width: 21.87vw;
             }
 
             .comparison thead th {
-                padding: 18px 20px;
-                font-size: 18px;
+                padding: 2.66vh 2.96vw;
+                font-size: 2.66vh;
             }
 
             .comparison tbody th {
-                padding: 18px 14px 18px 8px;
-                font-size: 16px;
+                padding: 2.66vh 2.07vw 2.66vh 1.18vw;
+                font-size: 2.37vh;
             }
 
             .comparison tbody td {
-                padding: 18px 20px;
-                font-size: 14px;
+                padding: 2.66vh 2.96vw;
+                font-size: 2.07vh;
             }
         }
 
         /* Mobile Layout */
-        @media (max-width: 768px) {
+        @media (max-width: 48vw) {
             .wrapper {
-                padding: 30px 16px;
+                padding: 4.44vh 2.37vw;
             }
 
             .main-heading {
-                font-size: clamp(2.5rem, 10vw, 4rem);
-                margin: 0 0 30px;
+                font-size: clamp(3.7vh, 10vw, 5.92vh);
+                margin: 0 0 4.44vh;
             }
 
             .caption {
-                font-size: 13px;
-                margin: 0 0 30px;
+                font-size: 1.92vh;
+                margin: 0 0 4.44vh;
             }
 
             .comparison {
@@ -787,54 +787,54 @@ async def plans_style():
             }
 
             .check {
-                gap: 8px;
-                font-size: 14px;
+                gap: 1.18vh;
+                font-size: 2.07vh;
             }
 
             .check svg {
-                width: 16px;
-                height: 16px;
+                width: 2.37vh;
+                height: 2.37vh;
             }
         }
 
         /* Very small screens */
-        @media (max-width: 480px) {
+        @media (max-width: 30vw) {
             .wrapper {
-                padding: 20px 12px;
+                padding: 2.96vh 1.77vw;
             }
 
             .main-heading {
-                font-size: clamp(2rem, 12vw, 3rem);
+                font-size: clamp(2.96vh, 12vw, 4.44vh);
             }
 
             .mobile-plan-header {
-                padding: 16px 20px;
-                font-size: 18px;
+                padding: 2.37vh 2.96vw;
+                font-size: 2.66vh;
             }
 
             .mobile-feature-label {
                 flex: 0 0 40%;
-                padding: 16px 12px;
-                font-size: 15px;
+                padding: 2.37vh 1.77vw;
+                font-size: 2.22vh;
             }
 
             .mobile-feature-value {
-                padding: 16px 16px;
+                padding: 2.37vh 2.37vw;
             }
 
             .check {
-                font-size: 13px;
-                gap: 6px;
+                font-size: 1.92vh;
+                gap: 0.88vh;
             }
 
             .check svg {
-                width: 14px;
-                height: 14px;
+                width: 2.07vh;
+                height: 2.07vh;
             }
 
             .mobile-inline-dash {
-                width: 50px;
-                height: 2px;
+                width: 7.4vh;
+                height: 0.29vh;
             }
         }
 

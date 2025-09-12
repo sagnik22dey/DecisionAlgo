@@ -40,12 +40,12 @@ async def footer_body():
                 <div class="link-column">
                     <h3>Industries</h3>
                     <ul>
-                        <li>Consumer Packaged Goods</li>
-                        <li>Retail</li>
-                        <li>Financial Services</li>
-                        <li>Insurance</li>
-                        <li>Technology, Media & telecom</li>
-                        <li>HealthCare & Life Sciences</li>
+                        <li><a href="/casestudy/customer_package_goods" style="color: white; text-decoration: none;">Consumer Packaged Goods</a></li>
+                        <li><a href="/casestudy/retail_firm" style="color: white; text-decoration: none;">Retail</a></li>
+                        <li><a href="/casestudy/financial" style="color: white; text-decoration: none;">Financial Services</a></li>
+                        <li><a href="/casestudy/insurance" style="color: white; text-decoration: none;">Insurance</a></li>
+                        <li><a href="/casestudy/tech_media_telecom" style="color: white; text-decoration: none;">Technology, Media & Telecom</a></li>
+                        <li><a href="/casestudy/healthcare" style="color: white; text-decoration: none;">HealthCare & Life Sciences</a></li>
                     </ul>
                 </div>
                 <div class="link-column">
@@ -253,7 +253,7 @@ async def footer_style():
         }
 
         /* --- Elegant & Aesthetic Mobile View --- */
-        @media (max-width: 767px) {
+        @media (max-width: 48vw) {
             .footer-container {
                 padding: 8vh 6vw;
                 gap: 6vh;
@@ -273,7 +273,7 @@ async def footer_style():
             
             .logo {
                 width: 50vw; /* Larger, more prominent logo */
-                max-width: 200px;
+                max-width: 26.04vw;
             }
             
             /* Hide original social links in footer-top for mobile */

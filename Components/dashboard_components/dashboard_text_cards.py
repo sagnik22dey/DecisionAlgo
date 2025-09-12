@@ -149,7 +149,7 @@ async def dashboard_text_cards_style():
         }
 
         /* --- Tablet View --- */
-        @media (max-width: 1024px) {
+        @media (max-width: 64vw) {
             .headline,
             .see-data-headline {
                 font-size: 7vw;
@@ -174,7 +174,7 @@ async def dashboard_text_cards_style():
         }
 
         /* --- Mobile View (Redesigned for Elegance & Aesthetics) --- */
-        @media (max-width: 767px) {
+        @media (max-width: 47.93vw) {
             .smart-simple-container,
             .see-data-container {
                 margin-top: 5vh; /* Reduced top margin for better flow */
@@ -221,7 +221,7 @@ async def dashboard_text_cards_style():
                 font-size: 4.5vw;
                 padding: 2.5vh 8vw; /* Larger tap target */
                 width: 80%; /* Make button wider */
-                max-width: 300px; /* But not excessively so */
+                max-width: 39.06vw; /* But not excessively so */
                 box-sizing: border-box;
             }
         }

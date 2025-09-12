@@ -55,7 +55,7 @@ async def our_offerings_style():
             grid-template-columns: repeat(2, 1fr);
             gap: 2vw;
             width: 90vw;
-            max-width: 1300px;
+            max-width: 101.56vw;
         }
 
         .offering-card {
@@ -123,7 +123,7 @@ async def our_offerings_style():
         }
 
         /* --- Mobile View --- */
-        @media (max-width: 768px) {
+        @media (max-width: 48vw) {
             .offerings-section {
                 padding: 10vh 5vw;
                 height: auto;

@@ -19,7 +19,7 @@ async def pricing_banner_body():
         function optimizePricingBanner() {
             const title = document.querySelector('.pricing-hero-title');
             const section = document.querySelector('.pricing-hero-section');
-            const isMobile = window.innerWidth <= 768;
+            const isMobile = window.innerWidth <= 48;
 
             if (isMobile) {
                 // Apply mobile-specific styles for better impact and fit

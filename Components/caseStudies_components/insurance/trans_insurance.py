@@ -67,13 +67,13 @@ async def trans_insurance_style():
 
         #insurance-hero h1 {
             /* Revolutionizing Insurance in the Digital Age */
-            width: 617px;
-            height: 216px;
+            width: 45.7vw;
+            height: 32vh;
             font-family: 'Exo 2';
             font-style: normal;
             font-weight: 700;
-            font-size: 60px;
-            line-height: 72px;
+            font-size: 4.4vw;
+            line-height: 10.6vh;
             letter-spacing: -0.02em;
             text-transform: capitalize;
             background: linear-gradient(90deg, rgba(235, 243, 243, 0.58) 0.22%, #EBF3F3 15.65%, #EBF3F3 54.72%, rgba(235, 243, 243, 0.7) 79.36%);
@@ -145,7 +145,7 @@ async def trans_insurance_body():
          */
         function adjustLayout() {
             // Define a breakpoint for mobile devices
-            const isMobile = window.innerWidth < 768;
+            const isMobile = window.innerWidth < 48;
 
             // Select all the elements that need style adjustments
             const heroSection = document.getElementById('insurance-hero');

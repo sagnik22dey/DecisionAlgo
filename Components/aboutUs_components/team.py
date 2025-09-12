@@ -72,7 +72,7 @@ async def team_body():
     <script>
         // Mobile/desktop optimizer (vw/vh only)
         function optimizeTeamLayout(){
-            const isMobile = window.innerWidth <= 768;
+            const isMobile = window.innerWidth <= 48;
 
             const section = document.querySelector('.team-section');
             const cards = document.querySelectorAll('.profile-card');
@@ -146,7 +146,7 @@ async def team_style():
             margin-top: -27vw;
             z-index: 5;
             position: absolute;
-            margin-left: -33rem;
+            margin-left: -43.22vw;
         }
         .eclipse-glow-2 {
             margin-top: -44vw;
@@ -261,7 +261,7 @@ async def team_style():
         .profile-text-content ul li::before{ content:'-'; position:absolute; left:0; color:#000; }
         
         /* Mobile Styles */
-        @media (max-width: 768px) {
+        @media (max-width: 48vw) {
             .eclipse-glow-1,
             .eclipse-glow-2 {
                 display: none;
@@ -304,7 +304,7 @@ async def team_style():
             .profile-image-wrapper img {
                 scale: 0.8;
                 object-fit: cover;
-                border: 1px solid white;
+                border: 0.14vh solid white;
                 border-radius: 9vw;
                 margin-top: 10vh;
                 background-color: black;
@@ -353,7 +353,7 @@ async def team_style():
         }
 
         /* Tablet Styles */
-        @media (max-width: 1024px) and (min-width: 769px) {
+        @media (max-width: 64vw) and (min-width: 48.06vw) {
             .team-section-title {
                 font-size: 6vw;
             }

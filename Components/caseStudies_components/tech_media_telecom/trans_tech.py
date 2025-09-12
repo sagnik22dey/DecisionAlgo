@@ -139,7 +139,7 @@ async def trans_tech_body():
          */
         function adjustLayout() {
             // Define a breakpoint for mobile devices
-            const isMobile = window.innerWidth < 768;
+            const isMobile = window.innerWidth < 48;
 
             // Select all the elements that need style adjustments
             const heroSection = document.getElementById('trans-hero');
@@ -203,7 +203,7 @@ async def trans_tech_body():
                 contentWrapper.style.padding = '4vh 5vw 4vh 2vw';
                 
                 // Restore desktop font sizes
-                heading.style.fontSize = '60px';
+                heading.style.fontSize = '3.5vw';
                 
                 paragraphs.forEach(p => {
                     p.style.fontSize = '1.1vw';

@@ -163,7 +163,7 @@ async def trust_style():
     #trust-section-mobile {
       position: relative;
       width: 100%;
-      padding: 4rem 1rem 3rem;
+      padding: 5.92vh 1.04vw 4.44vh;
     }
     
     /* CTAs row */
@@ -185,8 +185,8 @@ async def trust_style():
       transform: none;
       flex-direction: column;
       width: 100%;
-      gap: 1rem;
-      margin-top: 3rem;
+      gap: 1.48vh;
+      margin-top: 4.44vh;
     }
     
     .btn {
@@ -216,12 +216,12 @@ async def trust_style():
     /* Mobile button overrides */
     #trust-section-mobile .btn {
       width: 100%;
-      max-width: 400px;
+      max-width: 52.08vw;
       height: auto;
-      padding: 0.9rem 1.5rem;
-      border-radius: 12px;
-      border: 1px solid #DFDFDF;
-      font-size: 1rem;
+      padding: 1.33vh 1.95vw;
+      border-radius: 1.56vw;
+      border: 0.13vw solid #DFDFDF;
+      font-size: 1.3vw;
     }
     
     .btn.primary {
@@ -231,7 +231,7 @@ async def trust_style():
     }
     
     #trust-section-mobile .btn.primary {
-      padding: 0.9rem 1.5rem;
+      padding: 1.33vh 1.95vw;
     }
     
     .btn.ghost {
@@ -267,10 +267,10 @@ async def trust_style():
       left: auto;
       transform: none;
       width: 100%;
-      font-size: 2.25rem;
+      font-size: 2.92vw;
       line-height: 1.2;
       margin-top: 0;
-      margin-bottom: 2.5rem;
+      margin-bottom: 3.7vh;
     }
     
     .title .accent {
@@ -317,7 +317,7 @@ async def trust_style():
       width: 100%;
       height: auto;
       margin-top: 0;
-      border-radius: 20px;
+      border-radius: 2.6vw;
     }
     
     /* Features container */
@@ -345,8 +345,8 @@ async def trust_style():
     
     /* Mobile feature text box overrides */
     #trust-section-mobile .feature-text-box {
-      padding: 2.5rem 1.5rem;
-      gap: 2.5rem;
+      padding: 3.7vh 1.95vw;
+      gap: 3.7vh;
       align-items: flex-start;
       justify-content: flex-start;
     }
@@ -379,7 +379,7 @@ async def trust_style():
     
     /* Mobile feature overrides */
     #trust-section-mobile .feature {
-      gap: 1rem;
+      gap: 1.48vh;
     }
     
     .feature .icon {
@@ -396,10 +396,10 @@ async def trust_style():
     
     /* Mobile icon overrides */
     #trust-section-mobile .feature .icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 8px;
-      background-size: 24px 24px;
+      width: 5.72vw;
+      height: 6.51vh;
+      border-radius: 1.04vw;
+      background-size: 3.125vw 3.55vh;
     }
     
     .feature .icon {
@@ -437,9 +437,9 @@ async def trust_style():
     #trust-section-mobile .feature h3 {
       width: auto;
       height: auto;
-      font-size: 1.2rem;
+      font-size: 1.56vw;
       line-height: 1.3;
-      margin: 0 0 0.5rem 0;
+      margin: 0 0 0.74vh 0;
     }
     
     .feature p {
@@ -458,7 +458,7 @@ async def trust_style():
     #trust-section-mobile .feature p {
       width: auto;
       height: auto;
-      font-size: 0.95rem;
+      font-size: 1.23vw;
       line-height: 1.5;
     }
     
@@ -494,7 +494,7 @@ function toggleTrustSectionView() {
     const mobileSection = document.getElementById('trust-section-mobile');
     
     // Check current viewport width
-    const isMobileView = window.innerWidth <= 768;
+    const isMobileView = window.innerWidth <= 48;
     
     if (isMobileView) {
         // Show mobile, hide desktop

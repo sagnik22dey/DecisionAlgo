@@ -45,7 +45,7 @@ async def heroSection_style():
             overflow: hidden;
             border-radius: 4.24vw;
             border-bottom-right-radius: 5vw;
-            border-bottom: 1px solid rgba(255, 255, 255, 255);
+            border-bottom: 0.14vh solid rgba(255, 255, 255, 255);
         }
         
     .grid-overlay {
@@ -160,7 +160,7 @@ async def heroSection_style():
     }
 
     /* Mobile Styles */
-    @media (max-width: 768px) {
+    @media (max-width: 48vw) {
         .eclipse-glow {
             display: none; /* Hide eclipse glow on mobile */
         }

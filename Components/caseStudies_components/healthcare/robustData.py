@@ -8,7 +8,7 @@ async def robustData_style():
             max-width: 80vw;
             width: 70vw;
             height: 60vh;
-            margin: 48px auto;
+            margin: 7.11vh auto;
             position: relative;
             scale:1.2;
         }
@@ -17,7 +17,7 @@ async def robustData_style():
             border-radius: 1vw;
             margin-left: 2vh;
             margin-bottom: 2vh;
-            padding: 3.2rem 2.5rem 2.8rem 2.5rem;
+            padding: 4.74vh 3.25vw 4.14vh 3.25vw;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -41,53 +41,53 @@ async def robustData_style():
             display: flex;
             justify-content: space-between;
             align-items: stretch;
-            gap: 4rem;
-            margin-top: 3.5rem;
+            gap: 5.92vh;
+            margin-top: 5.18vh;
         }
         .robust-feature-card {
             flex: 1;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            border-radius: 1.1rem;
-            border: 1.3px solid rgba(95, 199, 251, 0.5);
+            border-radius: 1.62vh;
+            border: 0.19vh solid rgba(95, 199, 251, 0.5);
             transition: all 0.17s cubic-bezier(.36,.9,.68,1.09);
-            padding: 2rem 1.2rem 1.7rem 1.2rem;
-            min-width: 160px;
-            min-height: 240px;
+            padding: 2.96vh 1.56vw 2.51vh 1.56vw;
+            min-width: 9.83vw;
+            min-height: 26.55vh;
         }
         .robust-feature-card:hover {
-            box-shadow: 0 3px 14px 0 rgba(73,180,255,0.18);
+            box-shadow: 0 0.44vh 2.07vw 0 rgba(73,180,255,0.18);
             border-color: #65d5ff;
             background: rgba(35, 44, 54, 1);
-            transform: translateY(-4px) scale(1.022);
+            transform: translateY(-0.59vh) scale(1.022);
         }
         .robust-feature-icon {
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.77vh;
         }
         .robust-feature-card-title {
             font-weight: 600;
             color: #fff;
-            font-size: 1.19rem;
-            margin-bottom: 0.65rem;
+            font-size: 1.76vh;
+            margin-bottom: 0.96vh;
         }
         .robust-feature-card-desc {
             color: #C6D6ED;
-            font-size: 0.98rem;
+            font-size: 1.45vh;
             font-weight: 400;
         }
-        @media (max-width: 900px) {
+        @media (max-width: 56.25vw) {
             .robust-feature-outer {padding: 5vw 1vw;}
             .robust-feature-cards {
                 flex-wrap: wrap; gap: 2.5vw;
             }
         }
-        @media (max-width:600px){
+        @media (max-width:37.5vw){
             .robust-feature-outer{
                 padding: 6vw 1vw; border-radius: 6vw;
             }
             .robust-feature-title {
-                font-size: 1.35rem; margin-bottom: 2.1rem;
+                font-size: 2vh; margin-bottom: 3.11vh;
             }
             .robust-feature-cards {
                 flex-direction: column; gap: 3vw;

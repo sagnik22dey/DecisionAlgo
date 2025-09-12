@@ -52,7 +52,7 @@ async def top_business_style():
             grid-template-columns: repeat(3, 1fr);
             gap: 2vw;
             width: 90vw;
-            max-width: 1400px; /* To prevent cards from becoming too wide on very large screens */
+            max-width: 109.37vw; /* To prevent cards from becoming too wide on very large screens */
         }
 
         .benefit-card {
@@ -111,7 +111,7 @@ async def top_business_style():
 
 
         /* --- Mobile View --- */
-        @media (max-width: 768px) {
+        @media (max-width: 48vw) {
             .data-science-section {
                 padding: 10vh 5vw;
                 height: auto;

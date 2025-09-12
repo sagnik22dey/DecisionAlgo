@@ -177,7 +177,7 @@ async def dashboard_love_style():
         }
 
         /* --- Tablet View (Medium Screens) --- */
-        @media (max-width: 1024px) {
+        @media (max-width: 64vw) {
             .section-title {
                 font-size: 5vw;
             }
@@ -218,7 +218,7 @@ async def dashboard_love_style():
         }
         
         /* --- Mobile View (Redesigned for Elegance & Aesthetics) --- */
-        @media (max-width: 767px) {
+        @media (max-width: 47.93vw) {
             .features-section {
                 padding: 3vh 5vw; /* More vertical and horizontal space */
             }
@@ -236,7 +236,7 @@ async def dashboard_love_style():
 
             .feature-card {
                 width: 100%; /* Full width of the container */
-                height: 19rem;
+                height: 28.14vh;
                 padding: 8vw 6vw; /* Generous padding */
                 gap: 3vh; /* Vertical gap using vh */
                 border-radius: 4vw;

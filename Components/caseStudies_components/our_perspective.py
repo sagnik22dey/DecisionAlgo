@@ -24,7 +24,7 @@ async def our_perspective_style():
 
         .perspective-container {
             width: 80vw;
-            max-width: 1200px; /* Cap width on very large screens */
+            max-width: 93.75vw; /* Cap width on very large screens */
             text-align: center;
             position: relative;
             z-index: 1;
@@ -187,7 +187,7 @@ async def our_perspective_body(h3_1a, h3_1b,p_1,h3_2a, h3_2b,p_2,h3_3a, h3_3b,p_
          */
         function adjustPerspectiveLayout() {{
             // Set the breakpoint for mobile devices
-            const isMobile = window.innerWidth < 768;
+            const isMobile = window.innerWidth < 48;
 
             // Select all the elements that will be adjusted
             const sectionTitle = document.querySelector('#perspective-section .section-title');

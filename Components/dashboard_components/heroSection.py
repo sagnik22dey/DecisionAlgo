@@ -203,7 +203,7 @@ async def heroSection_style():
       }
 
       /* --- Tablet View --- */
-      @media (max-width: 1024px) {
+      @media (max-width: 64vw) {
         .hero-head {
             width: 85vw;
             margin-top: 6vh;
@@ -223,7 +223,7 @@ async def heroSection_style():
       }
 
       /* --- Mobile View (Redesigned for Elegance) --- */
-      @media (max-width: 767px) {
+      @media (max-width: 47.93vw) {
         .hero-section-container {
             margin-bottom: -45vh; /* Adjust negative margin for stacked layout */
             padding-top: 8vh;

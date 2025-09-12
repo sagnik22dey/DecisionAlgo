@@ -48,7 +48,7 @@ async def locations_body():
 
     <script>
         function optimizeLocationsLayout() {
-            const isMobile = window.innerWidth <= 768;
+            const isMobile = window.innerWidth <= 48;
             const grid = document.querySelector('.locations-grid');
             const cards = document.querySelectorAll('.location-card');
 
@@ -106,8 +106,8 @@ async def locations_style():
             align-items: center;
             text-align: center;
             box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(1.48vh);
+            -webkit-backdrop-filter: blur(1.48vh);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             font-family: 'Poppins', sans-serif;
         }
@@ -163,7 +163,7 @@ async def locations_style():
         }
         
         /* Font size adjustments for mobile view */
-        @media (max-width: 768px) {
+        @media (max-width: 48vw) {
             .location-card {
                 padding: 5vh 5vw;
                 border-radius: 5vw;

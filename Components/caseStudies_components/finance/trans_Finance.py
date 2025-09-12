@@ -130,7 +130,7 @@ async def trans_Finance_body():
          */
         function adjustLayout() {
             // Define a breakpoint for mobile devices
-            const isMobile = window.innerWidth < 768;
+            const isMobile = window.innerWidth < 48;
 
             // Select all the elements that need style adjustments
             const heroSection = document.getElementById('finance-hero');

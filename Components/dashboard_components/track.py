@@ -114,7 +114,7 @@ async def track_style():
         }
 
         .title-container h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-size: clamp(3.7vh, 5vw, 5.18vh);
             font-weight: 600;
             margin: 0;
             color: #FFFFFF;
@@ -122,7 +122,7 @@ async def track_style():
 
         .card2 {
             background: rgba(27, 27, 27, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 0.14vh solid rgba(255, 255, 255, 0.3);
             border-radius: 0.625vw;
             padding: 1.56vw;
             backdrop-filter: blur(0.75vw);
@@ -145,7 +145,7 @@ async def track_style():
             height: 3.31vw;
             flex-shrink: 0;
             background: #0A1015;
-            border: 1px solid #3A4046;
+            border: 0.14vh solid #3A4046;
             border-radius: 0.19vw;
             display: flex;
             justify-content: center;
@@ -159,7 +159,7 @@ async def track_style():
 
         .card2 h2 {
             font-weight: 600;
-            font-size: clamp(1.2rem, 1.5vw, 1.56rem);
+            font-size: clamp(1.77vh, 1.5vw, 2.31vh);
             line-height: 120%;
             color: #FFFFFF;
             margin: 0;
@@ -167,7 +167,7 @@ async def track_style():
 
         .card2 p {
             font-weight: 400;
-            font-size: clamp(0.9rem, 1vw, 1.02rem);
+            font-size: clamp(1.33vh, 1vw, 1.51vh);
             line-height: 160%;
             color: #FFFFFF;
             opacity: 0.7;
@@ -201,7 +201,7 @@ async def track_style():
 
         /* --- NEW, ELEGANT MOBILE VIEW --- */
         /* This will only apply on screens 767px or smaller */
-        @media (max-width: 767px) {
+        @media (max-width: 47.93vw) {
             .parent {
                 /* Change layout from grid to a single column flexbox */
                 display: flex;
@@ -238,8 +238,8 @@ async def track_style():
             .laptop-container {
                 align-items: center;
             }
-            .laptop-img { 
-                width: 130rem; /* Make laptop fit container */
+            .laptop-img {
+                width: 192.59vh; /* Make laptop fit container */
                 margin-right: 0; /* Reset desktop margin */
                 margin-top: -10vw; /* Add some top margin */
             }

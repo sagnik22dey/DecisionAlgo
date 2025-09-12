@@ -59,7 +59,7 @@ async def innovation_body():
     
     <script>
         function optimizeInnovationLayout() {
-            const isMobile = window.innerWidth <= 768;
+            const isMobile = window.innerWidth <= 48;
             const wrapper = document.querySelector('.innovation-content-wrapper');
             const missionVision = document.querySelector('.mission-vision-container');
             const headline = document.querySelector('.innovation-header h1');
@@ -293,7 +293,7 @@ async def innovation_style():
         }
         
         /* Mobile Styles */
-        @media (max-width: 768px) {
+        @media (max-width: 48vw) {
             .innovation-eclipse-glow {
                 display: none;
             }
@@ -384,7 +384,7 @@ async def innovation_style():
         }
 
         /* Tablet Styles */
-        @media (max-width: 1024px) and (min-width: 769px) {
+        @media (max-width: 64vw) and (min-width: 48.06vw) {
             .innovation-section {
                 padding: 8vh 8vw;
             }

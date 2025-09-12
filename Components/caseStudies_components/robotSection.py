@@ -64,10 +64,10 @@ async def robotSection_style():
                 width: 13vw;
                 height: 10vw;
                 background: rgba(10, 10, 10, 0.5);
-                border: 1px solid rgba(95, 199, 251, 0.5);
+                border: 0.14vh solid rgba(95, 199, 251, 0.5);
                 border-radius: 1vw;
-                backdrop-filter: blur(12px);
-                -webkit-backdrop-filter: blur(12px);
+                backdrop-filter: blur(1.77vh);
+                -webkit-backdrop-filter: blur(1.77vh);
                 z-index: 4;
                 transition: transform 0.3s ease, border-color 0.3s ease;
             }
@@ -85,7 +85,7 @@ async def robotSection_style():
                 padding: 0.5vw;
                 width: 3vw;
                 height: 3vw;
-                border: 1px solid var(--primary-blue);
+                border: 0.14vh solid var(--primary-blue);
                 border-radius: 0.5vw;
             }
 
@@ -133,12 +133,12 @@ async def robotSection_style():
                 width: 50vw;
                 right: 25%;
                 top: 20vh;
-                z=1;
+                z-index:1;
                 position:absolute;
             }
 
             /* --- Mobile View --- */
-            @media (max-width: 768px) {
+            @media (max-width: 48vw) {
                 .solutions-section {
                     height: auto;
                     padding: 10vh 5vw;
@@ -193,13 +193,12 @@ async def robotSection_style():
                     display: none !important;
                 }
             }
-        </style>
-    """
+</style>
+"""
 
 
 async def robotSection_body(folderName,text1,text2,text3,text4,text5):
-    return f"""
-
+    part1 = f"""
         <img class="eclipse-glow" src="../../Resources/Images/Dashboard/ecliplse_glow.png" alt="eclipse glow">
         <section class="solutions-section">
 
@@ -304,32 +303,34 @@ async def robotSection_body(folderName,text1,text2,text3,text4,text5):
 
             </div>
         </section>
-
+    """
+    
+    script = """
         <style>
-            .connector-lines polyline {{
+            .connector-lines polyline {
                 fill: none;
                 stroke: white;
                 stroke-width: 0.15;
-            }}
-            .connector-lines .connector-dot {{
+            }
+            .connector-lines .connector-dot {
                 stroke: white;
                 stroke-linecap: round;
                 stroke-width: 1vh; /* This determines the dot's diameter */
                 /* This key property ensures the stroke (our dot) isn't distorted by scaling */
                 vector-effect: non-scaling-stroke;
-            }}
+            }
         </style>
 
         <script>
-            document.addEventListener('DOMContentLoaded', () => {{
+            document.addEventListener('DOMContentLoaded', () => {
 
-                function drawLines() {{
+                function drawLines() {
                     // This function is only for desktop view
-                    if (window.innerWidth <= 768) {{
+                    if (window.innerWidth <= 48) {
                         const svg = document.querySelector('.connector-lines');
                         if(svg) svg.style.display = 'none';
                         return;
-                    }}
+                    }
 
                     const svg = document.querySelector('.connector-lines');
                     if(svg) svg.style.display = 'block';
@@ -342,19 +343,19 @@ async def robotSection_body(folderName,text1,text2,text3,text4,text5):
                     
                     // Define target points on the robot image relative to the container
                     // Values are in percentage (x, y)
-                    const targets = {{
-                        'card-bhc': {{ x: 40, y: 25 }},
-                        'card-hw':  {{ x: 38, y: 50 }},
-                        'card-hc':  {{ x: 42, y: 80 }},
-                        'card-pfc': {{ x: 60, y: 35 }},
-                        'card-pfb': {{ x: 62, y: 65 }}
-                    }};
+                    const targets = {
+                        'card-bhc': { x: 40, y: 25 },
+                        'card-hw':  { x: 38, y: 50 },
+                        'card-hc':  { x: 42, y: 80 },
+                        'card-pfc': { x: 60, y: 35 },
+                        'card-pfb': { x: 62, y: 65 }
+                    };
 
-                    cards.forEach(card => {{
+                    cards.forEach(card => {
                         const cardId = card.id;
-                        const line = document.getElementById(`line-for-${{cardId}}`);
-                        const startDot = document.getElementById(`start-dot-for-${{cardId}}`);
-                        const endDot = document.getElementById(`end-dot-for-${{cardId}}`);
+                        const line = document.getElementById(`line-for-${cardId}`);
+                        const startDot = document.getElementById(`start-dot-for-${cardId}`);
+                        const endDot = document.getElementById(`end-dot-for-${cardId}`);
 
                         if (!line || !startDot || !endDot) return;
 
@@ -366,11 +367,11 @@ async def robotSection_body(folderName,text1,text2,text3,text4,text5):
 
                         // Calculate the line's starting point from the card's edge
                         let startX, startY;
-                        if (isLeftSide) {{
+                        if (isLeftSide) {
                             startX = (cardRect.right - containerRect.left) / containerRect.width * 100;
-                        }} else {{
+                        } else {
                             startX = (cardRect.left - containerRect.left) / containerRect.width * 100;
-                        }}
+                        }
                         startY = (cardRect.top - containerRect.top + cardRect.height / 2) / containerRect.height * 100;
                         
                         // Calculate an intermediate point to create the "elbow" in the line
@@ -378,19 +379,20 @@ async def robotSection_body(folderName,text1,text2,text3,text4,text5):
                         let midX = isLeftSide ? startX + horizontalSegmentLength : startX - horizontalSegmentLength;
                         
                         // Set SVG attributes
-                        line.setAttribute('points', `${{startX}},${{startY}} ${{midX}},${{startY}} ${{target.x}},${{target.y}}`);
+                        line.setAttribute('points', `${startX},${startY} ${midX},${startY} ${target.x},${target.y}`);
                         
                         // Use a zero-length path with a round cap to create a perfect circle dot at both ends
-                        startDot.setAttribute('d', `M ${{startX}},${{startY}} h 0`);
-                        endDot.setAttribute('d', `M ${{target.x}},${{target.y}} h 0`);
-                }});
-                }}
+                        startDot.setAttribute('d', `M ${startX},${startY} h 0`);
+                        endDot.setAttribute('d', `M ${target.x},${target.y} h 0`);
+                });
+                }
 
                 // Initial call
                 drawLines();
 
                 // Recalculate on resize
                 window.addEventListener('resize', drawLines);
-            }});
+            });
         </script>
     """
+    return part1 + script

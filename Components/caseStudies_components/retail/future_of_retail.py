@@ -143,7 +143,7 @@ async def future_of_retail_body():
          */
         function adjustLayout() {
             // Define a breakpoint for mobile devices
-            const isMobile = window.innerWidth < 768;
+            const isMobile = window.innerWidth < 48;
 
             // Select all the elements that need style adjustments
             const heroSection = document.getElementById('retail-hero');
