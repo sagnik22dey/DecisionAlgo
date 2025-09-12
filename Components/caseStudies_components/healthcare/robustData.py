@@ -3,19 +3,20 @@ async def robustData_style():
     <style>
         .robust-feature-outer {
             border-bottom: 0.2vh solid #f0f0f0;
-            border-right: 0.2vh solid #f0f0f0;
-            border-radius: 0 6vw 1.4vw 6vw;
+            border-left: 0.2vh solid #f0f0f0;
+            border-radius: 6vw 0 6vw 1.5vw;
             max-width: 80vw;
             width: 70vw;
             height: 60vh;
             margin: 48px auto;
             position: relative;
+            scale:1.2;
         }
         .robust-feature-content-wrapper {
             background: linear-gradient(284.15deg, rgba(26, 26, 26, 0) 1.73%, rgba(65, 65, 65, 0.28) 33.62%, rgba(109, 109, 109, 0.36) 71.97%, rgba(128, 128, 128, 0.01) 97.84%), #151515;
-            border-radius: 1vw;;
-            margin-right:2vh;
-            margin-bottom:2vh;
+            border-radius: 1vw;
+            margin-left: 2vh;
+            margin-bottom: 2vh;
             padding: 3.2rem 2.5rem 2.8rem 2.5rem;
             display: flex;
             flex-direction: column;
@@ -26,7 +27,8 @@ async def robustData_style():
         .robust-feature-title {
             font-weight: 700;
             line-height: 1.3;
-            font-size: 3vw;
+            font-size: 2.4vw;
+            text-align: center;
             /* Silver gradient effect for the text */
             background: linear-gradient(180deg, #FFFFFF, #cccccc);
             -webkit-background-clip: text;
@@ -103,7 +105,7 @@ async def robustData_body():
 <div class="robust-feature-outer">
     <div class="robust-feature-content-wrapper">
         <div class="robust-feature-title">
-            With Robust Data Infrastructure<br>And A Unified Point Of Reference
+            Combined With The Right Data Foundation And Building A Single Source Of Truth
         </div>
         <div class="robust-feature-cards">
             <div class="robust-feature-card">
@@ -119,8 +121,8 @@ async def robustData_body():
                     </g>
                     </svg>
                 </div>
-                <div class="robust-feature-card-title">Information Frameworks</div>
-                <div class="robust-feature-card-desc">Integrate Data Resources</div>
+                <div class="robust-feature-card-title">Data Platforms</div>
+                <div class="robust-feature-card-desc">Unify Data Assets</div>
             </div>
             <div class="robust-feature-card">
                 <div class="robust-feature-icon">
@@ -135,8 +137,8 @@ async def robustData_body():
                     </svg>
 
                 </div>
-                <div class="robust-feature-card-title">Corporate Operations</div>
-                <div class="robust-feature-card-desc">Automate Monitoring</div>
+                <div class="robust-feature-card-title">Data Governance</div>
+                <div class="robust-feature-card-desc">Democrate Data Securely</div>
             </div>
             <div class="robust-feature-card">
                 <div class="robust-feature-icon">
@@ -150,8 +152,8 @@ async def robustData_body():
                     </g>
                     </svg>
                 </div>
-                <div class="robust-feature-card-title">Selection Frameworks</div>
-                <div class="robust-feature-card-desc">Ignite Smart Perspectives.</div>
+                <div class="robust-feature-card-title">Enterprise ops</div>
+                <div class="robust-feature-card-desc">Automate Monitoring & Observability</div>
             </div>
             <div class="robust-feature-card">
                 <div class="robust-feature-icon">
@@ -165,8 +167,8 @@ async def robustData_body():
                     </g>
                     </svg>
                 </div>
-                <div class="robust-feature-card-title">Information Control</div>
-                <div class="robust-feature-card-desc">Securely Democratize Data</div>
+                <div class="robust-feature-card-title">Decision Systems</div>
+                <div class="robust-feature-card-desc">Fuel Intelligent Insights</div>
             </div>
         </div>
     </div>

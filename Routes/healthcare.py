@@ -8,6 +8,7 @@ from Components.caseStudies_components.robotSection import *
 from Components.caseStudies_components.healthcare.trans_health import *
 from Components.caseStudies_components.our_perspective import *
 from Components.caseStudies_components.healthcare.text import *
+from Components.caseStudies_components.healthcare.robustData import *
 
 
 
@@ -20,7 +21,7 @@ async def get_healthcare():
     navbar_css = await navbar_style()
     footer_css = await footer_style()
     footer_html = await footer_body()
-    heroSection_html = await heroSection_body("Pioneering the Future of Health with AI and Data Science")
+    heroSection_html = await heroSection_body("Streamlining Your Product Portfolio")
     heroSection_css = await heroSection_style()
     robotSection_html = await robotSection_body(
         "healthcare",
@@ -47,6 +48,9 @@ async def get_healthcare():
         "We drive innovation in pharmaceuticals, biotechnology, and medical devices."
     )
     our_perspective_css = await our_perspective_style()
+    robustData_html = await robustData_body()
+    robustData_css = await robustData_style()
+
 
     return f"""
     <!DOCTYPE html>
@@ -69,6 +73,7 @@ async def get_healthcare():
             {trans_health_css}
             {our_perspective_css}
             {style_top_robot}
+            {robustData_css}
 
     </head>
     <body>
@@ -77,6 +82,7 @@ async def get_healthcare():
         {text_top_robot}
         {robotSection_html}
         {trans_health_html}
+        {robustData_html}
         {our_perspective_html}
         {footer_html}
     </body>
