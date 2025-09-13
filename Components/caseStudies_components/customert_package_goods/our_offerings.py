@@ -15,12 +15,6 @@ async def our_offerings_style():
             box-sizing: border-box;
         }
 
-        html, body {
-            overflow-x: hidden;
-            background-color: var(--background-dark);
-            font-family: 'Exo 2', sans-serif;
-            color: var(--primary-white);
-        }
 
         .offerings-section {
             width: 100vw;
@@ -125,50 +119,58 @@ async def our_offerings_style():
         /* --- Mobile View --- */
         @media (max-width: 768px) {
             .offerings-section {
-                padding: 10rem 5rem;
+                padding: 10vh 5vw;
                 height: auto;
+                min-height: auto; /* Override desktop min-height */
             }
 
             .section-title h1 {
                 font-size: 8vw;
+                line-height: 1.3;
             }
 
             .offerings-grid {
                 grid-template-columns: 1fr;
                 gap: 5vh;
+                width: 100%; /* Use full width on mobile */
             }
 
             .offering-card {
-                padding: 6vw;
-                border-radius: 4vw;
+                padding: 8vw 7vw;
+                border-radius: 5vw;
             }
 
-            .card-titles {
-                font-size: 6vw;
-            }
-
-            .card-number {
-                font-size: 10vw;
-                top: 5vw;
-                right: 5vw;
-            }
-            
-            .card-header {
+            .card-headers {
                 margin-bottom: 5vh;
             }
 
+            .card-titles {
+                font-size: 6.5vw;
+                width: 80%; /* Allow more space for the title on mobile */
+                line-height: 1.3;
+            }
+
+            .card-number {
+                font-size: 12vw;
+                top: 7vw;
+                right: 7vw;
+                line-height: 1;
+            }
+
             .benefits-list {
-                gap: 2.5vh;
+                gap: 3vh;
             }
             
             .benefits-list li {
-                font-size: 3.8vw;
-                gap: 3vw;
+                font-size: 4vw;
+                gap: 4vw;
+                line-height: 1.6;
             }
 
             .check-icon {
                 width: 5vw;
                 height: 5vw;
+                margin-top: 0.5vw; /* Fine-tune vertical alignment */
             }
         }
     </style>

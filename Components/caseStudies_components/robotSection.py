@@ -25,6 +25,7 @@ async def robotSection_style():
                 justify-content: center;
                 padding: 5vh 5vw;
                 position: relative;
+                overflow: hidden;
             }
 
             .main-content {
@@ -141,16 +142,14 @@ async def robotSection_style():
             @media (max-width: 768px) {
                 .solutions-section {
                     height: auto;
-                    padding: 10rem 5rem;
+                    min-height: auto;
+                    padding: 10vh 5vw;
                     justify-content: flex-start;
-                }
-
-                .heading-container h1 {
-                    font-size: 6vw;
                 }
                 
                 .main-content {
                     flex-direction: column;
+                    align-items: center;
                     position: static;
                     height: auto;
                     width: 100%;
@@ -159,35 +158,44 @@ async def robotSection_style():
 
                 .robot-container {
                     width: 70vw;
-                    height: 45vh;
-                    margin-bottom: 5vh;
+                    height: 40vh;
+                    margin-bottom: 8vh;
                 }
 
                 .solution-card {
                     position: static;
                     width: 90vw;
                     height: auto;
-                    min-height: 15vh;
-                    margin-bottom: 3vh;
-                    padding: 4vw;
+                    min-height: auto;
+                    margin-bottom: 4vh;
+                    padding: 6vw;
                     gap: 3vh;
+                    border-radius: 3vw;
                 }
 
                 .icon-box {
-                    width: 10vw;
-                    height: 10vw;
-                    border-radius: 1.5vw;
+                    width: 12vw;
+                    height: 12vw;
+                    border-radius: 2.5vw;
                 }
 
                 .icon-box svg {
-                    width: 5.5vw;
-                    height: 5.5vw;
+                    width: 6vw;
+                    height: 6vw;
                 }
 
                 .card-text {
-                    font-size: 4vw;
+                    font-size: 4.5vw;
+                    line-height: 1.5;
                 }
                 
+                .eclipse-glow {
+                    width: 150vw;
+                    right: -25vw;
+                    top: 25vh;
+                    opacity: 0.3;
+                }
+
                 /* Hide desktop-only elements */
                 .connector-lines {
                     display: none !important;

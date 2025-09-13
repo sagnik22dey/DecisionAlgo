@@ -9,7 +9,6 @@ async def our_perspective_style():
         }
 
         /* --- Perspective Section Styles --- */
-        /* The CSS is written desktop-first. JS will override styles for mobile. */
         #perspective-section {
             width: 100%;
             display: flex;
@@ -17,9 +16,10 @@ async def our_perspective_style():
             align-items: center;
             position: relative;
             overflow: hidden;
-
-            /* Padding using rem units */
             padding: 10rem 5rem;
+            font-family: 'Exo 2', sans-serif; /* Assuming a default font */
+            color: #FEFEFE; /* Assuming a default text color */
+            background-color: #0A0A0A; /* Assuming a default background */
         }
 
         .perspective-container {
@@ -32,13 +32,11 @@ async def our_perspective_style():
 
         .perspective-container .section-title {
             font-weight: 700;
-            
-            /* Sizing and spacing using rem units */
             font-size: 3rem;
             margin-bottom: 8rem;
+            text-transform: uppercase;
         }
         
-        /* Style for the highlighted word "Perspective" */
         .perspective-container .section-title .highlight {
             color: #38bdf8; /* A bright, modern blue */
         }
@@ -46,8 +44,6 @@ async def our_perspective_style():
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr); /* Creates the 3-column layout */
-            
-            /* Gap using rem units */
             gap: 4rem;
             transition: all 0.3s ease-in-out;
             margin-top: 7rem;
@@ -65,25 +61,20 @@ async def our_perspective_style():
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            
-            /* Sizing and spacing using rem units */
             width: 3.5rem;
             height: 3.5rem;
             border-radius: 0.8rem;
             margin-bottom: 3rem;
         }
 
-        .icon-container img {
-            /* Icon size relative to its container */
-            width: 40%;
-            height: 40%;
+        .icon-container svg {
+            width: 50%;
+            height: 50%;
         }
 
         .perspective-card h3 {
             font-weight: 600;
             line-height: 1.2;
-
-            /* Sizing and spacing using rem units */
             font-size: 1.6rem;
             margin-bottom: 1.5rem;
         }
@@ -91,11 +82,10 @@ async def our_perspective_style():
         .perspective-card p {
             color: #bdbdbd;
             line-height: 1.6;
-            
-            /* Sizing and spacing using rem units */
             font-size: 1.1rem;
             max-width: 30ch; /* Limits line length for readability */
         }
+
         .eclipse-glow {
             position: absolute;
             width: 80vw;
@@ -107,11 +97,73 @@ async def our_perspective_style():
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            z-index: -1;
+            z-index: 0;
             opacity: 0.5;
             pointer-events: none;
-    }
+        }
+        
+        /* --- Mobile View --- */
+        @media (max-width: 768px) {
+            #perspective-section {
+                padding: 10vh 5vw;
+                height: auto;
+                min-height: 100vh;
+            }
 
+            .perspective-container {
+                width: 90vw;
+                text-align: center;
+            }
+
+            .perspective-container .section-title {
+                font-size: 9vw;
+                line-height: 1.3;
+                margin-bottom: 8vh;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 8vh;
+                margin-top: 5vh;
+            }
+
+            .perspective-card {
+                align-items: center;
+                text-align: center;
+            }
+
+            .icon-container {
+                width: 18vw;
+                height: 18vw;
+                border-radius: 4vw;
+                margin-bottom: 4vh;
+            }
+            
+            .icon-container svg {
+                width: 50%;
+                height: 50%;
+            }
+
+            .perspective-card h3 {
+                font-size: 6vw;
+                line-height: 1.4;
+                margin-bottom: 2vh;
+            }
+
+            .perspective-card p {
+                font-size: 4vw;
+                line-height: 1.6;
+                max-width: 100%; /* Remove character limit for better flow on mobile */
+            }
+
+            .eclipse-glow {
+                width: 150vw;
+                height: 75vw;
+                top: 50%;
+                left: 50%;
+                opacity: 0.3;
+            }
+        }
     </style>
     
 """
@@ -127,7 +179,6 @@ async def our_perspective_body(h3_1a, h3_1b,p_1,h3_2a, h3_2b,p_2,h3_3a, h3_3b,p_
                 <!-- Card 1 -->
                 <article class="perspective-card">
                     <div class="icon-container">
-                        <!-- Embedded dummy icon using SVG data URI -->
                         <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <mask id="mask0_437_45" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="33" height="33">
                         <rect x="0.500977" y="0.566406" width="32.4013" height="32.4013" fill="#D9D9D9"/>
@@ -144,7 +195,6 @@ async def our_perspective_body(h3_1a, h3_1b,p_1,h3_2a, h3_2b,p_2,h3_3a, h3_3b,p_
                 <!-- Card 2 -->
                 <article class="perspective-card">
                     <div class="icon-container">
-                        <!-- Embedded dummy icon using SVG data URI -->
                         <svg width="34" height="33" viewBox="0 0 34 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <mask id="mask0_437_76" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="34" height="33">
                         <rect x="0.660156" y="0.00830078" width="32.6809" height="32.6809" fill="#D9D9D9"/>
@@ -161,7 +211,6 @@ async def our_perspective_body(h3_1a, h3_1b,p_1,h3_2a, h3_2b,p_2,h3_3a, h3_3b,p_
                 <!-- Card 3 -->
                 <article class="perspective-card">
                     <div class="icon-container">
-                        <!-- Embedded dummy icon using SVG data URI -->
                         <svg width="33" height="34" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <mask id="mask0_437_70" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="33" height="34">
                         <rect x="0.0117188" y="0.897949" width="32.3949" height="32.3949" fill="#D9D9D9"/>
@@ -178,82 +227,4 @@ async def our_perspective_body(h3_1a, h3_1b,p_1,h3_2a, h3_2b,p_2,h3_3a, h3_3b,p_
         </div>
         <div class="eclipse-glow"></div>
     </section>
-
-    <script>
-        /**
-         * This script handles responsive layout adjustments for the "Perspective" section.
-         * It checks the viewport width and applies different styles for mobile vs. desktop,
-         * effectively creating two different layouts (or "splits") as requested.
-         */
-        function adjustPerspectiveLayout() {{
-            // Set the breakpoint for mobile devices
-            const isMobile = window.innerWidth < 768;
-
-            // Select all the elements that will be adjusted
-            const sectionTitle = document.querySelector('#perspective-section .section-title');
-            const cardsGrid = document.querySelector('#perspective-section .cards-grid');
-            const cards = document.querySelectorAll('#perspective-section .perspective-card');
-
-            if (isMobile) {{
-                // --- APPLY MOBILE STYLES ---
-
-                // Adjust main title font size
-                sectionTitle.style.fontSize = '8rem';
-                sectionTitle.style.marginBottom = '8rem';
-
-                // Change grid to a single column and adjust gap
-                cardsGrid.style.gridTemplateColumns = '1fr';
-                cardsGrid.style.gap = '8rem'; // Increase vertical gap for stacked items
-
-                // Loop through each card to adjust its contents
-                cards.forEach(card => {{
-                    const iconContainer = card.querySelector('.icon-container');
-                    const cardTitle = card.querySelector('h3');
-                    const cardText = card.querySelector('p');
-
-                    // Make icons larger for mobile touchpoints
-                    iconContainer.style.width = '15rem';
-                    iconContainer.style.height = '15rem';
-                    iconContainer.style.borderRadius = '2rem';
-
-                    // Adjust font sizes for mobile readability
-                    cardTitle.style.fontSize = '5.5rem';
-                    cardText.style.fontSize = '4rem';
-                }});
-
-            }} else {{
-                // --- APPLY DESKTOP STYLES (Revert to original CSS) ---
-
-                // Restore main title font size
-                sectionTitle.style.fontSize = '3rem';
-                sectionTitle.style.marginBottom = '8rem';
-
-                // Restore the 3-column grid and gap
-                cardsGrid.style.gridTemplateColumns = 'repeat(3, 1fr)';
-                cardsGrid.style.gap = '4rem';
-
-                // Loop through each card to restore desktop styles
-                cards.forEach(card => {{
-                    const iconContainer = card.querySelector('.icon-container');
-                    const cardTitle = card.querySelector('h3');
-                    const cardText = card.querySelector('p');
-
-                    // Restore icon sizes
-                    iconContainer.style.width = '3.5rem';
-                    iconContainer.style.height = '3.5rem';
-                    iconContainer.style.borderRadius = '0.8rem';
-                    
-                    // Restore font sizes
-                    cardTitle.style.fontSize = '1.6rem';
-                    cardText.style.fontSize = '1.1rem';
-                }});
-            }}
-        }}
-
-        // Run the function on initial page load
-        document.addEventListener('DOMContentLoaded', adjustPerspectiveLayout);
-
-        // Re-run the function whenever the window is resized
-        window.addEventListener('resize', adjustPerspectiveLayout);
-    </script>
 """

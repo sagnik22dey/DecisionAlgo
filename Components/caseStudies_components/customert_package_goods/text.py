@@ -45,6 +45,19 @@ async def style_top_robot_section():
             .heading-container h1 .text-white {
                 color: var(--primary-white);
             }
+            
+        /* --- Mobile View --- */
+        @media (max-width: 768px) {
+            .heading-container {
+                margin-top: 10vh;
+                padding: 0 5vw; /* Add horizontal padding to prevent text from touching edges */
+            }
+
+            .heading-container h1 {
+                font-size: 8vw; /* Use vw for responsive font size */
+                line-height: 1.3; /* Adjust line height for better readability on smaller screens */
+            }
+        }
 
         </style>
         

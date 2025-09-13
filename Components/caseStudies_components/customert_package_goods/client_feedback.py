@@ -19,13 +19,6 @@ async def client_feedback_style():
             box-sizing: border-box;
         }
 
-        html,
-        body {
-            overflow-x: hidden;
-            background-color: var(--background-dark);
-            font-family: 'Exo 2', sans-serif;
-        }
-
         .testimonials-section {
             width: 100%;
             min-height: 100vh;
@@ -74,7 +67,7 @@ async def client_feedback_style():
             border-radius: 1.5rem;
             box-shadow: 0px 2rem 8rem rgba(0, 0, 0, 0.08);
             position: relative;
-            flex: 0 0 28rem;
+            flex: 0 0 calc(81vw / 3);
             /* 3 cards visible with some spacing */
             margin: 1rem;
             min-height: 55vh;
@@ -172,11 +165,19 @@ async def client_feedback_style():
         /* --- Mobile View --- */
         @media (max-width: 768px) {
             .testimonials-section {
-                padding: 10rem 5rem;
+                padding: 10vh 5vw;
+                justify-content: flex-start;
+                min-height: 100vh;
+                height: auto;
+            }
+
+            .section-header {
+                margin-bottom: 8vh;
             }
 
             .section-header h1 {
-                font-size: 8rem;
+                font-size: 8vw;
+                line-height: 1.3;
             }
 
             .slider-viewport {
@@ -184,62 +185,78 @@ async def client_feedback_style():
             }
 
             .testimonial-card {
-                flex: 0 0 90%;
-                /* 1 card visible */
-                margin: 0 5%;
-                /* Center the single card */
-                border-radius: 4rem;
-                min-height: 60vh;
+                flex: 0 0 100%;
+                margin: 0;
+                border-radius: 6vw;
+                min-height: 65vh;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
             }
 
             .card-top {
-                padding: 5rem;
-                border-radius: 4rem 4rem 0 0;
-                min-height: 25vh;
+                flex-direction: column;
+                text-align: center;
+                padding: 8vw 6vw 6vw;
+                gap: 3vw;
+                border-radius: 6vw 6vw 0 0;
+                min-height: auto;
+                flex-shrink: 0;
             }
 
             .client-photo {
-                width: 25rem;
-                height: 25rem;
-                border-radius: 2.5rem;
+                width: 28vw;
+                height: 28vw;
+                border-radius: 4vw;
             }
 
             .client-info h3 {
-                font-size: 5.5rem;
+                font-size: 5.5vw;
+                line-height: 1.2;
             }
 
             .client-info p {
-                font-size: 4rem;
+                font-size: 3.8vw;
+                line-height: 1.4;
             }
 
             .card-bottom {
-                padding: 5rem;
+                padding: 0 6vw 8vw;
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
             }
 
             .rating-box {
-                margin-top: -10rem;
-                margin-bottom: 5rem;
-                padding: 1.5rem 5rem;
-                border-radius: 2.5rem;
-                gap: 2rem;
+                margin-top: -8vh;
+                margin-bottom: 4vh;
+                padding: 2.5vh 6vw;
+                border-radius: 10vw;
+                gap: 2vw;
             }
 
             .rating-box svg {
-                width: 5rem;
-                height: 5rem;
+                width: 4.5vw;
+                height: 4.5vw;
             }
 
             .testimonial-quote {
-                font-size: 4.2rem;
+                font-size: 4vw;
+                line-height: 1.6;
+                max-width: 100%;
             }
 
             .slider-pagination {
-                gap: 3rem;
+                margin-top: 6vh;
+                gap: 3vw;
             }
 
             .pagination-dot {
-                width: 15rem;
-                height: 1rem;
+                width: 12vw;
+                height: 1.2vh;
             }
         }
     </style>
@@ -377,10 +394,11 @@ async def client_feedback_body():
                 currentIndex = slideCount; // Start at the first real slide
 
             const getSlideWidth = () => {
-                if (slides.length === 0) return 0;
-                const slideStyle = window.getComputedStyle(slides[0]);
-                const slideMargin = parseFloat(slideStyle.marginLeft) + parseFloat(slideStyle.marginRight);
-                return slides[0].offsetWidth + slideMargin;
+                const viewport = document.querySelector('.slider-viewport');
+                if (!viewport || slides.length === 0) return 0;
+
+                const slidesPerView = window.innerWidth > 768 ? 3 : 1;
+                return viewport.clientWidth / slidesPerView;
             };
 
             function setSliderPosition() {
@@ -435,10 +453,10 @@ async def client_feedback_body():
                 const movedBy = currentTranslate - prevTranslate;
                 const slideWidth = getSlideWidth();
 
-                if (movedBy < -slideWidth / 4 && currentIndex < slides.length - 1) {
+                const threshold = slideWidth * 0.35;
+                if (movedBy < -threshold) {
                     currentIndex++;
-                }
-                if (movedBy > slideWidth / 4 && currentIndex > 0) {
+                } else if (movedBy > threshold) {
                     currentIndex--;
                 }
 

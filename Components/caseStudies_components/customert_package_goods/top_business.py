@@ -27,6 +27,9 @@ async def top_business_style():
             align-items: center;
             justify-content: center;
             padding: 10vh 5vw;
+            font-family: 'Exo 2', sans-serif;
+            background-color: var(--background-dark);
+            color: var(--primary-white);
         }
 
         .section-heading {
@@ -90,10 +93,9 @@ async def top_business_style():
             border-radius: 0.5rem;
         }
 
-        .icon-wrapper svg {
+        .icon-wrapper img {
             width: 2rem;
-            height: 2rem;
-            stroke: var(--primary-white);
+            height: auto;
         }
 
         .card-header h2 {
@@ -113,12 +115,14 @@ async def top_business_style():
         /* --- Mobile View --- */
         @media (max-width: 768px) {
             .data-science-section {
-                padding: 10rem 5rem;
+                padding: 10vh 5vw;
                 height: auto;
+                min-height: auto;
             }
 
             .section-heading h1 {
-                font-size: 7vw;
+                font-size: 8vw;
+                line-height: 1.3;
             }
 
             .cards-grid {
@@ -128,32 +132,34 @@ async def top_business_style():
             }
 
             .benefit-card {
-                padding: 5vw;
-                border-radius: 2.5vw;
-                border-width: 0.2vw;
+                padding: 7vw;
+                border-radius: 4vw;
+                gap: 4vh;
             }
 
             .card-header {
-                gap: 4vw;
+                gap: 5vw;
             }
 
             .icon-wrapper {
-                width: 12vw;
-                height: 12vw;
-                border-radius: 1.5vw;
+                width: 13vw;
+                height: 13vw;
+                border-radius: 2.5vw;
             }
-
-            .icon-wrapper svg {
-                width: 6vw;
-                height: 6vw;
+            
+            .icon-wrapper img {
+                width: 6.5vw;
+                height: auto;
             }
 
             .card-header h2 {
                 font-size: 5.5vw;
+                line-height: 1.2;
             }
 
             .card-description {
                 font-size: 4vw;
+                line-height: 1.6;
             }
         }
     </style>
