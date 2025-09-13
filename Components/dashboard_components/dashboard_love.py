@@ -91,9 +91,9 @@ async def dashboard_love_style():
         }
 
         .section-title {
-            font-size: 3.5rem;
+            font-size: 3.5vw;
             font-weight: 700;
-            margin-bottom: 8rem;
+            margin-bottom: 8vh;
             letter-spacing: -0.02em;
             line-height: 1.2;
         }
@@ -105,8 +105,8 @@ async def dashboard_love_style():
         .features-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            max-width: 80%;
+            gap: 1.5vw;
+            max-width: 80vw;
             margin: 0 auto;
             justify-items: center;
         }
@@ -116,12 +116,12 @@ async def dashboard_love_style():
             flex-direction: column;
             align-items: flex-start;
             text-align: left;
-            padding: 1.7rem;
-            gap: 1rem;
-            border-radius: 1rem;
-            width: 18rem;
-            height: 19rem;
-            border: 1px solid #5FC7FB;
+            padding: 1.7vw;
+            gap: 1vw;
+            border-radius: 1vw;
+            width: 18vw;
+            height: 19vw;
+            border: 0.1vw solid #5FC7FB;
             background: transparent;
             border-bottom: none; /* Removed for the pseudo-element border */
             position: relative;
@@ -130,8 +130,8 @@ async def dashboard_love_style():
         }
         
         .feature-card:hover {
-            transform: translateY(-0.5rem);
-            box-shadow: 0 0.8rem 1.5rem rgba(95, 199, 251, 0.2);
+            transform: translateY(-0.5vw);
+            box-shadow: 0 0.8vw 1.5vw rgba(95, 199, 251, 0.2);
         }
 
         .feature-card::after {
@@ -140,27 +140,27 @@ async def dashboard_love_style():
             left: 0;
             right: 0;
             bottom: 0;
-            height: 1px;
+            height: 0.1vw;
             background: linear-gradient(to right, transparent, #5FC7FB, transparent);
         }
 
         .icon-container {
-            width: 3.5rem;
-            height: 3.5rem;
+            width: 3.5vw;
+            height: 3.5vw;
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 1px solid #5FC7FB;
-            border-radius: 0.7rem;
+            border: 0.1vw solid #5FC7FB;
+            border-radius: 0.7vw;
         }
 
         .icon-container svg {
-            width: 1.8rem;
-            height: 1.8rem;
+            width: 1.8vw;
+            height: 1.8vw;
         }
 
         .feature-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.5vw;
             font-weight: 600;
             line-height: 1.3;
             text-transform: none;
@@ -168,18 +168,18 @@ async def dashboard_love_style():
         }
 
         .feature-card p {
-            font-size: 1rem;
+            font-size: 1vw;
             font-weight: 300;
             line-height: 1.4;
             color: rgba(254, 254, 254, 0.8);
             text-transform: none;
-            margin-top: 0.5rem;
+            margin-top: 0.5vw;
         }
 
         /* --- Tablet View (Medium Screens) --- */
         @media (max-width: 1024px) {
             .section-title {
-                font-size: 5rem;
+                font-size: 5vw;
             }
 
             .features-grid {
@@ -220,7 +220,7 @@ async def dashboard_love_style():
         /* --- Mobile View (Redesigned for Elegance & Aesthetics) --- */
         @media (max-width: 767px) {
             .features-section {
-                padding: 3rem 5rem; /* More vertical and horizontal space */
+                padding: 3vh 5vw; /* More vertical and horizontal space */
             }
 
             .section-title {
@@ -236,7 +236,7 @@ async def dashboard_love_style():
 
             .feature-card {
                 width: 100%; /* Full width of the container */
-                height: 28.14vh;
+                height: 19rem;
                 padding: 8vw 6vw; /* Generous padding */
                 gap: 3vh; /* Vertical gap using vh */
                 border-radius: 4vw;

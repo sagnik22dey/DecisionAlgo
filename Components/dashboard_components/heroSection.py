@@ -101,7 +101,7 @@ async def heroSection_style():
       .hero-title {
         font-family: 'Exo 2', sans-serif;
         font-weight: 600;
-        font-size: 3.8rem;
+        font-size: 3.8vw;
         line-height: 1.25;
         letter-spacing: -0.02em;
         color: #fff;
@@ -117,7 +117,7 @@ async def heroSection_style():
       .hero-sub {
         font-family: 'Poppins', sans-serif;
         font-weight: 700;
-        font-size: 1.5rem;
+        font-size: 1.5vw;
         line-height: 1.5;
         color: #eaeaea;
         margin: 0;
@@ -134,12 +134,12 @@ async def heroSection_style():
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        width: 12rem;
-        height: 5.5rem;
-        border: 1px solid #DFDFDF;
-        border-radius: 1.8rem;
+        width: 12vw;
+        height: 5.5vh;
+        border: 0.1vw solid #DFDFDF;
+        border-radius: 1.8vw;
         font-family: 'Poppins', sans-serif;
-        font-size: 1.2rem;
+        font-size: 1.2vw;
         color: #DFDFDF;
         text-decoration: none;
         transition: transform 0.3s ease, background-color 0.3s ease;
@@ -205,7 +205,7 @@ async def heroSection_style():
       /* --- Tablet View --- */
       @media (max-width: 1024px) {
         .hero-head {
-            width: 85%;
+            width: 85vw;
             margin-top: 6vh;
         }
         .hero-title { font-size: 5vw; }
@@ -225,7 +225,7 @@ async def heroSection_style():
       /* --- Mobile View (Redesigned for Elegance) --- */
       @media (max-width: 767px) {
         .hero-section-container {
-            margin-bottom: -45rem; /* Adjust negative margin for stacked layout */
+            margin-bottom: -45vh; /* Adjust negative margin for stacked layout */
             padding-top: 8vh;
         }
         .hero-content {

@@ -32,6 +32,8 @@ app.include_router(tech_media_telecom.router)
 app.include_router(healthcare.router)
 
 app.mount("/Resources", StaticFiles(directory="Resources"), name="Resources")
+app.mount("/Resources/Images", StaticFiles(directory="Resources/Images"), name="Images")
+
 
 @app.exception_handler(404)
 async def not_found_exception_handler(request: Request, exc):
