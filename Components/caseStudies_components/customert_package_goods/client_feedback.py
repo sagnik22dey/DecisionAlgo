@@ -165,7 +165,7 @@ async def client_feedback_style():
         /* --- Mobile View --- */
         @media (max-width: 768px) {
             .testimonials-section {
-                padding: 10vh 5vw;
+                padding: 5vh 5vw;
                 justify-content: flex-start;
                 min-height: 100vh;
                 height: auto;

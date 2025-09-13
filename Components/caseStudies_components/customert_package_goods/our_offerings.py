@@ -119,7 +119,7 @@ async def our_offerings_style():
         /* --- Mobile View --- */
         @media (max-width: 768px) {
             .offerings-section {
-                padding: 10vh 5vw;
+                padding: 5vh 5vw;
                 height: auto;
                 min-height: auto; /* Override desktop min-height */
             }

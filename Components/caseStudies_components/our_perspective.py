@@ -105,7 +105,7 @@ async def our_perspective_style():
         /* --- Mobile View --- */
         @media (max-width: 768px) {
             #perspective-section {
-                padding: 10vh 5vw;
+                padding: 5vh 5vw;
                 height: auto;
                 min-height: 100vh;
             }

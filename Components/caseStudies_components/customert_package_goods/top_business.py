@@ -115,7 +115,7 @@ async def top_business_style():
         /* --- Mobile View --- */
         @media (max-width: 768px) {
             .data-science-section {
-                padding: 10vh 5vw;
+                padding: 5vh 5vw;
                 height: auto;
                 min-height: auto;
             }

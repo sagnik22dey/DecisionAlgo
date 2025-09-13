@@ -143,7 +143,7 @@ async def robotSection_style():
                 .solutions-section {
                     height: auto;
                     min-height: auto;
-                    padding: 10vh 5vw;
+                    padding: 5vh 5vw;
                     justify-content: flex-start;
                 }
                 
@@ -190,8 +190,7 @@ async def robotSection_style():
                 }
                 
                 .eclipse-glow {
-                    width: 150vw;
-                    right: -25vw;
+                    width: 100vw;
                     top: 25vh;
                     opacity: 0.3;
                 }
