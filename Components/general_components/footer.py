@@ -51,10 +51,10 @@ async def footer_body():
                 <div class="link-column">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li>Case Studies</li>
-                        <li>About Us</li>
-                        <li>Pricing</li>
-                        <li>Contact Us</li>
+                        <li><a href="/casestudy/customer_package_goods" style="color: white; text-decoration: none;">Case Studies<a></li>
+                        <li><a href="/aboutus" style="color: white; text-decoration: none;">About Us</a></li>
+                        <li><a href="/pricing" style="color: white; text-decoration: none;">Pricing</a></li>
+                        <li><a href="/contactus" style="color: white; text-decoration: none;">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -254,7 +254,7 @@ async def footer_style():
         }
 
         /* --- Elegant & Aesthetic Mobile View --- */
-        @media (max-width: 48vw) {
+        @media (max-width: 767px) {
             .footer-container {
                 padding: 8vh 6vw;
                 gap: 6vh;
@@ -274,7 +274,7 @@ async def footer_style():
             
             .logo {
                 width: 50vw; /* Larger, more prominent logo */
-                max-width: 26.04vw;
+                max-width: 200px;
             }
             
             /* Hide original social links in footer-top for mobile */

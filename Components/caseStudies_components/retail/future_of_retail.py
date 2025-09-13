@@ -71,10 +71,10 @@ async def future_of_retail_style():
             font-weight: 500;
             
             /* Sizing and spacing using viewport units */
-            padding: 0.8vh 1.5vw;
-            border-radius: 5vh;
-            font-size: 1vw;
-            margin-bottom: 2vh;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5rem;
+            font-size: 1rem;
+            margin-bottom: 2rem;
         }
 
         #retail-hero h1 {
@@ -82,8 +82,8 @@ async def future_of_retail_style():
             line-height: 1.1;
 
             /* Sizing and spacing using viewport units */
-            font-size: 3.5vw;
-            margin-bottom: 2.5vh;
+            font-size: 3.5rem;
+            margin-bottom: 2.5rem;
         }
 
         #retail-hero p {
@@ -91,8 +91,8 @@ async def future_of_retail_style():
             opacity: 0.9;
             
             /* Sizing and spacing using viewport units */
-            font-size: 1.1vw;
-            margin-bottom: 4vh;
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
         }
 
         .cta-button {
@@ -104,9 +104,9 @@ async def future_of_retail_style():
             transition: transform 0.2s ease, background-color 0.2s ease;
             
             /* Sizing and spacing using viewport units */
-            padding: 1.5vh 2.5vw;
-            border-radius: 5vh;
-            font-size: 1vw;
+            padding: 1.5rem 2.5rem;
+            border-radius: 5rem;
+            font-size: 1rem;
         }
 
         .cta-button:hover {
@@ -143,7 +143,7 @@ async def future_of_retail_body():
          */
         function adjustLayout() {
             // Define a breakpoint for mobile devices
-            const isMobile = window.innerWidth < 48;
+            const isMobile = window.innerWidth < 768;
 
             // Select all the elements that need style adjustments
             const heroSection = document.getElementById('retail-hero');

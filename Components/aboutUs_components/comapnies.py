@@ -25,7 +25,7 @@ async def companies_body():
 
     <script>
         function optimizeCompaniesLayout() {
-            const isMobile = window.innerWidth <= 48;
+            const isMobile = window.innerWidth <= 768;
             const logoBar = document.querySelector('.companies-logo-bar');
             const logos = document.querySelectorAll('.company-logo');
 
@@ -114,7 +114,7 @@ async def companies_style():
         .company-logo img {
             max-width: 100%;
             max-height: 18vh;
-            width: 20.83vw;
+            width: 20rem;
             object-fit: contain;
             filter: grayscale(1) brightness(5);
             opacity: 0.8;
@@ -127,7 +127,7 @@ async def companies_style():
         }
 
         /* Mobile Styles */
-        @media (max-width: 48vw) {
+        @media (max-width: 768px) {
             .companies-section {
                 padding: 8vh 0;
             }
@@ -158,7 +158,7 @@ async def companies_style():
         }
 
         /* Tablet Styles */
-        @media (max-width: 64vw) and (min-width: 48.06vw) {
+        @media (max-width: 1024px) and (min-width: 769px) {
             .companies-logo-bar {
                 gap: 1.5vw;
                 width: 90vw;
@@ -166,7 +166,7 @@ async def companies_style():
 
             .company-logo img {
                 max-height: 16vh;
-                width: 18.75vw;
+                width: 18rem;
             }
         }
     </style>

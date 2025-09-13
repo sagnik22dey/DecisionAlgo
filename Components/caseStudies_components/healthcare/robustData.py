@@ -4,7 +4,7 @@ async def robustData_style():
         .robust-feature-outer {
             border-bottom: 0.2vh solid #f0f0f0;
             border-left: 0.2vh solid #f0f0f0;
-            border-radius: 6vw 0 6vw 1.5vw;
+            border-radius: 3vw 0 3vw 1.5vw;
             max-width: 80vw;
             width: 70vw;
             height: 60vh;

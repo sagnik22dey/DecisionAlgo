@@ -67,7 +67,7 @@ async def trans_tech_style():
 
         #trans-hero h1 {
             font-family: 'Exo 2', sans-serif;
-            font-size: 3.5vw;
+            font-size: 3.5rem;
             font-weight: 700;
             line-height: 1.2;
             letter-spacing: -0.02em;
@@ -85,8 +85,8 @@ async def trans_tech_style():
             opacity: 0.9;
             
             /* Sizing and spacing using viewport units */
-            font-size: 1.1vw;
-            margin-bottom: 4vh;
+            font-size: 1.1rem;
+            margin-bottom: 0;
         }
 
         .cta-button {
@@ -98,10 +98,10 @@ async def trans_tech_style():
             transition: transform 0.2s ease, box-shadow 0.2s ease;
 
             /* Sizing and spacing using viewport units */
-            padding: 1.5vh 2.5vw;
-            border-radius: 5vh;
-            font-size: 1vw;
-            margin-top: 2vh;
+            padding: 1.5rem 2.5rem;
+            border-radius: 5rem;
+            font-size: 1rem;
+            margin-top: 2rem;
         }
 
         .cta-button:hover {
@@ -139,7 +139,7 @@ async def trans_tech_body():
          */
         function adjustLayout() {
             // Define a breakpoint for mobile devices
-            const isMobile = window.innerWidth < 48;
+            const isMobile = window.innerWidth < 768;
 
             // Select all the elements that need style adjustments
             const heroSection = document.getElementById('trans-hero');
@@ -197,7 +197,7 @@ async def trans_tech_body():
 
 
                 // Restore content wrapper layout
-                contentWrapper.style.width = '45vw';
+                contentWrapper.style.width = '44vw';
                 contentWrapper.style.alignItems = 'flex-start'; // Left-align items
                 contentWrapper.style.textAlign = 'left'; // Left-align text
                 contentWrapper.style.padding = '4vh 5vw 4vh 2vw';

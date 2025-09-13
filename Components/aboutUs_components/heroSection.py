@@ -43,9 +43,9 @@ async def heroSection_style():
             display: flex;
             align-items: stretch;
             overflow: hidden;
-            border-radius: 4.24vw;
-            border-bottom-right-radius: 5vw;
-            border-bottom: 0.14vh solid rgba(255, 255, 255, 255);
+            border-radius: 4rem;
+            border-bottom-right-radius: 5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 255);
         }
         
     .grid-overlay {
@@ -56,8 +56,8 @@ async def heroSection_style():
             top: 0;
             background: linear-gradient(177.33deg, rgba(15, 15, 15, 0) 5.46%, rgba(0, 0, 0, 0.6006) 53.07%, rgba(0, 0, 0, 0.77) 93.86%);
             background-image: url('../../Resources/Images/HomePage/grid1.png');
-            border-radius: 2vw;
-            border-bottom-right-radius: 5vw;
+            border-radius: 2rem;
+            border-bottom-right-radius: 5rem;
     }
     
     .eclipse-glow {
@@ -115,24 +115,24 @@ async def heroSection_style():
     }
 
     .hero-headline {
-        font-size: 4vw;
+        font-size: 4rem;
         font-weight: 700;
         line-height: 1.2;
     }
 
     .hero-paragraph {
-        font-size: 0.76vw;
+        font-size: 1rem;
         font-weight: 400;
         line-height: 1.6;
         color: rgba(255, 255, 255, 0.8);
-        max-width: 45vw;
+        max-width: 45rem;
     }
 
     .hero-cta-button {
         display: inline-block;
         background-color: #FFFFFF;
         color: #101010;
-        font-size: 0.76vw;
+        font-size: 1rem;
         font-weight: 600;
         text-decoration: none;
         padding: 1.5vh 2.5vw;
@@ -142,25 +142,25 @@ async def heroSection_style():
     
     .hero-cta-button:hover {
         transform: scale(1.05);
-        box-shadow: 0 0.5vw 1.5vw rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0.5rem 1.5rem rgba(255, 255, 255, 0.2);
     }
 
     .hero-keywords {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.5vw 1.5vw;
-        font-size: 0.9vw;
+        gap: 0.5rem 1.5rem;
+        font-size: 0.9rem;
         color: rgba(255, 255, 255, 0.6);
     }
 
     .hero-keywords span:not(:last-child)::after {
         content: '|';
-        margin-left: 1.5vw;
+        margin-left: 1.5rem;
         color: rgba(255, 255, 255, 0.4);
     }
 
     /* Mobile Styles */
-    @media (max-width: 48vw) {
+    @media (max-width: 768px) {
         .eclipse-glow {
             display: none; /* Hide eclipse glow on mobile */
         }

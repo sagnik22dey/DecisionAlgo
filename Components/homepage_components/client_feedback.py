@@ -289,65 +289,65 @@ async def client_feedback_style():
         /******************************************/
         /*           MOBILE STYLES                */
         /******************************************/
-        @media (max-width: 48vw) {
+        @media (max-width: 768px) {
             .section {
-                padding: 5.92vh 1.04vw 4.44vh;
+                padding: 4rem 1rem 3rem;
                 min-height: auto;
             }
 
             .cta {
-                font-size: 1.17vw;
-                padding: 0.74vh 1.62vw;
+                font-size: 0.9rem;
+                padding: 0.5rem 1.25rem;
                 width: auto;
                 height: auto;
-                margin: 0 0 2.96vh 0;
+                margin: 0 0 2rem 0;
             }
 
             .tagline {
-                font-size: 1.43vw;
+                font-size: 1.1rem;
                 line-height: 1.5;
-                max-width: 100vw;
-                margin: 0 auto 8.88vh;
+                max-width: 100%;
+                margin: 0 auto 6rem;
             }
 
             .heading {
-                font-size: 2.92vw;
+                font-size: 2.25rem;
                 line-height: 1.2;
-                margin: 0 auto 3.7vh;
+                margin: 0 auto 2.5rem;
             }
 
             .layout {
                 display: flex;
                 flex-direction: column;
-                gap: 2.96vh;
-                width: 100vw;
+                gap: 2rem;
+                width: 100%;
             }
             
             /* Testimonial card comes SECOND on mobile */
             .card {
                 order: 2; /* CHANGED */
                 height: auto; /* Allow height to fit the content */
-                border-radius: 3.125vw;
+                border-radius: 24px;
                 /* Add bottom padding to make space for absolutely positioned elements */
-                padding: 2.96vh 1.95vw 11.85vh 1.95vw;
+                padding: 2rem 1.5rem 8rem 1.5rem;
             }
             
             /* Portrait image comes FIRST */
             .portrait {
                 order: 1;
                 margin: auto;
-                width: 80vw;
-                height: 51.85vh;
-                border-radius: 3.125vw;
+                width: 80%;
+                height: 350px;
+                border-radius: 24px;
             }
 
             /* --- Styles inside the card --- */
 
             .quote-mark {
-                top: -1.48vh;
-                right: 1.95vw;
-                width: 15.625vw;
-                height: 14.81vh;
+                top: -10px;
+                right: 15px;
+                width: 120px;
+                height: 100px;
                 opacity: 0.8;
             }
             
@@ -357,37 +357,37 @@ async def client_feedback_style():
             }
 
             .quote {
-                font-size: 1.62vw;
+                font-size: 1.25rem;
                 line-height: 1.6;
             }
 
             .person {
-                left: 1.95vw;
-                bottom: 6.66vh; /* Position above the footer row */
+                left: 1.5rem;
+                bottom: 4.5rem; /* Position above the footer row */
             }
 
             .person .name {
-                font-size: 1.95vw;
+                font-size: 1.5rem;
             }
 
             .person .role {
-                font-size: 1.3vw;
+                font-size: 1rem;
                 color: var(--muted);
             }
 
             .footer-row {
-                left: 1.95vw;
-                right: 1.95vw;
-                bottom: 2.96vh; /* Position it firmly at the bottom */
+                left: 1.5rem;
+                right: 1.5rem;
+                bottom: 2rem; /* Position it firmly at the bottom */
             }
             
             .stars {
-                height: 2.96vh;
+                height: 20px;
             }
             
             .star {
-                width: 2.6vw;
-                height: 2.96vh;
+                width: 20px;
+                height: 20px;
             }
         }
     </style>

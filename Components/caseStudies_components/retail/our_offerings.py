@@ -31,7 +31,7 @@ async def our_offerings_style():
         }
 
         .section-title h1 {
-            font-size: 4vw;
+            font-size: 4rem;
             line-height: 1.2;
             font-weight: 700;
             text-transform: uppercase;
@@ -46,16 +46,16 @@ async def our_offerings_style():
         .offerings-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2.5vw;
-            width: 62vw;
-            height: 34vw;
-            max-width: 100vw;
+            gap: 5.5rem;
+            width: 65rem;
+            height: 43rem;
+            max-width: 100%;
         }
 
         .offering-card {
             background-color: var(--card-bg);
-            border-radius: 1vh;
-            padding: 2vw;
+            border-radius: 1rem;
+            padding: 2rem;
             position: relative;
             overflow: hidden;
             display: flex;
@@ -75,7 +75,7 @@ async def our_offerings_style():
         .card-title-retail {
             font-family: 'Exo 2', sans-serif;
             font-weight: 500;
-            font-size: 3vh;
+            font-size: 1.5vw;
             line-height: 1.2;
             color: var(--primary-white);
             width: 70%; /* Give space for the number */
@@ -84,12 +84,12 @@ async def our_offerings_style():
         .card-number {
             font-family: 'Urbanist', sans-serif;
             font-weight: 400;
-            font-size: 3vw;
+            font-size: 3rem;
             line-height: 1;
             color: var(--primary-blue);
             position: absolute;
-            top: 2.5vw;
-            right: 2.5vw;
+            top: 2.5rem;
+            right: 2.5rem;
         }
 
         .card-description {
@@ -100,9 +100,9 @@ async def our_offerings_style():
         }
 
         /* --- Mobile View --- */
-        @media (max-width: 48vw) {
+        @media (max-width: 768px) {
             .offerings-section {
-                padding: 10vh 5vw;
+                padding: 10rem 5rem;
                 height: auto;
             }
 

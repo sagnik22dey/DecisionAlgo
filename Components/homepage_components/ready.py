@@ -213,13 +213,13 @@ async def ready_style():
         /******************************************/
         /*           MOBILE STYLES                */
         /******************************************/
-        @media (max-width: 48vw) {
+        @media (max-width: 768px) {
             .viewport-container {
                 display: flex; /* CHANGE: Override grid with flexbox for mobile */
                 flex-direction: column; /* This now correctly orders the sibling elements */
-                padding: 5.92vh 1.95vw;
+                padding: 4rem 1.5rem;
                 justify-content: flex-start;
-                gap: 4.44vh;
+                gap: 3rem;
                 min-height: auto;
             }
 
@@ -228,66 +228,66 @@ async def ready_style():
                 height: 60vw;
                 top: 5vh;
                 left: -20vw;
-                filter: blur(13vw);
+                filter: blur(100px);
             }
             .ellipse-2 {
                 width: 60vw;
                 height: 60vw;
                 top: 50vh;
                 right: -20vw;
-                filter: blur(13vw);
+                filter: blur(100px);
                 transform: none;
             }
 
             .text-container {
-                width: 100vw;
+                width: 100%;
                 align-items: center;
                 text-align: center;
             }
             
             .text-content {
                 align-items: center;
-                gap: 1.48vh;
+                gap: 1rem;
             }
 
-            .main-heading { font-size: 3.25vw; line-height: 1.2; }
-            .sub-heading { font-size: 1.62vw; line-height: 1.3; }
-            .description { font-size: 1.3vw; line-height: 1.6; }
+            .main-heading { font-size: 2.5rem; line-height: 1.2; }
+            .sub-heading { font-size: 1.25rem; line-height: 1.3; }
+            .description { font-size: 1rem; line-height: 1.6; }
 
             .buttons-container {
                 flex-direction: column;
-                width: 100vw;
-                max-width: 52.08vw;
-                gap: 1.48vh;
+                width: 100%;
+                max-width: 400px;
+                gap: 1rem;
                 margin : auto;
             }
 
             .button {
                 width: 100%;
-                font-size: 1.3vw;
+                font-size: 1rem;
                 height: auto;
-                padding: 1.33vh 1.95vw;
-                border-radius: 6.51vw;
+                padding: 0.9rem 1.5rem;
+                border-radius: 50px;
             }
 
             .secondary-button {
-                border-width: 0.26vw;
+                border-width: 2px;
             }
 
             .image-container {
                 flex-direction: row;
-                width: 100vw;
-                gap: 1.11vh;
+                width: 100%;
+                gap: 0.75rem;
                 justify-content: center;
             }
             
             .image-box {
-                border-radius: 2.08vw;
-                border-width: 0.26vw;
+                border-radius: 16px;
+                border-width: 2px;
             }
 
-            .image-box-short { width: 30vw; height: 22.22vh; }
-            .image-box-long { width: 40vw; height: 29.63vh; transform: translateY(-3.7vh); }
+            .image-box-short { width: 30%; height: 150px; }
+            .image-box-long { width: 40%; height: 200px; transform: translateY(-25px); }
         }
     </style>
 """

@@ -195,32 +195,32 @@ async def heroSection_style():
         /******************************************/
         @media (max-width: 768px) {
             .hero-section-container {
-                margin-top: 4.44vh;
-                padding: 8.88vh 2.08vw 10.37vh;
+                margin-top: 3rem;
+                padding: 6rem 1rem 7rem; /* Reduced padding for mobile */
             }
 
             .bg-dark, .gradient-overlay, .grid-container {
-                border-radius: 3.9vw; /* A fixed radius looks better on mobile */
+                border-radius: 30px; /* A fixed radius looks better on mobile */
             }
 
             .hero-section-container::before {
                 width: 70vw; /* Make glow wider relative to screen */
                 height: 70vw;
-                top: -7.4vh;
-                filter: blur(13vw);
+                top: -5rem;
+                filter: blur(100px);
             }
             
             .glow-bottom {
                 width: 100vw; /* Make glow wider */
                 height: 100vw;
-                bottom: -13.88vh;
+                bottom: -150px;
                 opacity: 0.15;
-                filter: blur(13vw);
+                filter: blur(100px);
             }
 
             .hero-content-container {
                 margin-right: 0; /* Remove right margin to center content */
-                width: 100vw;
+                width: 100%;
                 display: flex;
                 justify-content: center;
             }
@@ -228,33 +228,33 @@ async def heroSection_style():
             .hero-content {
                 align-items: center; /* Center-align all items */
                 text-align: center;
-                gap: 2.59vh; /* Adjusted gap for mobile */
-                max-width: 95vw; /* Allow content to use more width */
+                gap: 1.75rem; /* Adjusted gap for mobile */
+                max-width: 95%; /* Allow content to use more width */
             }
 
             .hero-content h1 {
-                font-size: 5.2vw; /* Readable font size for mobile headlines */
+                font-size: 2.5rem; /* Readable font size for mobile headlines */
                 line-height: 1.2;
                 letter-spacing: -0.02em;
             }
             
             .hero-content p {
-                font-size: 2.08vw; /* Readable font size for body text */
+                font-size: 1rem; /* Readable font size for body text */
                 line-height: 1.6;
-                max-width: 65.1vw; /* Prevent lines from getting too long */
+                max-width: 500px; /* Prevent lines from getting too long */
             }
 
             .cta-button {
                 width: auto; /* Let the button size itself based on content */
                 height: auto;
-                padding: 1.9vh 5.2vw;
-                border-radius: 6.51vw; /* A simpler radius */
+                padding: 0.8rem 2.5rem;
+                border-radius: 50px; /* A simpler radius */
             }
 
             .cta-button span {
                 width: auto; /* Reset fixed width */
                 height: auto; /* Reset fixed height */
-                font-size: 2.29vw; /* Slightly larger, more tappable text */
+                font-size: 1.1rem; /* Slightly larger, more tappable text */
                 line-height: 1.5;
             }
         }

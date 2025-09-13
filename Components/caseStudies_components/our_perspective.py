@@ -11,20 +11,20 @@ async def our_perspective_style():
         /* --- Perspective Section Styles --- */
         /* The CSS is written desktop-first. JS will override styles for mobile. */
         #perspective-section {
-            width: 100vw;
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
             overflow: hidden;
 
-            /* Padding using viewport units */
-            padding: 10vh 5vw;
+            /* Padding using rem units */
+            padding: 10rem 5rem;
         }
 
         .perspective-container {
-            width: 80vw;
-            max-width: 93.75vw; /* Cap width on very large screens */
+            width: 80%;
+            max-width: 93.75rem; /* Cap width on very large screens */
             text-align: center;
             position: relative;
             z-index: 1;
@@ -33,9 +33,9 @@ async def our_perspective_style():
         .perspective-container .section-title {
             font-weight: 700;
             
-            /* Sizing and spacing using viewport units */
-            font-size: 3vw;
-            margin-bottom: 8vh;
+            /* Sizing and spacing using rem units */
+            font-size: 3rem;
+            margin-bottom: 8rem;
         }
         
         /* Style for the highlighted word "Perspective" */
@@ -47,10 +47,10 @@ async def our_perspective_style():
             display: grid;
             grid-template-columns: repeat(3, 1fr); /* Creates the 3-column layout */
             
-            /* Gap using viewport units */
-            gap: 4vw;
+            /* Gap using rem units */
+            gap: 4rem;
             transition: all 0.3s ease-in-out;
-            margin-top: 7vw;
+            margin-top: 7rem;
         }
 
         .perspective-card {
@@ -66,11 +66,11 @@ async def our_perspective_style():
             justify-content: center;
             align-items: center;
             
-            /* Sizing and spacing using viewport units */
-            width: 3.5vw;
-            height: 3.5vw;
-            border-radius: 0.8vw;
-            margin-bottom: 3vh;
+            /* Sizing and spacing using rem units */
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 0.8rem;
+            margin-bottom: 3rem;
         }
 
         .icon-container img {
@@ -83,17 +83,17 @@ async def our_perspective_style():
             font-weight: 600;
             line-height: 1.2;
 
-            /* Sizing and spacing using viewport units */
-            font-size: 1.6vw;
-            margin-bottom: 1.5vh;
+            /* Sizing and spacing using rem units */
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
         }
 
         .perspective-card p {
             color: #bdbdbd;
             line-height: 1.6;
             
-            /* Sizing and spacing using viewport units */
-            font-size: 1.1vw;
+            /* Sizing and spacing using rem units */
+            font-size: 1.1rem;
             max-width: 30ch; /* Limits line length for readability */
         }
         .eclipse-glow {
@@ -187,7 +187,7 @@ async def our_perspective_body(h3_1a, h3_1b,p_1,h3_2a, h3_2b,p_2,h3_3a, h3_3b,p_
          */
         function adjustPerspectiveLayout() {{
             // Set the breakpoint for mobile devices
-            const isMobile = window.innerWidth < 48;
+            const isMobile = window.innerWidth < 768;
 
             // Select all the elements that will be adjusted
             const sectionTitle = document.querySelector('#perspective-section .section-title');
@@ -198,12 +198,12 @@ async def our_perspective_body(h3_1a, h3_1b,p_1,h3_2a, h3_2b,p_2,h3_3a, h3_3b,p_
                 // --- APPLY MOBILE STYLES ---
 
                 // Adjust main title font size
-                sectionTitle.style.fontSize = '8vw';
-                sectionTitle.style.marginBottom = '8vh';
+                sectionTitle.style.fontSize = '8rem';
+                sectionTitle.style.marginBottom = '8rem';
 
                 // Change grid to a single column and adjust gap
                 cardsGrid.style.gridTemplateColumns = '1fr';
-                cardsGrid.style.gap = '8vh'; // Increase vertical gap for stacked items
+                cardsGrid.style.gap = '8rem'; // Increase vertical gap for stacked items
 
                 // Loop through each card to adjust its contents
                 cards.forEach(card => {{
@@ -212,25 +212,25 @@ async def our_perspective_body(h3_1a, h3_1b,p_1,h3_2a, h3_2b,p_2,h3_3a, h3_3b,p_
                     const cardText = card.querySelector('p');
 
                     // Make icons larger for mobile touchpoints
-                    iconContainer.style.width = '15vw';
-                    iconContainer.style.height = '15vw';
-                    iconContainer.style.borderRadius = '2vw';
+                    iconContainer.style.width = '15rem';
+                    iconContainer.style.height = '15rem';
+                    iconContainer.style.borderRadius = '2rem';
 
                     // Adjust font sizes for mobile readability
-                    cardTitle.style.fontSize = '5.5vw';
-                    cardText.style.fontSize = '4vw';
+                    cardTitle.style.fontSize = '5.5rem';
+                    cardText.style.fontSize = '4rem';
                 }});
 
             }} else {{
                 // --- APPLY DESKTOP STYLES (Revert to original CSS) ---
 
                 // Restore main title font size
-                sectionTitle.style.fontSize = '3vw';
-                sectionTitle.style.marginBottom = '8vh';
+                sectionTitle.style.fontSize = '3rem';
+                sectionTitle.style.marginBottom = '8rem';
 
                 // Restore the 3-column grid and gap
                 cardsGrid.style.gridTemplateColumns = 'repeat(3, 1fr)';
-                cardsGrid.style.gap = '4vw';
+                cardsGrid.style.gap = '4rem';
 
                 // Loop through each card to restore desktop styles
                 cards.forEach(card => {{
@@ -239,13 +239,13 @@ async def our_perspective_body(h3_1a, h3_1b,p_1,h3_2a, h3_2b,p_2,h3_3a, h3_3b,p_
                     const cardText = card.querySelector('p');
 
                     // Restore icon sizes
-                    iconContainer.style.width = '3.5vw';
-                    iconContainer.style.height = '3.5vw';
-                    iconContainer.style.borderRadius = '0.8vw';
+                    iconContainer.style.width = '3.5rem';
+                    iconContainer.style.height = '3.5rem';
+                    iconContainer.style.borderRadius = '0.8rem';
                     
                     // Restore font sizes
-                    cardTitle.style.fontSize = '1.6vw';
-                    cardText.style.fontSize = '1.1vw';
+                    cardTitle.style.fontSize = '1.6rem';
+                    cardText.style.fontSize = '1.1rem';
                 }});
             }}
         }}

@@ -19,7 +19,7 @@ async def custom_solutions_body():
 
     <script>
         function optimizeCustomSolutionsLayout() {
-            const isMobile = window.innerWidth <= 48;
+            const isMobile = window.innerWidth <= 768;
             const section = document.querySelector('.custom-solutions-section');
             const headline = document.querySelector('.solutions-headline');
             const list = document.querySelector('.solutions-list');
@@ -60,7 +60,7 @@ async def custom_solutions_style():
             align-items: center;
             width: 100%;
             padding: 10vh 5vw;
-            background-color: #1C1C1C;
+            background-color: transparent;
             box-sizing: border-box;
         }
 
@@ -70,7 +70,7 @@ async def custom_solutions_style():
             height: 105%;
             border-top: 0.15vw solid rgba(255, 255, 255, 0.4);
             border-radius: 3vw;
-            top: 24vw;
+            top: 23vw;
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 1;
@@ -94,7 +94,7 @@ async def custom_solutions_style():
         }
 
         .solutions-headline {
-            font-size: 4vw; /* Default for desktop */
+            font-size: 4rem; /* Default for desktop */
             font-weight: 700;
             text-transform: uppercase;
             background: linear-gradient(90deg, rgba(235, 240, 243, 0.3) 8.85%, #EBF0F3 22.59%, #EBF0F3 57.4%, rgba(235, 239, 243, 0.72) 79.36%);
@@ -107,7 +107,7 @@ async def custom_solutions_style():
         .solutions-list {
             list-style-position: inside;
             text-align: left;
-            font-size: 1.2vw;
+            font-size: 1.2rem;
             line-height: 1;
             color: rgba(255, 255, 255, 0.85);
             padding: 0;
@@ -126,7 +126,7 @@ async def custom_solutions_style():
         }
 
         .solutions-tagline {
-            font-size: 1.8vw; /* Default for desktop */
+            font-size: 1.8rem; /* Default for desktop */
             font-weight: 500;
             color: #FFFFFF;
             margin: 0;
@@ -134,10 +134,10 @@ async def custom_solutions_style():
 
         .consultation-btn {
             display: inline-block;
-            padding: 1vh 1.5vw; /* Default for desktop */
+            padding: 1rem 1.5rem; /* Default for desktop */
             background-color: #FFFFFF;
             color: #000000;
-            font-size: 1.2vw; /* Default for desktop */
+            font-size: 1.2rem; /* Default for desktop */
             font-weight: 500;
             text-decoration: none;
             border-radius: 50vw;

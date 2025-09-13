@@ -201,7 +201,7 @@ async def track_style():
 
         /* --- NEW, ELEGANT MOBILE VIEW --- */
         /* This will only apply on screens 767px or smaller */
-        @media (max-width: 47.93vw) {
+        @media (max-width: 767px) {
             .parent {
                 /* Change layout from grid to a single column flexbox */
                 display: flex;

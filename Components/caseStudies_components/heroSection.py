@@ -10,15 +10,15 @@ async def heroSection_body(heroName):
             const section = document.querySelector('.pricing-hero-section');
             if (!title || !section) return;
 
-            const isMobile = window.innerWidth <= 48;
+            const isMobile = window.innerWidth <= 768;
 
             if (isMobile) {{
                 // Apply mobile-specific styles for better impact and fit
-                title.style.fontSize = '10vw';
-                section.style.height = '20vh';
+                title.style.fontSize = '10rem';
+                section.style.height = '20rem';
             }} else {{
                 // Apply desktop styles
-                title.style.fontSize = '6.5vw';
+                title.style.fontSize = '5vw';
                 section.style.height = '30vh';
             }}
         }}

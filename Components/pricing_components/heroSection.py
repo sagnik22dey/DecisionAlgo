@@ -19,16 +19,16 @@ async def pricing_banner_body():
         function optimizePricingBanner() {
             const title = document.querySelector('.pricing-hero-title');
             const section = document.querySelector('.pricing-hero-section');
-            const isMobile = window.innerWidth <= 48;
+            const isMobile = window.innerWidth <= 768;
 
             if (isMobile) {
                 // Apply mobile-specific styles for better impact and fit
-                title.style.fontSize = '15vw';
-                section.style.height = '30vh';
+                title.style.fontSize = '15rem';
+                section.style.height = '30rem';
             } else {
                 // Revert to desktop styles defined in the CSS
-                title.style.fontSize = '8vw';
-                section.style.height = '40vh';
+                title.style.fontSize = '8rem';
+                section.style.height = '40rem';
             }
         }
 

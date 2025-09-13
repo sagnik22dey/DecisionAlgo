@@ -59,7 +59,7 @@ async def innovation_body():
     
     <script>
         function optimizeInnovationLayout() {
-            const isMobile = window.innerWidth <= 48;
+            const isMobile = window.innerWidth <= 768;
             const wrapper = document.querySelector('.innovation-content-wrapper');
             const missionVision = document.querySelector('.mission-vision-container');
             const headline = document.querySelector('.innovation-header h1');
@@ -103,19 +103,19 @@ async def innovation_body():
                 missionVision.style.textAlign = 'left';
                 missionVision.style.gap = '4vw';
 
-                headline.style.fontSize = '3.5vw';
-                mainParagraph.style.fontSize = '0.76vw';
-                readMoreBtn.style.padding = '1vh 1.5vw';
-                readMoreBtn.style.fontSize = '1vw';
+                headline.style.fontSize = '3.5rem';
+                mainParagraph.style.fontSize = '1rem';
+                readMoreBtn.style.padding = '1rem 1.5rem';
+                readMoreBtn.style.fontSize = '1rem';
                 
                 missionVisionItems.forEach(item => {
                     item.style.alignItems = 'flex-start';
                 });
-                itemHeadings.forEach(h2 => h2.style.fontSize = '2vw');
-                itemParagraphs.forEach(p => p.style.fontSize = '0.8vw');
+                itemHeadings.forEach(h2 => h2.style.fontSize = '2rem');
+                itemParagraphs.forEach(p => p.style.fontSize = '1rem');
                 icons.forEach(svg => {
-                    svg.style.width = '2vw';
-                    svg.style.height = '2vw';
+                    svg.style.width = '2rem';
+                    svg.style.height = '2rem';
                 });
             }
         }
@@ -130,13 +130,13 @@ async def innovation_style():
     <style>
         .innovation-section {
             background-color: #111;
-            padding: 10vh 12vw;
+            padding: 10rem 12rem;
             display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
             overflow: hidden;
-            border-top: 0.1vh solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .innovation-content-wrapper {
@@ -166,7 +166,7 @@ async def innovation_style():
         .innovation-header h1 {
             font-family: 'Exo 2', sans-serif;
             font-weight: 700;
-            font-size: 3.5vw;
+            font-size: 3.5rem;
             line-height: 1.1;
             letter-spacing: -0.02em;
             background: linear-gradient(90deg, rgba(235, 243, 243, 0.54) 0%, #EBF3F3 15%, #EBF3F3 55%, rgba(235, 243, 243, 0.7) 80%);
@@ -179,11 +179,11 @@ async def innovation_style():
 
         .innovation-header > p {
             font-family: 'Poppins', sans-serif;
-            font-size: 0.8vw;
+            font-size: 1rem;
             line-height: 1.6;
             color: #FFFFFF;
             opacity: 0.6;
-            max-width: 40vw;
+            max-width: 40rem;
             transition: font-size 0.3s ease-in-out;
         }
 
@@ -191,26 +191,26 @@ async def innovation_style():
             display: flex;
             flex-direction: row;
             align-items: center;
-            padding: 1vh 1.5vw;
-            gap: 0.5vw;
+            padding: 1rem 1.5rem;
+            gap: 0.5rem;
             background: #5FC7FB;
-            border-radius: 0.5vw;
+            border-radius: 0.5rem;
             text-decoration: none;
             color: #000000;
             font-family: 'Exo 2', sans-serif;
             font-weight: 500;
-            font-size: 1vw;
+            font-size: 1rem;
             transition: all 0.3s ease-in-out;
         }
 
         .read-more-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 0.5vw 1vw rgba(95, 199, 251, 0.3);
+            box-shadow: 0 0.5rem 1rem rgba(95, 199, 251, 0.3);
         }
 
         .mission-vision-container {
             display: flex;
-            gap: 4vw;
+            gap: 4rem;
             transition: all 0.3s ease-in-out;
         }
 
@@ -224,8 +224,8 @@ async def innovation_style():
 
         .icon-wrapper {
             background: #FFFFFF;
-            border-radius: 0.3vw;
-            padding: 0.8vw;
+            border-radius: 0.3rem;
+            padding: 0.8rem;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -238,14 +238,14 @@ async def innovation_style():
         .mission-item h2, .vision-item h2 {
             font-family: 'Exo 2', sans-serif;
             font-weight: 500;
-            font-size: 2vw;
+            font-size: 2rem;
             color: #FFFFFF;
             transition: font-size 0.3s ease-in-out;
         }
         
         .mission-item p, .vision-item p {
             font-family: 'Poppins', sans-serif;
-            font-size: 0.8vw;
+            font-size: 1rem;
             line-height: 1.5;
             color: #FFFFFF;
             opacity: 0.7;
@@ -261,18 +261,18 @@ async def innovation_style():
         }
 
         .image-frame {
-            padding-bottom: 1vw;
-            border-right: 0.1vh solid #B4B4B4;
-            border-bottom: 0.1vh solid #B4B4B4;
-            border-radius: 4.5vw;
-            padding-right: 1vw;
+            padding-bottom: 1rem;
+            border-right: 1px solid #B4B4B4;
+            border-bottom: 1px solid #B4B4B4;
+            border-radius: 4.5rem;
+            padding-right: 1rem;
         }
 
         .award-image {
-            width: 33vw;
+            width: 33rem;
             height: auto;
             display: block;
-            border-radius: 3vw;
+            border-radius: 3rem;
         }
     
         /* Eclipse Glow for Innovation Section */
@@ -293,7 +293,7 @@ async def innovation_style():
         }
         
         /* Mobile Styles */
-        @media (max-width: 48vw) {
+        @media (max-width: 768px) {
             .innovation-eclipse-glow {
                 display: none;
             }
@@ -384,9 +384,9 @@ async def innovation_style():
         }
 
         /* Tablet Styles */
-        @media (max-width: 64vw) and (min-width: 48.06vw) {
+        @media (max-width: 1024px) and (min-width: 769px) {
             .innovation-section {
-                padding: 8vh 8vw;
+                padding: 8rem 8rem;
             }
 
             .innovation-header h1 {

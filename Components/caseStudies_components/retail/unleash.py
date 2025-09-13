@@ -16,7 +16,7 @@ async def unleash_style():
         .unleash-title {
             font-family: 'Exo 2', sans-serif;
             font-weight: 700;
-            font-size: 3.3vw;
+            font-size: 3.3rem;
             line-height: 1.2;
             text-align: center;
             letter-spacing: -0.02em;
@@ -32,27 +32,27 @@ async def unleash_style():
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1.7vw;
-            width: 70vw;
+            gap: 1.7rem;
+            width: 70%;
         }
 
         .unleash-card {
             box-sizing: border-box;
-            width: 21.3vw;
-            height: 27.8vh;
-            border: 0.052vw solid rgba(255, 255, 255, 0.3);
-            border-radius: 0.52vw;
-            padding: 3.2vh 1.3vw;
+            width: 18vw;
+            height: 30vh;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 0.52rem;
+            padding: 3.2rem 1.3rem;
             display: flex;
             flex-direction: column;
-            gap: 2.5vh;
+            gap: 2.5rem;
             position: relative;
         }
 
         .unleash-card-header {
             display: flex;
             align-items: center;
-            gap: 1.5vw;
+            gap: 1.5rem;
         }
 
         .unleash-icon-wrapper {
@@ -60,23 +60,23 @@ async def unleash_style():
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 2.75vw;
-            height: 4.9vh;
+            width: 3vw;
+            height: 3vw;
             background: #0A1015;
-            border: 0.052vw solid #3A4046;
-            border-radius: 0.13vw;
+            border: 1px solid #3A4046;
+            border-radius: 0.13rem;
         }
 
         .unleash-icon {
-            width: 1.65vw;
-            height: 2.9vh;
+            width: 1.65rem;
+            height: 2.9rem;
             background: #FFFFFF;
         }
 
         .unleash-card-title {
             font-family: 'Exo 2', sans-serif;
             font-weight: 600;
-            font-size: 1.3vw;
+            font-size: 1.3rem;
             line-height: 1.2;
             text-transform: capitalize;
             color: #FFFFFF;
@@ -85,7 +85,7 @@ async def unleash_style():
         .unleash-card-description {
             font-family: 'Exo 2', sans-serif;
             font-weight: 400;
-            font-size: 0.85vw;
+            font-size: 0.85rem;
             line-height: 1.6;
             text-transform: capitalize;
             color: #FFFFFF;

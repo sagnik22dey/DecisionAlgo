@@ -96,7 +96,7 @@ async def robotSection_style():
             }
 
             .card-text {
-                font-size: 1.2vw;
+                font-size: 1vw;
                 line-height: 1.4;
                 font-weight: 500;
                 text-transform: capitalize;
@@ -138,10 +138,10 @@ async def robotSection_style():
             }
 
             /* --- Mobile View --- */
-            @media (max-width: 48vw) {
+            @media (max-width: 768px) {
                 .solutions-section {
                     height: auto;
-                    padding: 10vh 5vw;
+                    padding: 10rem 5rem;
                     justify-content: flex-start;
                 }
 
@@ -326,7 +326,7 @@ async def robotSection_body(folderName,text1,text2,text3,text4,text5):
 
                 function drawLines() {
                     // This function is only for desktop view
-                    if (window.innerWidth <= 48) {
+                    if (window.innerWidth <= 768) {
                         const svg = document.querySelector('.connector-lines');
                         if(svg) svg.style.display = 'none';
                         return;

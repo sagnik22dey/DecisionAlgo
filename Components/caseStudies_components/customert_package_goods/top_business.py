@@ -35,7 +35,7 @@ async def top_business_style():
         }
 
         .section-heading h1 {
-            font-size: 3.5vw;
+            font-size: 3.5rem;
             line-height: 1.2;
             font-weight: 700;
             text-transform: uppercase;
@@ -50,19 +50,19 @@ async def top_business_style():
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2vw;
-            width: 90vw;
-            max-width: 109.37vw; /* To prevent cards from becoming too wide on very large screens */
+            gap: 2rem;
+            width: 90%;
+            max-width: 1400px; /* To prevent cards from becoming too wide on very large screens */
         }
 
         .benefit-card {
             background-color: var(--card-bg);
-            border: 0.1vw solid var(--card-border);
-            border-radius: 1vw;
-            padding: 2vw;
+            border: 1px solid var(--card-border);
+            border-radius: 1rem;
+            padding: 2rem;
             display: flex;
             flex-direction: column;
-            gap: 3vh;
+            gap: 3rem;
             transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -75,7 +75,7 @@ async def top_business_style():
         .card-header {
             display: flex;
             align-items: center;
-            gap: 1.5vw;
+            gap: 1.5rem;
         }
 
         .icon-wrapper {
@@ -83,27 +83,27 @@ async def top_business_style():
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 2.5vw;
-            height: 2.5vw;
+            width: 4rem;
+            height: 4rem;
             background-color: var(--icon-bg);
-            border: 0.1vw solid var(--icon-border);
-            border-radius: 0.5vw;
+            border: 1px solid var(--icon-border);
+            border-radius: 0.5rem;
         }
 
         .icon-wrapper svg {
-            width: 2vw;
-            height: 2vw;
+            width: 2rem;
+            height: 2rem;
             stroke: var(--primary-white);
         }
 
         .card-header h2 {
-            font-size: 1.3vw;
+            font-size: 1.3rem;
             font-weight: 600;
             line-height: 1.1;
         }
 
         .card-description {
-            font-size: 1vw;
+            font-size: 1rem;
             font-weight: 400;
             line-height: 1.6;
             color: var(--text-secondary);
@@ -111,9 +111,9 @@ async def top_business_style():
 
 
         /* --- Mobile View --- */
-        @media (max-width: 48vw) {
+        @media (max-width: 768px) {
             .data-science-section {
-                padding: 10vh 5vw;
+                padding: 10rem 5rem;
                 height: auto;
             }
 

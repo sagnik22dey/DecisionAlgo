@@ -91,9 +91,9 @@ async def dashboard_love_style():
         }
 
         .section-title {
-            font-size: 3.5vw;
+            font-size: 3.5rem;
             font-weight: 700;
-            margin-bottom: 8vh;
+            margin-bottom: 8rem;
             letter-spacing: -0.02em;
             line-height: 1.2;
         }
@@ -105,8 +105,8 @@ async def dashboard_love_style():
         .features-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1.5vw;
-            max-width: 80vw;
+            gap: 1.5rem;
+            max-width: 80%;
             margin: 0 auto;
             justify-items: center;
         }
@@ -116,12 +116,12 @@ async def dashboard_love_style():
             flex-direction: column;
             align-items: flex-start;
             text-align: left;
-            padding: 1.7vw;
-            gap: 1vw;
-            border-radius: 1vw;
-            width: 18vw;
-            height: 19vw;
-            border: 0.1vw solid #5FC7FB;
+            padding: 1.7rem;
+            gap: 1rem;
+            border-radius: 1rem;
+            width: 18rem;
+            height: 19rem;
+            border: 1px solid #5FC7FB;
             background: transparent;
             border-bottom: none; /* Removed for the pseudo-element border */
             position: relative;
@@ -130,8 +130,8 @@ async def dashboard_love_style():
         }
         
         .feature-card:hover {
-            transform: translateY(-0.5vw);
-            box-shadow: 0 0.8vw 1.5vw rgba(95, 199, 251, 0.2);
+            transform: translateY(-0.5rem);
+            box-shadow: 0 0.8rem 1.5rem rgba(95, 199, 251, 0.2);
         }
 
         .feature-card::after {
@@ -140,27 +140,27 @@ async def dashboard_love_style():
             left: 0;
             right: 0;
             bottom: 0;
-            height: 0.1vw;
+            height: 1px;
             background: linear-gradient(to right, transparent, #5FC7FB, transparent);
         }
 
         .icon-container {
-            width: 3.5vw;
-            height: 3.5vw;
+            width: 3.5rem;
+            height: 3.5rem;
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 0.1vw solid #5FC7FB;
-            border-radius: 0.7vw;
+            border: 1px solid #5FC7FB;
+            border-radius: 0.7rem;
         }
 
         .icon-container svg {
-            width: 1.8vw;
-            height: 1.8vw;
+            width: 1.8rem;
+            height: 1.8rem;
         }
 
         .feature-card h3 {
-            font-size: 1.5vw;
+            font-size: 1.5rem;
             font-weight: 600;
             line-height: 1.3;
             text-transform: none;
@@ -168,18 +168,18 @@ async def dashboard_love_style():
         }
 
         .feature-card p {
-            font-size: 1vw;
+            font-size: 1rem;
             font-weight: 300;
             line-height: 1.4;
             color: rgba(254, 254, 254, 0.8);
             text-transform: none;
-            margin-top: 0.5vw;
+            margin-top: 0.5rem;
         }
 
         /* --- Tablet View (Medium Screens) --- */
-        @media (max-width: 64vw) {
+        @media (max-width: 1024px) {
             .section-title {
-                font-size: 5vw;
+                font-size: 5rem;
             }
 
             .features-grid {
@@ -218,9 +218,9 @@ async def dashboard_love_style():
         }
         
         /* --- Mobile View (Redesigned for Elegance & Aesthetics) --- */
-        @media (max-width: 47.93vw) {
+        @media (max-width: 767px) {
             .features-section {
-                padding: 3vh 5vw; /* More vertical and horizontal space */
+                padding: 3rem 5rem; /* More vertical and horizontal space */
             }
 
             .section-title {

@@ -67,13 +67,13 @@ async def trans_insurance_style():
 
         #insurance-hero h1 {
             /* Revolutionizing Insurance in the Digital Age */
-            width: 45.7vw;
-            height: 32vh;
+            width: 35vw;
+            height: 27vh;
             font-family: 'Exo 2';
             font-style: normal;
             font-weight: 700;
-            font-size: 4.4vw;
-            line-height: 10.6vh;
+            font-size: 4.4rem;
+            line-height: 1.2;
             letter-spacing: -0.02em;
             text-transform: capitalize;
             background: linear-gradient(90deg, rgba(235, 243, 243, 0.58) 0.22%, #EBF3F3 15.65%, #EBF3F3 54.72%, rgba(235, 243, 243, 0.7) 79.36%);
@@ -86,7 +86,7 @@ async def trans_insurance_style():
             order: 0;
             align-self: stretch;
             flex-grow: 0;
-            margin-bottom: 2.5vh;
+            margin-bottom: 0;
         }
 
         #insurance-hero p {
@@ -94,8 +94,8 @@ async def trans_insurance_style():
             opacity: 0.9;
             
             /* Sizing and spacing using viewport units */
-            font-size: 1.1vw;
-            margin-bottom: 4vh;
+            font-size: 1.1rem;
+            margin-bottom: 2vh;
         }
 
         .cta-button {
@@ -107,10 +107,10 @@ async def trans_insurance_style():
             transition: transform 0.2s ease, box-shadow 0.2s ease;
 
             /* Sizing and spacing using viewport units */
-            padding: 1.5vh 2.5vw;
-            border-radius: 5vh;
-            font-size: 1vw;
-            margin-top: 2vh;
+            padding: 1.5rem 2.5rem;
+            border-radius: 5rem;
+            font-size: 1rem;
+            margin-top: 1vh;
         }
 
         .cta-button:hover {
@@ -145,7 +145,7 @@ async def trans_insurance_body():
          */
         function adjustLayout() {
             // Define a breakpoint for mobile devices
-            const isMobile = window.innerWidth < 48;
+            const isMobile = window.innerWidth < 768;
 
             // Select all the elements that need style adjustments
             const heroSection = document.getElementById('insurance-hero');

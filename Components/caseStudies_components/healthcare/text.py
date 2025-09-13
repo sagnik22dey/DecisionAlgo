@@ -32,8 +32,8 @@ async def style_top_robot_section():
                 font-family: 'Exo 2';
                 font-style: normal;
                 font-weight: 700;
-                font-size: 4.16vw;
-                line-height: 11.4vh;
+                font-size: 4.16rem;
+                line-height: 1.2;
                 letter-spacing: -0.02em;
                 text-transform: uppercase;
                 background: linear-gradient(to bottom, #FFFFFF, #A9A9A9);

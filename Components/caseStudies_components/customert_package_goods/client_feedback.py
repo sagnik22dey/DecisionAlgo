@@ -27,22 +27,22 @@ async def client_feedback_style():
         }
 
         .testimonials-section {
-            width: 100vw;
+            width: 100%;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 10vh 2vw;
+            padding: 10rem 2rem;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 8vh;
+            margin-bottom: 8rem;
         }
 
         .section-header h1 {
-            font-size: 4vw;
+            font-size: 4rem;
             line-height: 1.2;
             font-weight: 700;
             text-transform: uppercase;
@@ -55,7 +55,7 @@ async def client_feedback_style():
         }
 
         .slider-viewport {
-            width: 90vw;
+            width: 90%;
             overflow: hidden;
         }
 
@@ -71,12 +71,12 @@ async def client_feedback_style():
 
         .testimonial-card {
             background-color: var(--card-white);
-            border-radius: 1.5vw;
-            box-shadow: 0px 2vw 8vw rgba(0, 0, 0, 0.08);
+            border-radius: 1.5rem;
+            box-shadow: 0px 2rem 8rem rgba(0, 0, 0, 0.08);
             position: relative;
-            flex: 0 0 28vw;
+            flex: 0 0 28rem;
             /* 3 cards visible with some spacing */
-            margin: 1vw;
+            margin: 1rem;
             min-height: 55vh;
             display: flex;
             flex-direction: column;
@@ -84,36 +84,36 @@ async def client_feedback_style():
 
         .card-top {
             background-color: var(--card-header-bg);
-            border-radius: 1.5vw 1.5vw 0 0;
-            padding: 2vw;
+            border-radius: 1.5rem 1.5rem 0 0;
+            padding: 2rem;
             display: flex;
             align-items: center;
-            gap: 1.5vw;
+            gap: 1.5rem;
             min-height: 20vh;
         }
 
         .client-photo {
-            width: 9vw;
-            height: 9vw;
-            border-radius: 1vw;
+            width: 9rem;
+            height: 9rem;
+            border-radius: 1rem;
             object-fit: cover;
         }
 
         .client-info h3 {
-            font-size: 1.8vw;
+            font-size: 1.8rem;
             font-weight: 700;
             color: var(--text-dark);
-            margin-bottom: 0.5vh;
+            margin-bottom: 0.5rem;
         }
 
         .client-info p {
-            font-size: 1.3vw;
+            font-size: 1.3rem;
             line-height: 1.3;
             color: var(--text-muted);
         }
 
         .card-bottom {
-            padding: 2vw;
+            padding: 2rem;
             text-align: center;
             color: var(--text-dark);
             flex-grow: 1;
@@ -125,25 +125,25 @@ async def client_feedback_style():
 
         .rating-box {
             background-color: var(--card-white);
-            border-radius: 1vw;
-            box-shadow: 0px 1.5vw 5vw rgba(0, 0, 0, 0.07);
-            padding: 1vh 2vw;
-            margin-top: -8vh;
+            border-radius: 1rem;
+            box-shadow: 0px 1.5rem 5rem rgba(0, 0, 0, 0.07);
+            padding: 1rem 2rem;
+            margin-top: -8rem;
             /* Pulls the rating box up */
-            margin-bottom: 4vh;
+            margin-bottom: 4rem;
             display: inline-flex;
-            gap: 0.5vw;
+            gap: 0.5rem;
             z-index: 2;
         }
 
         .rating-box svg {
-            width: 1.5vw;
-            height: 1.5vw;
+            width: 1.5rem;
+            height: 1.5rem;
             fill: var(--star-color);
         }
 
         .testimonial-quote {
-            font-size: 1.2vw;
+            font-size: 1.2rem;
             line-height: 1.5;
             max-width: 90%;
         }
@@ -151,16 +151,16 @@ async def client_feedback_style():
         .slider-pagination {
             display: flex;
             justify-content: center;
-            gap: 1vw;
-            margin-top: 5vh;
+            gap: 1rem;
+            margin-top: 5rem;
         }
 
         .pagination-dot {
-            width: 3.5vw;
-            height: 0.8vh;
+            width: 3.5rem;
+            height: 0.8rem;
             background-color: var(--primary-blue);
             opacity: 0.3;
-            border-radius: 2vw;
+            border-radius: 2rem;
             cursor: pointer;
             transition: opacity 0.3s ease;
         }
@@ -172,11 +172,11 @@ async def client_feedback_style():
         /* --- Mobile View --- */
         @media (max-width: 768px) {
             .testimonials-section {
-                padding: 10vh 5vw;
+                padding: 10rem 5rem;
             }
 
             .section-header h1 {
-                font-size: 8vw;
+                font-size: 8rem;
             }
 
             .slider-viewport {
@@ -184,62 +184,62 @@ async def client_feedback_style():
             }
 
             .testimonial-card {
-                flex: 0 0 90vw;
+                flex: 0 0 90%;
                 /* 1 card visible */
-                margin: 0 5vw;
+                margin: 0 5%;
                 /* Center the single card */
-                border-radius: 4vw;
+                border-radius: 4rem;
                 min-height: 60vh;
             }
 
             .card-top {
-                padding: 5vw;
-                border-radius: 4vw 4vw 0 0;
+                padding: 5rem;
+                border-radius: 4rem 4rem 0 0;
                 min-height: 25vh;
             }
 
             .client-photo {
-                width: 25vw;
-                height: 25vw;
-                border-radius: 2.5vw;
+                width: 25rem;
+                height: 25rem;
+                border-radius: 2.5rem;
             }
 
             .client-info h3 {
-                font-size: 5.5vw;
+                font-size: 5.5rem;
             }
 
             .client-info p {
-                font-size: 4vw;
+                font-size: 4rem;
             }
 
             .card-bottom {
-                padding: 5vw;
+                padding: 5rem;
             }
 
             .rating-box {
-                margin-top: -10vh;
-                margin-bottom: 5vh;
-                padding: 1.5vh 5vw;
-                border-radius: 2.5vw;
-                gap: 2vw;
+                margin-top: -10rem;
+                margin-bottom: 5rem;
+                padding: 1.5rem 5rem;
+                border-radius: 2.5rem;
+                gap: 2rem;
             }
 
             .rating-box svg {
-                width: 5vw;
-                height: 5vw;
+                width: 5rem;
+                height: 5rem;
             }
 
             .testimonial-quote {
-                font-size: 4.2vw;
+                font-size: 4.2rem;
             }
 
             .slider-pagination {
-                gap: 3vw;
+                gap: 3rem;
             }
 
             .pagination-dot {
-                width: 15vw;
-                height: 1vh;
+                width: 15rem;
+                height: 1rem;
             }
         }
     </style>

@@ -166,11 +166,11 @@ async def get_in_touch_style():
         }
 
         /* responsive */
-        @media (max-width: 48vw) {
+        @media (max-width: 768px) {
             .stage {
                 flex-direction: column;
                 align-items: center;
-                gap: 6vh
+                gap: 6rem
             }
 
             .map-container,

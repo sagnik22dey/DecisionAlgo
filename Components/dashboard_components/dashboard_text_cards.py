@@ -65,9 +65,9 @@ async def dashboard_text_cards_style():
 
         .headline,
         .see-data-headline {
-            font-size: 4.7vw;
+            font-size: 4.7rem;
             font-weight: 700;
-            margin: 0 0 4vh 0;
+            margin: 0 0 4rem 0;
             line-height: 1.2;
         }
 
@@ -94,7 +94,7 @@ async def dashboard_text_cards_style():
 
         .description,
         .see-data-description {
-            font-size: 1.5vw;
+            font-size: 1.5rem;
             font-weight: 400;
             line-height: 1.6;
             color: rgba(255, 255, 255, 0.85);
@@ -131,11 +131,11 @@ async def dashboard_text_cards_style():
 
         .get-started-btn {
             display: inline-block;
-            margin-top: 4vh;
-            padding: 1.5vh 3vw;
+            margin-top: 4rem;
+            padding: 1.5rem 3rem;
             background-color: #FFFFFF;
             color: #000000;
-            font-size: 1.5vw;
+            font-size: 1.5rem;
             font-weight: 600;
             text-decoration: none;
             border-radius: 50vw; /* Fully rounded corners */
@@ -149,10 +149,10 @@ async def dashboard_text_cards_style():
         }
 
         /* --- Tablet View --- */
-        @media (max-width: 64vw) {
+        @media (max-width: 1024px) {
             .headline,
             .see-data-headline {
-                font-size: 7vw;
+                font-size: 7rem;
             }
 
             .description,
@@ -174,11 +174,11 @@ async def dashboard_text_cards_style():
         }
 
         /* --- Mobile View (Redesigned for Elegance & Aesthetics) --- */
-        @media (max-width: 47.93vw) {
+        @media (max-width: 767px) {
             .smart-simple-container,
             .see-data-container {
-                margin-top: 5vh; /* Reduced top margin for better flow */
-                padding: 2vh 0;
+                margin-top: 5rem; /* Reduced top margin for better flow */
+                padding: 2rem 0;
             }
 
             .ai-powered-section,
