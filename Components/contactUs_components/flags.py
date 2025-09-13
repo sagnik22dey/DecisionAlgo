@@ -4,7 +4,7 @@ async def locations_body():
         <div class="locations-grid">
             <!-- Location Card: United Kingdom -->
             <div class="location-card">
-                <img src="/Images/ContactUS/uk.png" alt="UK Flag" class="location-flag">
+                <img src="/Images/ContactUS/uk_flag.png" alt="UK Flag" class="location-flag">
                 <h2 class="location-title">
                     <span>Beaconsfield</span>
                     United Kingdom
@@ -18,7 +18,7 @@ async def locations_body():
 
             <!-- Location Card: Germany -->
             <div class="location-card">
-                <img src="/Images/ContactUS/germany.png" alt="Germany Flag" class="location-flag">
+                <img src="/Images/ContactUS/germany_flag.png" alt="Germany Flag" class="location-flag">
                 <h2 class="location-title">
                     <span>Baden-Württemberg</span>
                     Germany
@@ -32,7 +32,7 @@ async def locations_body():
 
             <!-- Location Card: India -->
             <div class="location-card">
-                <img src="/Images/ContactUS/india.png" alt="India Flag" class="location-flag">
+                <img src="/Images/ContactUS/india_flag.png" alt="India Flag" class="location-flag">
                 <h2 class="location-title">
                     <span>South-Delhi</span>
                     India
