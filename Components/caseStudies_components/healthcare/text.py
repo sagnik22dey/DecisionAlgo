@@ -8,7 +8,6 @@ async def text_top_robot_section():
             </div>
         </section>
     """
-    
 
 
 async def style_top_robot_section():
@@ -47,6 +46,23 @@ async def style_top_robot_section():
                 -webkit-background-clip: initial;
                 background-clip: initial;
                 color: var(--primary-blue);
+            }
+            
+            /* --- Mobile View Modifications --- */
+            @media (max-width: 768px) {
+                .heading-container {
+                    /* Add more vertical space for better centering and add horizontal padding */
+                    margin-top: 15vh;
+                    margin-bottom: 10vh;
+                    padding: 0 5vw; /* Prevents text from touching screen edges */
+                }
+
+                .heading-container h1 {
+                    /* Use vw for a fluid font-size that scales with the screen width */
+                    font-size: 8.5vw;
+                    /* Increase line-height for better readability on multiple lines */
+                    line-height: 1.4;
+                }
             }
 
         </style>

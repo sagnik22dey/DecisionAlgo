@@ -1,6 +1,7 @@
 async def robustData_style():
     return """
     <style>
+        /* --- Desktop First Styles --- */
         .robust-feature-outer {
             border-bottom: 0.2vh solid #f0f0f0;
             border-right: 0.2vh solid #f0f0f0;
@@ -11,11 +12,12 @@ async def robustData_style():
             margin: 7.11vh auto;
             position: relative;
         }
+        
         .robust-feature-content-wrapper {
             background: linear-gradient(284.15deg, rgba(26, 26, 26, 0) 1.73%, rgba(65, 65, 65, 0.28) 33.62%, rgba(109, 109, 109, 0.36) 71.97%, rgba(128, 128, 128, 0.01) 97.84%), #151515;
-            border-radius: 1vw;;
-            margin-right:2vh;
-            margin-bottom:2vh;
+            border-radius: 1vw;
+            margin-right: 2vh;
+            margin-bottom: 2vh;
             padding: 4.74vh 3.25vw 4.14vh 3.25vw;
             display: flex;
             flex-direction: column;
@@ -23,76 +25,125 @@ async def robustData_style():
             width: auto;
             height: 58vh;
         }
+
         .robust-feature-title {
+            text-align: center;
             font-weight: 700;
             line-height: 1.3;
             font-size: 3vw;
-            /* Silver gradient effect for the text */
             background: linear-gradient(180deg, #FFFFFF, #cccccc);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-fill-color: transparent;
         }
+
         .robust-feature-cards {
             width: 83%;
             display: flex;
             justify-content: space-between;
             align-items: stretch;
-            gap: 5.92vh;
+            gap: 1.5vw;
             margin-top: 5.18vh;
         }
+
         .robust-feature-card {
             flex: 1;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            border-radius: 1.62vh;
+            border-radius: 1vw;
             border: 0.19vh solid rgba(95, 199, 251, 0.5);
             transition: all 0.17s cubic-bezier(.36,.9,.68,1.09);
             padding: 2.96vh 1.56vw 2.51vh 1.56vw;
-            min-width: 9.83vw;
             min-height: 26.55vh;
         }
+
         .robust-feature-card:hover {
             box-shadow: 0 0.44vh 2.07vw 0 rgba(73,180,255,0.18);
             border-color: #65d5ff;
             background: rgba(35, 44, 54, 1);
             transform: translateY(-0.59vh) scale(1.022);
         }
+
         .robust-feature-icon {
             margin-bottom: 1.77vh;
         }
+        
+        .robust-feature-icon svg {
+            width: 10vw;
+            height: auto;
+            max-width: 62px; /* Maintain original max size */
+        }
+
         .robust-feature-card-title {
             font-weight: 600;
             color: #fff;
-            font-size: 1.76vh;
+            font-size: 1.2vw;
             margin-bottom: 0.96vh;
         }
+
         .robust-feature-card-desc {
             color: #C6D6ED;
-            font-size: 1.45vh;
+            font-size: 1vw;
             font-weight: 400;
         }
-        @media (max-width: 56.25vw) {
-            .robust-feature-outer {padding: 5vw 1vw;}
-            .robust-feature-cards {
-                flex-wrap: wrap; gap: 2.5vw;
+
+        /* --- Mobile View Modifications --- */
+        @media (max-width: 768px) {
+            .robust-feature-outer {
+                width: 90vw;
+                height: auto; /* Allow container to grow with content */
+                border-radius: 4vw;
+                padding: 1vw;
+                border: none; /* Simplify outer border for mobile */
             }
-        }
-        @media (max-width:37.5vw){
-            .robust-feature-outer{
-                padding: 6vw 1vw; border-radius: 6vw;
+
+            .robust-feature-content-wrapper {
+                width: 100%;
+                height: auto;
+                border-radius: 4vw;
+                padding: 8vw 5vw;
+                margin: 0;
             }
+            
             .robust-feature-title {
-                font-size: 2vh; margin-bottom: 3.11vh;
+                font-size: 7vw;
+                line-height: 1.4;
             }
+
             .robust-feature-cards {
-                flex-direction: column; gap: 3vw;
+                flex-direction: column;
+                width: 100%;
+                gap: 5vw; /* Vertical gap between cards */
+                margin-top: 8vw;
             }
+
             .robust-feature-card {
-                border-radius: 2.7vw; padding: 6vw 4vw 6vw 4vw;
-                min-width: 0;
+                width: 100%;
+                padding: 6vw 5vw;
+                border-radius: 3vw;
+                min-height: auto;
+                align-items: center; /* Center content on mobile */
+                text-align: center;
+            }
+            
+            .robust-feature-icon {
+                margin-bottom: 3vh;
+            }
+            
+            .robust-feature-icon svg {
+                width: 15vw; /* Larger icon for mobile */
+            }
+
+            .robust-feature-card-title {
+                font-size: 5vw;
+                margin-bottom: 2vh;
+            }
+
+            .robust-feature-card-desc {
+                font-size: 3.8vw;
+                line-height: 1.6;
             }
         }
     </style>
@@ -108,7 +159,6 @@ async def robustData_body():
         <div class="robust-feature-cards">
             <div class="robust-feature-card">
                 <div class="robust-feature-icon">
-                    <!-- Pick your preferred icon -->
                     <svg width="62" height="62" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="0.949901" y="0.949901" width="59.5518" height="59.5518" rx="4.6204" stroke="#5FC7FB" stroke-width="1.02676"/>
                     <mask id="mask0_436_989" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="12" y="12" width="37" height="37">
@@ -133,7 +183,6 @@ async def robustData_body():
                     <path d="M26.2344 45.6997C24.787 45.6997 23.4269 45.4252 22.1541 44.8762C20.8814 44.3272 19.7708 43.5785 18.8225 42.6302C17.8742 41.6818 17.1255 40.5713 16.5765 39.2986C16.0274 38.0258 15.7529 36.6657 15.7529 35.2183C15.7529 33.1968 16.277 31.3501 17.3251 29.6781C18.3733 28.006 19.7459 26.7333 21.4429 25.8598C21.942 24.8865 22.5596 24.0318 23.2958 23.2956C24.032 22.5594 24.8868 21.9417 25.8601 21.4426C26.6836 19.7456 27.9439 18.3731 29.6409 17.3249C31.3379 16.2768 33.1971 15.7527 35.2185 15.7527C36.666 15.7527 38.026 16.0272 39.2988 16.5762C40.5715 17.1253 41.6821 17.8739 42.6304 18.8223C43.5787 19.7706 44.3274 20.8811 44.8764 22.1539C45.4255 23.4266 45.7 24.7867 45.7 26.2342C45.7 28.3554 45.1759 30.2271 44.1278 31.8492C43.0796 33.4714 41.707 34.7192 40.01 35.5926C39.5109 36.5659 38.8933 37.4206 38.1571 38.1568C37.4209 38.893 36.5661 39.5107 35.5928 40.0098C34.7194 41.7068 33.4466 43.0794 31.7746 44.1275C30.1026 45.1757 28.2558 45.6997 26.2344 45.6997ZM26.2344 42.705C27.0579 42.705 27.8503 42.5803 28.6114 42.3307C29.3726 42.0811 30.0776 41.7068 30.7265 41.2077C29.279 41.2077 27.9189 40.9332 26.6462 40.3841C25.3734 39.8351 24.2629 39.0864 23.3146 38.1381C22.3662 37.1898 21.6176 36.0792 21.0685 34.8065C20.5195 33.5337 20.245 32.1737 20.245 30.7262C19.7459 31.3751 19.3715 32.0801 19.122 32.8412C18.8724 33.6024 18.7476 34.3947 18.7476 35.2183C18.7476 36.2664 18.9473 37.2397 19.3466 38.1381C19.7459 39.0365 20.2824 39.8226 20.9562 40.4964C21.63 41.1702 22.4161 41.7068 23.3146 42.1061C24.213 42.5054 25.1863 42.705 26.2344 42.705ZM30.7265 38.213C31.55 38.213 32.3548 38.0882 33.1409 37.8386C33.927 37.5891 34.6445 37.2147 35.2934 36.7156C33.821 36.7156 32.4484 36.4349 31.1757 35.8734C29.9029 35.3119 28.7924 34.5569 27.8441 33.6086C26.8957 32.6603 26.1408 31.5498 25.5793 30.277C25.0178 29.0043 24.737 27.6317 24.737 26.1593C24.2379 26.8081 23.8636 27.5256 23.614 28.3117C23.3645 29.0978 23.2397 29.9027 23.2397 30.7262C23.2397 31.7744 23.4331 32.7476 23.8199 33.646C24.2067 34.5445 24.7495 35.3306 25.4483 36.0044C26.1221 36.7031 26.9082 37.2459 27.8066 37.6327C28.705 38.0196 29.6783 38.213 30.7265 38.213ZM35.2185 33.7209C35.6677 33.7209 36.0982 33.6835 36.51 33.6086C36.9218 33.5337 37.3398 33.4214 37.764 33.2717C38.313 31.7744 38.3941 30.3332 38.0073 28.9481C37.6205 27.5631 36.9529 26.3964 36.0046 25.448C35.0563 24.4997 33.8896 23.8322 32.5046 23.4453C31.1195 23.0585 29.6783 23.1396 28.181 23.6887C28.0312 24.1129 27.9189 24.5309 27.8441 24.9427C27.7692 25.3545 27.7317 25.7849 27.7317 26.2342C27.7317 27.2823 27.9252 28.2556 28.312 29.154C28.6988 30.0524 29.2416 30.8385 29.9403 31.5123C30.6142 32.2111 31.4003 32.7539 32.2987 33.1407C33.1971 33.5275 34.1704 33.7209 35.2185 33.7209ZM41.2079 30.8011C41.707 30.1522 42.0814 29.4347 42.3309 28.6486C42.5805 27.8625 42.7053 27.0577 42.7053 26.2342C42.7053 25.186 42.5119 24.2127 42.1251 23.3143C41.7382 22.4159 41.1954 21.6298 40.4967 20.956C39.8229 20.2572 39.0368 19.7144 38.1383 19.3276C37.2399 18.9408 36.2667 18.7474 35.2185 18.7474C34.3451 18.7474 33.5278 18.8722 32.7666 19.1217C32.0054 19.3713 31.3004 19.7456 30.6516 20.2447C32.124 20.2447 33.4966 20.5255 34.7693 21.087C36.0421 21.6485 37.1526 22.4034 38.1009 23.3517C39.0492 24.3001 39.8042 25.4106 40.3657 26.6834C40.9272 27.9561 41.2079 29.3287 41.2079 30.8011Z" fill="#5FC7FB"/>
                     </g>
                     </svg>
-
                 </div>
                 <div class="robust-feature-card-title">Corporate Operations</div>
                 <div class="robust-feature-card-desc">Automate Monitoring</div>
@@ -155,7 +204,7 @@ async def robustData_body():
             </div>
             <div class="robust-feature-card">
                 <div class="robust-feature-icon">
-                    <svg width="62" height="62" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <svg width="62" height="62" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="0.949901" y="0.949901" width="59.5518" height="59.5518" rx="4.6204" stroke="#5FC7FB" stroke-width="1.02676"/>
                     <mask id="mask0_436_1005" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="12" y="12" width="37" height="37">
                     <rect x="12.7578" y="12.7576" width="35.9365" height="35.9365" fill="#D9D9D9"/>

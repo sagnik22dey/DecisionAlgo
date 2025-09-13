@@ -157,7 +157,7 @@ async def our_perspective_style():
             }
 
             .eclipse-glow {
-                width: 150vw;
+                width: 100vw;
                 height: 75vw;
                 top: 50%;
                 left: 50%;

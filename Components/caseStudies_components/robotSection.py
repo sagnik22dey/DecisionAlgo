@@ -143,7 +143,7 @@ async def robotSection_style():
                 .solutions-section {
                     height: auto;
                     min-height: auto;
-                    padding: 5vh 5vw;
+                    padding: 0vh 5vw;
                     justify-content: flex-start;
                 }
                 

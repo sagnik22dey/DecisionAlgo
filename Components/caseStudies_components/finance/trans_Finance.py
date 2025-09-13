@@ -9,28 +9,19 @@ async def trans_Finance_style():
             font-family: 'Poppins', sans-serif;
         }
 
-        /* --- Hero Section Styles --- */
-        /* This section contains all the styles for the component.
-           The initial values are optimized for desktop view.
-           JavaScript will adjust these for mobile view. */
-
+        /* --- Hero Section Styles (Desktop First) --- */
         #finance-hero {
             position: relative;
             display: flex;
             justify-content: flex-end; /* Align content wrapper to the right */
             align-items: center;
-            
-            /* Dimensions using vw to maintain aspect ratio */
             width: 100vw;
             height: 48vw; /* Creates a ~16:9 aspect ratio */
-            max-width: 100vw; /* Cap the max size on very large screens */
+            max-width: 100vw;
             max-height: 90vh;
-            
-            /* Background Image */
             background-image: url('../../Resources/Images/CaseStudies/finance/trans_bg.jpg');
             background-size: cover;
             background-position: center left; /* Focus on the left part of the image */
-
             border-radius: 2vw;
             overflow: hidden; /* Ensures content respects the border radius */
             color: #ffffff;
@@ -47,19 +38,18 @@ async def trans_Finance_style():
             height: 100%;
             background: linear-gradient(to right, rgba(0, 0, 0, 0.1) 20%, rgba(0, 0, 0, 0.8) 65%);
             z-index: 1;
+            transition: background 0.5s ease-in-out;
         }
 
         /* Wrapper for all the text content */
         .text-content-wrapper {
-            position: relative; /* To appear above the ::before pseudo-element */
+            position: relative;
             z-index: 2;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: flex-start; /* Left-aligns the content within the wrapper */
             text-align: left;
-            
-            /* Sizing and padding using viewport units */
             width: 45vw;
             padding: 4vh 5vw 4vh 2vw;
             transition: all 0.3s ease-in-out;
@@ -68,8 +58,6 @@ async def trans_Finance_style():
         #finance-hero h1 {
             font-weight: 700;
             line-height: 1.1;
-
-            /* Sizing and spacing using viewport units */
             font-size: 3.5rem;
             margin-bottom: 2.5rem;
         }
@@ -77,8 +65,6 @@ async def trans_Finance_style():
         #finance-hero p {
             line-height: 1.6;
             opacity: 0.9;
-            
-            /* Sizing and spacing using viewport units */
             font-size: 1.1rem;
             margin-bottom: 4rem;
         }
@@ -90,8 +76,6 @@ async def trans_Finance_style():
             font-weight: 600;
             cursor: pointer;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-            /* Sizing and spacing using viewport units */
             padding: 1.5rem 2.5rem;
             border-radius: 5rem;
             font-size: 1rem;
@@ -100,6 +84,64 @@ async def trans_Finance_style():
 
         .cta-button:hover {
             transform: scale(1.05);
+        }
+
+        /* --- Mobile View Modifications --- */
+        /* This media query applies styles only for screens smaller than 768px */
+        @media (max-width: 768px) {
+            #finance-hero {
+                /* Adjust layout for vertical stacking */
+                flex-direction: column;
+                justify-content: center; /* Center content vertically */
+                align-items: center;     /* Center content horizontally */
+                
+                /* Set a more mobile-friendly size with some margin */
+                width: 90vw;
+                height: auto; /* Let content define the height */
+                min-height: 90vh; /* Ensure it's almost full screen */
+                margin: 5vh auto; /* Center the component on the page */
+                background-position: center center; /* Center the background image */
+                border-radius: 5vw; /* Prettier border radius for mobile */
+            }
+
+            /* Adjust overlay to protect text at the bottom-center */
+            #finance-hero::before {
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 20%, rgba(0, 0, 0, 0.1) 70%);
+            }
+
+            .text-content-wrapper {
+                /* Center text and make it take up more of the screen width */
+                width: 85vw;
+                align-items: center;
+                text-align: center;
+                padding: 0vh 5vw; /* Balanced padding */
+            }
+
+            #finance-hero h1 {
+                /* Fluid font size that scales with screen width */
+                font-size: 6vw;
+                line-height: 1.2;
+                margin-bottom: 2.5vh;
+            }
+
+            #finance-hero p {
+                /* Fluid font size for paragraphs */
+                font-size: 4vw;
+                line-height: 1.2;
+                margin-bottom: 3vh; /* Adjust spacing between paragraphs */
+            }
+            
+            #finance-hero p:last-of-type {
+                margin-bottom: 5vh; /* More space before the button */
+            }
+
+            .cta-button {
+                /* Fluid sizing for the button */
+                font-size: 3.5vw;
+                padding: 1.5vh 8vw;
+                border-radius: 10vw;
+                margin-top: 2vh;
+            }
         }
     </style>
 """
@@ -120,95 +162,9 @@ async def trans_Finance_body():
         </div>
     </section>
 
-    <!-- JavaScript for Responsive Layout Adjustments -->
-    <script>
-        /**
-         * This script handles the responsive layout adjustments.
-         * It checks the window width and applies specific styles for mobile or desktop views,
-         * fulfilling the requirement to use JavaScript for view optimization.
-         * This creates two different layouts ("splits") for the content.
-         */
-        function adjustLayout() {
-            // Define a breakpoint for mobile devices
-            const isMobile = window.innerWidth < 768;
-
-            // Select all the elements that need style adjustments
-            const heroSection = document.getElementById('finance-hero');
-            const contentWrapper = heroSection.querySelector('.text-content-wrapper');
-            const heading = heroSection.querySelector('h1');
-            const paragraphs = heroSection.querySelectorAll('p');
-            const ctaButton = heroSection.querySelector('.cta-button');
-
-            if (isMobile) {
-                // --- APPLY MOBILE STYLES ---
-
-                // Change section layout to be vertical and taller
-                heroSection.style.width = '90vw';
-                heroSection.style.height = '85vh'; // Taller for mobile content
-                heroSection.style.justifyContent = 'center'; // Center the content block
-                heroSection.style.backgroundPosition = 'center center';
-                                
-                // Adjust overlay for better readability in a stacked layout
-                heroSection.style.setProperty('--gradient', 'linear-gradient(to top, rgba(0, 0, 0, 0.9) 20%, rgba(0, 0, 0, 0.2) 80%)');
-                heroSection.style.background = `var(--gradient), url('../../Resources/Images/CaseStudies/finance/trans_bg.jpg')`;
-                heroSection.style.backgroundSize = 'cover';
-                heroSection.style.backgroundPosition = 'center';
-                
-                // Center the content and make it wider
-                contentWrapper.style.width = '80vw';
-                contentWrapper.style.alignItems = 'center'; // Center-align items
-                contentWrapper.style.textAlign = 'center'; // Center-align text
-                contentWrapper.style.padding = '4vh 2vw';
-                
-                // Adjust font sizes for mobile readability using vw
-                heading.style.fontSize = '8vw';
-                
-                paragraphs.forEach(p => {
-                    p.style.fontSize = '3.8vw';
-                });
-                
-                ctaButton.style.fontSize = '4vw';
-                ctaButton.style.padding = '1.8vh 6vw';
-
-            } else {
-                // --- APPLY DESKTOP STYLES (Revert to original CSS) ---
-                
-                // Restore section layout
-                heroSection.style.width = '100vw';
-                heroSection.style.height = '48vw';
-                heroSection.style.justifyContent = 'flex-end'; // Right-align content block
-                heroSection.style.backgroundPosition = 'center left';
-                heroSection.style.scale = '0.9';
-
-                // Restore desktop overlay and background
-                heroSection.style.setProperty('--gradient', 'linear-gradient(to right, rgba(0, 0, 0, 0.1) 20%, rgba(0, 0, 0, 0.8) 65%)');
-                heroSection.style.background = `var(--gradient), url('../../Resources/Images/CaseStudies/finance/trans_bg.jpg')`;
-                heroSection.style.backgroundSize = 'cover';
-                heroSection.style.backgroundPosition = 'center left';
-
-
-                // Restore content wrapper layout
-                contentWrapper.style.width = '45vw';
-                contentWrapper.style.alignItems = 'flex-start'; // Left-align items
-                contentWrapper.style.textAlign = 'left'; // Left-align text
-                contentWrapper.style.padding = '4vh 5vw 4vh 2vw';
-                
-                // Restore desktop font sizes
-                heading.style.fontSize = '3.5vw';
-                
-                paragraphs.forEach(p => {
-                    p.style.fontSize = '1.1vw';
-                });
-                
-                ctaButton.style.fontSize = '1vw';
-                ctaButton.style.padding = '1.5vh 2.5vw';
-            }
-        }
-
-        // Run the function on initial page load
-        document.addEventListener('DOMContentLoaded', adjustLayout);
-
-        // Re-run the function whenever the window is resized
-        window.addEventListener('resize', adjustLayout);
-    </script>
+    <!-- 
+        JavaScript for layout adjustments has been removed and replaced 
+        with a pure CSS media query solution in the style section for 
+        better performance, elegance, and maintainability.
+    -->
 """

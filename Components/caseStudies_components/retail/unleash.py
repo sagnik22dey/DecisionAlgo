@@ -1,9 +1,9 @@
-
 async def unleash_style():
     return """
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap');
 
+        /* --- Desktop First Styles --- */
         .unleash-section {
             display: flex;
             flex-direction: column;
@@ -11,6 +11,7 @@ async def unleash_style():
             justify-content: center;
             padding: 10vh 5vw;
             width: 100%;
+            box-sizing: border-box;
         }
 
         .unleash-title {
@@ -42,10 +43,10 @@ async def unleash_style():
             height: 30vh;
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 0.52rem;
-            padding: 3.2rem 1.3rem;
+            padding: 2rem 1.3rem;
             display: flex;
             flex-direction: column;
-            gap: 2.5rem;
+            gap: 1.5rem;
             position: relative;
         }
 
@@ -62,15 +63,17 @@ async def unleash_style():
             align-items: center;
             width: 3vw;
             height: 3vw;
+            min-width: 40px; /* prevent icon from getting too small */
+            min-height: 40px;
             background: #0A1015;
             border: 1px solid #3A4046;
             border-radius: 0.13rem;
         }
 
-        .unleash-icon {
-            width: 1.65rem;
-            height: 2.9rem;
-            background: #FFFFFF;
+        .unleash-icon-wrapper img {
+            width: 1.5vw;
+            height: auto;
+            min-width: 20px;
         }
 
         .unleash-card-title {
@@ -90,6 +93,57 @@ async def unleash_style():
             text-transform: capitalize;
             color: #FFFFFF;
             opacity: 0.7;
+        }
+        
+        /* --- Mobile View Modifications --- */
+        @media (max-width: 768px) {
+            .unleash-section {
+                padding: 15vh 5vw;
+            }
+
+            .unleash-title {
+                font-size: 9vw;
+                line-height: 1.3;
+                margin-bottom: 10vh;
+            }
+
+            .unleash-grid {
+                width: 100%;
+                flex-direction: column;
+                gap: 5vh;
+            }
+
+            .unleash-card {
+                width: 100%;
+                height: auto; /* Let content define height */
+                padding: 6vw;
+                border-radius: 4vw;
+                gap: 3vh;
+            }
+
+            .unleash-card-header {
+                gap: 5vw;
+            }
+
+            .unleash-icon-wrapper {
+                width: 13vw;
+                height: 13vw;
+                border-radius: 1vw;
+                /* min-width/height are inherited and still apply */
+            }
+
+            .unleash-icon-wrapper img {
+                width: 6.5vw;
+                 /* min-width is inherited and still applies */
+            }
+
+            .unleash-card-title {
+                font-size: 5.5vw;
+            }
+
+            .unleash-card-description {
+                font-size: 3.8vw;
+            }
         }
     </style>
 """

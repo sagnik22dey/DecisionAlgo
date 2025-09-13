@@ -13,6 +13,7 @@ async def our_offerings_style():
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
 
         .offerings-section-retail {
@@ -31,7 +32,7 @@ async def our_offerings_style():
         }
 
         .section-title h1 {
-            font-size: 4rem;
+            font-size: 3vw;
             line-height: 1.2;
             font-weight: 700;
             text-transform: uppercase;
@@ -42,20 +43,29 @@ async def our_offerings_style():
         .section-title h1 span {
             color: var(--primary-blue);
         }
+        
+        .section-title p {
+            font-size: 1.5vw; 
+            color: var(--primary-light-gray); 
+            margin-top: 2vh;
+            max-width: 60vw; /* Constrain line length for readability */
+            margin-left: auto;
+            margin-right: auto;
+        }
 
         .offerings-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 5.5rem;
-            width: 65rem;
-            height: 43rem;
+            gap: 2.5vw;
+            width: 70vw;
             max-width: 100%;
+            height: auto;
         }
 
         .offering-card {
             background-color: var(--card-bg);
-            border-radius: 1rem;
-            padding: 2rem;
+            border-radius: 1.5vw;
+            padding: 2.5vw;
             position: relative;
             overflow: hidden;
             display: flex;
@@ -75,7 +85,7 @@ async def our_offerings_style():
         .card-title-retail {
             font-family: 'Exo 2', sans-serif;
             font-weight: 500;
-            font-size: 1.5vw;
+            font-size: 2vw;
             line-height: 1.2;
             color: var(--primary-white);
             width: 70%; /* Give space for the number */
@@ -84,35 +94,45 @@ async def our_offerings_style():
         .card-number {
             font-family: 'Urbanist', sans-serif;
             font-weight: 400;
-            font-size: 3rem;
+            font-size: 4vw;
             line-height: 1;
             color: var(--primary-blue);
             position: absolute;
-            top: 2.5rem;
-            right: 2.5rem;
+            top: 2vw;
+            right: 2vw;
         }
 
         .card-description {
             font-family: 'Urbanist', sans-serif;
-            font-size: 1.5vh;
+            font-size: 1.1vw;
             line-height: 1.6;
             color: var(--primary-white);
         }
 
-        /* --- Mobile View --- */
+        /* --- Mobile View Modifications --- */
         @media (max-width: 768px) {
-            .offerings-section {
-                padding: 10rem 5rem;
+            .offerings-section-retail {
+                padding: 15vh 5vw;
                 height: auto;
             }
 
+            .section-title {
+                margin-bottom: 10vh;
+            }
+
             .section-title h1 {
-                font-size: 8vw;
+                font-size: 9vw;
+            }
+
+            .section-title p {
+                font-size: 4vw;
+                max-width: 90vw;
             }
 
             .offerings-grid {
                 grid-template-columns: 1fr;
                 gap: 5vh;
+                width: 100%;
             }
 
             .offering-card {
@@ -146,8 +166,8 @@ async def our_offerings_body():
     return """
     <section class="offerings-section-retail">
         <div class="section-title">
-            <h1 style="font-size: 3vw; line-height: 1.2; font-weight: 700; text-transform: uppercase; letter-spacing: -0.02em; color: var(--primary-light-gray);">NURTURE GROWTH . <span style="color: var(--primary-blue);">DELIVER VALUE</span></h1>
-            <p style="font-size: 1.5vw; color: var(--primary-light-gray); margin-top: 2vh;">Lift Your Customer Journey With Versatile And Adaptable AI Innovations To Thrive In Dynamic Surroundings.</p>
+            <h1>NURTURE GROWTH . <span>DELIVER VALUE</span></h1>
+            <p>Lift Your Customer Journey With Versatile And Adaptable AI Innovations To Thrive In Dynamic Surroundings.</p>
         </div>
 
         <div class="offerings-grid">
