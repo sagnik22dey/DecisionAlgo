@@ -84,7 +84,7 @@ async def trans_tech_style():
             font-weight: 600;
             cursor: pointer;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
-            padding: 1.5rem 2.5rem;
+            padding: 0.5rem 2.5rem;
             border-radius: 5rem;
             font-size: 1rem;
             margin-top: 2rem;

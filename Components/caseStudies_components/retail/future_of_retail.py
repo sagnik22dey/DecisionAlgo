@@ -88,7 +88,7 @@ async def future_of_retail_style():
             font-weight: 600;
             cursor: pointer;
             transition: transform 0.2s ease, background-color 0.2s ease;
-            padding: 1.5rem 2.5rem;
+            padding: 0.5rem 2.5rem;
             border-radius: 5rem;
             font-size: 1rem;
         }
