@@ -303,7 +303,7 @@ async def footer_style():
             }
 
             .link-column ul li {
-                font-size: 3.5vw; /* Slightly smaller font for better fit */
+                font-size: 3vw; /* Slightly smaller font for better fit */
                 line-height: 1.8; /* Tighter line height for mobile */
                 padding-left: 0;
                 text-align: left;

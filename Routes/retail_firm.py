@@ -25,7 +25,7 @@ async def get_retail_firm():
     heroSection_html = await heroSection_body("Retail Firms Adapting to AI Era")
     heroSection_css = await heroSection_style()
     robotSection_html = await robotSection_body(
-        "Retail",
+        "retail",
         "Fashion & Apparel",
         "Electronics & Gadgets",
         "Books & Entertainment",
