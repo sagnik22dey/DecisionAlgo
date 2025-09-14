@@ -11,6 +11,7 @@ async def heroSection_style():
         /* Ensure a font is available, for example, from Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@700&display=swap');
 
+
         .pricing-hero-section {
             position: relative;
             width: 100%;
