@@ -56,9 +56,26 @@ async def get_tech_media_telecom():
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Case Studies</title>
         <style>
-        
-        body{{
+        @media (prefers-color-scheme: dark) {{
+        body {{
             overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: black;
+        }}
+        }}
+        
+        @media (prefers-color-scheme: light) {{
+            body {{
+                background-color: white;
+                overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            }}
         }}
         </style>
         

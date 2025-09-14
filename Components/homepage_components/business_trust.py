@@ -143,8 +143,6 @@ async def trust_style():
     html, body { height: 100%; }
     body {
       margin: 0;
-      background: #000000;
-      color: #FFFFFF;
       font-family: "Exo 2", "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;

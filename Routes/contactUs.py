@@ -38,9 +38,26 @@ async def contactUs():
         <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700&family=Jost:wght@400&family=Poppins:wght@400&display=swap" rel="stylesheet">
         <title>Contact Us</title>
         <style>
+        @media (prefers-color-scheme: dark) {{
         body {{
             overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             background-color: black;
+        }}
+        }}
+        
+        @media (prefers-color-scheme: light) {{
+            body {{
+                background-color: white;
+                overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            }}
         }}
         </style>
         {navbar_css}

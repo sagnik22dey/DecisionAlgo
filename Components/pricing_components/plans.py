@@ -525,8 +525,6 @@ async def plans_style():
         body {
             margin: 0;
             font-family: var(--font-stack);
-            background: radial-gradient(circle at 0% 0%, var(--bg-gradient-right) 0%, var(--bg-gradient-left) 55%, #000 110%);
-            color: var(--text-primary);
             -webkit-font-smoothing: antialiased;
             min-height: 100vh;
         }

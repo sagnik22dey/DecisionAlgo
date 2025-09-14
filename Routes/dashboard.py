@@ -38,9 +38,27 @@ async def dashboard():
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Dashboard</title>  
         <style>
-            body, html {{
+            @media (prefers-color-scheme: dark) {{
+        body {{
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: black;
+        }}
+        }}
+        
+        @media (prefers-color-scheme: light) {{
+            body {{
+                background-color: white;
                 overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             }}
+        }}
         </style>
         {navabar_css}
         {footer_css}

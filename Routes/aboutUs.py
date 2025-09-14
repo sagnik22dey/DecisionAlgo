@@ -8,13 +8,12 @@ from Components.aboutUs_components.innovation import *
 from Components.aboutUs_components.team import *
 
 
-
 router = APIRouter()
 
 
 @router.get("/aboutus", response_class=HTMLResponse)
 async def aboutUs():
-    
+
     navbar_css = await navbar_style()
     navbar_html = await navbar_body()
     footer_html = await footer_body()
@@ -25,11 +24,8 @@ async def aboutUs():
     companies_css = await companies_style()
     innovation_html = await innovation_body()
     innovation_css = await innovation_style()
-    team_html= await team_body()
+    team_html = await team_body()
     team_css = await team_style()
-    
-    
-
 
     return f"""
     <html>
@@ -46,13 +42,26 @@ async def aboutUs():
         * {{
             box-sizing: border-box;
         }}
-        
+        @media (prefers-color-scheme: dark) {{
         body {{
             overflow-x: hidden;
             margin: 0;
             padding: 0;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            background-color: black;
+        }}
+        }}
+        
+        @media (prefers-color-scheme: light) {{
+            body {{
+                background-color: white;
+                overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            }}
         }}
         
         /* Smooth scrolling for better UX */
@@ -107,4 +116,3 @@ async def aboutUs():
         {footer_html}
         </body>
     """
-    
