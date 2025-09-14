@@ -80,9 +80,15 @@ async def aboutUs():
             /* Better mobile tap targets */
             a, button {{
                 min-height: 48px;
-                padding: 12px 16px;
+                
             }}
             
+            .brand{{
+                padding: 12px 16px;
+            }}
+            .footer-container{{
+                margin-top:15vw;
+            }}
             /* Optimize images for mobile */
             img {{
                 max-width: 100%;

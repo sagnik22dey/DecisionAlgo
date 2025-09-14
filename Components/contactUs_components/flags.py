@@ -118,7 +118,7 @@ async def locations_style():
         }
 
         .location-flag {
-            height: 6vw;
+            height: 17vw;
             width: auto;
             margin-bottom: 3vw;
             border-radius: 0.5vw;

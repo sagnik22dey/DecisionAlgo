@@ -51,8 +51,8 @@ async def get_retail_firm():
         "Transformations",
         "Delve into real-world examples of how data and AI have transformed industries and businesses.",
         "Intelligence",
-        "Beyond Numbers",  
-        "See how data and AI provide a depth of understanding that goes beyond raw data points."
+        "Beyond Numbers",
+        "See how data and AI provide a depth of understanding that goes beyond raw data points.",
     )
     our_perspective_css = await our_perspective_style()
 
@@ -68,6 +68,13 @@ async def get_retail_firm():
         body{{
             overflow-x: hidden;
         }}
+        
+        @media(max-width: 767px){{
+            *{{
+                font-family: 'Exo 2', sans-serif !important;
+            }}
+        }}
+        
         </style>
         
             {navbar_css}

@@ -198,7 +198,7 @@ async def robot_style():
             margin: 0;
             padding: 0;
             background: #000;
-            font-family: 'Exo 2', 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            font-family: 'Exo-2', 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
             overflow-x: hidden;
         }
 

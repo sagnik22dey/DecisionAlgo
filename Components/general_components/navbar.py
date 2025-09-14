@@ -83,6 +83,7 @@ async def navbar_style():
     return """
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@700&display=swap');
 
         :root {
             --bg: #111;
@@ -101,7 +102,7 @@ async def navbar_style():
         body {
             background: var(--bg);
             color: var(--text);
-            font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif,Exo 2;
         }
         
         body.no-scroll {
@@ -129,7 +130,7 @@ async def navbar_style():
             width: 40vw; /* Zoom-safe width for mobile */
             max-width: 40vw;
             height: auto;
-            z-index: 1001;
+            z-index: 0;
         }
         
         .brand img {

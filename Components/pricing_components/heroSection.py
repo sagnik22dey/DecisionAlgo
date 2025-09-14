@@ -43,6 +43,7 @@ async def pricing_banner_style():
     <style>
         /* Ensure a font is available, for example, from Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@700&display=swap');
 
         .pricing-hero-section {
             position: relative;

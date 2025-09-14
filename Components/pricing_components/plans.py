@@ -515,7 +515,7 @@ async def plans_style():
             --plan-col-width: 28.12vw;
             --container-width: 116.48vw;
             --dash-color: #e5e5e5;
-            --font-stack: 'Exo 2', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif;
+            --font-stack: 'Exo-2', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif;
         }
 
         * {

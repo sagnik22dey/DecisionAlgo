@@ -60,6 +60,11 @@ async def get_tech_media_telecom():
         body{{
             overflow-x: hidden;
         }}
+        @media(max-width: 767px){{
+            *{{
+                font-family: 'Exo 2', sans-serif !important;
+            }}
+        }}
         </style>
         
             {navbar_css}
