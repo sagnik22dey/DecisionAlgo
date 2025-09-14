@@ -56,7 +56,7 @@ async def style_top_robot_section():
 
                 .heading-container h1 {
                     /* Use vw for a fluid font-size that scales with screen width */
-                    font-size: 8vw;
+                    font-size: 5.5vw;
                     /* Increase line-height for better readability of multi-line text */
                     line-height: 1.4;
                 }

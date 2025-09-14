@@ -75,10 +75,11 @@ async def team_body():
             const isMobile = window.innerWidth <= 768;
 
             const section = document.querySelector('.team-section');
-            const cards = document.querySelectorAll('.profile-card');
-            const imageWrappers = document.querySelectorAll('.profile-image-wrapper');
-            const textContents = document.querySelectorAll('.profile-text-content');
-            const titles = document.querySelectorAll('.team-section-title');
+            if (!section) return;
+            const cards = section.querySelectorAll('.profile-card');
+            const imageWrappers = section.querySelectorAll('.profile-image-wrapper');
+            const textContents = section.querySelectorAll('.profile-text-content');
+            const titles = section.querySelectorAll('.team-section-title');
 
             if(isMobile){
                 section.style.gap = '8vh';

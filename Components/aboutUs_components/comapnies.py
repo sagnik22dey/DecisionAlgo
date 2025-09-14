@@ -26,8 +26,10 @@ async def companies_body():
     <script>
         function optimizeCompaniesLayout() {
             const isMobile = window.innerWidth <= 768;
-            const logoBar = document.querySelector('.companies-logo-bar');
-            const logos = document.querySelectorAll('.company-logo');
+            const companiesSection = document.querySelector('.companies-section');
+            if (!companiesSection) return;
+            const logoBar = companiesSection.querySelector('.companies-logo-bar');
+            const logos = companiesSection.querySelectorAll('.company-logo');
 
             if (isMobile) {
                 // Apply mobile-specific styles

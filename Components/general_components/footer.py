@@ -51,7 +51,7 @@ async def footer_body():
                 <div class="link-column">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="/casestudy/customer_package_goods" style="color: white; text-decoration: none;">Case Studies<a></li>
+                        <li><a href="/casestudy/customer_package_goods" style="color: white; text-decoration: none;">Case Studies</a></li>
                         <li><a href="/aboutus" style="color: white; text-decoration: none;">About Us</a></li>
                         <li><a href="/pricing" style="color: white; text-decoration: none;">Pricing</a></li>
                         <li><a href="/contactus" style="color: white; text-decoration: none;">Contact Us</a></li>
@@ -299,7 +299,7 @@ async def footer_style():
             .link-column h3 {
                 font-size: 5.5vw;
                 margin-bottom: 2vh;
-                text-align: left;
+                text-align: left !important;
             }
 
             .link-column ul li {

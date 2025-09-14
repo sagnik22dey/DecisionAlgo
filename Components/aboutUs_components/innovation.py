@@ -60,15 +60,17 @@ async def innovation_body():
     <script>
         function optimizeInnovationLayout() {
             const isMobile = window.innerWidth <= 768;
-            const wrapper = document.querySelector('.innovation-content-wrapper');
-            const missionVision = document.querySelector('.mission-vision-container');
-            const headline = document.querySelector('.innovation-header h1');
-            const mainParagraph = document.querySelector('.innovation-header > p');
-            const readMoreBtn = document.querySelector('.read-more-btn');
-            const missionVisionItems = document.querySelectorAll('.mission-item, .vision-item');
-            const itemHeadings = document.querySelectorAll('.mission-item h2, .vision-item h2');
-            const itemParagraphs = document.querySelectorAll('.mission-item p, .vision-item p');
-            const icons = document.querySelectorAll('.icon-wrapper svg');
+            const innovationSection = document.querySelector('.innovation-section');
+            if (!innovationSection) return;
+            const wrapper = innovationSection.querySelector('.innovation-content-wrapper');
+            const missionVision = innovationSection.querySelector('.mission-vision-container');
+            const headline = innovationSection.querySelector('.innovation-header h1');
+            const mainParagraph = innovationSection.querySelector('.innovation-header > p');
+            const readMoreBtn = innovationSection.querySelector('.read-more-btn');
+            const missionVisionItems = innovationSection.querySelectorAll('.mission-item, .vision-item');
+            const itemHeadings = innovationSection.querySelectorAll('.mission-item h2, .vision-item h2');
+            const itemParagraphs = innovationSection.querySelectorAll('.mission-item p, .vision-item p');
+            const icons = innovationSection.querySelectorAll('.icon-wrapper svg');
 
             if (isMobile) {
                 // Apply mobile styles

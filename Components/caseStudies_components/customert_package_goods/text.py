@@ -54,7 +54,7 @@ async def style_top_robot_section():
             }
 
             .heading-container h1 {
-                font-size: 8vw; /* Use vw for responsive font size */
+                font-size: 4.3vw; /* Use vw for responsive font size */
                 line-height: 1.3; /* Adjust line height for better readability on smaller screens */
             }
         }

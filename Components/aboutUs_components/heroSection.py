@@ -178,7 +178,7 @@ async def heroSection_style():
             display: none; /* Hide image section on mobile */
         }
         
-        .hero-text-section {
+        .hero-section-container .hero-text-section {
             flex: 1;
             padding: 5vw;
             text-align: center;
