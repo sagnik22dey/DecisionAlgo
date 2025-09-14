@@ -190,8 +190,8 @@ async def get_in_touch_style():
             .button {
                 align-self: center;
                 width: 70%;
-                height: 8vh;
-                font-size: 4vw;
+                height: 5vh;
+                font-size: 5vw;
                 border-radius: 8vw;
             }
         }

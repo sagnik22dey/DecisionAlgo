@@ -97,6 +97,7 @@ async def robustData_style():
                 border-radius: 4vw;
                 padding: 1vw;
                 border: none; /* Simplify outer border for mobile */
+                margin-top: -12vw;
             }
 
             .robust-feature-content-wrapper {

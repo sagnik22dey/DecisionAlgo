@@ -143,6 +143,7 @@ async def companies_style():
                 flex: 1 0 35%;
                 padding: 0 2vw;
                 min-width: 35%;
+                scale: 2;
             }
 
             .company-logo img {

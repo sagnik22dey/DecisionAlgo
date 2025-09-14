@@ -114,6 +114,7 @@ async def our_offerings_style():
             .offerings-section-retail {
                 padding: 15vh 5vw;
                 height: auto;
+                margin-top: -20vw;
             }
 
             .section-title {

@@ -188,9 +188,21 @@ async def get_in_touch_style():
             .button {
                 align-self: center;
                 width: 70%;
-                height: 8vh;
+                height: 5vh;
                 font-size: 4vw;
                 border-radius: 8vw;
+            }
+            .wrap {
+                min-height: 100vh;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 8vh;
+                padding-top: 8vh;
+                padding-bottom: 8vh;
+                overflow-x: hidden;
+                margin-top: -22vw;
             }
         }
         </style>

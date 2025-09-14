@@ -99,6 +99,7 @@ async def unleash_style():
         @media (max-width: 768px) {
             .unleash-section {
                 padding: 15vh 5vw;
+                margin-top: -25vw;
             }
 
             .unleash-title {

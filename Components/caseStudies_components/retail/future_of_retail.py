@@ -106,7 +106,7 @@ async def future_of_retail_style():
                 width: 90vw;
                 height: auto; /* Let height be determined by content */
                 min-height: 90vh; /* Ensure it feels full-screen */
-                margin: 5vh auto; /* Center the component */
+                margin: -10vw auto; /* Center the component */
                 background-position: center center;
                 border-radius: 5vw;
             }

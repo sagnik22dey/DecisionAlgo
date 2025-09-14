@@ -145,6 +145,7 @@ async def robotSection_style():
                     min-height: auto;
                     padding: 0vh 5vw;
                     justify-content: flex-start;
+                    margin-top:-10vw;
                 }
                 
                 .main-content {

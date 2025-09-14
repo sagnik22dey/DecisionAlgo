@@ -166,7 +166,7 @@ async def locations_style():
         @media (max-width: 768px) {
             .location-card {
                 padding: 5rem 5rem;
-                border-radius: 5rem;
+                border-radius: 2rem;
             }
             .location-title {
                 font-size: 6vw;

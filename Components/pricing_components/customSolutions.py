@@ -25,22 +25,44 @@ async def custom_solutions_body():
             const list = document.querySelector('.solutions-list');
             const tagline = document.querySelector('.solutions-tagline');
             const button = document.querySelector('.consultation-btn');
+            const backgroundCard = document.querySelector('.solutions-background-card');
 
             if (isMobile) {
-                // Apply mobile styles dynamically
-                section.style.padding = '6vh 5vw';
-                headline.style.fontSize = '9vw';
-                list.style.fontSize = '4vw';
-                tagline.style.fontSize = '4.5vw';
-                button.style.fontSize = '4vw';
-                button.style.padding = '2vh 6vw';
+                // Apply mobile styles for a beautiful and elegant layout
+                
+                // Adjust main section for better spacing on mobile
+                section.style.width = '90vw';
+                section.style.padding = '8vh 7vw';
+                section.style.gap = '3vh';
+
+                // Properly center the background card vertically
+                backgroundCard.style.top = '105vw';
+                
+                // Refine typography for readability and visual appeal
+                headline.style.fontSize = '6.5vw';
+                headline.style.lineHeight = '1.2';
+
+                list.style.fontSize = '1.7vw';
+                list.style.lineHeight = '1.7'; // Increase for better readability
+                list.style.maxWidth = '80%';
+                list.style.scale = 1.2;
+
+                tagline.style.fontSize = '4vw';
+                tagline.style.lineHeight = '1.5';
+                
+                // Enhance the call-to-action button
+                button.style.fontSize = '4.2vw';
+                button.style.padding = '1.5vh 5vw';
+                button.style.marginTop = '1vh';
+
             } else {
-                // Revert to desktop styles by clearing inline styles
+                // Revert to desktop styles by clearing all inline styles
                 section.style.cssText = '';
                 headline.style.cssText = '';
                 list.style.cssText = '';
                 tagline.style.cssText = '';
                 button.style.cssText = '';
+                backgroundCard.style.cssText = '';
             }
         }
         window.addEventListener('load', optimizeCustomSolutionsLayout);
@@ -51,7 +73,7 @@ async def custom_solutions_body():
 async def custom_solutions_style():
     return """
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+        @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;700;800&family=Poppins:wght@400;500;700&family=Urbanist:wght@400;700&display=swap");
 
         .custom-solutions-container {
             position: relative;
@@ -68,7 +90,7 @@ async def custom_solutions_style():
             position: absolute;
             width: 82vw;
             height: 105%;
-            border-top: 0.15vw solid rgba(255, 255, 255, 0.4);
+            border-top: 0.15vw solid rgba(255, 255, 255, 255);
             border-radius: 3vw;
             top: 23vw;
             left: 50%;
@@ -107,7 +129,7 @@ async def custom_solutions_style():
         .solutions-list {
             list-style-position: inside;
             text-align: left;
-            font-size: 1.2rem;
+            font-size: 1.6rem;
             line-height: 1;
             color: rgba(255, 255, 255, 0.85);
             padding: 0;
@@ -126,7 +148,7 @@ async def custom_solutions_style():
         }
 
         .solutions-tagline {
-            font-size: 1.8rem; /* Default for desktop */
+            font-size: 2.3rem; /* Default for desktop */
             font-weight: 500;
             color: #FFFFFF;
             margin: 0;
@@ -149,5 +171,20 @@ async def custom_solutions_style():
         .consultation-btn:hover {
             box-shadow: 0 0.5vw 2vw rgba(255, 255, 255,0.88);
         }
+        
+        @media (max-width: 768px) {
+            .custom-solutions-container{
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                padding: 10vh 5vw;
+                background-color: transparent;
+                box-sizing: border-box;
+                margin-top: -30vw;
+            }
+            
+        )
     </style>
     """
