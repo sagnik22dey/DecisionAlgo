@@ -29,7 +29,7 @@ async def style_top_robot_section():
             }
 
             .heading-container h1 {
-                font-size: 3.2rem;
+                font-size: 3.2vw;
                 line-height: 1.2;
                 font-weight: 700;
                 text-transform: uppercase;
@@ -51,8 +51,8 @@ async def style_top_robot_section():
             @media (max-width: 768px) {
                 .heading-container {
                     /* Add more vertical space and horizontal padding on mobile */
-                    margin-top: 15vh;
-                    margin-bottom: 10vh;
+                    margin-top: 8vh;
+                    margin-bottom: 8vh;
                     padding: 0 5vw;
                 }
 

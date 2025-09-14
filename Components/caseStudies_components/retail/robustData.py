@@ -39,7 +39,7 @@ async def robustData_style():
         }
 
         .robust-feature-cards {
-            width: 83%;
+            width: 90%;
             display: flex;
             justify-content: space-between;
             align-items: stretch;
@@ -71,7 +71,7 @@ async def robustData_style():
         }
         
         .robust-feature-icon svg {
-            width: 10vw;
+            width: 2.5vw;
             height: auto;
             max-width: 62px; /* Maintain original max size */
         }
@@ -79,13 +79,13 @@ async def robustData_style():
         .robust-feature-card-title {
             font-weight: 600;
             color: #fff;
-            font-size: 1.2vw;
+            font-size: 2vh;
             margin-bottom: 0.96vh;
         }
 
         .robust-feature-card-desc {
             color: #C6D6ED;
-            font-size: 1vw;
+            font-size: 1.45vh;
             font-weight: 400;
         }
 
@@ -109,7 +109,7 @@ async def robustData_style():
             }
             
             .robust-feature-title {
-                font-size: 7vw;
+                font-size: 6vw;
                 line-height: 1.4;
             }
 

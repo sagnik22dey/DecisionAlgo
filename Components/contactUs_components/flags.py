@@ -99,51 +99,51 @@ async def locations_style():
             width: 28vw; /* Default for desktop */
             background: linear-gradient(180deg, rgba(45, 45, 45, 0.5), rgba(30, 30, 30, 0.5));
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 2rem;
-            padding: 5rem 2rem;
+            border-radius: 2vw;
+            padding: 5vw 2vw;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(1.48rem);
-            -webkit-backdrop-filter: blur(1.48rem);
+            box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(1.48vw);
+            -webkit-backdrop-filter: blur(1.48vw);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             font-family: 'Poppins', sans-serif;
         }
         
         .location-card:hover {
-            transform: translateY(-1rem);
-            box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.3);
+            transform: translateY(-1vw);
+            box-shadow: 0 1.5vw 3vw rgba(0, 0, 0, 0.3);
         }
 
         .location-flag {
-            height: 6rem;
+            height: 6vw;
             width: auto;
-            margin-bottom: 3rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+            margin-bottom: 3vw;
+            border-radius: 0.5vw;
+            box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.2);
         }
 
         .location-title {
-            font-size: 2.2rem;
+            font-size: 2.2vw;
             font-weight: 600;
             color: #AAAAAA;
             line-height: 1.2;
-            margin-bottom: 4rem;
+            margin-bottom: 4vw;
         }
 
         .location-title span {
             display: block;
             color: #FFFFFF;
-            font-size: 2.2rem;
+            font-size: 2.2vw;
         }
         
         .location-details {
-            font-size: 1.1rem;
+            font-size: 1.1vw;
             color: #CCCCCC;
             line-height: 1.6;
-            margin-bottom: 4rem;
+            margin-bottom: 4vw;
             flex-grow: 1; /* Pushes email to the bottom */
         }
         
@@ -152,7 +152,7 @@ async def locations_style():
         }
 
         .location-email {
-            font-size: 1.1rem;
+            font-size: 1.1vw;
             color: #AAAAAA;
             text-decoration: none;
             transition: color 0.3s ease;
@@ -165,8 +165,8 @@ async def locations_style():
         /* Font size adjustments for mobile view */
         @media (max-width: 768px) {
             .location-card {
-                padding: 5rem 5rem;
-                border-radius: 2rem;
+                padding: 5vw 5vw;
+                border-radius: 2vw;
             }
             .location-title {
                 font-size: 6vw;

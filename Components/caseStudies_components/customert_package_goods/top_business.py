@@ -38,7 +38,7 @@ async def top_business_style():
         }
 
         .section-heading h1 {
-            font-size: 3.5rem;
+            font-size: 3.5vw;
             line-height: 1.2;
             font-weight: 700;
             text-transform: uppercase;
@@ -53,7 +53,7 @@ async def top_business_style():
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 2vw;
             width: 90%;
             max-width: 1400px; /* To prevent cards from becoming too wide on very large screens */
         }
@@ -61,11 +61,11 @@ async def top_business_style():
         .benefit-card {
             background-color: var(--card-bg);
             border: 1px solid var(--card-border);
-            border-radius: 1rem;
-            padding: 2rem;
+            border-radius: 1vw;
+            padding: 2vw;
             display: flex;
             flex-direction: column;
-            gap: 3rem;
+            gap: 3vw;
             transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -78,7 +78,7 @@ async def top_business_style():
         .card-header {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1.5vw;
         }
 
         .icon-wrapper {
@@ -86,26 +86,26 @@ async def top_business_style():
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 4rem;
-            height: 4rem;
+            width: 4vw;
+            height: 4vw;
             background-color: var(--icon-bg);
             border: 1px solid var(--icon-border);
-            border-radius: 0.5rem;
+            border-radius: 0.5vw;
         }
 
         .icon-wrapper img {
-            width: 2rem;
+            width: 2vw;
             height: auto;
         }
 
         .card-header h2 {
-            font-size: 1.3rem;
+            font-size: 1.3vw;
             font-weight: 600;
             line-height: 1.1;
         }
 
         .card-description {
-            font-size: 1rem;
+            font-size: 1vw;
             font-weight: 400;
             line-height: 1.6;
             color: var(--text-secondary);
@@ -121,7 +121,7 @@ async def top_business_style():
             }
 
             .section-heading h1 {
-                font-size: 8vw;
+                font-size: 5vw;
                 line-height: 1.3;
             }
 

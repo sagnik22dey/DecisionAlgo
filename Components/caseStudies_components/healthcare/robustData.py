@@ -9,7 +9,7 @@ async def robustData_style():
             max-width: 80vw;
             width: 70vw;
             height: 60vh;
-            margin: 7.11vh auto;
+            margin: 15vh auto;
             position: relative;
             scale: 1.2;
         }
@@ -93,6 +93,7 @@ async def robustData_style():
         /* --- Mobile View Modifications --- */
         @media (max-width: 768px) {
             .robust-feature-outer {
+                margin: 0 auto;
                 width: 90vw;
                 height: auto;
                 border-radius: 4vw;
@@ -110,7 +111,7 @@ async def robustData_style():
             }
             
             .robust-feature-title {
-                font-size: 7vw;
+                font-size: 5vw;
                 line-height: 1.4;
             }
 

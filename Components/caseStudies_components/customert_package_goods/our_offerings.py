@@ -32,7 +32,7 @@ async def our_offerings_style():
         }
 
         .section-title h1 {
-            font-size: 4rem;
+            font-size: 4vw;
             line-height: 1.2;
             font-weight: 700;
             text-transform: uppercase;
@@ -47,14 +47,14 @@ async def our_offerings_style():
         .offerings-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            gap: 2vw;
             width: 90%;
             max-width: 1600px;
         }
 
         .offering-card {
             background-color: var(--card-bg);
-            border-radius: 1.5rem;
+            border-radius: 1.5vw;
             padding: 6vh;;
             position: relative;
             overflow: hidden;
@@ -84,12 +84,12 @@ async def our_offerings_style():
         .card-number {
             font-family: 'Urbanist', sans-serif;
             font-weight: 400;
-            font-size: 4.5rem;
+            font-size: 4.5vw;
             line-height: 1;
             color: var(--primary-blue);
             position: absolute;
-            top: 2.5rem;
-            right: 2.5rem;
+            top: 2.5vw;
+            right: 2.5vw;
         }
 
         .benefits-list {
@@ -102,18 +102,18 @@ async def our_offerings_style():
         .benefits-list li {
             display: flex;
             align-items: flex-start;
-            gap: 1rem;
+            gap: 1vw;
             font-family: 'Urbanist', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1.1vw;
             line-height: 1.4;
             color: var(--primary-white);
         }
 
         .check-icon {
             flex-shrink: 0;
-            width: 1.5rem;
-            height: 1.5rem;
-            margin-top: 0.2rem;
+            width: 1.5vw;
+            height: 1.5vw;
+            margin-top: 0.2vw;
         }
 
         /* --- Mobile View --- */

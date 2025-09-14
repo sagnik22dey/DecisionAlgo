@@ -183,7 +183,7 @@ async def team_style():
         .team-section-title{
             font-family:'Exo 2',sans-serif;
             font-weight:700;
-            font-size:5rem;
+            font-size:5vw;
             line-height:1.15;
             letter-spacing:-0.02em;
             text-transform:capitalize;
@@ -253,9 +253,9 @@ async def team_style():
         .profile-card:not(.expert-card--reverse) .profile-text-content{ margin-left:48vw; }
         .profile-card.expert-card--reverse .profile-text-content{ margin-right:48vw; margin-left:0; }
 
-        .profile-text-content h3{ font-size:3.2rem; font-weight:700; line-height:1.2; }
-        .profile-text-content h4{ font-size:1.85rem; font-weight:600; line-height:1.2; margin:1.5rem 0 3rem 0; }
-        .profile-text-content p, .profile-text-content li{ font-size:1.15rem; line-height:1.55; font-weight:400; }
+        .profile-text-content h3{ font-size:3.2vw; font-weight:700; line-height:1.2; }
+        .profile-text-content h4{ font-size:1.85vw; font-weight:600; line-height:1.2; margin:1.5vw 0 3vw 0; }
+        .profile-text-content p, .profile-text-content li{ font-size:1.15vw; line-height:1.55; font-weight:400; }
 
         .profile-text-content ul{ list-style-type:none; padding-left:1.6vw; margin:0; }
         .profile-text-content ul li{ position:relative; padding-left:1.6vw; margin-bottom:1.2vh; }
@@ -356,7 +356,7 @@ async def team_style():
         /* Tablet Styles */
         @media (max-width: 1024px) and (min-width: 769px) {
             .team-section-title {
-                font-size: 6rem;
+                font-size: 6vw;
             }
 
             .profile-text-content h3 {

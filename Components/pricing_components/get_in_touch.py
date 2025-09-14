@@ -170,7 +170,7 @@ async def get_in_touch_style():
             .stage {
                 flex-direction: column;
                 align-items: center;
-                gap: 6rem
+                gap: 6vw;
             }
 
             .map-container,

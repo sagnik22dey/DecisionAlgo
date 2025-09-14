@@ -122,7 +122,7 @@ async def our_offerings_style():
             }
 
             .section-title h1 {
-                font-size: 9vw;
+                font-size: 7vw;
             }
 
             .section-title p {

@@ -43,8 +43,8 @@ async def heroSection_style():
             display: flex;
             align-items: stretch;
             overflow: hidden;
-            border-radius: 4rem;
-            border-bottom-right-radius: 5rem;
+            border-radius: 4vw;
+            border-bottom-right-radius: 5vw;
             border-bottom: 1px solid rgba(255, 255, 255, 255);
         }
         
@@ -56,8 +56,8 @@ async def heroSection_style():
             top: 0;
             background: linear-gradient(177.33deg, rgba(15, 15, 15, 0) 5.46%, rgba(0, 0, 0, 0.6006) 53.07%, rgba(0, 0, 0, 0.77) 93.86%);
             background-image: url('../../Resources/Images/HomePage/grid1.png');
-            border-radius: 2rem;
-            border-bottom-right-radius: 5rem;
+            border-radius: 2vw;
+            border-bottom-right-radius: 5vw;
     }
     
     .eclipse-glow {
@@ -115,24 +115,24 @@ async def heroSection_style():
     }
 
     .hero-headline {
-        font-size: 4rem;
+        font-size: 4vw;
         font-weight: 700;
         line-height: 1.2;
     }
 
     .hero-paragraph {
-        font-size: 1rem;
+        font-size: 1vw;
         font-weight: 400;
         line-height: 1.6;
         color: rgba(255, 255, 255, 0.8);
-        max-width: 45rem;
+        max-width: 45vw;
     }
 
     .hero-cta-button {
         display: inline-block;
         background-color: #FFFFFF;
         color: #101010;
-        font-size: 1rem;
+        font-size: 1vw;
         font-weight: 600;
         text-decoration: none;
         padding: 1.5vh 2.5vw;
@@ -142,20 +142,20 @@ async def heroSection_style():
     
     .hero-cta-button:hover {
         transform: scale(1.05);
-        box-shadow: 0 0.5rem 1.5rem rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0.5vw 1.5vw rgba(255, 255, 255, 0.2);
     }
 
     .hero-keywords {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.5rem 1.5rem;
-        font-size: 0.9rem;
+        gap: 0.5vw 1.5vw;
+        font-size: 0.9vw;
         color: rgba(255, 255, 255, 0.6);
     }
 
     .hero-keywords span:not(:last-child)::after {
         content: '|';
-        margin-left: 1.5rem;
+        margin-left: 1.5vw;
         color: rgba(255, 255, 255, 0.4);
     }
 

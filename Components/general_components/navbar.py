@@ -8,7 +8,7 @@ async def navbar_body():
             <a href="/">Home</a>
             <a href="/dashboard">Dashboards</a>
             <div class="nav-item dropdown">
-               <a href="#" class="nav-link" id="case-studies-link">Case Studies</a>
+               <a class="nav-link" id="case-studies-link">Case Studies</a>
                <div class="dropdown-menu">
                    <a href="/casestudy/customer_package_goods">Customer Packaged Goods</a>
                    <a href="/casestudy/retail_firm">Retail Firm Adapting to AI Era</a>
@@ -285,8 +285,8 @@ async def navbar_style():
             }
 
             .brand {
-                width: 12rem;
-                max-width: 12rem;
+                width: 12vw;
+                max-width: 12vw;
             }
 
             .hamburger {
@@ -301,7 +301,7 @@ async def navbar_style():
                 flex-direction: row;
                 justify-content: flex-end;
                 align-items: center;
-                gap: 0.5rem;
+                gap: 0.5vw;
                 transform: none;
                 transition: none;
             }
@@ -310,20 +310,20 @@ async def navbar_style():
                 opacity: 1;
                 transform: none;
                 transition: opacity 0.2s ease;
-                font-size: 1.5rem;
-                padding: 0.5rem 1rem;
+                font-size: 1vw;
+                padding: 0.5vw 1vw;
             }
 
             .dropdown-menu {
                 position: absolute;
                 min-width: 240px;
-                margin-top: 0.5rem;
+                margin-top: 0;
             }
 
             .dropdown-menu a {
                 padding: 12px 16px;
                 text-align: left;
-                font-size: 1.1rem;
+                font-size: 1vw;
                 line-height: 1.4;
             }
 
@@ -338,9 +338,9 @@ async def navbar_style():
             .nav-item.dropdown > .nav-link.active::after {
                 content: '';
                 position: absolute;
-                left: 1rem;
-                right: 1rem;
-                bottom: 0.25rem;
+                left: 1vw;
+                right: 1vw;
+                bottom: 0.25vw;
                 height: 2px;
                 background-color: white;
             }

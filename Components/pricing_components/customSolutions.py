@@ -92,7 +92,7 @@ async def custom_solutions_style():
             height: 105%;
             border-top: 0.15vw solid rgba(255, 255, 255, 255);
             border-radius: 3vw;
-            top: 23vw;
+            top: 24vw;
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 1;
@@ -116,7 +116,7 @@ async def custom_solutions_style():
         }
 
         .solutions-headline {
-            font-size: 4rem; /* Default for desktop */
+            font-size: 4vw; /* Default for desktop */
             font-weight: 700;
             text-transform: uppercase;
             background: linear-gradient(90deg, rgba(235, 240, 243, 0.3) 8.85%, #EBF0F3 22.59%, #EBF0F3 57.4%, rgba(235, 239, 243, 0.72) 79.36%);
@@ -129,7 +129,7 @@ async def custom_solutions_style():
         .solutions-list {
             list-style-position: inside;
             text-align: left;
-            font-size: 1.6rem;
+            font-size: 1.6vw;
             line-height: 1;
             color: rgba(255, 255, 255, 0.85);
             padding: 0;
@@ -148,7 +148,7 @@ async def custom_solutions_style():
         }
 
         .solutions-tagline {
-            font-size: 2.3rem; /* Default for desktop */
+            font-size: 2.3vw; /* Default for desktop */
             font-weight: 500;
             color: #FFFFFF;
             margin: 0;
@@ -156,10 +156,10 @@ async def custom_solutions_style():
 
         .consultation-btn {
             display: inline-block;
-            padding: 1rem 1.5rem; /* Default for desktop */
+            padding: 1vw 1.5vw; /* Default for desktop */
             background-color: #FFFFFF;
             color: #000000;
-            font-size: 1.2rem; /* Default for desktop */
+            font-size: 1.2vw; /* Default for desktop */
             font-weight: 500;
             text-decoration: none;
             border-radius: 50vw;

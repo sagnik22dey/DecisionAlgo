@@ -57,7 +57,7 @@ async def trans_tech_style():
 
         #trans-hero h1 {
             font-family: 'Exo 2', sans-serif;
-            font-size: 3.5rem;
+            font-size: 3.5vw;
             font-weight: 700;
             line-height: 1.2;
             letter-spacing: -0.02em;
@@ -73,7 +73,7 @@ async def trans_tech_style():
         #trans-hero p {
             line-height: 1.6;
             opacity: 0.9;
-            font-size: 1.1rem;
+            font-size: 1.1vw;
             margin-bottom: 0;
         }
 
@@ -84,10 +84,10 @@ async def trans_tech_style():
             font-weight: 600;
             cursor: pointer;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
-            padding: 0.5rem 2.5rem;
-            border-radius: 5rem;
-            font-size: 1rem;
-            margin-top: 2rem;
+            padding: 0.5vw 2.5vw;
+            border-radius: 5vw;
+            font-size: 1vw;
+            margin-top: 2vw;
         }
 
         .cta-button:hover {

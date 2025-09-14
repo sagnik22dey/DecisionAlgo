@@ -24,12 +24,12 @@ async def contact_banner_body():
 
             if (isMobile) {
                 // Apply mobile-specific styles for better readability
-                title.style.fontSize = '12rem';
-                section.style.height = '30rem';
+                title.style.fontSize = '12vw';
+                section.style.height = '30vw';
             } else {
                 // Revert to desktop styles
-                title.style.fontSize = '8rem';
-                section.style.height = '40rem';
+                title.style.fontSize = '8vw';
+                section.style.height = '40vw';
             }
         }
 
@@ -65,7 +65,7 @@ async def contact_banner_style():
             z-index: 2;
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
-            font-size: 8rem; /* Default font size for desktop */
+            font-size: 8vw; /* Default font size for desktop */
             text-transform: uppercase;
             letter-spacing: 0.2vw;
             text-align: center;
@@ -78,7 +78,7 @@ async def contact_banner_style():
             text-fill-color: transparent;
             
             /* Subtle shadow for depth */
-            text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
+            text-shadow: 0 0.2vw 0.5vw rgba(0, 0, 0, 0.5);
             transition: font-size 0.3s ease-in-out;
         }
     </style>

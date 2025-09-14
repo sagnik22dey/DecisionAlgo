@@ -17,7 +17,7 @@ async def unleash_style():
         .unleash-title {
             font-family: 'Exo 2', sans-serif;
             font-weight: 700;
-            font-size: 3.3rem;
+            font-size: 3.3vw;
             line-height: 1.2;
             text-align: center;
             letter-spacing: -0.02em;
@@ -33,27 +33,27 @@ async def unleash_style():
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1.7rem;
+            gap: 1.7vw;
             width: 70%;
         }
 
         .unleash-card {
             box-sizing: border-box;
-            width: 18vw;
-            height: 30vh;
+            width: 19vw;
+            height: 33vh;
             border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 0.52rem;
-            padding: 2rem 1.3rem;
+            border-radius: 0.52vw;
+            padding: 2vw 1.3vw;
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1.5vw;
             position: relative;
         }
 
         .unleash-card-header {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1.5vw;
         }
 
         .unleash-icon-wrapper {
@@ -67,7 +67,7 @@ async def unleash_style():
             min-height: 40px;
             background: #0A1015;
             border: 1px solid #3A4046;
-            border-radius: 0.13rem;
+            border-radius: 0.13vw;
         }
 
         .unleash-icon-wrapper img {
@@ -79,7 +79,7 @@ async def unleash_style():
         .unleash-card-title {
             font-family: 'Exo 2', sans-serif;
             font-weight: 600;
-            font-size: 1.3rem;
+            font-size: 1.3vw;
             line-height: 1.2;
             text-transform: capitalize;
             color: #FFFFFF;
@@ -88,7 +88,7 @@ async def unleash_style():
         .unleash-card-description {
             font-family: 'Exo 2', sans-serif;
             font-weight: 400;
-            font-size: 0.85rem;
+            font-size: 0.85vw;
             line-height: 1.6;
             text-transform: capitalize;
             color: #FFFFFF;

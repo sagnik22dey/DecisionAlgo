@@ -59,7 +59,7 @@ async def trans_insurance_style():
             font-family: 'Exo 2';
             font-style: normal;
             font-weight: 700;
-            font-size: 4.4rem;
+            font-size: 4.4vw;
             line-height: 1.2;
             letter-spacing: -0.02em;
             text-transform: capitalize;
@@ -68,14 +68,14 @@ async def trans_insurance_style():
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-fill-color: transparent;
-            /* Static height/width removed for responsiveness */
+            /* Static height/width vwoved for responsiveness */
             margin-bottom: 2vh;
         }
 
         #insurance-hero p {
             line-height: 1.6;
             opacity: 0.9;
-            font-size: 1.1rem;
+            font-size: 1.1vw;
             margin-bottom: 2vh;
         }
 
@@ -86,9 +86,9 @@ async def trans_insurance_style():
             font-weight: 600;
             cursor: pointer;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
-            padding: 0.5rem 2.5rem;
-            border-radius: 5rem;
-            font-size: 1rem;
+            padding: 0.5vw 2.5vw;
+            border-radius: 5vw;
+            font-size: 1vw;
             margin-top: 1vh;
         }
 

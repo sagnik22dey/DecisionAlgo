@@ -16,7 +16,7 @@ async def our_perspective_style():
             align-items: center;
             position: relative;
             overflow: hidden;
-            padding: 10rem 5rem;
+            padding: 10vw 5vw;
             font-family: 'Exo 2', sans-serif; /* Assuming a default font */
             color: #FEFEFE; /* Assuming a default text color */
             background-color: #0A0A0A; /* Assuming a default background */
@@ -24,7 +24,7 @@ async def our_perspective_style():
 
         .perspective-container {
             width: 80%;
-            max-width: 93.75rem; /* Cap width on very large screens */
+            max-width: 93.75vw; /* Cap width on very large screens */
             text-align: center;
             position: relative;
             z-index: 1;
@@ -32,9 +32,10 @@ async def our_perspective_style():
 
         .perspective-container .section-title {
             font-weight: 700;
-            font-size: 3rem;
-            margin-bottom: 8rem;
+            font-size: 3vw;
+            margin-bottom: 8vw;
             text-transform: uppercase;
+            margin-top: -7vw;
         }
         
         .perspective-container .section-title .highlight {
@@ -44,9 +45,9 @@ async def our_perspective_style():
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr); /* Creates the 3-column layout */
-            gap: 4rem;
+            gap: 4vw;
             transition: all 0.3s ease-in-out;
-            margin-top: 7rem;
+            margin-top: 7vw;
         }
 
         .perspective-card {
@@ -61,10 +62,10 @@ async def our_perspective_style():
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            width: 3.5rem;
-            height: 3.5rem;
-            border-radius: 0.8rem;
-            margin-bottom: 3rem;
+            width: 3.5vw;
+            height: 3.5vw;
+            border-radius: 0.8vw;
+            margin-bottom: 3vw;
         }
 
         .icon-container svg {
@@ -75,14 +76,14 @@ async def our_perspective_style():
         .perspective-card h3 {
             font-weight: 600;
             line-height: 1.2;
-            font-size: 1.6rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.6vw;
+            margin-bottom: 1.5vw;
         }
 
         .perspective-card p {
             color: #bdbdbd;
             line-height: 1.6;
-            font-size: 1.1rem;
+            font-size: 1.1vw;
             max-width: 30ch; /* Limits line length for readability */
         }
 

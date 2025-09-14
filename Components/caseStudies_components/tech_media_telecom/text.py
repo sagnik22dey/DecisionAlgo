@@ -3,7 +3,7 @@ async def text_top_robot_section():
         <section>
             <div class="heading-container">
                 <h1>
-                    <span>AI AND DATA SCIENCE</span> ACROSS DIVERSE <br> INDUSTRIES IN <span>INSURANCE</span>
+                    AI AND DATA SCIENCE IN <span>TECHNOLOGY,<br> MEDIA & TELECOM</span>
                 </h1>
             </div>
         </section>
@@ -32,7 +32,7 @@ async def style_top_robot_section():
                 font-family: 'Exo 2';
                 font-style: normal;
                 font-weight: 700;
-                font-size: 4.16rem;
+                font-size: 4.16vw;
                 line-height: 1.2;
                 letter-spacing: -0.02em;
                 text-transform: uppercase;
@@ -53,8 +53,8 @@ async def style_top_robot_section():
             @media (max-width: 768px) {
                 .heading-container {
                     /* Add more vertical space for better centering and add horizontal padding */
-                    margin-top: 15vh;
-                    margin-bottom: 10vh;
+                    margin-top: 8vh;
+                    margin-bottom: 8vh;
                     padding: 0 5vw; /* Prevents text from touching screen edges */
                 }
 

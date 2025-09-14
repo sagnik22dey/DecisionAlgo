@@ -742,8 +742,8 @@ async def plans_style():
         /* Tablet responsive adjustments */
         @media (max-width: 1200px) and (min-width: 769px) {
             :root {
-                --feature-col-width: 15.62rem;
-                --plan-col-width: 21.87rem;
+                --feature-col-width: 15.62vw;
+                --plan-col-width: 21.87vw;
             }
 
             .comparison thead th {
@@ -765,7 +765,7 @@ async def plans_style():
         /* Mobile Layout */
         @media (max-width: 768px) {
             .wrapper {
-                padding: 4.44rem 2.37rem;
+                padding: 4.44vw 2.37vw;
             }
 
             .main-heading {

@@ -116,7 +116,7 @@ async def companies_style():
         .company-logo img {
             max-width: 100%;
             max-height: 18vh;
-            width: 20rem;
+            width: 20vw;
             object-fit: contain;
             filter: grayscale(1) brightness(5);
             opacity: 0.8;
@@ -169,7 +169,7 @@ async def companies_style():
 
             .company-logo img {
                 max-height: 16vh;
-                width: 18rem;
+                width: 18vw;
             }
         }
     </style>

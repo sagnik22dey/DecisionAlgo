@@ -105,19 +105,19 @@ async def innovation_body():
                 missionVision.style.textAlign = 'left';
                 missionVision.style.gap = '4vw';
 
-                headline.style.fontSize = '3.5rem';
-                mainParagraph.style.fontSize = '1rem';
-                readMoreBtn.style.padding = '1rem 1.5rem';
-                readMoreBtn.style.fontSize = '1rem';
+                headline.style.fontSize = '3.5vw';
+                mainParagraph.style.fontSize = '1vw';
+                readMoreBtn.style.padding = '1vw 1.5vw';
+                readMoreBtn.style.fontSize = '1vw';
                 
                 missionVisionItems.forEach(item => {
                     item.style.alignItems = 'flex-start';
                 });
-                itemHeadings.forEach(h2 => h2.style.fontSize = '2rem');
-                itemParagraphs.forEach(p => p.style.fontSize = '1rem');
+                itemHeadings.forEach(h2 => h2.style.fontSize = '2vw');
+                itemParagraphs.forEach(p => p.style.fontSize = '1vw');
                 icons.forEach(svg => {
-                    svg.style.width = '2rem';
-                    svg.style.height = '2rem';
+                    svg.style.width = '2vw';
+                    svg.style.height = '2vw';
                 });
             }
         }
@@ -132,7 +132,7 @@ async def innovation_style():
     <style>
         .innovation-section {
             background-color: #111;
-            padding: 10rem 12rem;
+            padding: 10vw 12vw;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -168,7 +168,7 @@ async def innovation_style():
         .innovation-header h1 {
             font-family: 'Exo 2', sans-serif;
             font-weight: 700;
-            font-size: 3.5rem;
+            font-size: 3.5vw;
             line-height: 1.1;
             letter-spacing: -0.02em;
             background: linear-gradient(90deg, rgba(235, 243, 243, 0.54) 0%, #EBF3F3 15%, #EBF3F3 55%, rgba(235, 243, 243, 0.7) 80%);
@@ -181,11 +181,11 @@ async def innovation_style():
 
         .innovation-header > p {
             font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
+            font-size: 1vw;
             line-height: 1.6;
             color: #FFFFFF;
             opacity: 0.6;
-            max-width: 40rem;
+            max-width: 40vw;
             transition: font-size 0.3s ease-in-out;
         }
 
@@ -193,26 +193,26 @@ async def innovation_style():
             display: flex;
             flex-direction: row;
             align-items: center;
-            padding: 1rem 1.5rem;
-            gap: 0.5rem;
+            padding: 1vw 1.5vw;
+            gap: 0.5vw;
             background: #5FC7FB;
-            border-radius: 0.5rem;
+            border-radius: 0.5vw;
             text-decoration: none;
             color: #000000;
             font-family: 'Exo 2', sans-serif;
             font-weight: 500;
-            font-size: 1rem;
+            font-size: 1vw;
             transition: all 0.3s ease-in-out;
         }
 
         .read-more-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 0.5rem 1rem rgba(95, 199, 251, 0.3);
+            box-shadow: 0 0.5vw 1vw rgba(95, 199, 251, 0.3);
         }
 
         .mission-vision-container {
             display: flex;
-            gap: 4rem;
+            gap: 4vw;
             transition: all 0.3s ease-in-out;
         }
 
@@ -226,8 +226,8 @@ async def innovation_style():
 
         .icon-wrapper {
             background: #FFFFFF;
-            border-radius: 0.3rem;
-            padding: 0.8rem;
+            border-radius: 0.3vw;
+            padding: 0.8vw;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -240,14 +240,14 @@ async def innovation_style():
         .mission-item h2, .vision-item h2 {
             font-family: 'Exo 2', sans-serif;
             font-weight: 500;
-            font-size: 2rem;
+            font-size: 2vw;
             color: #FFFFFF;
             transition: font-size 0.3s ease-in-out;
         }
         
         .mission-item p, .vision-item p {
             font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
+            font-size: 1vw;
             line-height: 1.5;
             color: #FFFFFF;
             opacity: 0.7;
@@ -263,18 +263,18 @@ async def innovation_style():
         }
 
         .image-frame {
-            padding-bottom: 1rem;
+            padding-bottom: 1vw;
             border-right: 1px solid #B4B4B4;
             border-bottom: 1px solid #B4B4B4;
-            border-radius: 4.5rem;
-            padding-right: 1rem;
+            border-radius: 4.5vw;
+            padding-right: 1vw;
         }
 
         .award-image {
-            width: 33rem;
+            width: 33vw;
             height: auto;
             display: block;
-            border-radius: 3rem;
+            border-radius: 3vw;
         }
     
         /* Eclipse Glow for Innovation Section */
@@ -388,7 +388,7 @@ async def innovation_style():
         /* Tablet Styles */
         @media (max-width: 1024px) and (min-width: 769px) {
             .innovation-section {
-                padding: 8rem 8rem;
+                padding: 8vw 8vw;
             }
 
             .innovation-header h1 {

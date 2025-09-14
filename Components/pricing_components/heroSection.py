@@ -23,12 +23,12 @@ async def pricing_banner_body():
 
             if (isMobile) {
                 // Apply mobile-specific styles for better impact and fit
-                title.style.fontSize = '15rem';
-                section.style.height = '30rem';
+                title.style.fontSize = '15vw';
+                section.style.height = '30vw';
             } else {
                 // Revert to desktop styles defined in the CSS
-                title.style.fontSize = '8rem';
-                section.style.height = '40rem';
+                title.style.fontSize = '8vw';
+                section.style.height = '40vw';
             }
         }
 

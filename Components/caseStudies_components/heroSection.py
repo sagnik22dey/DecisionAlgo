@@ -45,6 +45,7 @@ async def heroSection_style():
 
             /* Responsive font size */
             font-size: clamp(5.92vh, 10vw, 14.22vh);
+            scale: 0.8;
         }
 
         /* --- Mobile View --- */

@@ -58,15 +58,15 @@ async def trans_Finance_style():
         #finance-hero h1 {
             font-weight: 700;
             line-height: 1.1;
-            font-size: 3.5rem;
-            margin-bottom: 2.5rem;
+            font-size: 3.5vw;
+            margin-bottom: 2.5vw;
         }
 
         #finance-hero p {
             line-height: 1.6;
             opacity: 0.9;
-            font-size: 1.1rem;
-            margin-bottom: 4rem;
+            font-size: 1.1vw;
+            margin-bottom: 4vw;
         }
 
         .cta-button {
@@ -76,10 +76,10 @@ async def trans_Finance_style():
             font-weight: 600;
             cursor: pointer;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
-            padding: 0.5rem 2.5rem;
-            border-radius: 5rem;
-            font-size: 1rem;
-            margin-top: 2rem;
+            padding: 0.5vw 2.5vw;
+            border-radius: 5vw;
+            font-size: 1vw;
+            margin-top: 2vw;
         }
 
         .cta-button:hover {

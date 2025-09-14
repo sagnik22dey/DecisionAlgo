@@ -169,7 +169,7 @@ async def dashboard_text_cards_style():
             .ai-powered-section,
             .see-data-section,
             .see-data-background-card {
-                border-radius: 14.5vw;
+                border-radius: 6.5vw;
             }
         }
 
@@ -189,8 +189,8 @@ async def dashboard_text_cards_style():
             }
             
             .decorative-line {
-                width: 90vw; /* Match card width */
-                height: 5vh;
+                width: 80vw; /* Match card width */
+                height: 3vh;
             }
             
             .see-data-background-card {

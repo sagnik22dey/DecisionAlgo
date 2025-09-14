@@ -26,16 +26,16 @@ async def client_feedback_style():
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 10rem 2rem;
+            padding: 10vw 2vw;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 8rem;
+            margin-bottom: 8vw;
         }
 
         .section-header h1 {
-            font-size: 4rem;
+            font-size: 4vw;
             line-height: 1.2;
             font-weight: 700;
             text-transform: uppercase;
@@ -64,12 +64,12 @@ async def client_feedback_style():
 
         .testimonial-card {
             background-color: var(--card-white);
-            border-radius: 1.5rem;
-            box-shadow: 0px 2rem 8rem rgba(0, 0, 0, 0.08);
+            border-radius: 1.5vw;
+            box-shadow: 0px 2vw 8vw rgba(0, 0, 0, 0.08);
             position: relative;
-            flex: 0 0 calc(81vw / 3);
+            flex: 0 0 calc(80vw / 3);
             /* 3 cards visible with some spacing */
-            margin: 1rem;
+            margin: 1vw;
             min-height: 55vh;
             display: flex;
             flex-direction: column;
@@ -77,36 +77,36 @@ async def client_feedback_style():
 
         .card-top {
             background-color: var(--card-header-bg);
-            border-radius: 1.5rem 1.5rem 0 0;
-            padding: 2rem;
+            border-radius: 1.5vw 1.5vw 0 0;
+            padding: 2vw;
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1.5vw;
             min-height: 20vh;
         }
 
         .client-photo {
-            width: 9rem;
-            height: 9rem;
-            border-radius: 1rem;
+            width: 9vw;
+            height: 9vw;
+            border-radius: 1vw;
             object-fit: cover;
         }
 
         .client-info h3 {
-            font-size: 1.8rem;
+            font-size: 1.8vw;
             font-weight: 700;
             color: var(--text-dark);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.5vw;
         }
 
         .client-info p {
-            font-size: 1.3rem;
+            font-size: 1.3vw;
             line-height: 1.3;
             color: var(--text-muted);
         }
 
         .card-bottom {
-            padding: 2rem;
+            padding: 2vw;
             text-align: center;
             color: var(--text-dark);
             flex-grow: 1;
@@ -118,25 +118,25 @@ async def client_feedback_style():
 
         .rating-box {
             background-color: var(--card-white);
-            border-radius: 1rem;
-            box-shadow: 0px 1.5rem 5rem rgba(0, 0, 0, 0.07);
-            padding: 1rem 2rem;
-            margin-top: -8rem;
+            border-radius: 1vw;
+            box-shadow: 0px 1.5vw 5vw rgba(0, 0, 0, 0.07);
+            padding: 1vw 2vw;
+            margin-top: -3.7vw;
             /* Pulls the rating box up */
-            margin-bottom: 4rem;
+            margin-bottom: 4vw;
             display: inline-flex;
-            gap: 0.5rem;
+            gap: 0.5vw;
             z-index: 2;
         }
 
         .rating-box svg {
-            width: 1.5rem;
-            height: 1.5rem;
+            width: 1.5vw;
+            height: 1.5vw;
             fill: var(--star-color);
         }
 
         .testimonial-quote {
-            font-size: 1.2rem;
+            font-size: 1.2vw;
             line-height: 1.5;
             max-width: 90%;
         }
@@ -144,16 +144,16 @@ async def client_feedback_style():
         .slider-pagination {
             display: flex;
             justify-content: center;
-            gap: 1rem;
-            margin-top: 5rem;
+            gap: 1vw;
+            margin-top: 5vw;
         }
 
         .pagination-dot {
-            width: 3.5rem;
-            height: 0.8rem;
+            width: 3.5vw;
+            height: 0.8vw;
             background-color: var(--primary-blue);
             opacity: 0.3;
-            border-radius: 2rem;
+            border-radius: 2vw;
             cursor: pointer;
             transition: opacity 0.3s ease;
         }
@@ -176,7 +176,7 @@ async def client_feedback_style():
             }
 
             .section-header h1 {
-                font-size: 8vw;
+                font-size: 7vw;
                 line-height: 1.3;
             }
 
@@ -201,7 +201,7 @@ async def client_feedback_style():
                 padding: 8vw 6vw 6vw;
                 gap: 3vw;
                 border-radius: 6vw 6vw 0 0;
-                min-height: auto;
+                min-height: 30vh;
                 flex-shrink: 0;
             }
 
@@ -231,7 +231,7 @@ async def client_feedback_style():
             }
 
             .rating-box {
-                margin-top: -8vh;
+                margin-top: -12vh;
                 margin-bottom: 4vh;
                 padding: 2.5vh 6vw;
                 border-radius: 10vw;

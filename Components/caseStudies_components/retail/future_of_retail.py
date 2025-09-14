@@ -61,24 +61,24 @@ async def future_of_retail_style():
             color: #ffffff;
             border: none;
             font-weight: 500;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5rem;
-            font-size: 1rem;
-            margin-bottom: 2rem;
+            padding: 0.8vw 1.5vw;
+            border-radius: 5vw;
+            font-size: 1vw;
+            margin-bottom: 2vw;
         }
 
         #retail-hero h1 {
             font-weight: 700;
             line-height: 1.1;
-            font-size: 3.5rem;
-            margin-bottom: 2.5rem;
+            font-size: 3.5vw;
+            margin-bottom: 2.5vw;
         }
 
         #retail-hero p {
             line-height: 1.6;
             opacity: 0.9;
-            font-size: 1.1rem;
-            margin-bottom: 4rem;
+            font-size: 1.1vw;
+            margin-bottom: 4vw;
         }
 
         .cta-button {
@@ -88,9 +88,9 @@ async def future_of_retail_style():
             font-weight: 600;
             cursor: pointer;
             transition: transform 0.2s ease, background-color 0.2s ease;
-            padding: 0.5rem 2.5rem;
-            border-radius: 5rem;
-            font-size: 1rem;
+            padding: 0.5vw 2.5vw;
+            border-radius: 5vw;
+            font-size: 1vw;
         }
 
         .cta-button:hover {
@@ -106,14 +106,16 @@ async def future_of_retail_style():
                 width: 90vw;
                 height: auto; /* Let height be determined by content */
                 min-height: 90vh; /* Ensure it feels full-screen */
-                margin: -10vw auto; /* Center the component */
+                margin: 0vw auto; /* Center the component */
                 background-position: center center;
                 border-radius: 5vw;
+                margin-top: -5vw;
             }
 
             #retail-hero::before {
                 /* Gradient from bottom to top for mobile text readability */
                 background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 20%, rgba(0, 0, 0, 0.1) 70%);
+                
             }
 
             .content-wrapper {
