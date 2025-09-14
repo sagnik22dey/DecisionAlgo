@@ -238,7 +238,7 @@ async def team_style():
             object-fit:contain;
             object-position:bottom;
             filter:grayscale(100%);
-            scale:1.2;
+            scale:1.19;
         }
 
         .profile-text-content{
