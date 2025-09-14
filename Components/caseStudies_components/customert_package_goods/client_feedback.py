@@ -26,12 +26,22 @@ async def client_feedback_style():
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 10vw 2vw;
+            padding: 5vw 2vw;
+            background-color: var(--background-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials-section::before {
+            content: '';
+            display: none;
         }
 
         .section-header {
             text-align: center;
             margin-bottom: 8vw;
+            position: relative;
+            z-index: 1;
         }
 
         .section-header h1 {
@@ -48,14 +58,17 @@ async def client_feedback_style():
         }
 
         .slider-viewport {
-            width: 90%;
+            width: 90vw;
             overflow: hidden;
+            position: relative;
+            z-index: 1;
         }
 
         .slider-track {
             display: flex;
             cursor: grab;
             user-select: none;
+            gap: 2.4vw;
         }
 
         .slider-track:active {
@@ -63,32 +76,33 @@ async def client_feedback_style():
         }
 
         .testimonial-card {
-            background-color: var(--card-white);
+            background: linear-gradient(to bottom, #F3F3F3 47%, #FFFFFF 40%);
             border-radius: 1.5vw;
-            box-shadow: 0px 2vw 8vw rgba(0, 0, 0, 0.08);
+            box-shadow: 0px 1vw 4vw rgba(0, 0, 0, 0.1);
             position: relative;
-            flex: 0 0 calc(80vw / 3);
-            /* 3 cards visible with some spacing */
-            margin: 1vw;
-            min-height: 55vh;
+            flex: 0 0 27.7vw;
+            margin: 0;
+            min-height: auto;
             display: flex;
             flex-direction: column;
+            padding: 2vw;
+            background-color: var(--card-white);
         }
 
         .card-top {
-            background-color: var(--card-header-bg);
-            border-radius: 1.5vw 1.5vw 0 0;
-            padding: 2vw;
+            background-color: transparent;
+            border-radius: 0;
+            padding: 0;
             display: flex;
             align-items: center;
             gap: 1.5vw;
-            min-height: 20vh;
+            min-height: auto;
         }
 
         .client-photo {
-            width: 9vw;
-            height: 9vw;
-            border-radius: 1vw;
+            width: 8vw;
+            height: 8vw;
+            border-radius: 1.5vw;
             object-fit: cover;
         }
 
@@ -100,45 +114,60 @@ async def client_feedback_style():
         }
 
         .client-info p {
-            font-size: 1.3vw;
+            font-size: 1.1vw;
             line-height: 1.3;
             color: var(--text-muted);
         }
 
         .card-bottom {
-            padding: 2vw;
-            text-align: center;
+            padding: 0;
+            text-align: left;
             color: var(--text-dark);
             flex-grow: 1;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
+            margin-top: 2vw;
+            position: relative;
         }
 
+        .card-bottom::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 5%;
+            right: 5%;
+            height: 1px;
+            background-color: #e0e0e0;
+        }
+        
         .rating-box {
             background-color: var(--card-white);
-            border-radius: 1vw;
-            box-shadow: 0px 1.5vw 5vw rgba(0, 0, 0, 0.07);
-            padding: 1vw 2vw;
-            margin-top: -3.7vw;
-            /* Pulls the rating box up */
-            margin-bottom: 4vw;
+            border-radius: 2vw;
+            box-shadow: 0px 0.5vw 2vw rgba(0, 0, 0, 0.1);
+            padding: 0.8vw 1.5vw;
+            margin-top: -1.5vw;
+            margin-bottom: 1.5vw;
             display: inline-flex;
             gap: 0.5vw;
-            z-index: 2;
+            z-index: 1;
+            align-self: center;
         }
 
         .rating-box svg {
-            width: 1.5vw;
-            height: 1.5vw;
+            width: 1.2vw;
+            height: 1.2vw;
             fill: var(--star-color);
         }
 
         .testimonial-quote {
-            font-size: 1.2vw;
-            line-height: 1.5;
-            max-width: 90%;
+            font-size: 1.1vw;
+            line-height: 1.6;
+            max-width: 100%;
+            text-align: left;
+            padding: 0 1vw;
+            color: var(--text-dark);
         }
 
         .slider-pagination {
@@ -151,32 +180,33 @@ async def client_feedback_style():
         .pagination-dot {
             width: 3.5vw;
             height: 0.8vw;
-            background-color: var(--primary-blue);
-            opacity: 0.3;
+            background-color: #444;
+            opacity: 0.5;
             border-radius: 2vw;
             cursor: pointer;
-            transition: opacity 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .pagination-dot.active {
             opacity: 1;
+            background-color: var(--primary-blue);
         }
 
         /* --- Mobile View --- */
         @media (max-width: 768px) {
             .testimonials-section {
-                padding: 5vh 5vw;
-                justify-content: flex-start;
-                min-height: 100vh;
-                height: auto;
+                padding: 15vh 0;
+                justify-content: center;
+                min-height: auto;
             }
 
             .section-header {
                 margin-bottom: 8vh;
+                padding: 0 5vw;
             }
 
             .section-header h1 {
-                font-size: 7vw;
+                font-size: 8vw;
                 line-height: 1.3;
             }
 
@@ -184,11 +214,15 @@ async def client_feedback_style():
                 width: 100%;
             }
 
+            .slider-track {
+                gap: 4vw;
+            }
+
             .testimonial-card {
-                flex: 0 0 100%;
+                flex: 0 0 88vw;
                 margin: 0;
-                border-radius: 6vw;
-                min-height: 65vh;
+                border-radius: 4vw;
+                min-height: 58vh;
                 height: auto;
                 display: flex;
                 flex-direction: column;
@@ -198,17 +232,17 @@ async def client_feedback_style():
             .card-top {
                 flex-direction: column;
                 text-align: center;
-                padding: 8vw 6vw 6vw;
+                padding: 6vw 6vw 8vw;
                 gap: 3vw;
-                border-radius: 6vw 6vw 0 0;
-                min-height: 30vh;
+                border-radius: 4vw 4vw 0 0;
+                min-height: initial;
                 flex-shrink: 0;
             }
 
             .client-photo {
-                width: 28vw;
-                height: 28vw;
-                border-radius: 4vw;
+                width: 25vw;
+                height: 25vw;
+                border-radius: 3vw;
             }
 
             .client-info h3 {
@@ -217,34 +251,34 @@ async def client_feedback_style():
             }
 
             .client-info p {
-                font-size: 3.8vw;
+                font-size: 4vw;
                 line-height: 1.4;
             }
 
             .card-bottom {
-                padding: 0 6vw 8vw;
+                padding: 0 6vw 6vw;
                 flex-grow: 1;
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                justify-content: flex-start;
                 align-items: center;
             }
 
             .rating-box {
-                margin-top: -12vh;
+                margin-top: -3vh;
                 margin-bottom: 4vh;
-                padding: 2.5vh 6vw;
+                padding: 2vh 5vw;
                 border-radius: 10vw;
                 gap: 2vw;
             }
 
             .rating-box svg {
-                width: 4.5vw;
-                height: 4.5vw;
+                width: 5vw;
+                height: 5vw;
             }
 
             .testimonial-quote {
-                font-size: 4vw;
+                font-size: 4.2vw;
                 line-height: 1.6;
                 max-width: 100%;
             }
@@ -391,14 +425,19 @@ async def client_feedback_body():
                 currentTranslate = 0,
                 prevTranslate = 0,
                 animationID,
-                currentIndex = slideCount; // Start at the first real slide
+                currentIndex = slideCount, // Start at the first real slide
+                autoSlideInterval;
 
             const getSlideWidth = () => {
-                const viewport = document.querySelector('.slider-viewport');
-                if (!viewport || slides.length === 0) return 0;
-
-                const slidesPerView = window.innerWidth > 768 ? 3 : 1;
-                return viewport.clientWidth / slidesPerView;
+                if (slides.length === 0) return 0;
+                if (window.innerWidth > 768) {
+                    const viewport = document.querySelector('.slider-viewport');
+                    return viewport.clientWidth / 3;
+                }
+                const slideStyle = window.getComputedStyle(slides[0]);
+                const slideMargin = parseFloat(slideStyle.marginLeft) + parseFloat(slideStyle.marginRight);
+                const gap = parseFloat(window.getComputedStyle(track).gap) || 0;
+                return slides[0].offsetWidth + slideMargin + gap;
             };
 
             function setSliderPosition() {
@@ -407,7 +446,15 @@ async def client_feedback_body():
 
             function setPositionByIndex(withTransition = true) {
                 const slideWidth = getSlideWidth();
-                currentTranslate = -currentIndex * slideWidth;
+                let offset = 0;
+                if (window.innerWidth <= 768) {
+                    const viewportWidth = document.querySelector('.slider-viewport').clientWidth;
+                    if (slides.length > 0) {
+                        const cardWidth = slides[0].offsetWidth;
+                        offset = (viewportWidth - cardWidth) / 2;
+                    }
+                }
+                currentTranslate = -currentIndex * slideWidth + offset;
                 prevTranslate = currentTranslate;
                 if (withTransition) {
                     track.style.transition = 'transform 0.5s ease-out';
@@ -421,6 +468,7 @@ async def client_feedback_body():
             setPositionByIndex(false);
 
             function dragStart(event) {
+                stopAutoSlide();
                 isDragging = true;
                 startPos = getPositionX(event);
                 animationID = requestAnimationFrame(animation);
@@ -465,6 +513,7 @@ async def client_feedback_body():
                 track.addEventListener('transitionend', () => {
                     checkIndex();
                     updatePagination();
+                    startAutoSlide(); // Restart auto-slide after manual interaction
                 }, { once: true });
             }
 
@@ -497,8 +546,29 @@ async def client_feedback_body():
             track.addEventListener('touchstart', dragStart, { passive: true });
 
             window.addEventListener('resize', () => {
+                stopAutoSlide();
                 setPositionByIndex(false);
+                startAutoSlide();
             });
+
+            // --- Automatic Sliding ---
+            function autoSlide() {
+                currentIndex++;
+                setPositionByIndex();
+                track.addEventListener('transitionend', () => {
+                    checkIndex();
+                    updatePagination();
+                }, { once: true });
+            }
+
+            function startAutoSlide() {
+                stopAutoSlide(); // Clear any existing interval
+                autoSlideInterval = setInterval(autoSlide, 5000); // Change slide every 5 seconds
+            }
+
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
             
             // --- Pagination ---
             const paginationContainer = document.querySelector('.slider-pagination');
@@ -530,6 +600,7 @@ async def client_feedback_body():
             }
 
             updatePagination();
+            startAutoSlide(); // Initial start
         });
     </script>
 """
