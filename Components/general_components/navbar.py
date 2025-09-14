@@ -229,6 +229,7 @@ async def navbar_style():
             font-weight: 800;
             white-space: nowrap;
             font-size: 4.5vw; /* Zoom-safe font size for mobile */
+            position: relative;
 
             /* Staggered animation setup */
             opacity: 0;
@@ -251,8 +252,33 @@ async def navbar_style():
         .nav.is-active a:nth-child(4) { transition-delay: calc(var(--nav-timing) * 0.8); }
         .nav.is-active a:nth-child(5) { transition-delay: calc(var(--nav-timing) * 0.9); }
         .nav.is-active a:nth-child(6) { transition-delay: calc(var(--nav-timing) * 1.0); }
+
+        /* --- SHARED DROPDOWN STYLES --- */
+        .nav-item.dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            background-color: var(--nav-panel-bg);
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 4px;
+        }
+
+        .dropdown-menu a {
+            text-decoration: none;
+            display: block;
+            white-space: normal;
+            position: relative;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #575757;
+            opacity: 1;
+        }
         
-        /* --- DESKTOP STYLES (Applied on screens wider than 992px) --- */
+        /* --- DESKTOP STYLES (min-width: 993px) --- */
         @media (min-width: 993px) {
             .navbar {
                 padding: 1.5vw 2vw;
@@ -267,7 +293,6 @@ async def navbar_style():
                 display: none;
             }
 
-            /* Revert nav to a horizontal layout for desktop */
             .nav {
                 position: static;
                 width: auto;
@@ -287,72 +312,57 @@ async def navbar_style():
                 transition: opacity 0.2s ease;
                 font-size: 1.5rem;
                 padding: 0.5rem 1rem;
-                position: relative;
             }
 
-            .nav a.active::after {
-                content: '';
+            .dropdown-menu {
                 position: absolute;
-                left: 0;
-                bottom: -2px;
-                width: 100%;
-                height: 2px;
-                background-color: white;
+                min-width: 240px;
+                margin-top: 0.5rem;
             }
-        }
 
-        /* --- Dropdown Styles --- */
-        .nav-item.dropdown {
-            position: relative;
-        }
+            .dropdown-menu a {
+                padding: 12px 16px;
+                text-align: left;
+                font-size: 1.1rem;
+                line-height: 1.4;
+            }
 
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            background-color: var(--nav-panel-bg);
-            min-width: 240px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            border-radius: 4px;
-            margin-top: 0.5rem;
-        }
-
-        .dropdown-menu a {
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-            font-size: 1.1rem;
-            white-space: normal;
-            line-height: 1.4;
-        }
-
-        .dropdown-menu a:hover {
-            background-color: #575757;
-            opacity: 1;
-        }
-
-        .nav-item.dropdown .nav-link.active::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -2px;
-            width: 100%;
-            height: 2px;
-            background-color: white;
-        }
-
-        /* Desktop Dropdown */
-        @media (min-width: 993px) {
             .nav-item.dropdown:hover .dropdown-menu {
                 display: block;
             }
-            .nav-item.dropdown .nav-link {
-                padding: 0.5rem 1rem;
+
+            /* --- DESKTOP UNDERLINE STYLES (REFACTORED) --- */
+
+            /* Underline for standard active nav links (Home, etc.) AND the main "Case Studies" link */
+            .nav > a.active::after,
+            .nav-item.dropdown > .nav-link.active::after {
+                content: '';
+                position: absolute;
+                left: 1rem;
+                right: 1rem;
+                bottom: 0.25rem;
+                height: 2px;
+                background-color: white;
+            }
+
+            /* Underline for active links INSIDE the dropdown */
+            .dropdown-menu a.active::after {
+                content: '';
+                position: absolute;
+                left: 16px;
+                right: 16px;
+                bottom: 10px;
+                height: 2px;
+                background-color: white;
+            }
+
+            /* On hover, HIDE the underline from the main "Case Studies" link so only the child's underline is visible. */
+            .nav-item.dropdown:hover > .nav-link.active::after {
+                background-color: transparent;
             }
         }
 
-        /* Mobile Dropdown */
+        /* --- MOBILE STYLES (max-width: 992px) --- */
         @media (max-width: 992px) {
             .nav-item.dropdown {
                 width: 100%;
@@ -364,10 +374,11 @@ async def navbar_style():
             }
             .dropdown-menu {
                 position: static;
-                display: none;
-                background-color: transparent;
+                background-color: rgba(255, 255, 255, 0.05);
                 box-shadow: none;
-                width: 100%;
+                width: 90%;
+                margin: 1vh auto 0;
+                padding: 1vh 0;
             }
             .nav-item.dropdown.is-open .dropdown-menu {
                 display: block;
@@ -375,6 +386,24 @@ async def navbar_style():
             .dropdown-menu a {
                 font-size: 3.8vw;
                 padding: 1.5vh 0;
+                text-align: center;
+            }
+
+            /* --- MOBILE UNDERLINE STYLES --- */
+            .nav a.active::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+                height: 2px;
+                background-color: white;
+            }
+            
+            /* Hide underline on main 'Case Studies' link when its dropdown is open */
+            .nav-item.dropdown.is-open > .nav-link.active::after {
+                display: none;
             }
         }
     </style>
