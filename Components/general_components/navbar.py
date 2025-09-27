@@ -332,6 +332,7 @@ async def navbar_style():
                 transition: opacity 0.2s ease;
                 font-size: 1vw;
                 padding: 0.5vw 1vw;
+                text-decoration: none;
             }
             
             .nav a.active {

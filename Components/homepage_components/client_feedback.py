@@ -76,33 +76,78 @@ async def client_feedback_style():
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;700;800&family=Poppins:wght@400;500;700&family=Urbanist:wght@400;700&display=swap" rel="stylesheet" />
 
     <style>
+        /* Default to Light Theme */
         :root {
-            --bg: #0b0b0b;
-            --panel: #1111;
-            --panel-2: #121212;
-            --panel-3: #292828;
-            --text: #ffffff;
-            --muted: rgba(255, 255, 255, .6);
-            --gold: #FFBB00;
-            --stroke: #DFDFDF;
-            --chip-bg: #FFFFFF;
-            --shadow: 0 0.93vh 1.56vw rgba(0, 0, 0, .35); /* Original: 0 10px 30px */
+            /* Light Theme Variables (based on provided light image) */
+            --bg: #FFFFFF;
+            --body-background: linear-gradient(180deg, rgba(14,165,233,0.04) 0%, rgba(255,255,255,1) 40%), var(--bg);
+            --section-background: radial-gradient(80% 80% at 50% -10%, rgba(14,165,233, .06) 0%, rgba(255, 255, 255, 0) 60%), transparent;
+
+            --text: #05223a;
+            --muted: rgba(5, 34, 58, .6);
+            --gold: #FFC107;
+            --stroke: #BDE5F8;
+            --shadow: 0 6px 24px rgba(11, 53, 84, .06);
+
+            --cta-bg: #29B6F6;
+            --cta-text: #FFFFFF;
+            
+            --tagline-gradient: var(--text);
+            --heading-gradient: var(--text);
+            --card-bg: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(241,248,255,1) 50%, rgba(230,245,255,1) 100%);
+            
+            --quote-mark-image: url("../../Resources/Images/HomePage/comma_light_bg.png");
+            --dash-line-image: url("data:image/svg+xml,%3Csvg width='565' height='1' viewBox='0 0 565 1' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline y1='0.5' x2='565' y2='0.5' stroke='%2305233a' stroke-dasharray='10 10'/%3E%3C/svg%3E");
+        }
+        
+        /* Dark Theme Override */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                /* Dark Theme Variables (based on provided dark image) */
+                --bg: black;
+                --body-background: var(--bg);
+                --section-background: transparent;
+
+                --text: #F9FAFB;
+                --muted: rgba(249, 250, 251, .6);
+                --gold: #FFC107;
+                --stroke: transdparent; /* Removed stroke in dark mode to match design */
+                --shadow: 0 6px 24px rgba(0, 0, 0, .25);
+
+                --cta-bg: #FFFFFF;
+                --cta-text: #1A1A1A;
+                
+                --tagline-gradient: var(--text); /* Fallback to solid color */
+                --heading-gradient: var(--text); /* Fallback to solid color */
+                --card-bg: #262626;
+
+                /* You will need to create a dark version of this image */
+                --quote-mark-image: url("../../Resources/Images/HomePage/comma_bg.png"); 
+                --dash-line-image: url("data:image/svg+xml,%3Csvg width='565' height='1' viewBox='0 0 565 1' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline y1='0.5' x2='565' y2='0.5' stroke='%239CA3AF' stroke-dasharray='10 10'/%3E%3C/svg%3E");
+            }
         }
 
         * {
-            box-sizing: border-box
+            box-sizing: border-box;
+        }
+
+        html, body {
+            background: var(--body-background);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .section {
             position: relative;
             min-height: 100vh;
-            padding: 2.89vh 1.67vw 3.11vh; /* Original: 96px 24px 120px */
+            padding: 2.89vh 1.67vw 3.11vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
             overflow: hidden;
-            background: radial-gradient(80% 80% at 50% -10%, rgba(255, 255, 25, .06) 0%, rgba(255, 255, 255, 0) 60%), #00;
+            background: var(--section-background);
         }
         .section-1 {
             position: relative;
@@ -112,7 +157,7 @@ async def client_feedback_style():
             align-items: center;
             justify-content: flex-start;
             overflow: hidden;
-            background: radial-gradient(80% 80% at 50% -10%, rgba(255, 255, 25, .06) 0%, rgba(255, 255, 255, 0) 60%), #00;
+            background: var(--section-background);
         }
 
         /* Top pill button (Let's Talk) */
@@ -123,50 +168,53 @@ async def client_feedback_style():
             align-items: center;
             justify-content: center;
             padding: 2.93vh 2.53vw;
-            background: var(--chip-bg);
-            border: 0.09vw solid var(--stroke);
+            background: var(--cta-bg);
             border-radius: 50vw;
-            color: #000;
-            font: 400 1.46vw / 1.3 'Poppins', system-ui, sans-serif;
+            border: none; /* Removed border to match images */
+            color: var(--cta-text);
+            font: 500 1.46vw / 1.3 'Poppins', system-ui, sans-serif;
             text-transform: capitalize;
             box-shadow: var(--shadow);
             user-select: none;
             width: 16.33vw;
             height: 5.96vh;
+            text-decoration: none;
         }
 
-        /* Tagline gradient */
+        /* Tagline text */
         .tagline {
-            max-width: 78.89vw; /* Original: 1136px */
+            max-width: 78.89vw;
             text-align: center;
-            margin: 11.85vh auto; /* Original: 8rem */
-            font: 700 2.5vw/1.1 'Exo 2', sans-serif; /* Original: 36px */
+            margin: 11.85vh auto;
+            font: 700 2.5vw/1.1 'Exo 2', sans-serif;
             letter-spacing: -0.02em;
             text-transform: capitalize;
-            background: linear-gradient(90deg, rgba(235, 240, 243, .54) 7.5%, #EBF1F3 24.5%, #EBF0F3 67.4%, rgba(235, 239, 243, .54) 94.46%);
+            background: var(--tagline-gradient);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
+            color: var(--text); /* Fallback for dark mode */
         }
 
-        /* Section heading gradient */
+        /* Section heading text */
         .heading {
-            margin-top: 10.37vh; /* Original: 7rem */
+            margin-top: 10.37vh;
             text-align: center;
-            font: 800 4.44vw/1.2 'Exo 2', sans-serif; /* Original: 64px */
+            font: 800 4.44vw/1.2 'Exo 2', sans-serif;
             letter-spacing: -0.02em;
             text-transform: capitalize;
-            background: linear-gradient(90deg, rgba(235, 240, 243, .30) .22%, #EBF0F3 15.65%, #EBF0F3 54.72%, rgba(235, 239, 243, .72) 79.36%);
+            background: var(--heading-gradient);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
+            color: var(--text); /* Fallback for dark mode */
         }
 
         .layout {
-            width: min(98.4vw, 100%); /* Original: 1417px */
+            width: min(98.4vw, 100%);
             display: grid;
-            grid-template-columns: 22.17vw 1fr; /* Original: 420px */
-            gap: 3.89vw; /* Original: 56px */
+            grid-template-columns: 22.17vw 1fr;
+            gap: 3.89vw;
             align-items: start;
             position: relative;
             scale:0.95;
@@ -174,73 +222,75 @@ async def client_feedback_style():
 
         /* Left portrait card */
         .portrait {
-            margin-top: 10.63vh; /* Original: 50px */
+            margin-top: 10.63vh;
             margin-left: 2.67vw;
             width: 90%;
-            height: 51.94vh; /* Original: 453px */
-            border-radius: 2.08vw; /* Original: 30px */
+            height: 51.94vh;
+            border-radius: 2.08vw;
             position: relative;
             overflow: hidden;
             box-shadow: var(--shadow);
             background:
-                linear-gradient(0deg, rgba(255, 255, 255, .2), rgba(255, 255, 255, .2)),
                 url("../../Resources/Images/HomePage/ceo.png") center/cover no-repeat;
         }
 
         /* Right testimonial panel */
         .card {
             position: relative;
-            height: 68.5vh; /* Original: 513px */
-            border-radius: 3.47vw; /* Original: 50px */
-            background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.2) 100%), #1111;
+            height: 68.5vh;
+            border-radius: 3.47vw;
+            background: var(--card-bg);
+            border: 0.5vh solid var(--stroke);
+            box-shadow: var(--shadow);
         }
         
         /* Huge quote-mark watermark */
         .quote-mark {
             position: absolute;
-            top: -4.63vh; /* Original: -50px */
-            right: 2.08vw; /* Original: 30px */
-            width: 24.44vw; /* Original: 352px */
-            height: 22.68vh; /* Original: 245px */
-            background: url("../../Resources/Images/HomePage/comma_bg.png") no-repeat;
+            top: -4.63vh;
+            right: 2.08vw;
+            width: 24.44vw;
+            height: 22.68vh;
+            background: var(--quote-mark-image) no-repeat;
             background-size: contain;
-            opacity: 1;
+            opacity: 0.9;
             z-index: 1;
         }
 
         /* Inner content */
         .card-inner {
             position: absolute;
-            inset: 5.56vh 4.17vw auto 4.17vw; /* Original: 60px */
+            inset: 5.56vh 4.17vw auto 4.17vw;
             z-index: 1;
             display: flex;
             flex-direction: column;
-            gap: 1.85vh; /* Original: 20px */
+            gap: 1.85vh;
         }
 
         .quote {
-            font: 500 2.5vw/1.5 'Exo 2', sans-serif; /* Original: 36px */
+            font: 500 2.5vw/1.5 'Exo 2', sans-serif;
             letter-spacing: -0.01em;
-            color: #fff;
+            color: var(--text);
         }
 
         /* Name + title */
         .person {
             position: absolute;
-            left: 4.17vw; /* Original: 60px */
-            bottom: 5.56vh; /* Original: 60px */
+            left: 4.17vw;
+            bottom: 5.56vh;
             display: flex;
             flex-direction: column;
         }
 
         .person .name {
-            font: 700 2.85vw/1.4 'Exo 2', sans-serif; /* Original: 41px */
+            font: 700 2.85vw/1.4 'Exo 2', sans-serif;
             letter-spacing: -0.02em;
             margin: 0;
+            color: var(--text);
         }
 
         .person .role {
-            font: 400 2.29vw/1.4 'Exo 2', sans-serif; /* Original: 33px */
+            font: 400 2.29vw/1.4 'Exo 2', sans-serif;
             letter-spacing: -0.02em;
             color: var(--muted);
             margin: 0;
@@ -249,33 +299,33 @@ async def client_feedback_style():
         /* Divider + stars row */
         .footer-row {
             position: absolute;
-            left: 4.17vw; /* Original: 60px */
-            right: 4.17vw; /* Original: 60px */
-            bottom: 3.33vh; /* Original: 36px */
+            left: 4.17vw;
+            right: 4.17vw;
+            bottom: 3.33vh;
             display: flex;
             align-items: flex-end;
             justify-content: space-between;
-            gap: 1.67vw; /* Original: 24px */
+            gap: 1.67vw;
         }
 
         .dash {
             flex: 1 1 auto;
             opacity: 1;
-            background: url("data:image/svg+xml,%3Csvg width='565' height='1' viewBox='0 0 565 1' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline y1='0.5' x2='565' y2='0.5' stroke='white' stroke-dasharray='10 10'/%3E%3C/svg%3E");
-            height: 0.09vh; /* Original: 1px */
+            background: var(--dash-line-image);
+            height: 0.09vh;
             margin-bottom: 0.12vh;
             z-index: 10;
         }
 
         .stars {
             display: inline-flex;
-            gap: 0.28vw; /* Original: 4px */
-            height: 2.22vh; /* Original: 24px */
+            gap: 0.28vw;
+            height: 2.22vh;
         }
 
         .star {
-            width: 1.67vw; /* Original: 24px */
-            height: 2.22vh; /* Original: 24px */
+            width: 1.67vw;
+            height: 2.22vh;
             display: inline-block;
         }
 
@@ -325,10 +375,9 @@ async def client_feedback_style():
             
             /* Testimonial card comes SECOND on mobile */
             .card {
-                order: 2; /* CHANGED */
-                height: auto; /* Allow height to fit the content */
+                order: 2;
+                height: auto;
                 border-radius: 24px;
-                /* Add bottom padding to make space for absolutely positioned elements */
                 padding: 2rem 1.5rem 8rem 1.5rem;
             }
             
@@ -348,11 +397,11 @@ async def client_feedback_style():
                 right: 15px;
                 width: 120px;
                 height: 100px;
-                opacity: 0.8;
+                opacity: 0.9;
             }
             
             .card-inner {
-                position: relative; /* Change from absolute to flow normally */
+                position: relative;
                 inset: auto;
             }
 
@@ -363,7 +412,7 @@ async def client_feedback_style():
 
             .person {
                 left: 1.5rem;
-                bottom: 4.5rem; /* Position above the footer row */
+                bottom: 4.5rem;
             }
 
             .person .name {
@@ -378,7 +427,7 @@ async def client_feedback_style():
             .footer-row {
                 left: 1.5rem;
                 right: 1.5rem;
-                bottom: 2rem; /* Position it firmly at the bottom */
+                bottom: 2rem;
             }
             
             .stars {
