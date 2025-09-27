@@ -27,7 +27,7 @@ async def robot_body():
             <!-- Desktop Feature Cards -->
             <div id="feature-box-1" class="feature-box desktop-card">
                 <div class="feature-header">
-                    <div class="feature-icon"><img src="../../Resources/Images/HomePage/route.png" alt="route icon"></div>
+                    <div class="feature-icon"><img alt="route icon"></div>
                     <h3>Real-Time Dashboards</h3>
                 </div>
                 <div class="feature-content">
@@ -40,7 +40,7 @@ async def robot_body():
             </div>
             <div id="feature-box-2" class="feature-box desktop-card">
                 <div class="feature-header">
-                    <div class="feature-icon"><img src="../../Resources/Images/HomePage/route.png" alt="route icon"></div>
+                    <div class="feature-icon"><img alt="route icon"></div>
                     <h3>AI-Powered Chatbots</h3>
                 </div>
                 <div class="feature-content">
@@ -56,7 +56,7 @@ async def robot_body():
 
             <div id="feature-box-3" class="feature-box desktop-card">
                 <div class="feature-header">
-                    <div class="feature-icon"><img src="../../Resources/Images/HomePage/route.png" alt="route icon"></div>
+                    <div class="feature-icon"><img alt="route icon"></div>
                     <h3>Data-Driven Reports</h3>
                 </div>
                 <div class="feature-content">
@@ -69,7 +69,7 @@ async def robot_body():
             </div>
             <div id="feature-box-4" class="feature-box desktop-card">
                 <div class="feature-header">
-                    <div class="feature-icon"><img src="../../Resources/Images/HomePage/route.png" alt="route icon"></div>
+                    <div class="feature-icon"><img alt="route icon"></div>
                     <h3>Smart Outsourcing Solutions</h3>
                 </div>
                 <div class="feature-content">
@@ -87,7 +87,7 @@ async def robot_body():
             <div class="features-grid">
                 <div class="feature-box mobile-card">
                     <div class="feature-header">
-                        <div class="feature-icon"><img src="../../Resources/Images/HomePage/route.png" alt="route icon"></div>
+                        <div class="feature-icon"><img alt="route icon"></div>
                         <h3>Real-Time Dashboards</h3>
                     </div>
                     <div class="feature-content">
@@ -100,7 +100,7 @@ async def robot_body():
                 </div>
                 <div class="feature-box mobile-card">
                     <div class="feature-header">
-                        <div class="feature-icon"><img src="../../Resources/Images/HomePage/route.png" alt="route icon"></div>
+                        <div class="feature-icon"><img alt="route icon"></div>
                         <h3>AI-Powered Chatbots</h3>
                     </div>
                     <div class="feature-content">
@@ -114,7 +114,7 @@ async def robot_body():
                 <div class="robot-container"><img class="mobile-robot" src="../../Resources/Images/HomePage/robotHomepage.png" alt="A sleek black robot symbolizing advanced automation and AI."></div>
                 <div class="feature-box mobile-card">
                     <div class="feature-header">
-                        <div class="feature-icon"><img src="../../Resources/Images/HomePage/route.png" alt="route icon"></div>
+                        <div class="feature-icon"><img alt="route icon"></div>
                         <h3>Data-Driven Reports</h3>
                     </div>
                     <div class="feature-content">
@@ -127,7 +127,7 @@ async def robot_body():
                 </div>
                 <div class="feature-box mobile-card">
                     <div class="feature-header">
-                        <div class="feature-icon"><img src="../../Resources/Images/HomePage/route.png" alt="route icon"></div>
+                        <div class="feature-icon"><img alt="route icon"></div>
                         <h3>Smart Outsourcing Solutions</h3>
                     </div>
                     <div class="feature-content">
@@ -165,6 +165,7 @@ async def robot_style():
             --connector-fill: rgba(255, 255, 255, 0.7);
             --backdrop-display: none;
             --card-backdrop-filter: none;
+            --route-icon-url: url('../../Resources/Images/HomePage/route-light.png');
         }
 
         @media (prefers-color-scheme: dark) {
@@ -184,6 +185,7 @@ async def robot_style():
                 --connector-fill: rgba(129, 129, 129, 0.43);
                 --backdrop-display: block;
                 --card-backdrop-filter: blur(0.52vw) saturate(120%);
+                --route-icon-url: url('../../Resources/Images/HomePage/route.png');
             }
         }
 
@@ -198,7 +200,7 @@ async def robot_style():
             align-items: center;
             min-height: 100vh;
             background: var(--robot-section-bg);
-            padding: 8.89vh 1.67vw 5.93vh;
+            padding: 4vh 1.67vw 5.93vh; /* Reduced top padding from 8.89vh to 4vh for better spacing with hero section */
             border-radius: 0 0 4.43vw 4.43vw;
             overflow: hidden;
         }
@@ -287,7 +289,11 @@ async def robot_style():
             background: var(--robot-icon-bg); border: 0.05vw solid var(--icon-border);
             border-radius: 0.42vw; flex-shrink: 0;
         }
-        .feature-icon img { width: 1.46vw; height: 1.46vw; }
+        .feature-icon img {
+            content: var(--route-icon-url);
+            width: 1.46vw;
+            height: 1.46vw;
+        }
         .desktop-card h3 {
             font-weight: 600; font-size: 1.15vw; line-height: 1.3;
             color: var(--card-text-primary); margin: 0;
@@ -434,8 +440,8 @@ async def robot_script():
                 const headingContainer = document.querySelector('.heading-container');
                 
                 if (view === 'mobile') {
-                    // Apply mobile-specific styles
-                    pageWrapper.style.padding = '8vh 4vw 6vh';
+                    // Apply mobile-specific styles with original mobile padding
+                    pageWrapper.style.padding = '8.89vh 4vw 6vh'; // Keep original top padding for mobile
                     pageWrapper.style.borderRadius = '0';
                     headingContainer.style.maxWidth = '92vw';
                     headingContainer.style.marginBottom = '6vh';
@@ -447,8 +453,8 @@ async def robot_script():
                     if (h2) h2.style.fontSize = '8.5vw';
                     
                 } else {
-                    // Reset to desktop styles
-                    pageWrapper.style.padding = '8.89vh 1.67vw 5.93vh';
+                    // Reset to desktop styles with reduced top padding
+                    pageWrapper.style.padding = '4vh 1.67vw 5.93vh'; // Reduced top padding for desktop
                     pageWrapper.style.borderRadius = '0 0 4.43vw 4.43vw';
                     headingContainer.style.maxWidth = '52.08vw';
                     headingContainer.style.marginBottom = '1.85vh';

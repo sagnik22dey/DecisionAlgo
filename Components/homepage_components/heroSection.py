@@ -62,7 +62,7 @@ async def heroSection_style():
             justify-content: center; 
             align-items: center; 
             padding-top: 22.22vh;
-            padding-bottom: 29.63vh;
+            padding-bottom: 15vh; /* Reduced from 29.63vh for better spacing with robot section */
             box-sizing: border-box; 
             overflow: hidden;
         }
