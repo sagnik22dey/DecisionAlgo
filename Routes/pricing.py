@@ -18,7 +18,6 @@ async def pricing():
     navbar_css = await navbar_style()
     footer_html = await footer_body()
     footer_css = await footer_style()
-    footerScript = await footer_script()
     heroSection_html = await pricing_banner_body()
     heroSection_css = await pricing_banner_style()
     plans_html = await plans_body()
@@ -44,7 +43,6 @@ async def pricing():
         
         {navbar_css}
         {footer_css}
-        {footerScript}
         {heroSection_css}
         {plans_css}
     

@@ -85,14 +85,34 @@ async def navbar_style():
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@700&display=swap');
 
+        /* --- THEME & GLOBAL PAGE STYLES --- */
+        
+        /* Light theme (default) */
         :root {
-            --bg: #111;
-            --text: #ffffff;
-            --brand: #7ec5f4;
+            ---nav-bg: #ffffff;
+            --nav-text: #000000;
+            --brand: #0096ff; /* A vibrant blue for light backgrounds */
             --nav-timing: 400ms;
-            --nav-panel-bg: #1a1a1a;
+            --nav-panel--nav-bg: #f8f8f8;
+            --dropdown-hover--nav-bg: #e9e9e9;
+            --header-border-color: rgba(0, 0, 0, 0.1);
+            --mobile-dropdown--nav-bg: rgba(0, 0, 0, 0.05);
         }
 
+        /* Dark theme (overrides for users who prefer dark mode) */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                ---nav-bg: #111;
+                --nav-text: #ffffff;
+                --brand: #7ec5f4; /* Lighter blue for dark backgrounds */
+                --nav-panel--nav-bg: #1a1a1a;
+                --dropdown-hover--nav-bg: #333333;
+                --header-border-color: rgba(255, 255, 255, 0.1);
+                --mobile-dropdown--nav-bg: rgba(255, 255, 255, 0.05);
+            }
+        }
+
+        /* --- Global Styles --- */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -100,34 +120,37 @@ async def navbar_style():
         }
 
         body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif,Exo 2;
+            background-color: var(---nav-bg);
+            color: var(--nav-text);
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif, 'Exo 2';
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
         }
         
         body.no-scroll {
             overflow: hidden;
         }
 
-        /* --- SHARED & MOBILE-FIRST STYLES --- */
+        /* --- NAVBAR STYLES START HERE --- */
+
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             z-index: 1000;
-            background-color: var(--bg);
+            background-color: var(---nav-bg);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 2vh 4vw; /* Zoom-safe padding */
+            padding: 2vh 4vw;
             font-family: 'Poppins', sans-serif; 
             font-weight: 600;
+            border-bottom: 1px solid var(--header-border-color);
         }
 
         .brand {
             display: flex;
-            width: 40vw; /* Zoom-safe width for mobile */
+            width: 40vw;
             max-width: 40vw;
             height: auto;
             z-index: 0;
@@ -138,20 +161,20 @@ async def navbar_style():
             height: auto;
         }
         
-        /* --- HAMBURGER MENU STYLES (Visible on Mobile by default) --- */
+        /* --- HAMBURGER MENU STYLES --- */
         .hamburger {
             display: block;
             cursor: pointer;
-            padding: 1vh 1vw; /* Zoom-safe padding */
+            padding: 1vh 1vw;
             border: none;
             background-color: transparent;
             z-index: 1001;
         }
 
         .hamburger-box {
-            width: 8vw; /* Zoom-safe width */
+            width: 8vw;
             max-width: 8vw;
-            height: 6vw; /* Zoom-safe height */
+            height: 6vw;
             max-height: 6vw;
             display: inline-block;
             position: relative;
@@ -159,8 +182,8 @@ async def navbar_style():
 
         .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
             width: 100%;
-            height: 0.5vh; /* Zoom-safe height */
-            background-color: var(--text);
+            height: 0.5vh;
+            background-color: var(--nav-text);
             border-radius: 1vw;
             position: absolute;
             transition: transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
@@ -176,11 +199,11 @@ async def navbar_style():
             display: block;
         }
         .hamburger-inner::before {
-            top: -2.5vw; /* Zoom-safe spacing */
+            top: -2.5vw;
             transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
         }
         .hamburger-inner::after {
-            bottom: -2.5vw; /* Zoom-safe spacing */
+            bottom: -2.5vw;
             transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
         }
 
@@ -206,16 +229,14 @@ async def navbar_style():
             position: fixed;
             top: 0;
             right: 0;
-            width: 75vw; /* Zoom-safe width */
+            width: 75vw;
             height: 100vh;
-            background-color: var(--nav-panel-bg);
-            
+            background-color: var(--nav-panel--nav-bg);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 5vh; /* Zoom-safe gap */
-            
+            gap: 5vh;
             transform: translateX(100%);
             transition: transform var(--nav-timing) cubic-bezier(0.23, 1, 0.32, 1);
         }
@@ -225,16 +246,14 @@ async def navbar_style():
         }
         
         .nav a {
-            color: var(--text);
-            text-decoration: none;
+            color: var(--nav-text);
+            nav-text-decoration: none;
             font-weight: 800;
             white-space: nowrap;
-            font-size: 4.5vw; /* Zoom-safe font size for mobile */
+            font-size: 4.5vw;
             position: relative;
-
-            /* Staggered animation setup */
             opacity: 0;
-            transform: translateY(3vh); /* Zoom-safe transform */
+            transform: translateY(3vh);
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
         
@@ -261,21 +280,21 @@ async def navbar_style():
 
         .dropdown-menu {
             display: none;
-            background-color: var(--nav-panel-bg);
+            background-color: var(--nav-panel--nav-bg);
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
             border-radius: 4px;
         }
 
         .dropdown-menu a {
-            text-decoration: none;
+            nav-text-decoration: none;
             display: block;
             white-space: normal;
             position: relative;
         }
 
         .dropdown-menu a:hover {
-            background-color: #575757;
+            background-color: var(--dropdown-hover--nav-bg);
             opacity: 1;
         }
         
@@ -314,6 +333,10 @@ async def navbar_style():
                 font-size: 1vw;
                 padding: 0.5vw 1vw;
             }
+            
+            .nav a.active {
+                font-weight: 800; /* Make active link bolder */
+            }
 
             .dropdown-menu {
                 position: absolute;
@@ -323,7 +346,7 @@ async def navbar_style():
 
             .dropdown-menu a {
                 padding: 12px 16px;
-                text-align: left;
+                nav-text-align: left;
                 font-size: 1vw;
                 line-height: 1.4;
             }
@@ -332,9 +355,6 @@ async def navbar_style():
                 display: block;
             }
 
-            /* --- DESKTOP UNDERLINE STYLES (REFACTORED) --- */
-
-            /* Underline for standard active nav links (Home, etc.) AND the main "Case Studies" link */
             .nav > a.active::after,
             .nav-item.dropdown > .nav-link.active::after {
                 content: '';
@@ -343,10 +363,9 @@ async def navbar_style():
                 right: 1vw;
                 bottom: 0.25vw;
                 height: 2px;
-                background-color: white;
+                background-color: var(--nav-text);
             }
 
-            /* Underline for active links INSIDE the dropdown */
             .dropdown-menu a.active::after {
                 content: '';
                 position: absolute;
@@ -354,10 +373,9 @@ async def navbar_style():
                 right: 16px;
                 bottom: 10px;
                 height: 2px;
-                background-color: white;
+                background-color: var(--nav-text);
             }
 
-            /* On hover, HIDE the underline from the main "Case Studies" link so only the child's underline is visible. */
             .nav-item.dropdown:hover > .nav-link.active::after {
                 background-color: transparent;
             }
@@ -367,7 +385,7 @@ async def navbar_style():
         @media (max-width: 992px) {
             .nav-item.dropdown {
                 width: 100%;
-                text-align: center;
+                nav-text-align: center;
             }
             .nav-item.dropdown .nav-link::after {
                 content: ' ▾';
@@ -375,7 +393,7 @@ async def navbar_style():
             }
             .dropdown-menu {
                 position: static;
-                background-color: rgba(255, 255, 255, 0.05);
+                background-color: var(--mobile-dropdown--nav-bg);
                 box-shadow: none;
                 width: 90%;
                 margin: 1vh auto 0;
@@ -387,10 +405,9 @@ async def navbar_style():
             .dropdown-menu a {
                 font-size: 3.8vw;
                 padding: 1.5vh 0;
-                text-align: center;
+                nav-text-align: center;
             }
 
-            /* --- MOBILE UNDERLINE STYLES --- */
             .nav a.active::after {
                 content: '';
                 position: absolute;
@@ -399,10 +416,9 @@ async def navbar_style():
                 transform: translateX(-50%);
                 width: 100%;
                 height: 2px;
-                background-color: white;
+                background-color: var(--nav-text);
             }
             
-            /* Hide underline on main 'Case Studies' link when its dropdown is open */
             .nav-item.dropdown.is-open > .nav-link.active::after {
                 display: none;
             }
