@@ -151,7 +151,7 @@ async def robot_style():
         /* ============================================================= */
         :root {
             /* Light Theme (Default) */
-            --section-bg: linear-gradient(170deg, #3B82F6 0%, #4F46E5 100%);
+            --robot-section-bg: linear-gradient(170deg, #3B82F6 0%, #4F46E5 100%);
             --heading-primary-color: #FFFFFF;
             --heading-secondary-color: #FFFFFF;
             --card-bg: #FFFFFF;
@@ -160,7 +160,7 @@ async def robot_style():
             --card-text-primary: #111827;
             --card-text-secondary: #4B5563;
             --card-link-color: #111827;
-            --icon-bg: #F3F4F6;
+            --robot-icon-bg: #F3F4F6;
             --icon-border: #E5E7EB;
             --connector-fill: rgba(255, 255, 255, 0.7);
             --backdrop-display: none;
@@ -170,7 +170,7 @@ async def robot_style():
         @media (prefers-color-scheme: dark) {
             :root {
                 /* Dark Theme Overrides */
-                --section-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 1.45%, rgba(48, 48, 48, 0.08) 28.37%, #000000 100%);
+                --robot-section-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 1.45%, rgba(48, 48, 48, 0.08) 28.37%, #000000 100%);
                 --heading-primary-color: linear-gradient(90deg, rgba(235, 240, 243, 0.4) 0.22%, #EBF0F3 15.65%, #EBF0F3 54.72%, rgba(235, 239, 243, 0.8) 79.36%);
                 --heading-secondary-color: #25A6E9;
                 --card-bg: rgba(255,255,255,0.06);
@@ -179,7 +179,7 @@ async def robot_style():
                 --card-text-primary: #FFFFFF;
                 --card-text-secondary: rgba(255,255,255,0.8);
                 --card-link-color: #FFFFFF;
-                --icon-bg: linear-gradient(135deg, #0A1015 0%, #1a1f25 100%);
+                --robot-icon-bg: linear-gradient(135deg, #0A1015 0%, #1a1f25 100%);
                 --icon-border: #3A4046;
                 --connector-fill: rgba(129, 129, 129, 0.43);
                 --backdrop-display: block;
@@ -197,9 +197,9 @@ async def robot_style():
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            background: var(--section-bg);
+            background: var(--robot-section-bg);
             padding: 8.89vh 1.67vw 5.93vh;
-            border-radius: 4.43vw;
+            border-radius: 0 0 4.43vw 4.43vw;
             overflow: hidden;
         }
 
@@ -284,7 +284,7 @@ async def robot_style():
         .feature-icon {
             display: flex; justify-content: center; align-items: center;
             width: 2.6vw; height: 2.6vw;
-            background: var(--icon-bg); border: 0.05vw solid var(--icon-border);
+            background: var(--robot-icon-bg); border: 0.05vw solid var(--icon-border);
             border-radius: 0.42vw; flex-shrink: 0;
         }
         .feature-icon img { width: 1.46vw; height: 1.46vw; }
@@ -449,7 +449,7 @@ async def robot_script():
                 } else {
                     // Reset to desktop styles
                     pageWrapper.style.padding = '8.89vh 1.67vw 5.93vh';
-                    pageWrapper.style.borderRadius = '4.43vw';
+                    pageWrapper.style.borderRadius = '0 0 4.43vw 4.43vw';
                     headingContainer.style.maxWidth = '52.08vw';
                     headingContainer.style.marginBottom = '1.85vh';
                     

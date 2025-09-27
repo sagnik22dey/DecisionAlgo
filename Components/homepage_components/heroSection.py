@@ -27,8 +27,8 @@ async def heroSection_style():
         :root {
             /* Light Theme (Default) */
             --hero-bg: #FFFFFF;
-            --hero-grid-image: linear-gradient(to right, rgba(206, 222, 245, 0.7) 1px, transparent 1px), linear-gradient(to bottom, rgba(206, 222, 245, 0.7) 1px, transparent 1px);
-            --hero-grid-bg-size: 40px 40px;
+            --hero-grid-image: linear-gradient(to right, rgba(206, 222, 245, 0.7) 2px, transparent 2px), linear-gradient(to bottom, rgba(206, 222, 245, 0.7) 2px, transparent 2px);
+            --hero-grid-bg-size: 3.5vw 3.5vw;
             --hero-text-primary: #111111;
             --hero-text-highlight: #2563EB; /* Blue highlight for light mode */
             --hero-button-bg: linear-gradient(105deg, #3B82F6 0%, #2563EB 100%);
