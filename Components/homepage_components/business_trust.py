@@ -137,7 +137,8 @@ async def trust_style():
         --ghost-btn-bg: transparent;
         --ghost-btn-text: #374151;
         --ghost-btn-border: #6B7280;
-        --title-text: #111827;
+        --title-text-color: #111827;
+        --title-gradient: none;
         --title-accent: #2563EB;
         --panel-bg: #2563EB;
         --feature-card-bg: #FFFFFF;
@@ -145,7 +146,7 @@ async def trust_style():
         --feature-text-primary: #111827;
         --feature-text-secondary: #4B5563;
         --icon-bg: transparent;
-        --icon-filter: invert(0); /* black icons */
+        --icon-filter: invert(0); /* Keeps source black icons black */
         --dark-mode-element-display: none;
     }
 
@@ -159,43 +160,47 @@ async def trust_style():
             --ghost-btn-bg: transparent;
             --ghost-btn-text: #DFDFDF;
             --ghost-btn-border: #DFDFDF;
-            --title-text: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%, #FFFFFF 25%, #FFFFFF 75%, rgba(255, 255, 255, 0.5) 100%);
+            --title-text-color: #FFFFFF;
+            --title-gradient: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%, #FFFFFF 25%, #FFFFFF 75%, rgba(255, 255, 255, 0.5) 100%);
             --title-accent: #44B4FF;
             --panel-bg: linear-gradient(103.91deg, rgba(26, 26, 26, 0) 5.34%, rgba(65, 65, 65, 0.28) 35.27%, rgba(109, 109, 109, 0.49) 71.27%, rgba(128, 128, 128, 0.01) 95.55%), #151515;
-            --feature-card-bg: #181818;
+            --feature-card-bg: transparent;
             --feature-card-shadow: none;
             --feature-text-primary: #FFFFFF;
             --feature-text-secondary: rgba(255, 255, 255, 0.7);
-            --icon-bg: #FFFFFF;
-            --icon-filter: invert(1); /* white icons */
+            --icon-bg: transparent;
+            --icon-filter: invert(1); /* Makes source black icons white */
             --dark-mode-element-display: block;
         }
     }
 
     /* ============================================================= */
-    /* ORIGINAL LAYOUT (UNCHANGED SIZES & SPACING)                   */
+    /* STRUCTURAL LAYOUT (UNCHANGED SIZES & SPACING)                 */
     /* ============================================================= */
-    .trust-section { position: relative; width: 100%; background: var(--trust-section-bg); font-family: "Exo-2", "Poppins", sans-serif; }
+    .trust-section { position: relative; width: 100%; font-family: "Exo-2", "Poppins", sans-serif; }
     #trust-section-desktop { padding: 9.26vh 0 14.81vh; }
-    .cta-row { position: relative; left: 50%; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; gap: 2.24vw; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 1.02vh 1.82vw; line-height: 1.33; cursor: pointer; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1.15vw; height: 6.02vh; box-sizing: border-box; border-radius: 9.52vw; white-space: nowrap; transition: transform 0.2s ease; border: 0.05vw solid; text-decoration: none }
-    .title { position: relative; width: 47.7vw; left: 50%; transform: translateX(-50%); margin-top: 7.41vh; font-weight: 700; font-size: 3.33vw; line-height: 4.01vw; text-align: center; letter-spacing: -0.02em; }
+    .cta-row { position: relative; left: 50%; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; gap: 2.24vw; z-index: 5; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 1.02vh 1.82vw; line-height: 1.33; cursor: pointer; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1.15vw; height: 6.02vh; box-sizing: border-box; border-radius: 9.52vw; white-space: nowrap; transition: transform 0.2s ease; border: 0.05vw solid; text-decoration: none; }
+    .title { position: relative; width: 47.7vw; left: 50%; transform: translateX(-50%); margin-top: 7.41vh; font-weight: 700; font-size: 3.33vw; line-height: 4.01vw; text-align: center; letter-spacing: -0.02em; z-index: 5;}
     .panel { position: relative; width: 76.77vw; height: 65.37vh; left: 50%; transform: translateX(-50%); margin-top: 9.26vh; border-radius: 1.46vw; overflow: hidden; }
     .features { position: absolute; inset: 0; }
-    .feature-text-box{ padding: 14.81vh 2.5vw; display: flex; flex-direction: column; gap: 3.65vw; justify-content: space-evenly; align-items: center; }
+    .feature-text-box { padding: 5.81vh 2.5vw; display: flex; flex-direction: column; gap: 3.65vw; justify-content: space-evenly; align-items: center; }
     .upper-features, .lower-features { display: flex; justify-content: center; gap: 3.65vw; }
-    .upper-features { margin-top: -3vh; }
-    .lower-features { margin-top: 7.65vh; gap: 12.65vw; }
-    .feature { display: flex; align-items: flex-start; gap: 1.3vw; position: relative; /* Context for pseudo-element */ }
-    .f1, .f2, .f3, .f4, .f5 { width: 20.42vw; height: 16.89vh; padding: 1vh;}
-    .feature .icon { width: 2.6vw; height: 2.6vw; border-radius: 0.26vw; display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; z-index: 1; }
-    .feature-content { position: relative; z-index: 1; }
-    .feature h3 { margin: 0; width: 13.75vw; height: 5.37vh; font-family: 'Exo 2'; font-style: normal; font-weight: 400; font-size: 1.52vw; }
-    .feature p { margin: 0; width: 15.68vw; height: 6.11vh; font-family: 'Exo 2'; font-style: normal; font-size: 0.94vw; line-height: 2.04vh; }
+    .lower-features { gap: 12.65vw; }
+    
+    /* --- THE CORRECTED CARD STYLING --- */
+    .feature { display: flex; align-items: flex-start; gap: 1.3vw; position: relative; padding: 2.78vh 2.08vw; box-sizing: border-box; width: 20.42vw; border-radius: 1.2rem; transition: transform 0.2s ease; }
+    .feature:hover { transform: translateY(-5px); }
+
+    .feature .icon { width: 2.6vw; height: 2.6vw; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .feature-content { flex-grow: 1; }
+    .feature h3 { margin: 0; width: 100%; height: auto; font-family: 'Exo 2'; font-style: normal; font-weight: 500; font-size: 1.52vw; }
+    .feature p { margin: 0.5rem 0 0; width: 100%; height: auto; font-family: 'Exo 2'; font-style: normal; font-size: 0.94vw; line-height: 2.04vh; }
 
     /* ============================================================= */
     /* THEMED VISUAL STYLES (NO LAYOUT CHANGES)                      */
     /* ============================================================= */
+    .trust-section { background: var(--trust-section-bg); }
     
     /* Buttons */
     .btn.primary { background: var(--primary-btn-bg); color: var(--primary-btn-text); border-color: var(--primary-btn-border); padding: 1.02vh 2.34vw; }
@@ -203,51 +208,41 @@ async def trust_style():
     .btn:hover { transform: translateY(-2px); }
 
     /* Title */
-    .title { color: var(--title-text); }
-    @media (prefers-color-scheme: dark) { .title { background: var(--title-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; } .title .accent { -webkit-text-fill-color: initial; } }
-    .title .accent { background: none; color: var(--title-accent); }
+    .title { color: var(--title-text-color); background: var(--title-gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .title .accent { color: var(--title-accent); -webkit-text-fill-color: initial; }
 
     /* Panel */
     .features { background: var(--panel-bg); }
-
-    /* --- THE CORRECTED CARD STYLING --- */
-    .feature::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: var(--feature-card-bg);
-        box-shadow: var(--feature-card-shadow);
-        border-radius: 1.2rem; /* Rounded corners for the card */
-        transition: transform 0.2s ease;
-        z-index: 0;
-    }
-    .feature:hover::before { transform: translateY(-5px); }
+    
+    /* Feature Cards */
+    .feature { background: var(--feature-card-bg); box-shadow: var(--feature-card-shadow); }
     
     /* Icon & Text Theming */
     .feature .icon { background: var(--icon-bg); }
     .feature .icon img { width: 1.67vw; height: 1.67vw; filter: var(--icon-filter); }
     .feature h3 { color: var(--feature-text-primary); }
-    .feature p { color: var(--feature-text-secondary); opacity: 1; }
+    .feature p { color: var(--feature-text-secondary); }
     
     /* Dark Mode Specific Elements */
-    .frame-outline, .top-fade { display: var(--dark-mode-element-display); }
-    .frame-outline { margin-top: 7.41vh; position: absolute; width: 73.18vw; height: 68.15vh; left: 50%; transform: translateX(-50%); top: 25.93vh; border: 0.05vw solid #FFF; border-bottom: none; border-radius: 3.38vw; }
-    .top-fade { position: absolute; inset: 0 0 auto 0; height: 20.37vh; background: radial-gradient(80% 100% at 50% 0%, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 70%); }
+    .frame-outline, .top-fade { display: var(--dark-mode-element-display); pointer-events: none; }
+    .frame-outline { margin-top: 10.41vh; position: absolute; width: 73.18vw; height: 68.15vh; left: 50%; transform: translateX(-50%); top: 25.93vh; border: 0.05vw solid #FFF; border-bottom: none; border-radius: 3.38vw; z-index: 0; }
+    .top-fade { position: absolute; inset: 0 0 auto 0; height: 20.37vh; background: radial-gradient(80% 100% at 50% 0%, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 70%); z-index: 0;}
     
     /* ============================================================= */
     /* MOBILE STYLES (ADAPTED FOR THEMES)                            */
     /* ============================================================= */
     @media (max-width: 768px) {
-      #trust-section-mobile { padding: 4rem 1rem 3rem; }
-      #trust-section-mobile .cta-row { left: auto; transform: none; flex-direction: column; width: 100%; gap: 1rem; margin-top: 3rem; }
+      #trust-section-desktop { display: none; }
+      #trust-section-mobile { display: block; padding: 4rem 1rem 3rem; }
+      #trust-section-mobile .cta-row { position: relative; left: auto; transform: none; flex-direction: column; width: 100%; gap: 1rem; margin-top: 3rem; }
       #trust-section-mobile .btn { width: 100%; max-width: 400px; height: auto; padding: 0.9rem 1.5rem; border-radius: 12px; border-width: 1px; font-size: 1rem; }
-      #trust-section-mobile .title { left: auto; transform: none; width: 100%; font-size: 2.25rem; line-height: 1.2; margin-top: 0; margin-bottom: 2.5rem; }
-      #trust-section-mobile .panel { left: auto; transform: none; width: 100%; height: auto; margin-top: 0; border-radius: 20px; }
+      #trust-section-mobile .title { position: relative; left: auto; transform: none; width: 100%; font-size: 2.25rem; line-height: 1.2; margin-top: 0; margin-bottom: 2.5rem; }
+      #trust-section-mobile .panel { position: relative; left: auto; transform: none; width: 100%; height: auto; margin-top: 0; border-radius: 20px; }
       #trust-section-mobile .features { position: relative; }
-      #trust-section-mobile .feature-text-box { padding: 2.5rem 1.5rem; gap: 2.5rem; align-items: flex-start; }
+      #trust-section-mobile .feature-text-box { padding: 2.5rem 1.5rem; gap: 2.5rem; flex-direction: column; align-items: flex-start; }
       #trust-section-mobile .upper-features, #trust-section-mobile .lower-features { display: none; }
-      #trust-section-mobile .feature { width: 100%; height: auto; }
-      #trust-section-mobile .feature::before { background: transparent; box-shadow: none; }
+      #trust-section-mobile .feature { width: 100%; height: auto; padding: 0; background: transparent; box-shadow: none; }
+      #trust-section-mobile .feature:hover { transform: none; }
       #trust-section-mobile .feature .icon { width: 44px; height: 44px; border-radius: 8px; }
       #trust-section-mobile .feature .icon img { width: 24px; height: 24px; }
       #trust-section-mobile .feature h3 { width: auto; height: auto; font-size: 1.2rem; line-height: 1.3; margin: 0 0 0.5rem 0; }
@@ -260,46 +255,8 @@ async def trust_style():
 async def trust_script():
     return """
   <script>
-function toggleTrustSectionView() {
-    const desktopSection = document.getElementById('trust-section-desktop');
-    const mobileSection = document.getElementById('trust-section-mobile');
-    
-    // Check current viewport width
-    const isMobileView = window.innerWidth <= 768;
-    
-    if (isMobileView) {
-        // Show mobile, hide desktop
-        if (desktopSection) desktopSection.style.display = 'none';
-        if (mobileSection) mobileSection.style.display = 'block';
-    } else {
-        // Show desktop, hide mobile
-        if (desktopSection) desktopSection.style.display = 'block';
-        if (mobileSection) mobileSection.style.display = 'none';
-    }
-}
-
-// Initialize on page load
-document.addEventListener('DOMContentLoaded', toggleTrustSectionView);
-
-// Listen for window resize events
-window.addEventListener('resize', toggleTrustSectionView);
-
-// Optional: Manual toggle function (can be called from buttons or other triggers)
-function manualToggleTrustSection() {
-    const desktopSection = document.getElementById('trust-section-desktop');
-    const mobileSection = document.getElementById('trust-section-mobile');
-    
-    if (desktopSection && mobileSection) {
-        const isDesktopVisible = desktopSection.style.display !== 'none';
-        
-        if (isDesktopVisible) {
-            desktopSection.style.display = 'none';
-            mobileSection.style.display = 'block';
-        } else {
-            desktopSection.style.display = 'block';
-            mobileSection.style.display = 'none';
-        }
-    }
-}
-</script>
+    // This script is no longer necessary with the CSS-based approach,
+    // but is kept here to maintain the original file structure.
+    // The responsive view is now handled entirely by CSS media queries.
+  </script>
 """

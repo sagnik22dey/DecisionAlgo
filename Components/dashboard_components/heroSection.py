@@ -27,12 +27,12 @@ async def heroSection_body():
           
           <!-- Left card -->
           <article class="card-item card-left">
-           <img src="../../Resources/Images/Dashboard/dashboard_left_card.png" alt="Sales performance dashboard card">
+           <img class="dashboard-card-image" src="" alt="Sales performance dashboard card">
           </article>
 
           <!-- Right card -->
           <article class="card-item card-right">
-            <img src="../../Resources/Images/Dashboard/dashboard_right_card.png" alt="User activity dashboard card">
+            <img class="dashboard-card-image-right" src="" alt="User activity dashboard card">
           </article>
         </div>
     </div>
@@ -41,7 +41,10 @@ async def heroSection_body():
 async def heroSection_style():
     return """
     <style>
-      /* --- Base & Desktop Styles --- */
+      /* --- Base & Desktop Styles (Theme-Agnostic) --- */
+      /* This section contains all layout, positioning, and sizing rules. */
+      /* Colors and backgrounds are defined in the Theming section below. */
+      
       .hero-section-container {
         margin-top: 2vh;
         margin-bottom: -25vh; /* Pulls subsequent content up */
@@ -67,8 +70,6 @@ async def heroSection_style():
         flex-direction: column;
         align-items: center;
         gap: 1.5vh;
-        background-image: url(../../Resources/Images/HomePage/grid1.png);
-        border-bottom: 0.1vw solid #FFFFFF;
         border-radius: 3vw;
         box-sizing: border-box;
       }
@@ -104,14 +105,9 @@ async def heroSection_style():
         font-size: 3.8vw;
         line-height: 1.25;
         letter-spacing: -0.02em;
-        color: #fff;
         text-align: center;
         text-shadow: 0 0.5vh 0.5vw rgba(0, 0, 0, 0.25);
         margin: 0;
-      }
-
-      .hero-title .accent {
-        color: #4AA6ED;
       }
 
       .hero-sub {
@@ -119,7 +115,6 @@ async def heroSection_style():
         font-weight: 700;
         font-size: 1.5vw;
         line-height: 1.5;
-        color: #eaeaea;
         margin: 0;
         text-align: center;
         opacity: 0.9;
@@ -136,18 +131,15 @@ async def heroSection_style():
         align-items: center;
         width: 12vw;
         height: 5.5vh;
-        border: 0.1vw solid #DFDFDF;
         border-radius: 1.8vw;
         font-family: 'Poppins', sans-serif;
         font-size: 1.2vw;
-        color: #DFDFDF;
         text-decoration: none;
-        transition: transform 0.3s ease, background-color 0.3s ease;
+        transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
       }
 
       .cta-outline:hover {
         transform: translateY(-0.4vh);
-        background: rgba(255, 255, 255, 0.06);
       }
 
       /* Cards row */
@@ -202,7 +194,90 @@ async def heroSection_style():
         width: 27.3vw;
       }
 
-      /* --- Tablet View --- */
+
+      /* --- Theming Section --- */
+      /* Contains all color and background rules for light and dark modes. */
+      
+      /* Light Theme */
+      @media (prefers-color-scheme: light) {
+        :root {
+          --dashboard-card-image: url(../../Resources/Images/Dashboard/dashboard_left_card_light.png);
+          --dashboard-card-image-right: url(../../Resources/Images/Dashboard/dashboard_right_card_light.png);
+        }
+        .bg-dark {
+          background-color: #FFFFFF;
+          border-bottom: 0.1vw solid #E0E0E0;
+        }
+        .grid-container {
+          background-image: linear-gradient(to right, rgba(206, 222, 245, 0.7) 2px, transparent 2px), linear-gradient(to bottom, rgba(206, 222, 245, 0.7) 2px, transparent 2px);
+          background-size: 3.5vw 3.5vw;
+        }
+        .hero-content {
+          background-color: transparent; /* Make transparent to show grid */
+        }
+        .dashboard-card-image {
+          content: var(--dashboard-card-image);
+        }
+        .dashboard-card-image-right {
+          content: var(--dashboard-card-image-right);
+        }
+        .hero-title {
+          color: #1A202C; /* A very dark, near-black color */
+        }
+        .hero-title .accent {
+          color: #4AA6ED;
+        }
+        .hero-sub {
+          color: #4A5568; /* A readable dark gray */
+        }
+        .cta-outline {
+          background-color: #4AA6ED;
+          border: 0.1vw solid #4AA6ED;
+          color: #FFFFFF;
+        }
+        .cta-outline:hover {
+          background-color: #3593D8; /* Slightly darker blue on hover */
+          border-color: #3593D8;
+        }
+      }
+
+      /* Dark Theme */
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --dashboard-card-image: url(../../Resources/Images/Dashboard/dashboard_left_card.png);
+          --dashboard-card-image-right: url(../../Resources/Images/Dashboard/dashboard_right_card.png);
+        }
+        .hero-content {
+          background-image: url(../../Resources/Images/HomePage/grid1.png);
+          border-bottom: 0.1vw solid #FFFFFF;
+          background-color: #000000;
+        }
+        .dashboard-card-image {
+          content: var(--dashboard-card-image);
+        }
+        .dashboard-card-image-right {
+          content: var(--dashboard-card-image-right);
+        }
+        .hero-title {
+          color: #fff;
+        }
+        .hero-title .accent {
+          color: #4AA6ED;
+        }
+        .hero-sub {
+          color: #eaeaea;
+        }
+        .cta-outline {
+          border: 0.1vw solid #DFDFDF;
+          color: #DFDFDF;
+          background-color: transparent;
+        }
+        .cta-outline:hover {
+          background-color: rgba(255, 255, 255, 0.06);
+        }
+      }
+
+      /* --- Tablet View (Structural) --- */
       @media (max-width: 1024px) {
         .hero-head {
             width: 85vw;
@@ -222,7 +297,7 @@ async def heroSection_style():
         }
       }
 
-      /* --- Mobile View (Redesigned for Elegance) --- */
+      /* --- Mobile View (Structural) --- */
       @media (max-width: 767px) {
         .hero-section-container {
             margin-bottom: -45vh; /* Adjust negative margin for stacked layout */
@@ -231,28 +306,23 @@ async def heroSection_style():
         .hero-content {
             height: 72vh; 
         }
-
         .hero-head {
             width: 90vw;
             gap: 2vh;
             margin-top: 5vh;
         }
-
         .hero-title {
             font-size: 9vw;
             line-height: 1.3;
         }
-
         .hero-sub {
             font-size: 4vw;
             line-height: 1.6;
             font-weight: 500; /* Slightly thinner for modern feel */
         }
-        
         .hero-sub-last {
             margin-top: 2vh;
         }
-
         .cta-outline {
             width: 55vw;
             height: 7vh;
@@ -261,27 +331,22 @@ async def heroSection_style():
             margin-top: 5vh;
             border-width: 0.3vw;
         }
-
         .cards-row {
             flex-direction: column;
             width: 90vw;
             gap: 4vh;
             top: -88vw; /* Adjust overlap for vertical stack */
         }
-        
         .card-left,
         .card-right {
             width: 100%; /* Cards take full width of the row */
         }
-        
-        /* Reposition glows for a nice ambient background effect */
         .peak-glow {
             width: 80vw;
             left: -25vw;
             top: -10vh;
             opacity: 0.7;
         }
-
         .eclipse-glow {
             width: 110vw;
             right: -40vw;
