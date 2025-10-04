@@ -22,7 +22,7 @@ async def top_business_style():
         }
 
         .data-science-section {
-            width: 100vw;
+            width: 99vw;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
