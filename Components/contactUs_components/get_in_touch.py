@@ -23,34 +23,22 @@ async def get_in_touch_body():
 async def get_in_touch_style():
     return """
 <style>
-        :root {
-            --bg: #111111;
-            --field-bg: #EFEFEF;
-            --placeholder-text: #888888;
-            --field-text: #333333;
-            --white: #ffffff;
-        }
-
-        /* base */
+        /* --- Base & Structural Styles (Theme-Agnostic) --- */
         * {
-            box-sizing: border-box
+            box-sizing: border-box;
         }
 
-        html,
-        body {
-            min-height: 100vh
+        html, body {
+            min-height: 100vh;
         }
 
         body {
             margin: 0;
-            background-color: var(--bg);
-            color: var(--white);
             font-family: 'Poppins', serif;
             font-size: max(1.2vh, 1.1vw);
             line-height: 1.3;
         }
 
-        /* layout */
         .wrap {
             min-height: 100vh;
             width: 100%;
@@ -68,28 +56,19 @@ async def get_in_touch_style():
             font-weight: 700;
             font-size: min(8vw, 10vh);
             letter-spacing: .1vw;
-            /* Metallic gradient effect */
-            background: linear-gradient(180deg, #FFFFFF 50%, #B0B0B0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-fill-color: transparent;
         }
 
         .stage {
             width: 90vw;
             max-width: 109.37vw;
-            /* Max width for large screens */
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: 5vw;
         }
 
-        /* left visual (world map image) */
         .map-container {
             flex: 1 1 55%;
-            /* Allow shrinking but prefer 55% width */
         }
 
         .map-container img {
@@ -98,23 +77,17 @@ async def get_in_touch_style():
             object-fit: contain;
         }
 
-
-        /* right form */
         .contact-form {
             flex: 1 1 40%;
-            /* Allow shrinking but prefer 40% width */
             display: flex;
             flex-direction: column;
             gap: 2.5vh;
         }
 
-        /* fields */
         .field {
             width: 100%;
             height: 7vh;
             display: block;
-            color: var(--field-text);
-            background: var(--field-bg);
             border: none;
             border-radius: 1.2vw;
             padding: 0 1.8vw;
@@ -128,46 +101,77 @@ async def get_in_touch_style():
             resize: vertical;
         }
 
-        /* placeholder */
-        .field::placeholder {
-            color: var(--placeholder-text);
-            opacity: 1;
-        }
-
-        .field:focus {
-            box-shadow: 0 0 0 0.3vw rgba(255, 255, 255, 0.2);
-        }
-
-        /* button */
         .button {
             height: 6.5vh;
             width: auto;
-            /* let padding define width */
             padding: 0 2.5vw;
-            background: var(--white);
-            color: var(--bg);
             font-weight: 700;
             font-size: 1.2vw;
             border: none;
             border-radius: 3vw;
-            /* Pill shape */
             letter-spacing: .05vw;
             cursor: pointer;
             align-self: flex-start;
-            /* Align to the left */
-            transition: transform .1s ease, filter .2s ease;
+            transition: transform .1s ease, filter .2s ease, background-color .2s ease;
         }
 
         .button:hover {
             transform: translateY(-.3vh);
-            filter: brightness(1.05)
+            filter: brightness(1.05);
         }
 
         .button:active {
             transform: translateY(.2vh);
         }
 
-        /* responsive */
+        /* --- Theming Section --- */
+        
+        /* Light Theme */
+        @media (prefers-color-scheme: light) {
+            .wrap { background-color: #FFFFFF; }
+            h1 {
+                /* Solid black text */
+                background: none;
+                -webkit-background-clip: initial;
+                -webkit-text-fill-color: initial;
+                color: #111111;
+            }
+            .field {
+                background-color: #F0F2F5;
+                color: #1A202C;
+            }
+            .field::placeholder { color: #6B7280; opacity: 1; }
+            .field:focus { box-shadow: 0 0 0 0.3vw rgba(37, 150, 244, 0.3); }
+            .button {
+                background-color: #2596F4;
+                color: #FFFFFF;
+            }
+        }
+
+        /* Dark Theme */
+        @media (prefers-color-scheme: dark) {
+            .wrap { background-color: #111111; }
+            h1 {
+                /* Metallic gradient effect */
+                background: linear-gradient(180deg, #FFFFFF 50%, #B0B0B0 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-fill-color: transparent;
+            }
+            .field {
+                background-color: #EFEFEF;
+                color: #333333;
+            }
+            .field::placeholder { color: #888888; opacity: 1; }
+            .field:focus { box-shadow: 0 0 0 0.3vw rgba(255, 255, 255, 0.2); }
+            .button {
+                background-color: #FFFFFF;
+                color: #111111;
+            }
+        }
+
+        /* Responsive Structural Adjustments */
         @media (max-width: 768px) {
             .stage {
                 flex-direction: column;
@@ -195,5 +199,5 @@ async def get_in_touch_style():
                 border-radius: 8vw;
             }
         }
-        </style>
+</style>
 """

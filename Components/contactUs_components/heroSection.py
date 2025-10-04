@@ -57,7 +57,8 @@ async def contact_banner_style():
             overflow: hidden;
             transition: height 0.3s ease-in-out;
             top: 2vh;
-            margin-top: 5vw;
+            margin-top: 4.5vw;
+            border-radius: 0 0 2vw 2vw;
         }
 
         .contact-hero-title {

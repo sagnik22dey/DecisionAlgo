@@ -79,8 +79,8 @@ async def locations_body():
 async def locations_style():
     return """
 <style>
+        /* --- Base & Structural Styles (Theme-Agnostic) --- */
         .locations-section {
-            background-color: #1C1C1C;
             padding: 10vh 5vw;
             display: flex;
             justify-content: center;
@@ -91,57 +91,47 @@ async def locations_style():
             display: flex;
             justify-content: center;
             align-items: stretch; /* Make cards same height */
-            gap: 2.5vw; /* Default for desktop */
+            gap: 2.5vw;
             flex-wrap: wrap;
         }
 
         .location-card {
-            width: 28vw; /* Default for desktop */
-            background: linear-gradient(180deg, rgba(45, 45, 45, 0.5), rgba(30, 30, 30, 0.5));
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 28vw;
             border-radius: 2vw;
-            padding: 5vw 2vw;
+            padding: 3vw 2vw;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(1.48vw);
-            -webkit-backdrop-filter: blur(1.48vw);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             font-family: 'Poppins', sans-serif;
         }
         
         .location-card:hover {
             transform: translateY(-1vw);
-            box-shadow: 0 1.5vw 3vw rgba(0, 0, 0, 0.3);
         }
 
         .location-flag {
-            height: 17vw;
+            height: 11vw;
             width: auto;
             margin-bottom: 3vw;
             border-radius: 0.5vw;
-            box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.2);
         }
 
         .location-title {
             font-size: 2.2vw;
             font-weight: 600;
-            color: #AAAAAA;
             line-height: 1.2;
-            margin-bottom: 4vw;
+            margin-bottom: 1vw;
         }
 
         .location-title span {
             display: block;
-            color: #FFFFFF;
             font-size: 2.2vw;
         }
         
         .location-details {
             font-size: 1.1vw;
-            color: #CCCCCC;
             line-height: 1.6;
             margin-bottom: 4vw;
             flex-grow: 1; /* Pushes email to the bottom */
@@ -153,16 +143,60 @@ async def locations_style():
 
         .location-email {
             font-size: 1.1vw;
-            color: #AAAAAA;
             text-decoration: none;
             transition: color 0.3s ease;
         }
+        
+        /* --- Theming Section --- */
 
-        .location-email:hover {
-            color: #FFFFFF;
+        /* Light Theme */
+        @media (prefers-color-scheme: light) {
+            .locations-section {
+                background-color: #FFFFFF;
+            }
+            .location-card {
+                background: linear-gradient(145deg, #4dabf7 0%, #2573f5 100%);
+                box-shadow: 0 1vw 2vw rgba(37, 150, 244, 0.25);
+            }
+            .location-card:hover {
+                 box-shadow: 0 1.5vw 3vw rgba(37, 150, 244, 0.35);
+            }
+            .location-flag {
+                box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
+            }
+            .location-title { color: rgba(255, 255, 255, 0.9); }
+            .location-title span { color: #FFFFFF; }
+            .location-details { color: rgba(255, 255, 255, 0.9); }
+            .location-email { color: rgba(255, 255, 255, 0.9); }
+            .location-email:hover { color: #FFFFFF; }
+        }
+
+        /* Dark Theme */
+        @media (prefers-color-scheme: dark) {
+            .locations-section {
+                background-color: transparent;
+            }
+            .location-card {
+                background: linear-gradient(180deg, rgba(45, 45, 45, 0.5), rgba(30, 30, 30, 0.5));
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.2);
+                backdrop-filter: blur(1.48vw);
+                -webkit-backdrop-filter: blur(1.48vw);
+            }
+            .location-card:hover {
+                box-shadow: 0 1.5vw 3vw rgba(0, 0, 0, 0.3);
+            }
+            .location-flag {
+                box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.2);
+            }
+            .location-title { color: #AAAAAA; }
+            .location-title span { color: #FFFFFF; }
+            .location-details { color: #CCCCCC; }
+            .location-email { color: #AAAAAA; }
+            .location-email:hover { color: #FFFFFF; }
         }
         
-        /* Font size adjustments for mobile view */
+        /* Responsive Structural Adjustments */
         @media (max-width: 768px) {
             .location-card {
                 padding: 5vw 5vw;

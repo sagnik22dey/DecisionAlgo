@@ -221,7 +221,7 @@ async def track_style():
         /* Dark Theme */
         @media (prefers-color-scheme: dark) {
             .track-section {
-                background-color: #111111;
+                background-color: transparent;
             }
             .title-container h1 {
                 color: #E5E7EB; /* Off-white */
