@@ -9,27 +9,30 @@ async def text_top_robot_section():
         </section>
     """
     
-
-
 async def style_top_robot_section():
     return """
         <style>
+            /* --- Default: Dark Mode --- */
             :root {
-            --primary-blue: #5FC7FB;
-            --primary-white: #FEFEFE;
-            --primary-gray: #CCCCCC;
-            --background-dark: #0A0A0A;
-            --card-bg: rgba(20, 20, 20, 0.4);
-            --card-border: rgba(95, 199, 251, 0.5);
-        }
+                --primary-blue: #5FC7FB;
+                --primary-white: #FEFEFE;
+                --primary-gray: #CCCCCC;
+                --background-dark: transparent;
+                --card-bg: rgba(20, 20, 20, 0.4);
+                --card-border: rgba(95, 199, 251, 0.5);
+            }
+
+            .heading-section-wrapper {
+                background-color: var(--background-dark);
+            }
         
-        .heading-container {
+            .heading-container {
                 text-align: center;
-                margin-top: 5vw;
+                padding: 5vw 0;
             }
 
             .heading-container h1 {
-                font-family: 'Exo 2';
+                font-family: 'Exo 2', sans-serif;
                 font-style: normal;
                 font-weight: 700;
                 font-size: 4.16vw;
@@ -49,23 +52,34 @@ async def style_top_robot_section():
                 color: var(--primary-blue);
             }
 
-            /* --- Mobile View Modifications --- */
-            @media (max-width: 768px) {
-                .heading-container {
-                    /* Add more vertical space for better centering and add horizontal padding */
-                    margin-top: 8vh;
-                    margin-bottom: 8vh;
-                    padding: 0 5vw; /* Prevents text from touching screen edges */
+            /* --- Light Mode --- */
+            @media (prefers-color-scheme: light) {
+                .heading-section-wrapper {
+                    background-color: #FFFFFF;
+                }
+                
+                .heading-container h1 {
+                    background: none;
+                    -webkit-background-clip: unset;
+                    background-clip: unset;
+                    color: #111111;
                 }
 
-                .heading-container h1 {
-                    /* Use vw for a fluid font-size that scales with the screen width */
-                    font-size: 6.5vw;
-                    /* Increase line-height for better readability on multiple lines */
-                    line-height: 1.4;
+                .heading-container h1 span {
+                    color: #007AFF; 
                 }
             }
 
+            /* --- Mobile View Modifications --- */
+            @media (max-width: 768px) {
+                .heading-container {
+                    padding: 8vh 5vw;
+                }
+
+                .heading-container h1 {
+                    font-size: 6.5vw;
+                    line-height: 1.4;
+                }
+            }
         </style>
-        
     """

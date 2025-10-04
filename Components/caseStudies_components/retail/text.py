@@ -10,26 +10,28 @@ async def text_top_robot_section():
         </section>
     """
     
-
-
 async def style_top_robot_section():
     return """
         <style>
+            /* --- Default: Dark Mode --- */
             :root {
-            --primary-blue: #5FC7FB;
-            --primary-white: #FEFEFE;
-            --primary-gray: #CCCCCC;
-            --background-dark: #0A0A0A;
-            --card-bg: rgba(20, 20, 20, 0.4);
-            --card-border: rgba(95, 199, 251, 0.5);
-        }
+                --primary-blue: #5FC7FB;
+                --primary-white: #FEFEFE;
+                --primary-gray: #CCCCCC;
+                --background-dark: transparent;
+            }
+            
+            section {
+                background-color: var(--background-dark);
+                padding: 5vw 0; /* Manages vertical spacing */
+            }
         
-        .heading-container {
+            .heading-container {
                 text-align: center;
-                margin-top: 5vw;
             }
 
             .heading-container h1 {
+                font-family: 'Exo 2', sans-serif;
                 font-size: 3.2vw;
                 line-height: 1.2;
                 font-weight: 700;
@@ -41,27 +43,39 @@ async def style_top_robot_section():
             .heading-container h1 span {
                 color: var(--primary-blue);
             }
+
             .heading-container h1 .text-white {
                 color: var(--primary-white);
             }
 
-            /* --- Mobile View Modifications --- */
-            @media (max-width: 768px) {
-                .heading-container {
-                    /* Add more vertical space and horizontal padding for mobile */
-                    margin-top: 15vh;
-                    margin-bottom: 10vh;
-                    padding: 0 5vw;
+            /* --- Light Mode --- */
+            @media (prefers-color-scheme: light) {
+                section {
+                    background-color: #FFFFFF;
                 }
 
                 .heading-container h1 {
-                    /* Use vw for a fluid font-size that scales with screen width */
-                    font-size: 5.5vw;
-                    /* Increase line-height for better readability of multi-line text */
-                    line-height: 1.4;
+                    color: #111111; /* Default text becomes black */
+                }
+
+                /* Both span types become blue in light mode to match the image */
+                .heading-container h1 span,
+                .heading-container h1 .text-white {
+                    color: #007AFF;
                 }
             }
 
+            /* --- Mobile View Modifications --- */
+            @media (max-width: 768px) {
+                section {
+                    /* Adjust padding for mobile layout */
+                    padding: 15vh 5vw 10vh;
+                }
+
+                .heading-container h1 {
+                    font-size: 5.5vw;
+                    line-height: 1.4;
+                }
+            }
         </style>
-        
     """

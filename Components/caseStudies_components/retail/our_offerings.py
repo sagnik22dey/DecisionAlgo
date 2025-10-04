@@ -1,11 +1,12 @@
 async def our_offerings_style():
     return """
     <style>
+        /* --- Default: Dark Mode --- */
         :root {
             --primary-blue: #5FC7FB;
             --primary-white: #FEFEFE;
             --primary-light-gray: #EBF0F3;
-            --background-dark: #0A0A0A;
+            --background-dark: transparent;
             --card-bg: #1A1A1A;
         }
 
@@ -24,6 +25,8 @@ async def our_offerings_style():
             align-items: center;
             justify-content: center;
             padding: 10vh 5vw;
+            background-color: var(--background-dark);
+            transition: background-color 0.3s ease;
         }
 
         .section-title {
@@ -38,19 +41,22 @@ async def our_offerings_style():
             text-transform: uppercase;
             letter-spacing: -0.02em;
             color: var(--primary-light-gray);
+            transition: color 0.3s ease;
         }
 
         .section-title h1 span {
             color: var(--primary-blue);
+            transition: color 0.3s ease;
         }
         
         .section-title p {
             font-size: 1.5vw; 
             color: var(--primary-light-gray); 
             margin-top: 2vh;
-            max-width: 60vw; /* Constrain line length for readability */
+            max-width: 60vw;
             margin-left: auto;
             margin-right: auto;
+            transition: color 0.3s ease;
         }
 
         .offerings-grid {
@@ -70,7 +76,7 @@ async def our_offerings_style():
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
         }
         
         .offering-card:hover {
@@ -88,7 +94,8 @@ async def our_offerings_style():
             font-size: 2vw;
             line-height: 1.2;
             color: var(--primary-white);
-            width: 70%; /* Give space for the number */
+            width: 70%;
+            transition: color 0.3s ease;
         }
         
         .card-number {
@@ -100,6 +107,7 @@ async def our_offerings_style():
             position: absolute;
             top: 2vw;
             right: 2vw;
+            transition: color 0.3s ease;
         }
 
         .card-description {
@@ -107,6 +115,41 @@ async def our_offerings_style():
             font-size: 1.1vw;
             line-height: 1.6;
             color: var(--primary-white);
+            transition: color 0.3s ease;
+        }
+
+        /* --- Light Mode --- */
+        @media (prefers-color-scheme: light) {
+            .offerings-section-retail {
+                background-color: #FFFFFF;
+            }
+
+            .section-title h1 {
+                color: #111111;
+            }
+            
+            .section-title h1 span {
+                color: #007AFF;
+            }
+
+            .section-title p {
+                color: #555555;
+            }
+            
+            .offering-card {
+                background-color: #007AFF;
+            }
+            
+            .offering-card:hover {
+                transform: translateY(-1vh);
+                box-shadow: 0 1vh 4vh rgba(0, 122, 255, 0.25);
+            }
+            
+            .card-title-retail,
+            .card-description,
+            .card-number {
+                color: #FFFFFF;
+            }
         }
 
         /* --- Mobile View Modifications --- */
@@ -161,8 +204,6 @@ async def our_offerings_style():
         }
     </style>
 """
-
-
 async def our_offerings_body():
     return """
     <section class="offerings-section-retail">

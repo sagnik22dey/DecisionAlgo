@@ -1,6 +1,7 @@
 async def client_feedback_style():
     return """
     <style>
+        /* --- Default: Dark Mode --- */
         :root {
             --primary-blue: #5FC7FB;
             --primary-white: #FFFFFF;
@@ -30,11 +31,7 @@ async def client_feedback_style():
             background-color: var(--background-dark);
             position: relative;
             overflow: hidden;
-        }
-
-        .testimonials-section::before {
-            content: '';
-            display: none;
+            transition: background-color 0.3s ease;
         }
 
         .section-header {
@@ -45,16 +42,19 @@ async def client_feedback_style():
         }
 
         .section-header h1 {
+            font-family: 'Exo 2', sans-serif;
             font-size: 4vw;
             line-height: 1.2;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: -0.02em;
             color: var(--primary-light-gray);
+            transition: color 0.3s ease;
         }
 
         .section-header h1 span {
             color: var(--primary-blue);
+            transition: color 0.3s ease;
         }
 
         .slider-viewport {
@@ -86,7 +86,7 @@ async def client_feedback_style():
             display: flex;
             flex-direction: column;
             padding: 2vw;
-            background-color: var(--card-white);
+            transition: background 0.3s ease, box-shadow 0.3s ease;
         }
 
         .card-top {
@@ -107,6 +107,7 @@ async def client_feedback_style():
         }
 
         .client-info h3 {
+            font-family: 'Exo 2', sans-serif;
             font-size: 1.8vw;
             font-weight: 700;
             color: var(--text-dark);
@@ -114,6 +115,7 @@ async def client_feedback_style():
         }
 
         .client-info p {
+            font-family: 'Poppins', sans-serif;
             font-size: 1.1vw;
             line-height: 1.3;
             color: var(--text-muted);
@@ -153,6 +155,7 @@ async def client_feedback_style():
             gap: 0.5vw;
             z-index: 1;
             align-self: center;
+            transition: background-color 0.3s ease;
         }
 
         .rating-box svg {
@@ -162,6 +165,7 @@ async def client_feedback_style():
         }
 
         .testimonial-quote {
+            font-family: 'Poppins', sans-serif;
             font-size: 1.1vw;
             line-height: 1.6;
             max-width: 100%;
@@ -190,6 +194,39 @@ async def client_feedback_style():
         .pagination-dot.active {
             opacity: 1;
             background-color: var(--primary-blue);
+        }
+
+        /* --- Light Mode --- */
+        @media (prefers-color-scheme: light) {
+            .testimonials-section {
+                background-color: #FFFFFF;
+            }
+
+            .section-header h1 {
+                color: #111111;
+            }
+
+            .section-header h1 span {
+                color: #007AFF;
+            }
+
+            .testimonial-card {
+                background: #F5F5F7;
+                box-shadow: 0 1vh 0.5vw rgba(0, 0, 0, 0.09);
+            }
+            
+            .rating-box {
+                background-color: #F5F5F7;
+            }
+
+            .pagination-dot {
+                background-color: #D1D1D6;
+                opacity: 1;
+            }
+            
+            .pagination-dot.active {
+                background-color: #007AFF;
+            }
         }
 
         /* --- Mobile View --- */
@@ -263,6 +300,24 @@ async def client_feedback_style():
                 justify-content: flex-start;
                 align-items: center;
             }
+            
+            /* The gradient background on the main card is removed for light mode, so we need a background on the card-bottom itself */
+            @media (prefers-color-scheme: light) {
+                 .testimonial-card {
+                    background: none; /* remove gradient */
+                 }
+                .card-top {
+                    background-color: #F5F5F7;
+                }
+                .card-bottom {
+                    background-color: #F5F5F7;
+                    border-radius: 0 0 4vw 4vw;
+                }
+                .rating-box {
+                    background-color: #FFFFFF; /* Makes it pop from the gray card bg */
+                }
+            }
+
 
             .rating-box {
                 margin-top: -3vh;

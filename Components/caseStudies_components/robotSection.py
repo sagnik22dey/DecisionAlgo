@@ -1,211 +1,4 @@
-async def robotSection_style():
-    return """
-<style>
-
-            :root {
-            --primary-blue: #5FC7FB;
-            --primary-white: #FEFEFE;
-            --primary-gray: #CCCCCC;
-            --background-dark: #0A0A0A;
-            --card-bg: rgba(20, 20, 20, 0.4);
-            --card-border: rgba(95, 199, 251, 0.5);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-            .solutions-section {
-                width: 100vw;
-                min-height: 100vh;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                padding: 5vh 5vw;
-                position: relative;
-                overflow: hidden;
-            }
-
-            .main-content {
-                position: relative;
-                width: 75vw;
-                height: 80vh;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            
-            .robot-container {
-                position: relative;
-                width: 30vw;
-                height: 75vh;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .robot-image {
-                position: absolute;
-                height: 100%;
-                width: auto;
-                object-fit: contain;
-                z-index: 2;
-            }
-
-            .solution-card {
-                box-sizing: border-box;
-                position: absolute;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 1.5vw;
-                gap: 1.5vh;
-                width: 13vw;
-                height: 10vw;
-                background: rgba(10, 10, 10, 0.5);
-                border: 0.14vh solid rgba(95, 199, 251, 0.5);
-                border-radius: 1vw;
-                backdrop-filter: blur(1.77vh);
-                -webkit-backdrop-filter: blur(1.77vh);
-                z-index: 4;
-                transition: transform 0.3s ease, border-color 0.3s ease;
-            }
-            
-            .solution-card:hover {
-                transform: scale(1.05);
-                border-color: var(--primary-blue);
-            }
-
-            .icon-box {
-                box-sizing: border-box;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 0.5vw;
-                width: 3vw;
-                height: 3vw;
-                border: 0.14vh solid var(--primary-blue);
-                border-radius: 0.5vw;
-            }
-
-            .icon-box svg {
-                width: 2vw;
-                height: 2vw;
-                fill: var(--primary-blue);
-            }
-
-            .card-text {
-                font-size: 1vw;
-                line-height: 1.4;
-                font-weight: 500;
-                text-transform: capitalize;
-                color: var(--primary-white);
-            }
-
-            /* Positioning the cards for desktop */
-            #card-bhc { top: 5vh; left: 0; }
-            #card-hw { top: 30vh; left: 0; }
-            #card-hc { top: 55vh; left: 0; }
-            #card-pfc { top: 10vh; right: 0; }
-            #card-pfb { top: 40vh; right: 0; }
-
-            .connector-lines {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                pointer-events: none;
-                z-index: 3;
-            }
-            
-            .connector-lines polyline {
-                stroke: var(--primary-white);
-                stroke-width: 0.15; /* This is relative to the viewBox */
-                fill: none;
-            }
-
-            .connector-lines circle {
-                fill: var(--primary-white);
-            }
-            .eclipse-glow {
-                width: 50vw;
-                right: 25%;
-                top: 20vh;
-                z-index:1;
-                position:absolute;
-            }
-
-            /* --- Mobile View --- */
-            @media (max-width: 768px) {
-                .solutions-section {
-                    height: auto;
-                    min-height: auto;
-                    padding: 0vh 5vw;
-                    justify-content: flex-start;
-                    margin-top:-10vw;
-                }
-                
-                .main-content {
-                    flex-direction: column;
-                    align-items: center;
-                    position: static;
-                    height: auto;
-                    width: 100%;
-                    margin-top: 5vh;
-                }
-
-                .robot-container {
-                    width: 70vw;
-                    height: 40vh;
-                    margin-bottom: 8vh;
-                }
-
-                .solution-card {
-                    position: static;
-                    width: 90vw;
-                    height: auto;
-                    min-height: auto;
-                    margin-bottom: 4vh;
-                    padding: 6vw;
-                    gap: 3vh;
-                    border-radius: 3vw;
-                }
-
-                .icon-box {
-                    width: 12vw;
-                    height: 12vw;
-                    border-radius: 2.5vw;
-                }
-
-                .icon-box svg {
-                    width: 6vw;
-                    height: 6vw;
-                }
-
-                .card-text {
-                    font-size: 4.5vw;
-                    line-height: 1.5;
-                }
-                
-                .eclipse-glow {
-                    width: 100vw;
-                    top: 25vh;
-                    opacity: 0.3;
-                }
-
-                /* Hide desktop-only elements */
-                .connector-lines {
-                    display: none !important;
-                }
-            }
-</style>
-"""
-
-
-async def robotSection_body(folderName,text1,text2,text3,text4,text5):
+async def robotSection_body(folderName, text1, text2, text3, text4, text5):
     part1 = f"""
         <img class="eclipse-glow" src="../../Resources/Images/Dashboard/ecliplse_glow.png" alt="eclipse glow">
         <section class="solutions-section">
@@ -312,23 +105,8 @@ async def robotSection_body(folderName,text1,text2,text3,text4,text5):
             </div>
         </section>
     """
-    
-    script = """
-        <style>
-            .connector-lines polyline {
-                fill: none;
-                stroke: white;
-                stroke-width: 0.15;
-            }
-            .connector-lines .connector-dot {
-                stroke: white;
-                stroke-linecap: round;
-                stroke-width: 1vh; /* This determines the dot's diameter */
-                /* This key property ensures the stroke (our dot) isn't distorted by scaling */
-                vector-effect: non-scaling-stroke;
-            }
-        </style>
 
+    script = """
         <script>
             document.addEventListener('DOMContentLoaded', () => {
 
@@ -404,3 +182,249 @@ async def robotSection_body(folderName,text1,text2,text3,text4,text5):
         </script>
     """
     return part1 + script
+
+
+async def robotSection_style():
+    return """
+<style>
+            /* --- Default: Dark Mode --- */
+            :root {
+                --primary-blue: #5FC7FB;
+                --primary-white: #FEFEFE;
+                --primary-gray: #CCCCCC;
+                --background-dark: #0A0A0A;
+                --card-bg: rgba(20, 20, 20, 0.4);
+                --card-border: rgba(95, 199, 251, 0.5);
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            .solutions-section {
+                width: 100vw;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 5vh 5vw;
+                position: relative;
+                overflow: hidden;
+                background-color: var(--background-dark);
+            }
+
+            .main-content {
+                position: relative;
+                width: 75vw;
+                height: 80vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .robot-container {
+                position: relative;
+                width: 30vw;
+                height: 75vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .robot-image {
+                position: absolute;
+                height: 100%;
+                width: auto;
+                object-fit: contain;
+                z-index: 2;
+            }
+
+            .solution-card {
+                box-sizing: border-box;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1.5vw;
+                gap: 1.5vh;
+                width: 13vw;
+                height: 10vw;
+                background: var(--card-bg);
+                border: 0.14vh solid var(--card-border);
+                border-radius: 1vw;
+                backdrop-filter: blur(1.77vh);
+                -webkit-backdrop-filter: blur(1.77vh);
+                z-index: 4;
+                transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+            }
+            
+            .solution-card:hover {
+                transform: scale(1.05);
+                border-color: var(--primary-blue);
+            }
+
+            .icon-box {
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0.5vw;
+                width: 3vw;
+                height: 3vw;
+                border: 0.14vh solid var(--primary-blue);
+                border-radius: 0.5vw;
+                transition: border-color 0.3s ease;
+            }
+
+            .icon-box svg {
+                width: 2vw;
+                height: 2vw;
+            }
+            
+            .icon-box svg path{
+                transition: fill 0.3s ease;
+            }
+
+            .card-text {
+                font-size: 1vw;
+                line-height: 1.4;
+                font-weight: 500;
+                text-transform: capitalize;
+                color: var(--primary-white);
+                transition: color 0.3s ease;
+            }
+
+            /* Positioning the cards for desktop */
+            #card-bhc { top: 5vh; left: 0; }
+            #card-hw { top: 30vh; left: 0; }
+            #card-hc { top: 55vh; left: 0; }
+            #card-pfc { top: 10vh; right: 0; }
+            #card-pfb { top: 40vh; right: 0; }
+
+            .connector-lines {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 3;
+            }
+            
+            .connector-lines polyline {
+                stroke: var(--primary-white);
+                stroke-width: 0.15;
+                fill: none;
+                transition: stroke 0.3s ease;
+            }
+
+            .connector-lines .connector-dot {
+                stroke: var(--primary-white);
+                stroke-linecap: round;
+                stroke-width: 1vh;
+                vector-effect: non-scaling-stroke;
+                transition: stroke 0.3s ease;
+            }
+
+            .eclipse-glow {
+                width: 50vw;
+                right: 25%;
+                top: 20vh;
+                z-index:1;
+                position:absolute;
+            }
+
+            /* --- Light Mode --- */
+            @media (prefers-color-scheme: light) {
+                .solutions-section {
+                    background-color: #FFFFFF;
+                }
+                .solution-card {
+                    background: linear-gradient(180deg, #2196F3 0%, #4436B1 91.05%);
+                    border-color: transparent;
+                }
+                .card-text {
+                    color: #FEFEFE;
+                }
+                .icon-box {
+                    border-color: #FEFEFE;
+                }
+                .icon-box svg path {
+                    fill: #FEFEFE !important; /* Override inline fill */
+                }
+                .connector-lines polyline,
+                .connector-lines .connector-dot {
+                    stroke: #333333;
+                }
+                .eclipse-glow {
+                    display: none;
+                }
+            }
+
+            /* --- Mobile View --- */
+            @media (max-width: 768px) {
+                .solutions-section {
+                    height: auto;
+                    min-height: auto;
+                    padding: 0vh 5vw;
+                    justify-content: flex-start;
+                    margin-top:-10vw;
+                }
+                
+                .main-content {
+                    flex-direction: column;
+                    align-items: center;
+                    position: static;
+                    height: auto;
+                    width: 100%;
+                    margin-top: 5vh;
+                }
+
+                .robot-container {
+                    width: 70vw;
+                    height: 40vh;
+                    margin-bottom: 8vh;
+                }
+
+                .solution-card {
+                    position: static;
+                    width: 90vw;
+                    height: auto;
+                    min-height: auto;
+                    margin-bottom: 4vh;
+                    padding: 6vw;
+                    gap: 3vh;
+                    border-radius: 3vw;
+                }
+
+                .icon-box {
+                    width: 12vw;
+                    height: 12vw;
+                    border-radius: 2.5vw;
+                }
+
+                .icon-box svg {
+                    width: 6vw;
+                    height: 6vw;
+                }
+
+                .card-text {
+                    font-size: 4.5vw;
+                    line-height: 1.5;
+                }
+                
+                .eclipse-glow {
+                    width: 100vw;
+                    top: 25vh;
+                    opacity: 0.3;
+                }
+
+                /* Hide desktop-only elements */
+                .connector-lines {
+                    display: none !important;
+                }
+            }
+</style>
+"""

@@ -1,6 +1,7 @@
 async def top_business_style():
     return """
     <style>
+        /* --- Default: Dark Mode --- */
         :root {
             --primary-blue: #00A9FF;
             --primary-white: #FFFFFF;
@@ -11,6 +12,7 @@ async def top_business_style():
             --card-border: rgba(255, 255, 255, 0.3);
             --icon-bg: #0A1015;
             --icon-border: #3A4046;
+            --top-business-route-icon-url: url('../../Resources/Images/HomePage/route.png');
         }
 
         * {
@@ -30,6 +32,7 @@ async def top_business_style():
             font-family: 'Exo 2', sans-serif;
             background-color: var(--background-dark);
             color: var(--primary-white);
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .section-heading {
@@ -44,10 +47,12 @@ async def top_business_style():
             text-transform: uppercase;
             letter-spacing: -0.02em;
             color: var(--primary-light-gray);
+            transition: color 0.3s ease;
         }
 
         .section-heading h1 span {
             color: var(--primary-blue);
+            transition: color 0.3s ease;
         }
 
         .cards-grid {
@@ -55,7 +60,7 @@ async def top_business_style():
             grid-template-columns: repeat(3, 1fr);
             gap: 2vw;
             width: 90%;
-            max-width: 1400px; /* To prevent cards from becoming too wide on very large screens */
+            max-width: 1400px;
         }
 
         .benefit-card {
@@ -66,7 +71,7 @@ async def top_business_style():
             display: flex;
             flex-direction: column;
             gap: 3vw;
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
         }
 
         .benefit-card:hover {
@@ -91,9 +96,11 @@ async def top_business_style():
             background-color: var(--icon-bg);
             border: 1px solid var(--icon-border);
             border-radius: 0.5vw;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
         }
 
         .icon-wrapper img {
+            content: var(--top-business-route-icon-url);
             width: 2vw;
             height: auto;
         }
@@ -102,6 +109,7 @@ async def top_business_style():
             font-size: 1.3vw;
             font-weight: 600;
             line-height: 1.1;
+            transition: color 0.3s ease;
         }
 
         .card-description {
@@ -109,8 +117,49 @@ async def top_business_style():
             font-weight: 400;
             line-height: 1.6;
             color: var(--text-secondary);
+            transition: color 0.3s ease;
         }
+        
+        /* --- Light Mode --- */
+        @media (prefers-color-scheme: light) {
+            .data-science-section {
+                background-color: #FFFFFF;
+                color: #111111;
+            }
 
+            .section-heading h1 {
+                color: #111111;
+            }
+
+            .section-heading h1 span {
+                color: #2196F3;
+            }
+
+            .benefit-card {
+                background-color: #2196F3;
+                border-color: transparent;
+                color: #FFFFFF;
+            }
+
+            .benefit-card:hover {
+                box-shadow: 0 1vh 3vh rgba(33, 150, 243, 0.3);
+            }
+            
+            .card-header h2 {
+                color: #FFFFFF;
+            }
+
+            .card-description {
+                color: #FFFFFF;
+                opacity: 0.9;
+            }
+            
+            .icon-wrapper {
+                background-color: #FFFFFF;
+                border-color: transparent;
+                --top-business-route-icon-url: url('../../Resources/Images/HomePage/route-light.png');
+            }
+        }
 
         /* --- Mobile View --- */
         @media (max-width: 768px) {
@@ -126,7 +175,7 @@ async def top_business_style():
             }
 
             .cards-grid {
-                grid-template-columns: 1fr; /* Stack cards in a single column */
+                grid-template-columns: 1fr;
                 width: 100%;
                 gap: 4vh;
             }
@@ -182,7 +231,7 @@ async def top_business_body():
             <div class="benefit-card">
                 <div class="card-header">
                     <div class="icon-wrapper">
-                        <img src="../../Resources/Images/HomePage/route.png" alt="route icon">
+                        <img alt="route icon">
                     </div>
                     <h2>Quality Control</h2>
                 </div>
@@ -195,7 +244,7 @@ async def top_business_body():
             <div class="benefit-card">
                 <div class="card-header">
                     <div class="icon-wrapper">
-                        <img src="../../Resources/Images/HomePage/route.png" alt="route icon">
+                        <img alt="route icon">
                     </div>
                     <h2>Demand Forecasting</h2>
                 </div>
@@ -208,7 +257,7 @@ async def top_business_body():
             <div class="benefit-card">
                 <div class="card-header">
                     <div class="icon-wrapper">
-                        <img src="../../Resources/Images/HomePage/route.png" alt="route icon">
+                        <img alt="route icon">
                     </div>
                     <h2>Sustainability & CSR</h2>
                 </div>
@@ -221,7 +270,7 @@ async def top_business_body():
             <div class="benefit-card">
                 <div class="card-header">
                     <div class="icon-wrapper">
-                        <img src="../../Resources/Images/HomePage/route.png" alt="route icon">
+                        <img alt="route icon">
                     </div>
                     <h2>Risk Management</h2>
                 </div>
@@ -234,7 +283,7 @@ async def top_business_body():
             <div class="benefit-card">
                 <div class="card-header">
                     <div class="icon-wrapper">
-                        <img src="../../Resources/Images/HomePage/route.png" alt="route icon">                    
+                        <img alt="route icon">
                     </div>
                     <h2>Supply Chain View</h2>
                 </div>
@@ -247,7 +296,7 @@ async def top_business_body():
             <div class="benefit-card">
                 <div class="card-header">
                     <div class="icon-wrapper">
-                        <img src="../../Resources/Images/HomePage/route.png" alt="route icon">
+                        <img alt="route icon">
                     </div>
                     <h2>AI-Powered Chatbots</h2>
                 </div>
