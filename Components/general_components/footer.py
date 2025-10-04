@@ -112,7 +112,7 @@ async def footer_style():
         :root {
             /* Light Theme (Default) */
             --footer-bg: #F0F8FF; /* AliceBlue background as requested */
-            --footer-shadow: 0px -11px 18.5px rgba(0, 0, 0, 0.25); /* Top shadow as requested */
+            --footer-shadow: 0px -11px 18.5px rgba(0, 0, 0, 0); /* Top shadow as requested */
             --footer-text-primary: #1A202C;
             --footer-text-secondary: #4A5568;
             --footer-border: transparent; /* Hide border to emphasize shadow */

@@ -61,7 +61,7 @@ async def ready_style():
         @media (prefers-color-scheme: dark) {
             :root {
                 /* Dark Theme Overrides */
-                --section-bg: #141414;
+                --section-bg: transparent;
                 --ellipse-opacity: 1;
                 --text-primary: #FFFFFF;
                 --text-secondary: #FFFFFF;
@@ -78,7 +78,7 @@ async def ready_style():
         /* ============================================================= */
         .viewport-container {
             position: relative;
-            width: 100vw;
+            width: 99vw;
             min-height: 100vh;
             display: grid;
             grid-template-columns: 46vw auto;
