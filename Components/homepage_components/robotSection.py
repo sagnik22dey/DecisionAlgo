@@ -151,7 +151,7 @@ async def robot_style():
         /* ============================================================= */
         :root {
             /* Light Theme (Default) */
-            --robot-section-bg: linear-gradient(170deg, #3B82F6 0%, #4F46E5 100%);
+            --robot-section-bg: linear-gradient(180deg, #2196F3 0%, #4436B1 91.05%);
             --heading-primary-color: #FFFFFF;
             --heading-secondary-color: #FFFFFF;
             --card-bg: #FFFFFF;

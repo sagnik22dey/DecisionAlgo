@@ -328,7 +328,7 @@ async def innovation_style():
             }
 
             .icon-wrapper {
-                background: #007AFF;
+                background: linear-gradient(180deg, #2196F3 0%, #4436B1 91.05%);
             }
 
             .icon-wrapper svg path {

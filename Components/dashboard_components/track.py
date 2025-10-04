@@ -203,7 +203,7 @@ async def track_style():
                 color: #2563EB; /* Strong blue */
             }
             .card2 {
-                background: linear-gradient(145deg, #4dabf7 0%, #2573f5 100%);
+                background: linear-gradient(180deg, #2196F3 0%, #4436B1 91.05%);
                 border: none;
             }
             .card2-icon {

@@ -155,7 +155,7 @@ async def locations_style():
                 background-color: #FFFFFF;
             }
             .location-card {
-                background: linear-gradient(145deg, #4dabf7 0%, #2573f5 100%);
+                background: linear-gradient(180deg, #2196F3 0%, #4436B1 91.05%);
                 box-shadow: 0 1vw 2vw rgba(37, 150, 244, 0.25);
             }
             .location-card:hover {
