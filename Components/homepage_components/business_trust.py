@@ -139,7 +139,8 @@ async def trust_style():
         --ghost-btn-border: #6B7280;
         --title-text-color: #111827;
         --title-gradient: none;
-        --title-accent: #2563EB;
+        --title-accent: #44B4FF;
+        --title-fill-color: initial;
         --panel-bg: #2563EB;
         --feature-card-bg: #FFFFFF;
         --feature-card-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.1), 0 4px 6px -2px rgba(37, 99, 235, 0.05);
@@ -163,6 +164,7 @@ async def trust_style():
             --title-text-color: #FFFFFF;
             --title-gradient: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%, #FFFFFF 25%, #FFFFFF 75%, rgba(255, 255, 255, 0.5) 100%);
             --title-accent: #44B4FF;
+            --title-fill-color: transparent;
             --panel-bg: linear-gradient(103.91deg, rgba(26, 26, 26, 0) 5.34%, rgba(65, 65, 65, 0.28) 35.27%, rgba(109, 109, 109, 0.49) 71.27%, rgba(128, 128, 128, 0.01) 95.55%), #151515;
             --feature-card-bg: transparent;
             --feature-card-shadow: none;
@@ -208,7 +210,7 @@ async def trust_style():
     .btn:hover { transform: translateY(-2px); }
 
     /* Title */
-    .title { color: var(--title-text-color); background: var(--title-gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .title { color: var(--title-text-color); background: var(--title-gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: var(--title-fill-color); }
     .title .accent { color: var(--title-accent); -webkit-text-fill-color: initial; }
 
     /* Panel */
