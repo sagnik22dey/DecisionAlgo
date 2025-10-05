@@ -10,7 +10,7 @@ async def team_body():
         <!-- Founder Section -->
         <div class="team-group">
             <div class="section-bar">
-                <h2 class="team-section-title founder-title">Meet The Founder</h2>
+                <h2 class="team-section-title founder-title">Meet The <span class="highlight">Founder</span></h2>
             </div>
 
             <div class="profile-card founder-card">
@@ -29,7 +29,7 @@ async def team_body():
         <!-- Experts Section -->
         <div class="team-group">
             <div class="section-bar">
-                <h2 class="team-section-title experts-title">Meet Our Experts</h2>
+                <h2 class="team-section-title experts-title">Meet Our <span class="highlight">Experts</span></h2>
             </div>
 
             <!-- Vishal (image right) -->
@@ -143,6 +143,7 @@ async def team_body():
 async def team_style():
     return """
     <style>
+        /* --- Default: Dark Mode --- */
         .eclipse-glow-1 {
             margin-top: -27vw;
             z-index: 5;
@@ -173,7 +174,6 @@ async def team_style():
             width:100vw;
         }
 
-        /* Dark bar that holds the gradient title, matching the comp */
         .section-bar{
             width:100vw;
             background:transparent;
@@ -198,7 +198,6 @@ async def team_style():
         .founder-title{text-align:right;}
         .experts-title{text-align:left;}
 
-        /* Full-width gradient strips for each person */
         .profile-card{
             display:flex;
             align-items:center;
@@ -208,13 +207,11 @@ async def team_style():
             padding:6vh 0;
         }
 
-        /* Founder + Mahak: left image, blue to sky gradient */
         .founder-card,
         .expert-card--normal{
             background:linear-gradient(90deg, #DCF3FF 0%, #5FC7FB 100%);
         }
 
-        /* Vishal: image on right, flipped gradient */
         .expert-card--reverse{
             background:linear-gradient(90deg, #5FC7FB 0%, #D7F2FF 100%);
             flex-direction:row-reverse;
@@ -238,7 +235,7 @@ async def team_style():
             object-fit:contain;
             object-position:bottom;
             filter:grayscale(100%);
-            scale:1.19;
+            scale:1.196;
         }
 
         .profile-text-content{
@@ -249,7 +246,6 @@ async def team_style():
             width:44vw;
             padding:0 5vw;
         }
-        /* Reserve space for photos with viewport margins */
         .profile-card:not(.expert-card--reverse) .profile-text-content{ margin-left:48vw; }
         .profile-card.expert-card--reverse .profile-text-content{ margin-right:48vw; margin-left:0; }
 
@@ -260,6 +256,31 @@ async def team_style():
         .profile-text-content ul{ list-style-type:none; padding-left:1.6vw; margin:0; }
         .profile-text-content ul li{ position:relative; padding-left:1.6vw; margin-bottom:1.2vh; }
         .profile-text-content ul li::before{ content:'-'; position:absolute; left:0; color:#000; }
+        
+        /* --- Light Mode --- */
+        @media (prefers-color-scheme: light) {
+            .eclipse-glow-1,
+            .eclipse-glow-2 {
+                display: none;
+            }
+
+            .team-section-title {
+                background: none;
+                -webkit-background-clip: unset;
+                -webkit-text-fill-color: unset;
+                background-clip: unset;
+                text-fill-color: unset;
+                color: #111;
+            }
+
+            .team-section-title .highlight {
+                color: #3898F2; /* Blue color for the highlighted word */
+            }
+            
+            .team-section {
+                 background-color: #FFFFFF; /* Ensures a white background for light mode */
+            }
+        }
         
         /* Mobile Styles */
         @media (max-width: 768px) {

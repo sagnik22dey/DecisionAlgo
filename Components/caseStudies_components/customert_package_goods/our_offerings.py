@@ -1,6 +1,7 @@
 async def our_offerings_style():
     return """
     <style>
+        /* --- Default: Dark Mode --- */
         :root {
             --primary-blue: #5FC7FB;
             --primary-white: #FEFEFE;
@@ -15,7 +16,6 @@ async def our_offerings_style():
             box-sizing: border-box;
         }
 
-
         .offerings-section {
             width: 100vw;
             min-height: 100vh;
@@ -24,6 +24,8 @@ async def our_offerings_style():
             align-items: center;
             justify-content: center;
             padding: 10vh 5vw;
+            background-color: var(--background-dark);
+            transition: background-color 0.3s ease;
         }
 
         .section-title {
@@ -32,16 +34,19 @@ async def our_offerings_style():
         }
 
         .section-title h1 {
+            font-family: 'Exo 2', sans-serif;
             font-size: 4vw;
             line-height: 1.2;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: -0.02em;
             color: var(--primary-light-gray);
+            transition: color 0.3s ease;
         }
 
         .section-title h1 span {
             color: var(--primary-blue);
+            transition: color 0.3s ease;
         }
 
         .offerings-grid {
@@ -55,12 +60,12 @@ async def our_offerings_style():
         .offering-card {
             background-color: var(--card-bg);
             border-radius: 1.5vw;
-            padding: 6vh;;
+            padding: 6vh;
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
         }
         
         .offering-card:hover {
@@ -78,7 +83,8 @@ async def our_offerings_style():
             font-size: 2vw;
             line-height: 1.2;
             color: var(--primary-white);
-            width: 70%; /* Give space for the number */
+            width: 70%;
+            transition: color 0.3s ease;
         }
         
         .card-number {
@@ -90,6 +96,7 @@ async def our_offerings_style():
             position: absolute;
             top: 2.5vw;
             right: 2.5vw;
+            transition: color 0.3s ease;
         }
 
         .benefits-list {
@@ -107,6 +114,7 @@ async def our_offerings_style():
             font-size: 1.1vw;
             line-height: 1.4;
             color: var(--primary-white);
+            transition: color 0.3s ease;
         }
 
         .check-icon {
@@ -115,13 +123,51 @@ async def our_offerings_style():
             height: 1.5vw;
             margin-top: 0.2vw;
         }
+        
+        .check-icon path {
+            stroke: var(--primary-blue);
+            transition: stroke 0.3s ease;
+        }
+        
+        /* --- Light Mode --- */
+        @media (prefers-color-scheme: light) {
+            .offerings-section {
+                background-color: #FFFFFF;
+            }
+
+            .section-title h1 {
+                color: #111111;
+            }
+
+            .section-title h1 span {
+                color: #007AFF;
+            }
+            
+            .offering-card {
+                background-color: #2196F3;
+            }
+            
+            .offering-card:hover {
+                 box-shadow: 0 1vh 4vh rgba(33, 150, 243, 0.3);
+            }
+
+            .card-titles,
+            .card-number,
+            .benefits-list li {
+                color: #FFFFFF;
+            }
+            
+            .check-icon path {
+                stroke: #FFFFFF;
+            }
+        }
 
         /* --- Mobile View --- */
         @media (max-width: 768px) {
             .offerings-section {
                 padding: 5vh 5vw;
                 height: auto;
-                min-height: auto; /* Override desktop min-height */
+                min-height: auto;
             }
 
             .section-title h1 {
@@ -132,7 +178,7 @@ async def our_offerings_style():
             .offerings-grid {
                 grid-template-columns: 1fr;
                 gap: 5vh;
-                width: 100%; /* Use full width on mobile */
+                width: 100%;
             }
 
             .offering-card {
@@ -146,7 +192,7 @@ async def our_offerings_style():
 
             .card-titles {
                 font-size: 6.5vw;
-                width: 80%; /* Allow more space for the title on mobile */
+                width: 80%;
                 line-height: 1.3;
             }
 
@@ -170,7 +216,7 @@ async def our_offerings_style():
             .check-icon {
                 width: 5vw;
                 height: 5vw;
-                margin-top: 0.5vw; /* Fine-tune vertical alignment */
+                margin-top: 0.5vw;
             }
         }
     </style>
@@ -194,10 +240,10 @@ async def our_offerings_body():
                     <span class="card-number">01.</span>
                 </div>
                 <ul class="benefits-list">
-                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="#5FC7FB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Enhance end-to-end supply chain efforts to optimize and streamline business operations.</li>
-                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="#5FC7FB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Enhance customer contentment by optimizing service quality, on-time deliveries, and automating issue analysis for preemptive issue resolution.</li>
-                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="#5FC7FB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Boost cost-effectiveness and financial performance by streamlining expenses, investigating alternative procurement possibilities, and minimizing wastage.</li>
-                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="#5FC7FB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Achieve manufacturing brilliance by adopting a smart factory strategy and leveraging comprehensive digital data for enhancing quality and reliability.</li>
+                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Enhance end-to-end supply chain efforts to optimize and streamline business operations.</li>
+                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Enhance customer contentment by optimizing service quality, on-time deliveries, and automating issue analysis for preemptive issue resolution.</li>
+                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Boost cost-effectiveness and financial performance by streamlining expenses, investigating alternative procurement possibilities, and minimizing wastage.</li>
+                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Achieve manufacturing brilliance by adopting a smart factory strategy and leveraging comprehensive digital data for enhancing quality and reliability.</li>
                 </ul>
             </div>
 
@@ -208,10 +254,10 @@ async def our_offerings_body():
                     <span class="card-number">02.</span>
                 </div>
                 <ul class="benefits-list">
-                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="#5FC7FB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Realize added value through the utilization of revenue growth management (RGM) techniques, including pricing, promotions, and portfolio optimization.</li>
-                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="#5FC7FB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Maximize digital commerce effectiveness through the pursuit of product excellence, supply chain efficiency, and precise demand prediction.</li>
-                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="#5FC7FB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Elevate your business strategy with all-encompassing growth prediction and analytical resources, designed to inform your strategic decisions.</li>
-                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="#5FC7FB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Unleash your innovation potential with all-in-one solutions for research and development digitization.</li>
+                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Realize added value through the utilization of revenue growth management (RGM) techniques, including pricing, promotions, and portfolio optimization.</li>
+                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Maximize digital commerce effectiveness through the pursuit of product excellence, supply chain efficiency, and precise demand prediction.</li>
+                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Elevate your business strategy with all-encompassing growth prediction and analytical resources, designed to inform your strategic decisions.</li>
+                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Unleash your innovation potential with all-in-one solutions for research and development digitization.</li>
                 </ul>
             </div>
 
@@ -222,10 +268,10 @@ async def our_offerings_body():
                     <span class="card-number">03.</span>
                 </div>
                 <ul class="benefits-list">
-                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="#5FC7FB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Realize your sales potential through the implementation of an all-encompassing digital business platform and a cohesive contact strategy.</li>
-                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="#5FC7FB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Enhance sales results by employing efficient sales planning, which incorporates SKU optimization, target segmentation, and shelf performance analysis.</li>
-                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="#5FC7FB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Enhance your in-store ambiance with advanced shelf visual analysis, asset/display suggestions, and SRM activation evaluation.</li>
-                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="#5FC7FB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Optimize your sales capabilities by adopting a data-centric strategy employing Customer Genomics® solutions.</li>
+                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Realize your sales potential through the implementation of an all-encompassing digital business platform and a cohesive contact strategy.</li>
+                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Enhance sales results by employing efficient sales planning, which incorporates SKU optimization, target segmentation, and shelf performance analysis.</li>
+                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Enhance your in-store ambiance with advanced shelf visual analysis, asset/display suggestions, and SRM activation evaluation.</li>
+                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Optimize your sales capabilities by adopting a data-centric strategy employing Customer Genomics® solutions.</li>
                 </ul>
             </div>
 
@@ -236,10 +282,10 @@ async def our_offerings_body():
                     <span class="card-number">04.</span>
                 </div>
                 <ul class="benefits-list">
-                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="#5FC7FB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Enhance financial management and guarantee adequate cash flow by engaging in financial collaboration with instant insights and advanced data analysis.</li>
-                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="#5FC7FB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Leverage cutting-edge technology for forward-looking strategic financial planning, budget formulation, and foresight.</li>
-                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="#5FC7FB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Empower well-informed decision-making using sophisticated analytics, automation, and AI/ML within financial controllership.</li>
-                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="#5FC7FB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Improve financial decision-making by embracing forward-looking treasury and risk management.</li>
+                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Enhance financial management and guarantee adequate cash flow by engaging in financial collaboration with instant insights and advanced data analysis.</li>
+                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Leverage cutting-edge technology for forward-looking strategic financial planning, budget formulation, and foresight.</li>
+                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Empower well-informed decision-making using sophisticated analytics, automation, and AI/ML within financial controllership.</li>
+                    <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Improve financial decision-making by embracing forward-looking treasury and risk management.</li>
                 </ul>
             </div>
             

@@ -1,7 +1,7 @@
 async def robustData_style():
     return """
     <style>
-        /* --- Desktop First Styles --- */
+        /* --- Default: Dark Mode --- */
         .robust-feature-outer {
             border-bottom: 0.2vh solid #f0f0f0;
             border-right: 0.2vh solid #f0f0f0;
@@ -24,10 +24,12 @@ async def robustData_style():
             align-items: center;
             width: auto;
             height: 58vh;
+            transition: background 0.3s ease;
         }
 
         .robust-feature-title {
             text-align: center;
+            font-family: 'Exo 2', sans-serif;
             font-weight: 700;
             line-height: 1.3;
             font-size: 3vw;
@@ -73,10 +75,11 @@ async def robustData_style():
         .robust-feature-icon svg {
             width: 2.5vw;
             height: auto;
-            max-width: 62px; /* Maintain original max size */
+            max-width: 62px;
         }
 
         .robust-feature-card-title {
+            font-family: 'Exo 2', sans-serif;
             font-weight: 600;
             color: #fff;
             font-size: 2vh;
@@ -84,19 +87,74 @@ async def robustData_style():
         }
 
         .robust-feature-card-desc {
+            font-family: 'Poppins', sans-serif;
             color: #C6D6ED;
             font-size: 1.45vh;
             font-weight: 400;
+        }
+
+        /* --- Light Mode --- */
+        @media (prefers-color-scheme: light) {
+            .robust-feature-outer {
+                border: none;
+            }
+            
+            .robust-feature-content-wrapper {
+                background: linear-gradient(180deg, #2196F3 0%, #4436B1 91.05%);
+                margin: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 1vw;
+            }
+            
+            .robust-feature-title {
+                background: none;
+                -webkit-background-clip: unset;
+                -webkit-text-fill-color: unset;
+                background-clip: unset;
+                text-fill-color: unset;
+                color: #FFFFFF;
+            }
+            
+            .robust-feature-card {
+                background: transparent;
+                border: 0.19vh solid rgba(255, 255, 255, 0.4);
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+            }
+            
+            .robust-feature-card:hover {
+                box-shadow: none;
+                border-color: #FFFFFF;
+                background: rgba(255, 255, 255, 0.25);
+            }
+            
+            .robust-feature-card-title {
+                color: #FFFFFF;
+            }
+            
+            .robust-feature-card-desc {
+                color: #FFFFFF;
+                opacity: 0.85;
+            }
+
+            .robust-feature-icon svg rect {
+                stroke: #FFFFFF;
+            }
+
+            .robust-feature-icon svg path {
+                fill: #FFFFFF;
+            }
         }
 
         /* --- Mobile View Modifications --- */
         @media (max-width: 768px) {
             .robust-feature-outer {
                 width: 90vw;
-                height: auto; /* Allow container to grow with content */
+                height: auto;
                 border-radius: 4vw;
-                padding: 1vw;
-                border: none; /* Simplify outer border for mobile */
+                padding: 0;
+                border: none;
                 margin-top: -12vw;
             }
 
@@ -116,7 +174,7 @@ async def robustData_style():
             .robust-feature-cards {
                 flex-direction: column;
                 width: 100%;
-                gap: 5vw; /* Vertical gap between cards */
+                gap: 5vw;
                 margin-top: 8vw;
             }
 
@@ -125,7 +183,7 @@ async def robustData_style():
                 padding: 6vw 5vw;
                 border-radius: 3vw;
                 min-height: auto;
-                align-items: center; /* Center content on mobile */
+                align-items: center;
                 text-align: center;
             }
             
@@ -134,7 +192,7 @@ async def robustData_style():
             }
             
             .robust-feature-icon svg {
-                width: 15vw; /* Larger icon for mobile */
+                width: 15vw;
             }
 
             .robust-feature-card-title {
@@ -149,7 +207,6 @@ async def robustData_style():
         }
     </style>
     """
-
 async def robustData_body():
     return """
 <div class="robust-feature-outer">

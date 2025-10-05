@@ -58,7 +58,8 @@ async def pricing_banner_style():
             background-position: center;
             overflow: hidden;
             transition: height 0.3s ease-in-out;
-            margin-top: 5vw;
+            margin-top: 4.5vw;
+            border-radius: 0 0 2vw 2vw;
         }
 
         .pricing-hero-title {

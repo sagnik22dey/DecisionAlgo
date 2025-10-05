@@ -9,22 +9,29 @@ async def text_top_robot_section():
         </section>
     """
 
-
 async def style_top_robot_section():
     return """
         <style>
+            /* --- Default: Dark Mode --- */
             :root {
-            --primary-blue: #5FC7FB;
-            --primary-white: #FEFEFE;
-            --primary-gray: #CCCCCC;
-            --background-dark: #0A0A0A;
-            --card-bg: rgba(20, 20, 20, 0.4);
-            --card-border: rgba(95, 199, 251, 0.5);
-        }
+                --primary-blue: #5FC7FB;
+                --primary-white: #FEFEFE;
+                --primary-gray: #CCCCCC;
+                --background-dark: transparent;
+                --card-bg: rgba(20, 20, 20, 0.4);
+                --card-border: rgba(95, 199, 251, 0.5);
+            }
+
+            .heading-container section {
+                 background-color: var(--background-dark);
+                 padding-top: 5vh;
+                 padding-bottom: 5vh;
+            }
         
-        .heading-container {
+            .heading-container {
                 text-align: center;
                 margin-top: 5vw;
+                background-color: var(--background-dark);
             }
 
             .heading-container h1 {
@@ -47,20 +54,39 @@ async def style_top_robot_section():
                 background-clip: initial;
                 color: var(--primary-blue);
             }
+
+            /* --- Light Mode --- */
+            @media (prefers-color-scheme: light) {
+                .heading-container {
+                    background-color: #FFFFFF;
+                }
+
+                .heading-container section {
+                    background-color: #FFFFFF;
+                }
+
+                .heading-container h1 {
+                    background: none;
+                    -webkit-background-clip: unset;
+                    background-clip: unset;
+                    color: #111111;
+                }
+
+                .heading-container h1 span {
+                    color: #007AFF; /* A slightly more saturated blue for light mode */
+                }
+            }
             
             /* --- Mobile View Modifications --- */
             @media (max-width: 768px) {
                 .heading-container {
-                    /* Add more vertical space for better centering and add horizontal padding */
                     margin-top: 8vh;
                     margin-bottom: 8vh;
-                    padding: 0 5vw; /* Prevents text from touching screen edges */
+                    padding: 0 5vw;
                 }
 
                 .heading-container h1 {
-                    /* Use vw for a fluid font-size that scales with the screen width */
                     font-size: 6.5vw;
-                    /* Increase line-height for better readability on multiple lines */
                     line-height: 1.4;
                 }
             }

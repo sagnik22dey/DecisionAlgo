@@ -1,7 +1,7 @@
 async def robustData_style():
     return """
     <style>
-        /* --- Desktop First Styles --- */
+        /* --- Default: Dark Mode --- */
         .robust-feature-outer {
             border-bottom: 0.2vh solid #f0f0f0;
             border-left: 0.2vh solid #f0f0f0;
@@ -90,6 +90,59 @@ async def robustData_style():
             font-weight: 400;
         }
 
+        /* --- Light Mode --- */
+        @media (prefers-color-scheme: light) {
+            .robust-feature-outer {
+                border: none;
+            }
+            
+            .robust-feature-content-wrapper {
+                background: linear-gradient(145deg, #2196F3 0%, #4436B1 91.05%);
+                margin: 0;
+                width: 100%;
+                height: 100%;
+            }
+            
+            .robust-feature-title {
+                background: none;
+                -webkit-background-clip: unset;
+                -webkit-text-fill-color: unset;
+                background-clip: unset;
+                text-fill-color: unset;
+                color: #FFFFFF;
+            }
+            
+            .robust-feature-card {
+                background: rgba(255, 255, 255, 0.15);
+                border: 0.19vh solid rgba(255, 255, 255, 0.4);
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+            }
+            
+            .robust-feature-card:hover {
+                box-shadow: none;
+                border-color: #FFFFFF;
+                background: rgba(255, 255, 255, 0.25);
+            }
+            
+            .robust-feature-card-title {
+                color: #FFFFFF;
+            }
+            
+            .robust-feature-card-desc {
+                color: #FFFFFF;
+                opacity: 0.85;
+            }
+
+            .robust-feature-icon svg rect {
+                stroke: #FFFFFF;
+            }
+
+            .robust-feature-icon svg path {
+                fill: #FFFFFF;
+            }
+        }
+
         /* --- Mobile View Modifications --- */
         @media (max-width: 768px) {
             .robust-feature-outer {
@@ -151,6 +204,7 @@ async def robustData_style():
         }
     </style>
     """
+
 
 async def robustData_body():
     return """

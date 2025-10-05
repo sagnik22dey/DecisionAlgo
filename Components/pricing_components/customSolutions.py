@@ -13,7 +13,7 @@ async def custom_solutions_body():
             <p class="solutions-tagline">
                 Let's connect and take your business to the next level!
             </p>
-            <a href="#" class="consultation-btn">Free 1:1 Consultation</a>
+            <a href="/contactus" class="consultation-btn">Free 1:1 Consultation</a>
         </section>
     </section>
 
@@ -75,6 +75,7 @@ async def custom_solutions_style():
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;700;800&family=Poppins:wght@400;500;700&family=Urbanist:wght@400;700&display=swap");
 
+        /* --- Structural & Theme-Agnostic Styles --- */
         .custom-solutions-container {
             position: relative;
             display: flex;
@@ -82,7 +83,6 @@ async def custom_solutions_style():
             align-items: center;
             width: 100%;
             padding: 10vh 5vw;
-            background-color: transparent;
             box-sizing: border-box;
         }
 
@@ -90,7 +90,6 @@ async def custom_solutions_style():
             position: absolute;
             width: 82vw;
             height: 105%;
-            border-top: 0.15vw solid rgba(255, 255, 255, 255);
             border-radius: 3vw;
             top: 24vw;
             left: 50%;
@@ -102,11 +101,9 @@ async def custom_solutions_style():
             position: relative;
             z-index: 2;
             width: 88vw;
-            padding: 8vh 5vw; /* Default for desktop */
+            padding: 8vh 5vw;
             text-align: center;
             border-radius: 2.5vw;
-            background: linear-gradient(160deg, #2E2E2E 0%, #222222 100%);
-            box-shadow: inset 0 0.1vw 0.2vw rgba(255, 255, 255, 0.05), 0 1vw 3vw rgba(0, 0, 0, 0.6);
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
@@ -116,14 +113,9 @@ async def custom_solutions_style():
         }
 
         .solutions-headline {
-            font-size: 4vw; /* Default for desktop */
+            font-size: 4vw;
             font-weight: 700;
             text-transform: uppercase;
-            background: linear-gradient(90deg, rgba(235, 240, 243, 0.3) 8.85%, #EBF0F3 22.59%, #EBF0F3 57.4%, rgba(235, 239, 243, 0.72) 79.36%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-fill-color: transparent;
         }
 
         .solutions-list {
@@ -131,60 +123,91 @@ async def custom_solutions_style():
             text-align: left;
             font-size: 1.6vw;
             line-height: 1;
-            color: rgba(255, 255, 255, 0.85);
             padding: 0;
             margin-top: 4vh;
             margin-bottom: 1.5vh;
             max-width: 90%;
         }
         
-        .solutions-list li {
-            margin-bottom: 1.5vh;
-        }
-        
-        .solutions-list li::marker {
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 700;
-        }
+        .solutions-list li { margin-bottom: 1.5vh; }
+        .solutions-list li::marker { font-weight: 700; }
 
         .solutions-tagline {
-            font-size: 2.3vw; /* Default for desktop */
+            font-size: 2.3vw;
             font-weight: 500;
-            color: #FFFFFF;
             margin: 0;
         }
 
         .consultation-btn {
             display: inline-block;
-            padding: 1vw 1.5vw; /* Default for desktop */
-            background-color: #FFFFFF;
-            color: #000000;
-            font-size: 1.2vw; /* Default for desktop */
+            padding: 1vw 1.5vw;
+            font-size: 1.2vw;
             font-weight: 500;
             text-decoration: none;
             border-radius: 50vw;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
-            margin-top:2vh;
+            margin-top: 2vh;
         }
 
-        .consultation-btn:hover {
-            box-shadow: 0 0.5vw 2vw rgba(255, 255, 255,0.88);
+        /* --- Theming Section --- */
+
+        /* Light Theme */
+        @media (prefers-color-scheme: light) {
+            .custom-solutions-container { background-color: #FFFFFF; }
+            .solutions-background-card { display: none; }
+            .custom-solutions-section {
+                background-color: #2596F4;
+                box-shadow: 0 1vw 3vw rgba(37, 150, 244, 0.3);
+            }
+            .solutions-headline {
+                background: none;
+                -webkit-background-clip: initial;
+                -webkit-text-fill-color: initial;
+                color: #FFFFFF;
+            }
+            .solutions-list { color: rgba(255, 255, 255, 0.9); }
+            .solutions-list li::marker { color: #FFFFFF; }
+            .solutions-tagline { color: #FFFFFF; }
+            .consultation-btn {
+                background-color: #FFFFFF;
+                color: #1F2937;
+            }
+            .consultation-btn:hover { box-shadow: 0 0.5vw 2vw rgba(255, 255, 255, 0.4); }
+        }
+
+        /* Dark Theme */
+        @media (prefers-color-scheme: dark) {
+            .custom-solutions-container { background-color: transparent; }
+            .solutions-background-card {
+                border-top: 0.15vw solid rgba(255, 255, 255, 1);
+                display: block;
+            }
+            .custom-solutions-section {
+                background: linear-gradient(160deg, #2E2E2E 0%, #222222 100%);
+                box-shadow: inset 0 0.1vw 0.2vw rgba(255, 255, 255, 0.05), 0 1vw 3vw rgba(0, 0, 0, 0.6);
+            }
+            .solutions-headline {
+                background: linear-gradient(90deg, rgba(235, 240, 243, 0.3) 8.85%, #EBF0F3 22.59%, #EBF0F3 57.4%, rgba(235, 239, 243, 0.72) 79.36%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-fill-color: transparent;
+            }
+            .solutions-list { color: rgba(255, 255, 255, 0.85); }
+            .solutions-list li::marker { color: rgba(255, 255, 255, 0.9); }
+            .solutions-tagline { color: #FFFFFF; }
+            .consultation-btn {
+                background-color: #FFFFFF;
+                color: #000000;
+            }
+            .consultation-btn:hover { box-shadow: 0 0.5vw 2vw rgba(255, 255, 255, 0.88); }
         }
         
         @media (max-width: 768px) {
-            .custom-solutions-container{
-                position: relative;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                padding: 10vh 5vw;
-                background-color: transparent;
-                box-sizing: border-box;
+            .custom-solutions-container {
                 margin-top: -30vw;
             }
-            
-        )
+        }
     </style>
     """

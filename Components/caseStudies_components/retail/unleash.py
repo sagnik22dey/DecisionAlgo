@@ -3,7 +3,7 @@ async def unleash_style():
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap');
 
-        /* --- Desktop First Styles --- */
+        /* --- Default: Dark Mode --- */
         .unleash-section {
             display: flex;
             flex-direction: column;
@@ -12,6 +12,9 @@ async def unleash_style():
             padding: 10vh 5vw;
             width: 100%;
             box-sizing: border-box;
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+            --unleash-route-icon-url: url('../../Resources/Images/HomePage/route.png');
         }
 
         .unleash-title {
@@ -48,6 +51,8 @@ async def unleash_style():
             flex-direction: column;
             gap: 1.5vw;
             position: relative;
+            background-color: transparent;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
         }
 
         .unleash-card-header {
@@ -63,14 +68,16 @@ async def unleash_style():
             align-items: center;
             width: 3vw;
             height: 3vw;
-            min-width: 40px; /* prevent icon from getting too small */
+            min-width: 40px;
             min-height: 40px;
             background: #0A1015;
             border: 1px solid #3A4046;
             border-radius: 0.13vw;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
         }
 
         .unleash-icon-wrapper img {
+            content: var(--unleash-route-icon-url);
             width: 1.5vw;
             height: auto;
             min-width: 20px;
@@ -83,6 +90,7 @@ async def unleash_style():
             line-height: 1.2;
             text-transform: capitalize;
             color: #FFFFFF;
+            transition: color 0.3s ease;
         }
 
         .unleash-card-description {
@@ -93,6 +101,46 @@ async def unleash_style():
             text-transform: capitalize;
             color: #FFFFFF;
             opacity: 0.7;
+            transition: color 0.3s ease;
+        }
+
+        /* --- Light Mode --- */
+        @media (prefers-color-scheme: light) {
+            .unleash-section {
+                background-color: #FFFFFF;
+                --unleash-route-icon-url: url('../../Resources/Images/HomePage/route-light.png');
+            }
+
+            .unleash-title {
+                background: none;
+                -webkit-background-clip: unset;
+                background-clip: unset;
+                -webkit-text-fill-color: unset;
+                color: #111111;
+            }
+            
+            .unleash-title .highlight {
+                 color: #2196F3;
+            }
+
+            .unleash-card {
+                background-color: #2196F3;
+                border-color: transparent;
+            }
+
+            .unleash-card-title,
+            .unleash-card-description {
+                color: #FFFFFF;
+            }
+
+            .unleash-card-description {
+                opacity: 0.9;
+            }
+
+            .unleash-icon-wrapper {
+                background-color: #FFFFFF;
+                border-color: transparent;
+            }
         }
         
         /* --- Mobile View Modifications --- */
@@ -116,7 +164,7 @@ async def unleash_style():
 
             .unleash-card {
                 width: 100%;
-                height: auto; /* Let content define height */
+                height: auto;
                 padding: 6vw;
                 border-radius: 4vw;
                 gap: 3vh;
@@ -130,12 +178,10 @@ async def unleash_style():
                 width: 13vw;
                 height: 13vw;
                 border-radius: 1vw;
-                /* min-width/height are inherited and still apply */
             }
 
             .unleash-icon-wrapper img {
                 width: 6.5vw;
-                 /* min-width is inherited and still applies */
             }
 
             .unleash-card-title {
@@ -148,18 +194,17 @@ async def unleash_style():
         }
     </style>
 """
-
 async def unleash_body():
     return """
     <section class="unleash-section">
-        <h1 class="unleash-title">Unleash Innovation . Transform Tomorrow</h1>
+        <h1 class="unleash-title">Unleash Innovation . <span class="highlight">Transform Tomorrow</span></h1>
 
         <div class="unleash-grid">
             
             <article class="unleash-card">
                 <header class="unleash-card-header">
                     <div class="unleash-icon-wrapper">
-                        <img src="../../Resources/Images/HomePage/route.png" alt="route icon">
+                        <img alt="route icon">
                     </div>
                     <h2 class="unleash-card-title">AI-Driven<br>Personalization</h2>
                 </header>
@@ -171,7 +216,7 @@ async def unleash_body():
             <article class="unleash-card">
                 <header class="unleash-card-header">
                     <div class="unleash-icon-wrapper">
-                        <img src="../../Resources/Images/HomePage/route.png" alt="route icon">
+                        <img alt="route icon">
                     </div>
                     <h2 class="unleash-card-title">Smart Store<br>Transformation</h2>
                 </header>
@@ -183,7 +228,7 @@ async def unleash_body():
             <article class="unleash-card">
                 <header class="unleash-card-header">
                     <div class="unleash-icon-wrapper">
-                        <img src="../../Resources/Images/HomePage/route.png" alt="route icon">
+                        <img alt="route icon">
                     </div>
                     <h2 class="unleash-card-title">AI Chatbots For<br>Customer Support</h2>
                 </header>
@@ -195,7 +240,7 @@ async def unleash_body():
             <article class="unleash-card">
                 <header class="unleash-card-header">
                     <div class="unleash-icon-wrapper">
-                        <img src="../../Resources/Images/HomePage/route.png" alt="route icon">
+                        <img alt="route icon">
                     </div>
                     <h2 class="unleash-card-title">AI Fraud Detection</h2>
                 </header>
@@ -207,7 +252,7 @@ async def unleash_body():
             <article class="unleash-card">
                 <header class="unleash-card-header">
                     <div class="unleash-icon-wrapper">
-                        <img src="../../Resources/Images/HomePage/route.png" alt="route icon">
+                        <img alt="route icon">
                     </div>
                     <h2 class="unleash-card-title">AI-Powered Inventory<br>Forecasting</h2>
                 </header>

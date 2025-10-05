@@ -8,49 +8,117 @@ async def get_in_touch_body():
                 <img src="../../Resources/Images/ContactUs/world_map.png" alt="Stylized world map with location pins">
             </div>
 
-            <form class="contact-form" action="#" method="post" autocomplete="on" aria-label="Contact form">
-                <input class="field" id="name" name="name" type="text" placeholder="Name*" aria-label="Name" required>
-                <input class="field" id="email" name="email" type="email" placeholder="Email*" aria-label="Email" required>
-                <input class="field" id="subject" name="subject" type="text" placeholder="Subject*" aria-label="Subject" required>
-                <textarea class="field textarea" id="comments" name="comments" placeholder="Comments" aria-label="Comments"></textarea>
-                <button class="button" type="submit">Send Message</button>
+            <form class="contact-form" id="contact-form" autocomplete="on" aria-label="Contact form" onsubmit="return false;">
+                <input class="field" id="name" type="text" placeholder="Name*" aria-label="Name" required>
+                <input class="field" id="email" type="email" placeholder="Email*" aria-label="Email" required>
+                <input class="field" id="subject" type="text" placeholder="Subject*" aria-label="Subject" required>
+                <textarea class="field textarea" id="comments" placeholder="Comments" aria-label="Comments"></textarea>
+                <button class="button" id="submit-btn" type="button">Send Message</button>
+                <div id="form-message" class="form-message"></div>
             </form>
         </section>
     </section>
+    """
+
+async def get_in_touch_script():
+    return """
+    <script>
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize EmailJS with your public key
+            emailjs.init("o9t8TF0k4wl0JeGFw");
+
+            // Handle form submission
+            const form = document.getElementById('contact-form');
+            if (!form) {
+                console.error('Contact form not found');
+                return;
+            }
+
+            const submitBtn = document.getElementById('submit-btn');
+            
+            submitBtn.addEventListener('click', function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                const formMessage = document.getElementById('form-message');
+                const originalBtnText = submitBtn.textContent;
+                
+                // Disable button and show loading state
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+                formMessage.textContent = '';
+                formMessage.className = 'form-message';
+                
+                // Get form data
+                const formData = {
+                    name: document.getElementById('name').value,
+                    user_email: document.getElementById('email').value,
+                    subject: document.getElementById('subject').value,
+                    comments: document.getElementById('comments').value || 'No comments provided',
+                    time: new Date().toLocaleString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        hour12: true
+                    })
+                };
+                
+                console.log('Sending email with data:', formData);
+                
+                // Send email using EmailJS
+                emailjs.send('service_wkbsrmi', 'template_l6oxc9y', formData)
+                    .then(function(response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        formMessage.textContent = '✓ Query Received successfully! We will get back to you soon.';
+                        formMessage.className = 'form-message success';
+                        form.reset();
+                        
+                        // Re-enable button
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalBtnText;
+                        
+                        // Clear success message after 5 seconds
+                        setTimeout(function() {
+                            formMessage.textContent = '';
+                            formMessage.className = 'form-message';
+                        }, 5000);
+                    })
+                    .catch(function(error) {
+                        console.log('FAILED...', error);
+                        formMessage.textContent = '✗ Failed to send message. Please try again or contact us directly.';
+                        formMessage.className = 'form-message error';
+                        
+                        // Re-enable button
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalBtnText;
+                    });
+            });
+        });
+    </script>
 """
 
 
 async def get_in_touch_style():
     return """
 <style>
-        :root {
-            --bg: #111111;
-            --field-bg: #EFEFEF;
-            --placeholder-text: #888888;
-            --field-text: #333333;
-            --white: #ffffff;
-        }
-
-        /* base */
+        /* --- Base & Structural Styles (Theme-Agnostic) --- */
         * {
-            box-sizing: border-box
+            box-sizing: border-box;
         }
 
-        html,
-        body {
-            min-height: 100vh
+        html, body {
+            min-height: 100vh;
         }
 
         body {
             margin: 0;
-            background-color: var(--bg);
-            color: var(--white);
             font-family: 'Poppins', serif;
             font-size: max(1.2vh, 1.1vw);
             line-height: 1.3;
         }
 
-        /* layout */
         .wrap {
             min-height: 100vh;
             width: 100%;
@@ -68,28 +136,19 @@ async def get_in_touch_style():
             font-weight: 700;
             font-size: min(8vw, 10vh);
             letter-spacing: .1vw;
-            /* Metallic gradient effect */
-            background: linear-gradient(180deg, #FFFFFF 50%, #B0B0B0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-fill-color: transparent;
         }
 
         .stage {
             width: 90vw;
             max-width: 109.37vw;
-            /* Max width for large screens */
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: 5vw;
         }
 
-        /* left visual (world map image) */
         .map-container {
             flex: 1 1 55%;
-            /* Allow shrinking but prefer 55% width */
         }
 
         .map-container img {
@@ -98,23 +157,17 @@ async def get_in_touch_style():
             object-fit: contain;
         }
 
-
-        /* right form */
         .contact-form {
             flex: 1 1 40%;
-            /* Allow shrinking but prefer 40% width */
             display: flex;
             flex-direction: column;
             gap: 2.5vh;
         }
 
-        /* fields */
         .field {
             width: 100%;
             height: 7vh;
             display: block;
-            color: var(--field-text);
-            background: var(--field-bg);
             border: none;
             border-radius: 1.2vw;
             padding: 0 1.8vw;
@@ -128,46 +181,104 @@ async def get_in_touch_style():
             resize: vertical;
         }
 
-        /* placeholder */
-        .field::placeholder {
-            color: var(--placeholder-text);
-            opacity: 1;
-        }
-
-        .field:focus {
-            box-shadow: 0 0 0 0.3vw rgba(255, 255, 255, 0.2);
-        }
-
-        /* button */
         .button {
             height: 6.5vh;
             width: auto;
-            /* let padding define width */
             padding: 0 2.5vw;
-            background: var(--white);
-            color: var(--bg);
             font-weight: 700;
             font-size: 1.2vw;
             border: none;
             border-radius: 3vw;
-            /* Pill shape */
             letter-spacing: .05vw;
             cursor: pointer;
             align-self: flex-start;
-            /* Align to the left */
-            transition: transform .1s ease, filter .2s ease;
+            transition: transform .1s ease, filter .2s ease, background-color .2s ease;
         }
 
         .button:hover {
             transform: translateY(-.3vh);
-            filter: brightness(1.05)
+            filter: brightness(1.05);
         }
 
         .button:active {
             transform: translateY(.2vh);
         }
 
-        /* responsive */
+        .button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* form message */
+        .form-message {
+            margin-top: 1vh;
+            padding: 1.5vh 2vw;
+            border-radius: 1vw;
+            font-size: 1.1vw;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .form-message.success {
+            background-color: rgba(46, 204, 113, 0.1);
+            color: #2ecc71;
+            border: 1px solid rgba(46, 204, 113, 0.3);
+        }
+
+        .form-message.error {
+            background-color: rgba(231, 76, 60, 0.1);
+            color: #e74c3c;
+            border: 1px solid rgba(231, 76, 60, 0.3);
+        }
+
+        /* --- Theming Section --- */
+        
+        /* Light Theme */
+        @media (prefers-color-scheme: light) {
+            .wrap { background-color: #FFFFFF; }
+            h1 {
+                /* Solid black text */
+                background: none;
+                -webkit-background-clip: initial;
+                -webkit-text-fill-color: initial;
+                color: #111111;
+            }
+            .field {
+                background-color: #F0F2F5;
+                color: #1A202C;
+            }
+            .field::placeholder { color: #6B7280; opacity: 1; }
+            .field:focus { box-shadow: 0 0 0 0.3vw rgba(37, 150, 244, 0.3); }
+            .button {
+                background-color: #2596F4;
+                color: #FFFFFF;
+            }
+        }
+
+        /* Dark Theme */
+        @media (prefers-color-scheme: dark) {
+            .wrap { background-color: #111111; }
+            h1 {
+                /* Metallic gradient effect */
+                background: linear-gradient(180deg, #FFFFFF 50%, #B0B0B0 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-fill-color: transparent;
+            }
+            .field {
+                background-color: #EFEFEF;
+                color: #333333;
+            }
+            .field::placeholder { color: #888888; opacity: 1; }
+            .field:focus { box-shadow: 0 0 0 0.3vw rgba(255, 255, 255, 0.2); }
+            .button {
+                background-color: #FFFFFF;
+                color: #111111;
+            }
+        }
+
+        /* Responsive Structural Adjustments */
         @media (max-width: 768px) {
             .stage {
                 flex-direction: column;
@@ -195,5 +306,5 @@ async def get_in_touch_style():
                 border-radius: 8vw;
             }
         }
-        </style>
+</style>
 """

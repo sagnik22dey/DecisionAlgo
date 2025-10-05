@@ -1,36 +1,25 @@
-async def text_top_robot_section():
-    return """
-        <section>
-            <div class="heading-container">
-                <h1>
-                    <span>Leading Enterprises</span> Across Various <br>
-                    Consumer Goods <span class="text-white">Corporations</span> <span>Utilize</span> <br>
-                    <span>Our Solutions.</span>
-                </h1>
-            </div>
-        </section>
-    """
-    
-
-
 async def style_top_robot_section():
     return """
         <style>
+            /* --- Default: Dark Mode --- */
             :root {
-            --primary-blue: #5FC7FB;
-            --primary-white: #FEFEFE;
-            --primary-gray: #CCCCCC;
-            --background-dark: #0A0A0A;
-            --card-bg: rgba(20, 20, 20, 0.4);
-            --card-border: rgba(95, 199, 251, 0.5);
-        }
+                --primary-blue: #5FC7FB;
+                --primary-white: #FEFEFE;
+                --primary-gray: #CCCCCC;
+                --background-dark: #0A0A0A;
+            }
+
+            .heading-section-wrapper {
+                background-color: var(--background-dark);
+                padding: 5vw 0;
+            }
         
-        .heading-container {
+            .heading-container {
                 text-align: center;
-                margin-top: 5vw;
             }
 
             .heading-container h1 {
+                font-family: 'Exo 2', sans-serif;
                 font-size: 3.2vw;
                 line-height: 1.2;
                 font-weight: 700;
@@ -46,19 +35,47 @@ async def style_top_robot_section():
                 color: var(--primary-white);
             }
             
-        /* --- Mobile View --- */
-        @media (max-width: 768px) {
-            .heading-container {
-                margin-top: 10vh;
-                padding: 0 5vw; /* Add horizontal padding to prevent text from touching edges */
+            /* --- Light Mode --- */
+            @media (prefers-color-scheme: light) {
+                .heading-section-wrapper {
+                    background-color: #FFFFFF;
+                }
+
+                .heading-container h1 {
+                    color: #111111; /* Default text becomes black */
+                }
+
+                /* In light mode, all spans become blue to match the image */
+                .heading-container h1 span,
+                .heading-container h1 .text-white {
+                    color: #007AFF;
+                }
             }
 
-            .heading-container h1 {
-                font-size: 4.3vw; /* Use vw for responsive font size */
-                line-height: 1.3; /* Adjust line height for better readability on smaller screens */
-            }
-        }
+            /* --- Mobile View --- */
+            @media (max-width: 768px) {
+                .heading-section-wrapper {
+                    padding: 10vh 5vw;
+                }
 
+                .heading-container h1 {
+                    font-size: 4.3vw;
+                    line-height: 1.3;
+                }
+            }
         </style>
-        
+    """
+
+
+async def text_top_robot_section():
+    return """
+        <section class="heading-section-wrapper">
+            <div class="heading-container">
+                <h1>
+                    <span>Leading Enterprises</span> Across Various <br>
+                    Consumer Goods <span class="text-white">Corporations</span> <span>Utilize</span> <br>
+                    <span>Our Solutions.</span>
+                </h1>
+            </div>
+        </section>
     """

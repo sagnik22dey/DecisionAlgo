@@ -25,6 +25,7 @@ async def contactUs():
     flags_css = await locations_style()
     getInTouch_html = await get_in_touch_body()
     getInTouch_css = await get_in_touch_style()
+    getInTouch_script = await get_in_touch_script()
 
 
     return f"""
@@ -36,6 +37,8 @@ async def contactUs():
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700&family=Jost:wght@400&family=Poppins:wght@400&display=swap" rel="stylesheet">
+        <!-- EmailJS SDK -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
         <title>Contact Us</title>
         <style>
         body {{
@@ -57,6 +60,7 @@ async def contactUs():
         {getInTouch_html}
         
         {footer_html}
+        {getInTouch_script}
         </body>
     </html>
 """

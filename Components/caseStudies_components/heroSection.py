@@ -26,6 +26,7 @@ async def heroSection_style():
             overflow: hidden;
             transition: height 0.3s ease-in-out;
             margin-top: 5vw;
+            border-radius: 0 0 2vw 2vw;
         }
         .contact-title {
             /* Font and Text Styling */

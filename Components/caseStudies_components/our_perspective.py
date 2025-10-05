@@ -8,7 +8,7 @@ async def our_perspective_style():
             box-sizing: border-box;
         }
 
-        /* --- Perspective Section Styles --- */
+        /* --- Default: Dark Mode --- */
         #perspective-section {
             width: 100%;
             display: flex;
@@ -17,14 +17,15 @@ async def our_perspective_style():
             position: relative;
             overflow: hidden;
             padding: 10vw 5vw;
-            font-family: 'Exo 2', sans-serif; /* Assuming a default font */
-            color: #FEFEFE; /* Assuming a default text color */
-            background-color: #0A0A0A; /* Assuming a default background */
+            font-family: 'Exo 2', sans-serif;
+            color: #FEFEFE;
+            background-color: transparent;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .perspective-container {
             width: 80%;
-            max-width: 93.75vw; /* Cap width on very large screens */
+            max-width: 93.75vw;
             text-align: center;
             position: relative;
             z-index: 1;
@@ -39,12 +40,13 @@ async def our_perspective_style():
         }
         
         .perspective-container .section-title .highlight {
-            color: #38bdf8; /* A bright, modern blue */
+            color: #38bdf8;
+            transition: color 0.3s ease;
         }
 
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Creates the 3-column layout */
+            grid-template-columns: repeat(3, 1fr);
             gap: 4vw;
             transition: all 0.3s ease-in-out;
             margin-top: 7vw;
@@ -66,13 +68,14 @@ async def our_perspective_style():
             height: 3.5vw;
             border-radius: 0.8vw;
             margin-bottom: 3vw;
+            transition: background 0.3s ease;
         }
 
-        .icon-container svg {
-            width: 50%;
-            height: 50%;
+        .icon-container svg path {
+            transition: fill 0.3s ease;
+            fill: #0C0C0C; /* Explicitly set for dark mode */
         }
-
+        
         .perspective-card h3 {
             font-weight: 600;
             line-height: 1.2;
@@ -84,7 +87,8 @@ async def our_perspective_style():
             color: #bdbdbd;
             line-height: 1.6;
             font-size: 1.1vw;
-            max-width: 30ch; /* Limits line length for readability */
+            max-width: 30ch;
+            transition: color 0.3s ease;
         }
 
         .eclipse-glow {
@@ -101,6 +105,34 @@ async def our_perspective_style():
             z-index: 0;
             opacity: 0.5;
             pointer-events: none;
+        }
+
+        /* --- Light Mode --- */
+        @media (prefers-color-scheme: light) {
+            #perspective-section {
+                background-color: #FFFFFF;
+                color: #111111;
+            }
+
+            .perspective-container .section-title .highlight {
+                color: #007AFF;
+            }
+            
+            .icon-container {
+                background: linear-gradient(160deg, #2196F3, #5FC7FB);
+            }
+
+            .icon-container svg path {
+                fill: #FFFFFF;
+            }
+
+            .perspective-card p {
+                color: #555555;
+            }
+
+            .eclipse-glow {
+                display: none;
+            }
         }
         
         /* --- Mobile View --- */
@@ -154,7 +186,7 @@ async def our_perspective_style():
             .perspective-card p {
                 font-size: 4vw;
                 line-height: 1.6;
-                max-width: 100%; /* Remove character limit for better flow on mobile */
+                max-width: 100%;
             }
 
             .eclipse-glow {
@@ -170,7 +202,7 @@ async def our_perspective_style():
 """
 
 
-async def our_perspective_body(h3_1a, h3_1b,p_1,h3_2a, h3_2b,p_2,h3_3a, h3_3b,p_3):
+async def our_perspective_body(h3_1a, h3_1b, p_1, h3_2a, h3_2b, p_2, h3_3a, h3_3b, p_3):
     return f"""    
     <section id="perspective-section">
         <div class="perspective-container">

@@ -3,32 +3,32 @@ async def footer_body():
         <footer class="footer-container">
             <!-- Top Section: Logo & Social Links -->
             <div class="footer-top">
-                <img src="../../Resources/Images/HomePage/silver_logo.png" alt="Decisionalgo Logo" class="logo">
+                <img src="/Resources/Images/HomePage/decisionalgo_logo_footer.png" alt="Decisionalgo Logo" class="logo">
                 <div class="social-links">
-                    <a href="#">
+                    <a href="/contactus">
                         <span>Instagram</span>
                         <span class="social-arrow">
                             <svg viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M3.75 12.5L20.25 12.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M13.5 5.75V5.75C14.6595 8.55205 16.8074 10.8309 19.5361 12.1538L20.25 12.5L19.1908 13.0777C16.6674 14.4542 14.6674 16.6233 13.5 19.25V19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M3.75 12.5L20.25 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M13.5 5.75V5.75C14.6595 8.55205 16.8074 10.8309 19.5361 12.1538L20.25 12.5L19.1908 13.0777C16.6674 14.4542 14.6674 16.6233 13.5 19.25V19.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </span>
                     </a>
-                    <a href="#">
+                    <a href="/contactus">
                         <span>Facebook</span>
                         <span class="social-arrow">
                            <svg viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M3.75 12.5L20.25 12.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M13.5 5.75V5.75C14.6595 8.55205 16.8074 10.8309 19.5361 12.1538L20.25 12.5L19.1908 13.0777C16.6674 14.4542 14.6674 16.6233 13.5 19.25V19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M3.75 12.5L20.25 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M13.5 5.75V5.75C14.6595 8.55205 16.8074 10.8309 19.5361 12.1538L20.25 12.5L19.1908 13.0777C16.6674 14.4542 14.6674 16.6233 13.5 19.25V19.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </span>
                     </a>
-                    <a href="#">
+                    <a href="/contactus">
                         <span>YouTube</span>
                         <span class="social-arrow">
                             <svg viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M3.75 12.5L20.25 12.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M13.5 5.75V5.75C14.6595 8.55205 16.8074 10.8309 19.5361 12.1538L20.25 12.5L19.1908 13.0777C16.6674 14.4542 14.6674 16.6233 13.5 19.25V19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M3.75 12.5L20.25 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M13.5 5.75V5.75C14.6595 8.55205 16.8074 10.8309 19.5361 12.1538L20.25 12.5L19.1908 13.0777C16.6674 14.4542 14.6674 16.6233 13.5 19.25V19.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </span>
                     </a>
@@ -40,51 +40,51 @@ async def footer_body():
                 <div class="link-column">
                     <h3>Industries</h3>
                     <ul>
-                        <li><a href="/casestudy/customer_package_goods" style="color: white; text-decoration: none;">Consumer Packaged Goods</a></li>
-                        <li><a href="/casestudy/retail_firm" style="color: white; text-decoration: none;">Retail</a></li>
-                        <li><a href="/casestudy/financial" style="color: white; text-decoration: none;">Financial Services</a></li>
-                        <li><a href="/casestudy/insurance" style="color: white; text-decoration: none;">Insurance</a></li>
-                        <li><a href="/casestudy/tech_media_telecom" style="color: white; text-decoration: none;">Technology, Media & Telecom</a></li>
-                        <li><a href="/casestudy/healthcare" style="color: white; text-decoration: none;">HealthCare & Life Sciences</a></li>
+                        <li><a href="/casestudy/customer_package_goods">Consumer Packaged Goods</a></li>
+                        <li><a href="/casestudy/retail_firm">Retail</a></li>
+                        <li><a href="/casestudy/finance">Financial Services</a></li>
+                        <li><a href="/casestudy/insurance">Insurance</a></li>
+                        <li><a href="/casestudy/tech_media_telecom">Technology, Media & Telecom</a></li>
+                        <li><a href="/casestudy/healthcare">HealthCare & Life Sciences</a></li>
                     </ul>
                 </div>
                 <div class="link-column">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="/casestudy/customer_package_goods" style="color: white; text-decoration: none;">Case Studies</a></li>
-                        <li><a href="/aboutus" style="color: white; text-decoration: none;">About Us</a></li>
-                        <li><a href="/pricing" style="color: white; text-decoration: none;">Pricing</a></li>
-                        <li><a href="/contactus" style="color: white; text-decoration: none;">Contact Us</a></li>
+                        <li><a href="/casestudy/customer_package_goods">Case Studies</a></li>
+                        <li><a href="/aboutus">About Us</a></li>
+                        <li><a href="/pricing">Pricing</a></li>
+                        <li><a href="/contactus">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
 
             <!-- Mobile Social Links Section (Hidden on Desktop) -->
             <div class="mobile-social-links">
-                <a href="#">
+                <a href="/contactus">
                     <span>Instagram</span>
                     <span class="social-arrow">
                         <svg viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.75 12.5L20.25 12.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M13.5 5.75V5.75C14.6595 8.55205 16.8074 10.8309 19.5361 12.1538L20.25 12.5L19.1908 13.0777C16.6674 14.4542 14.6674 16.6233 13.5 19.25V19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.75 12.5L20.25 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13.5 5.75V5.75C14.6595 8.55205 16.8074 10.8309 19.5361 12.1538L20.25 12.5L19.1908 13.0777C16.6674 14.4542 14.6674 16.6233 13.5 19.25V19.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </span>
                 </a>
-                <a href="#">
+                <a href="/contactus">
                     <span>Facebook</span>
                     <span class="social-arrow">
                        <svg viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.75 12.5L20.25 12.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M13.5 5.75V5.75C14.6595 8.55205 16.8074 10.8309 19.5361 12.1538L20.25 12.5L19.1908 13.0777C16.6674 14.4542 14.6674 16.6233 13.5 19.25V19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.75 12.5L20.25 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13.5 5.75V5.75C14.6595 8.55205 16.8074 10.8309 19.5361 12.1538L20.25 12.5L19.1908 13.0777C16.6674 14.4542 14.6674 16.6233 13.5 19.25V19.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </span>
                 </a>
-                <a href="#">
+                <a href="/contactus">
                     <span>YouTube</span>
                     <span class="social-arrow">
                         <svg viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.75 12.5L20.25 12.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M13.5 5.75V5.75C14.6595 8.55205 16.8074 10.8309 19.5361 12.1538L20.25 12.5L19.1908 13.0777C16.6674 14.4542 14.6674 16.6233 13.5 19.25V19.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.75 12.5L20.25 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13.5 5.75V5.75C14.6595 8.55205 16.8074 10.8309 19.5361 12.1538L20.25 12.5L19.1908 13.0777C16.6674 14.4542 14.6674 16.6233 13.5 19.25V19.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </span>
                 </a>
@@ -101,25 +101,47 @@ async def footer_body():
         </footer>
     """
 
+
 async def footer_style():
     return """ 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        /* --- THEME VARIABLES --- */
+        :root {
+            /* Light Theme (Default) */
+            --footer-bg: #F0F8FF; /* AliceBlue background as requested */
+            --footer-shadow: 0px -11px 18.5px rgba(0, 0, 0, 0); /* Top shadow as requested */
+            --footer-text-primary: #1A202C;
+            --footer-text-secondary: #4A5568;
+            --footer-border: transparent; /* Hide border to emphasize shadow */
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                /* Dark Theme Overrides */
+                --footer-bg: linear-gradient(293.29deg, #090909 0.66%, rgba(37, 37, 37, 0.85) 27.54%, rgba(84, 84, 84, 0.62) 72.03%);
+                --footer-shadow: none; /* No shadow in dark mode */
+                --footer-text-primary: #FFFFFF;
+                --footer-text-secondary: rgba(255, 255, 255, 0.7);
+                --footer-border: rgba(221, 215, 222, 0.5); /* Restore subtle border for dark mode */
+            }
+        }
+    
         /* --- Base & Desktop Styles --- */
-        
         .footer-container {
             font-family: 'Exo 2', sans-serif;
-            background: linear-gradient(293.29deg, #090909 0.66%, rgba(37, 37, 37, 0.85) 27.54%, rgba(84, 84, 84, 0.62) 72.03%);
+            background: var(--footer-bg);
+            color: var(--footer-text-secondary);
             display: flex;
             flex-direction: column;
             border-radius: 3vw 3vw 0 0;
-            color: #ffffff;
             padding: 4vh 5vw;
             gap: 4vh;
             box-sizing: border-box;
-            border-top: 0.1vh solid #DDD7DE;
+            border-top: 0.1vh solid var(--footer-border);
+            box-shadow: var(--footer-shadow);
         }
 
         .footer-top {
@@ -133,7 +155,7 @@ async def footer_style():
 
         .logo {
             width: 50vw;
-            max-width: 50vw; /* Max size for very large screens */
+            max-width: 50vw;
             height: auto;
             object-fit: contain;
         }
@@ -153,13 +175,13 @@ async def footer_style():
             align-items: center;
             width: 9vw;
             transition: opacity 0.3s ease;
-            opacity: 0.7;
+            opacity: 1;
             text-decoration: none;
-            color: inherit;
+            color: var(--footer-text-secondary);
         }
 
         .social-links a:hover {
-            opacity: 1;
+            opacity: 0.8;
         }
         
         .social-arrow svg {
@@ -167,10 +189,7 @@ async def footer_style():
             height: auto;
         }
 
-        /* Hide mobile social links on desktop */
-        .mobile-social-links {
-            display: none;
-        }
+        .mobile-social-links { display: none; }
 
         .footer-middle {
             display: flex;
@@ -186,24 +205,24 @@ async def footer_style():
             font-size: 1.5vw;
             font-weight: 600;
             margin: 0 0 2vh 0;
-            background: linear-gradient(90.01deg, #EBF3F3 16.31%, #EBF3F3 94.45%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: var(--footer-text-primary);
         }
-
-        .link-column ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
+        
+        .link-column ul { list-style: none; padding: 0; margin: 0; }
         .link-column ul li {
             font-size: 0.9vw;
             font-weight: 400;
-            opacity: 0.7;
             line-height: 1.8;
             padding-left: 0.5vw;
+        }
+        
+        .link-column ul li a {
+            color: var(--footer-text-secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .link-column ul li a:hover {
+            color: var(--footer-text-primary);
         }
         
         .link-column ul li::before {
@@ -212,163 +231,55 @@ async def footer_style():
              opacity: 0.8;
         }
 
-        .footer-bottom {
-            display: flex;
-            flex-direction: column;
-            gap: 3vh;
-        }
+        .footer-bottom { display: flex; flex-direction: column; gap: 3vh; }
+        .separator { width: 100%; border: 0; height: 0.1vh; background-color: var(--footer-border); opacity: 1; }
+        .bottom-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5vw; }
 
-        .separator {
-            width: 100%;
-            border: 0;
-            height: 0.1vh;
-            background-color: #DDD7DE;
-            opacity: 0.5;
-        }
-
-        .bottom-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1.5vw;
-        }
-
-        .copyright {
-            font-size: 1.3vw;
-            font-weight: 700;
-            margin: 0;
-            background: linear-gradient(90.01deg, rgba(235, 243, 243, 0.3) 0.01%, #EBF3F3 18.63%, #EBF3F3 65.13%, rgba(235, 243, 243, 0.3) 94.45%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            padding-left: 2vw;
-        }
-
-        .partner {
+        .copyright, .partner {
             font-size: 1.1vw;
             font-weight: 400;
             margin: 0;
-            opacity: 0.9;
-            padding-right: 2vw;
+            color: var(--footer-text-primary);
         }
+        .copyright { padding-left: 2vw; }
+        .partner { padding-right: 2vw; }
 
-        /* --- Elegant & Aesthetic Mobile View --- */
-        @media (max-width: 767px) {
-            .footer-container {
-                padding: 8vh 6vw;
-                gap: 6vh;
-                border-radius: 8vw 8vw 0 0;
-                display: flex;
-                flex-direction: column;
-            }
-
-            .footer-top {
-                display: flex;
-                flex-direction: column;
-                align-items: center; /* Center logo */
-                gap: 6vh;
-                padding: 0; /* Reset padding */
-                order: 1; /* Logo section first */
-            }
-            
-            .logo {
-                width: 50vw; /* Larger, more prominent logo */
-                max-width: 200px;
-            }
-            
-            /* Hide original social links in footer-top for mobile */
-            .footer-top .social-links {
-                display: none;
-            }
-
-            .footer-middle {
-                flex-direction: row; /* Display link columns side by side */
-                justify-content: space-between; /* Space them evenly */
-                text-align: center; /* Center headings and links */
-                gap: 8vw; /* Adequate spacing between columns */
-                order: 2; /* Middle section second */
-            }
-            
-            .link-column {
-                padding: 0;
-                flex: 1; /* Each column takes equal space */
-                min-width: 0; /* Allow shrinking if needed */
-            }
-
+        /* Dark Mode Specific Gradient Text */
+        @media (prefers-color-scheme: dark) {
             .link-column h3 {
-                font-size: 5.5vw;
-                margin-bottom: 2vh;
-                text-align: left !important;
+                background: linear-gradient(90.01deg, #EBF3F3 16.31%, #EBF3F3 94.45%);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
             }
-
-            .link-column ul li {
-                font-size: 3vw; /* Slightly smaller font for better fit */
-                line-height: 1.8; /* Tighter line height for mobile */
-                padding-left: 0;
-                text-align: left;
-            }
-            
-            .link-column ul li::before {
-                content: ""; /* Remove bullet points for cleaner look */
-                margin-right: 0;
-            }
-            
-            /* Show and style mobile social links */
-            .mobile-social-links {
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                gap: 8vw;
-                padding: 0;
-                width: 100%;
-                order: 3; /* Position after footer-middle */
-            }
-
-            .mobile-social-links a {
-                font-size: 4vw;
-                font-weight: 400;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: auto;
-                transition: opacity 0.3s ease;
-                opacity: 0.7;
-                text-decoration: none;
-                color: inherit;
-            }
-
-            .mobile-social-links a:hover {
-                opacity: 1;
-            }
-            
-            .mobile-social-links .social-arrow {
-                display: none; /* Hide arrow icon for a cleaner mobile look */
-            }
-
-            .footer-bottom {
-                order: 4; /* Bottom section is last */
-                gap: 3vh;
-            }
-            
-            .bottom-content {
-                flex-direction: column; /* Stack copyright and partner */
-                text-align: center;
-                gap: 1.5vh;
-            }
-
             .copyright {
-                font-size: 4vw;
-                padding: 0;
+                background: linear-gradient(90.01deg, rgba(235, 243, 243, 0.3) 0.01%, #EBF3F3 18.63%, #EBF3F3 65.13%, rgba(235, 243, 243, 0.3) 94.45%);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
             }
-
-            .partner {
-                font-size: 3.5vw;
-                padding: 0;
-            }
+        }
+        
+        /* --- Mobile View --- */
+        @media (max-width: 767px) {
+            .footer-container { padding: 8vh 6vw; gap: 6vh; border-radius: 8vw 8vw 0 0; display: flex; flex-direction: column; }
+            .footer-top { display: flex; flex-direction: column; align-items: center; gap: 6vh; padding: 0; order: 1; }
+            .logo { width: 50vw; max-width: 200px; }
+            .footer-top .social-links { display: none; }
+            .footer-middle { flex-direction: row; justify-content: space-between; text-align: center; gap: 8vw; order: 2; }
+            .link-column { padding: 0; flex: 1; min-width: 0; }
+            .link-column h3 { font-size: 5.5vw; margin-bottom: 2vh; text-align: left !important; }
+            .link-column ul li { font-size: 3vw; line-height: 1.8; padding-left: 0; text-align: left; }
+            .link-column ul li::before { content: ""; margin-right: 0; }
+            .mobile-social-links { display: flex; flex-direction: row; justify-content: center; gap: 8vw; padding: 0; width: 100%; order: 3; }
+            .mobile-social-links a { font-size: 4vw; font-weight: 400; display: flex; justify-content: space-between; align-items: center; width: auto; transition: opacity 0.3s ease; text-decoration: none; color: var(--footer-text-secondary); }
+            .mobile-social-links a:hover { opacity: 0.8; }
+            .mobile-social-links .social-arrow { display: none; }
+            .footer-bottom { order: 4; gap: 3vh; }
+            .bottom-content { flex-direction: column; text-align: center; gap: 1.5vh; }
+            .copyright { font-size: 4vw; padding: 0; }
+            .partner { font-size: 3.5vw; padding: 0; }
         }
     </style>
     """
 
-async def footer_script():
-    return "" # No script is needed with the pure CSS solution
