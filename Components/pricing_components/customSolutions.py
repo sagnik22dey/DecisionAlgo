@@ -13,7 +13,7 @@ async def custom_solutions_body():
             <p class="solutions-tagline">
                 Let's connect and take your business to the next level!
             </p>
-            <a href="#" class="consultation-btn">Free 1:1 Consultation</a>
+            <a href="/contactus" class="consultation-btn">Free 1:1 Consultation</a>
         </section>
     </section>
 

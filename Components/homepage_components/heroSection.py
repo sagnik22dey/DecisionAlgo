@@ -12,7 +12,7 @@ async def heroSection_body():
         <div class="hero-content">
             <h1>Is your Business drowning in Data but, <span class="highlight">Starving for </br> Insights?</span></h1>
             <p>Transform frustration into fortune with AI solutions that eliminate data headaches, accelerate decision-making, and drive measurable ROI.</p>
-            <a href="#" class="cta-button">
+            <a href="/contactus" class="cta-button">
                 <span>Discover How</span>
             </a>
         </div>

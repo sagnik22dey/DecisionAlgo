@@ -3,7 +3,7 @@ async def lets_talk_body():
 
     <section class="section-1">
         <!-- Top pill -->
-        <a href='#' class="cta">Let’s Talk</a>
+        <a href='/contactus' class="cta">Let’s Talk</a>
 
         <!-- Tagline -->
         <h2 class="tagline">
