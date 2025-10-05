@@ -7,7 +7,7 @@ async def innovation_body():
                 <div class="innovation-header">
                     <h1><span class="highlight">Award-Winning</span><br>Innovation</h1>
                     <p>At DecisionAlgo, we turn data into actionable insights that fuel business growth. Recognized by Startup India and backed by industry giants like AWS and DigitalOcean, we empower businesses with cutting-edge AI, automation, and data-driven solutions.</p>
-                    <a href="#" class="read-more-btn">
+                    <a href="/contactus" class="read-more-btn">
                         <span>Read More</span>
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M2 8H10M10 8L7.33333 5.33333M10 8L7.33333 10.6667M8 14C9.5913 14 11.1174 13.3679 12.2426 12.2426C13.3679 11.1174 14 9.5913 14 8C14 6.4087 13.3679 4.88258 12.2426 3.75736C11.1174 2.63214 9.5913 2 8 2" stroke-linecap="round" stroke-linejoin="round"/>

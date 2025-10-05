@@ -27,7 +27,7 @@ async def see_data_body():
             <p class="see-data-description">
                 Make faster, smarter decisions with a dashboard that works for you.
             </p>
-            <a href="#" class="get-started-btn">Get Started Now</a>
+            <a href="/contactus" class="get-started-btn">Get Started Now</a>
         </section>
     </div>
 """

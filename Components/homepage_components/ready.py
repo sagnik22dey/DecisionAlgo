@@ -29,8 +29,8 @@ async def ready_body():
 
         <!-- Buttons (Moved here to be a sibling for layout control) -->
         <div class="buttons-container">
-            <a href="#" class="button primary-button">Get a Free Consultation</a>
-            <a href="#" class="button secondary-button">Try Our Solutions</a>
+            <a href="/contactus" class="button primary-button">Get a Free Consultation</a>
+            <a href="/contactus" class="button secondary-button">Try Our Solutions</a>
         </div>
     </main>
 """
