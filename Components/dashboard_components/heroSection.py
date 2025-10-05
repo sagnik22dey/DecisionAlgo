@@ -16,7 +16,7 @@ async def heroSection_body():
               <p class="hero-sub">Tired of messy spreadsheets?</p>
               <p class="hero-sub">Get all the key metrics in one sleek, interactive dashboard.</p>
               <p class="hero-sub hero-sub-last">No more digging for data—just clear, instant insights.</p>
-              <a href="#" class="cta-outline">Try A Live Demo</a>
+              <a href="/contactus" class="cta-outline">Try A Live Demo</a>
             </div>
         </div>
 

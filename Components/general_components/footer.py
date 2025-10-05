@@ -5,7 +5,7 @@ async def footer_body():
             <div class="footer-top">
                 <img src="/Resources/Images/HomePage/decisionalgo_logo_footer.png" alt="Decisionalgo Logo" class="logo">
                 <div class="social-links">
-                    <a href="#">
+                    <a href="/contactus">
                         <span>Instagram</span>
                         <span class="social-arrow">
                             <svg viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -14,7 +14,7 @@ async def footer_body():
                             </svg>
                         </span>
                     </a>
-                    <a href="#">
+                    <a href="/contactus">
                         <span>Facebook</span>
                         <span class="social-arrow">
                            <svg viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,7 +23,7 @@ async def footer_body():
                             </svg>
                         </span>
                     </a>
-                    <a href="#">
+                    <a href="/contactus">
                         <span>YouTube</span>
                         <span class="social-arrow">
                             <svg viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -61,7 +61,7 @@ async def footer_body():
 
             <!-- Mobile Social Links Section (Hidden on Desktop) -->
             <div class="mobile-social-links">
-                <a href="#">
+                <a href="/contactus">
                     <span>Instagram</span>
                     <span class="social-arrow">
                         <svg viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -70,7 +70,7 @@ async def footer_body():
                         </svg>
                     </span>
                 </a>
-                <a href="#">
+                <a href="/contactus">
                     <span>Facebook</span>
                     <span class="social-arrow">
                        <svg viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -79,7 +79,7 @@ async def footer_body():
                         </svg>
                     </span>
                 </a>
-                <a href="#">
+                <a href="/contactus">
                     <span>YouTube</span>
                     <span class="social-arrow">
                         <svg viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">

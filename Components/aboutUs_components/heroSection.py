@@ -16,7 +16,7 @@ async def heroSection_body():
             <div class="hero-text-section">
                 <h1 class="hero-headline">Leading the <span class="highlight">AI & Data Revolution</span></h1>
                 <p class="hero-paragraph">At DecisionAlgo, we turn data into actionable insights that fuel business growth. Recognized by Startup India and backed by industry giants like AWS and DigitalOcean, we empower businesses with cutting-edge AI, automation, and data-driven solutions.</p>
-                <a href="#" class="hero-cta-button">Discover How We Work</a>
+                <a href="/contactus" class="hero-cta-button">Discover How We Work</a>
                 <div class="hero-keywords">
                     <span>Real-time dashboards</span>
                     <span>AI chatbots</span>

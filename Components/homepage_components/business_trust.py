@@ -5,8 +5,8 @@ async def trust_body():
     <div class="top-fade" aria-hidden="true"></div>
     <div class="trust-section-content-wrapper">
       <div class="cta-row">
-        <a href="#" class="btn primary">See Our Dashboards</a>
-        <a href="#" class="btn ghost">Explore More Solutions</a>
+        <a href="/dashboard" class="btn primary">See Our Dashboards</a>
+        <a href="/contactus" class="btn ghost">Explore More Solutions</a>
       </div>
       <h2 class="title">
         Why <span class="accent">Businesses</span> Trust Us
@@ -114,8 +114,8 @@ async def trust_body():
         </div>
       </div>
       <div class="cta-row">
-        <a href="#" class="btn primary">See Our Dashboards</a>
-        <a href="#" class="btn ghost">Explore More Solutions</a>
+        <a href="/contactus" class="btn primary">See Our Dashboards</a>
+        <a href="/contactus" class="btn ghost">Explore More Solutions</a>
       </div>
     </div>
   </section>

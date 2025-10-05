@@ -32,7 +32,7 @@ async def robot_body():
                 </div>
                 <div class="feature-content">
                     <p>Ditch The Spreadsheets! Visualize Key Business Metrics In A Single, Dynamic Dashboard That Updates In Real-Time.</p>
-                    <a href="#" class="show-detail-link">
+                    <a href="/dashboard" class="show-detail-link">
                         <span>Show Detail</span>
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 18L18 6M18 6H9M18 6V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </a>
@@ -45,7 +45,7 @@ async def robot_body():
                 </div>
                 <div class="feature-content">
                     <p>Automate Customer Engagement And Streamline Workflows With Intelligent Chatbots Tailored To Your Needs.</p>
-                    <a href="#" class="show-detail-link">
+                    <a href="/dashboard" class="show-detail-link">
                         <span>Show Detail</span>
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 18L18 6M18 6H9M18 6V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </a>
@@ -61,7 +61,7 @@ async def robot_body():
                 </div>
                 <div class="feature-content">
                     <p>No More Manual Reporting-Get Automated Insights Delivered Weekly & Monthly To Make Informed Decisions Faster.</p>
-                    <a href="#" class="show-detail-link">
+                    <a href="/dashboard" class="show-detail-link">
                         <span>Show Detail</span>
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 18L18 6M18 6H9M18 6V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </a>
@@ -74,7 +74,7 @@ async def robot_body():
                 </div>
                 <div class="feature-content">
                     <p>Scale Your Business Effortlessly By Delegating Time-Consuming Data Processes To Our Expert Team</p>
-                    <a href="#" class="show-detail-link">
+                    <a href="/dashboard" class="show-detail-link">
                         <span>Show Detail</span>
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 18L18 6M18 6H9M18 6V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </a>
@@ -92,7 +92,7 @@ async def robot_body():
                     </div>
                     <div class="feature-content">
                         <p>Ditch The Spreadsheets! Visualize Key Business Metrics In A Single, Dynamic Dashboard That Updates In Real-Time.</p>
-                        <a href="#" class="show-detail-link">
+                        <a href="/contactus" class="show-detail-link">
                             <span>Show Detail</span>
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 18L18 6M18 6H9M18 6V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </a>
@@ -105,7 +105,7 @@ async def robot_body():
                     </div>
                     <div class="feature-content">
                         <p>Automate Customer Engagement And Streamline Workflows With Intelligent Chatbots Tailored To Your Needs.</p>
-                        <a href="#" class="show-detail-link">
+                        <a href="/contactus" class="show-detail-link">
                             <span>Show Detail</span>
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 18L18 6M18 6H9M18 6V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </a>
@@ -119,7 +119,7 @@ async def robot_body():
                     </div>
                     <div class="feature-content">
                         <p>No More Manual Reporting-Get Automated Insights Delivered Weekly & Monthly To Make Informed Decisions Faster.</p>
-                        <a href="#" class="show-detail-link">
+                        <a href="/contactus" class="show-detail-link">
                             <span>Show Detail</span>
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 18L18 6M18 6H9M18 6V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </a>
@@ -132,7 +132,7 @@ async def robot_body():
                     </div>
                     <div class="feature-content">
                         <p>Scale Your Business Effortlessly By Delegating Time-Consuming Data Processes To Our Expert Team</p>
-                        <a href="#" class="show-detail-link">
+                        <a href="/contactus" class="show-detail-link">
                             <span>Show Detail</span>
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 18L18 6M18 6H9M18 6V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </a>
@@ -198,9 +198,9 @@ async def robot_style():
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-height: 100vh;
+            min-height: 95vh;
             background: var(--robot-section-bg);
-            padding: 4vh 1.67vw 5.93vh; /* Reduced top padding from 8.89vh to 4vh for better spacing with hero section */
+            padding: 4vh 1.67vw 0vh; /* Reduced top padding from 8.89vh to 4vh for better spacing with hero section */
             border-radius: 0 0 4.43vw 4.43vw;
             overflow: hidden;
         }
@@ -252,7 +252,7 @@ async def robot_style():
         /* ============================================================= */
         .desktop-view {
             position: relative; width: 100%; max-width: 83.33vw;
-            height: 74.07vh; margin-top: 7.41vh;
+            height: 67.07vh; margin-top: 7.41vh;
         }
         .connector-vector {
             position: absolute; pointer-events: none; z-index: 15;
@@ -262,7 +262,7 @@ async def robot_style():
         #vector-3 { right: 32%; top: -1%; } #vector-4 { right: 32%; top: 58%; }
 
         .desktop-robot {
-            position: absolute; left: 50%; top: 50%;
+            position: absolute; left: 50%; top: 52.5%;
             transform: translate(-50%, -50%); width: 39.25vw; height: 65.81vh;
             object-fit: contain; z-index: 10;
             filter: drop-shadow(0 1.85vh 3.125vw rgba(0,0,0,0.6));
@@ -454,7 +454,7 @@ async def robot_script():
                     
                 } else {
                     // Reset to desktop styles with reduced top padding
-                    pageWrapper.style.padding = '4vh 1.67vw 5.93vh'; // Reduced top padding for desktop
+                    pageWrapper.style.padding = '4vh 1.67vw 0vh'; // Reduced top padding for desktop
                     pageWrapper.style.borderRadius = '0 0 4.43vw 4.43vw';
                     headingContainer.style.maxWidth = '52.08vw';
                     headingContainer.style.marginBottom = '1.85vh';
