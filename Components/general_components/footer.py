@@ -42,7 +42,7 @@ async def footer_body():
                     <ul>
                         <li><a href="/casestudy/customer_package_goods">Consumer Packaged Goods</a></li>
                         <li><a href="/casestudy/retail_firm">Retail</a></li>
-                        <li><a href="/casestudy/financial">Financial Services</a></li>
+                        <li><a href="/casestudy/finance">Financial Services</a></li>
                         <li><a href="/casestudy/insurance">Insurance</a></li>
                         <li><a href="/casestudy/tech_media_telecom">Technology, Media & Telecom</a></li>
                         <li><a href="/casestudy/healthcare">HealthCare & Life Sciences</a></li>
