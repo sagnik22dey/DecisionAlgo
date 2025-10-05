@@ -262,7 +262,7 @@ async def robot_style():
         #vector-3 { right: 32%; top: -1%; } #vector-4 { right: 32%; top: 58%; }
 
         .desktop-robot {
-            position: absolute; left: 50%; top: 52.5%;
+            position: absolute; left: 50%; top: 53.5%;
             transform: translate(-50%, -50%); width: 39.25vw; height: 65.81vh;
             object-fit: contain; z-index: 10;
             filter: drop-shadow(0 1.85vh 3.125vw rgba(0,0,0,0.6));
